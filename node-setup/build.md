@@ -25,7 +25,7 @@
         git clone https://github.com/input-output-hk/cardano-node.git
 
    This should create a folder ``cardano-node``, then download the latest source code from git into it.
-   After the download has finished, we can check its content with change our working directory to the new folder by
+   After the download has finished, we can check its content by
 
         ls cardano-node
 
