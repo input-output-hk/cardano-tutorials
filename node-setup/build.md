@@ -9,7 +9,8 @@
     - ``ncurses-devel`` (development files for ``ncurses``)
     - ``stack`` (Haskell build tool)
 
-   If we are using an AWS instance, we can install them as follows:
+   If we are using an AWS instance running Amazon Linux AMI 2 (see the [AWS walk-through](AWS.md) for how to get such an instance up and running), 
+   we can install them as follows:
 
         sudo yum update -y
         sudo yum install git gcc gmp-devel -y
