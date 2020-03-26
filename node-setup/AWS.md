@@ -7,33 +7,53 @@ To do so, please follow the steps below:
 
 2. Go to the _AWS Management Console_.
 
-3. If you already have a running instance, go to step 8.
+3. Go to the _EC2 Dashboard_.
 
-4. Go to _Launch a virtual machine (With EC2)_.
+   ![AWS Management Console](management_console.png)
 
-  ![Launch a virtual machine](AWS_Management_Console.png)
+4. If you already have a running instance, go to step 9.
 
-5. As Amazon Machine Image, choose _Amazon Linux 2 (HVM), SSD Volume Type_, 64-bit (x86).
+5. We first make sure to get enough harddrive space (at least 24G). Click on _Volumes_.
+
+   ![Volumes in the Management Console](volumes.png)
+
+6. Under _Actions_, select _Modify Volume_.
+
+   ![Volume Actions](volume_actions.png)
+
+7. In the _Modify Volume_ diaglog, select a size of 24 and click _Modify_, then confirm in the next dialog.
+
+   ![Modify Volume](modify_volume.png)
+
+8. Go back to the _EC2 Dashboard_.
+
+   ![EC2 Dashboard](dashboard.png) 
+
+9. Go to _Launch Instance_.
+
+  ![Launch Instance](launch_instance.png)
+
+10. As Amazon Machine Image, choose _Amazon Linux 2 (HVM), SSD Volume Type_, 64-bit (x86).
 
   ![Amazon Machine Image](AMI.png)
 
-6. As Instance Type, choose _t2.medium_, then click _Review and Launch_ and finally _Launch_ on the next screen.
+11. As Instance Type, choose _t2.medium_, then click _Review and Launch_ and finally _Launch_ on the next screen.
 
   ![Instance Type](Instance_Type.png)
 
-7. Create a key pair (or use an existing one).
+12. Create a key pair (or use an existing one).
 
   ![Create a key pair](key_pair.png)
 
-8. _Connect_ to your instance.
+13. _Connect_ to your instance.
 
   ![Connect](connect.png)
 
-9. You can use the _EC2 Instance Connect_ connection method.
+14. You can use the _EC2 Instance Connect_ connection method.
 
   ![Choose connection method](connect2.png)
 
-10. Type ``echo hello`` (and Enter) to try whether the connection works. This should print "hello" to the console.
+15. Type ``echo hello`` (and Enter) to try whether the connection works. This should print "hello" to the console.
 
   ![Trying the console](connect3.png)
 
