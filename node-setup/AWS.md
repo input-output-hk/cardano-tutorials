@@ -17,7 +17,7 @@ To do so, please follow the steps below:
 
   ![Amazon Machine Image](AMI.png)
 
-6. As Instance Type, choose _t2.micro_, then click _Review and Launch_ and finally _Launch_ on the next screen.
+6. As Instance Type, choose _t2.medium_, then click _Review and Launch_ and finally _Launch_ on the next screen.
 
   ![Instance Type](Instance_Type.png)
 
