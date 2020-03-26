@@ -29,6 +29,9 @@
 
         ls cardano-node
 
+   ![Content of folder ``cardano-node``](ls-cardano-node.png)
+   Note that the content of your ``cardano-node``-folder can slightly differ from this!
+
 3. We change our working directory to the downloaded source code folder:
 
         cd cardano-node
