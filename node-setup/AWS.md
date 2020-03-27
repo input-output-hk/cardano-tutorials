@@ -1,5 +1,9 @@
 # Getting access to Linux at AWS
 
+In order to build a node from source, run it and connect it to the Cardano mainnet, you need a Linux system with at least 4GB RAM and 24GB harddrive space.
+The RAM is mostly needed for _building_ the node; for _running_ it, 1GB would be sufficient. The harddrive space is necessary if you want to connect to and download
+the Cardano blockchain on mainnet. If you just want to set up a local testnet or connect to an external testnet, less space is needed.
+
 If you do not have access to a computer running Linux, you can use Amazon Web Services (AWS) to create a cloud-based virtual machine running Linux for free.
 To do so, please follow the steps below:
 
@@ -13,7 +17,7 @@ To do so, please follow the steps below:
 
 4. If you already have a running instance, go to step 9.
 
-5. We first make sure to get enough harddrive space (at least 24G). Click on _Volumes_.
+5. We first make sure to get enough harddrive space (at least 24GB). Click on _Volumes_.
 
    ![Volumes in the Management Console](volumes.png)
 

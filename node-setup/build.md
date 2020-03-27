@@ -1,16 +1,16 @@
 # Installing and Running a Node
 
 1. We need the following packages and tools on our Linux system to download the source code and build it:
-    - ``git`` (version control system)
-    - ``gcc`` (C and C++ compiler)
-    - ``gmp-devel`` (developer tools for the ``gmp`` arithmetic library)
-    - ``zlib-devel`` (developer tools for the ``zlib`` compression library)
-    - ``systemd-devel`` (developer headers for ``systemd``)
-    - ``ncurses-devel`` (development files for ``ncurses``)
-    - ``stack`` (Haskell build tool)
+    - the version control system ``git``,
+    - the ``gcc`` C-compiler,
+    - developer libraries for the the arbitrary precision library ``gmp``,
+    - developer libraries for the compression library ``zlib``,
+    - developer libraries for ``systemd``
+    - developer libraries for ``ncurses``,
+    - the Haskell build-tool ``stack``.
 
    If we are using an AWS instance running Amazon Linux AMI 2 (see the [AWS walk-through](AWS.md) for how to get such an instance up and running), 
-   we can install them as follows:
+   we can install these dependencies as follows:
 
         sudo yum update -y
         sudo yum install git gcc gmp-devel -y
@@ -18,7 +18,7 @@
         curl -sSL https://get.haskellstack.org/ | sh
 
    If you are using a different flavor of Linux, you will need to use the package manager suitable for your platform instead of ``yum``,
-   and the names of the packages might differ.
+   and the names of the packages you need to install might differ.
 
 2. To download the source code, we use git:
 
