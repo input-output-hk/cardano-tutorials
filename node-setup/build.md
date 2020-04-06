@@ -36,19 +36,26 @@
 
         cd cardano-node
 
-4. Then we build the node with ``stack``, which will take a couple of minutes (``stack`` first needs to download and install the GHC Haskell compiler, then compile 250+ Haskell
+4. For reproducible builds, we should check out a specific release. At the time of writing, the latest release has `tag 1.9.3`, and we can check it out as follows:
+
+        git fetch --all --tags
+        git checkout tags/1.9.3
+
+5. Now we build the node with ``stack``, which will take a couple of minutes (``stack`` first needs to download and install the GHC Haskell compiler, then compile 250+ Haskell
    packages to build the node):
 
         stack build
 
-5. If you ever want to update the code to the newest version, go to the ``cardano-node`` directory, pull the latest code with ``git`` and rebuild. 
+6. If you ever want to update the code to a newer version, go to the ``cardano-node`` directory, pull the latest code with ``git`` and rebuild. 
    This will be much faster than the initial build:
 
         cd cardano-node
-        git pull
+        git fetch --all --tags
+        git tag
+        git checkout tags/<the-tag-you-want>
         stack build
 
-6. We can start a node on the Cardano mainnet with
+7. We can start a node on the Cardano mainnet with
 
         scripts/mainnet.sh
 
