@@ -55,6 +55,8 @@
         git checkout tags/<the-tag-you-want>
         stack build
 
+   Note that it might be necessary to delete the `db`-folder (the database-folder) before running an updated version of the node.
+
 7. We can start a node on the Cardano mainnet with
 
         scripts/mainnet.sh
