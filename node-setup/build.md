@@ -29,22 +29,23 @@
 
         ls cardano-node
 
-   ![Content of folder ``cardano-node``](ls-cardano-node.png)
+   ![Content of folder ``cardano-node``.](ls-cardano-node.png)
    Note that the content of your ``cardano-node``-folder can slightly differ from this!
 
 3. We change our working directory to the downloaded source code folder:
 
         cd cardano-node
 
-4. For reproducible builds, we should check out a specific release. At the time of writing, the latest release has `tag 1.9.3`, and we can check it out as follows:
+4. For reproducible builds, we should check out a specific release. At the time of writing, the latest release has `tag 1.10.0`, and we can check it out as follows:
 
         git fetch --all --tags
-        git checkout tags/1.9.3
+        git checkout tags/1.10.0
 
-5. Now we build the node with ``stack``, which will take a couple of minutes (``stack`` first needs to download and install the GHC Haskell compiler, then compile 250+ Haskell
+5. Now we build and install the node with ``stack``, 
+   which will take a couple of minutes (``stack`` first needs to download and install the GHC Haskell compiler, then compile 250+ Haskell
    packages to build the node):
 
-        stack build
+        stack install
 
 6. If you ever want to update the code to a newer version, go to the ``cardano-node`` directory, pull the latest code with ``git`` and rebuild. 
    This will be much faster than the initial build:
@@ -53,7 +54,7 @@
         git fetch --all --tags
         git tag
         git checkout tags/<the-tag-you-want>
-        stack build
+        stack install
 
    Note that it might be necessary to delete the `db`-folder (the database-folder) before running an updated version of the node.
 
@@ -61,6 +62,6 @@
 
         scripts/mainnet.sh
 
-   ![Node running on mainnet](mainnet.png)
+   ![Node running on mainnet.](mainnet.png)
 
 Congratulations! You have installed the node, started it and connected it to the Cardano mainnet.
