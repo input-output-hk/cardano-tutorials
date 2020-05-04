@@ -3,6 +3,7 @@
 1. We need the following packages and tools on our Linux system to download the source code and build it:
     - the version control system ``git``,
     - the ``gcc`` C-compiler,
+    - C++ support for ``gcc``,
     - developer libraries for the the arbitrary precision library ``gmp``,
     - developer libraries for the compression library ``zlib``,
     - developer libraries for ``systemd``
@@ -13,7 +14,7 @@
    we can install these dependencies as follows:
 
         sudo yum update -y
-        sudo yum install git gcc gmp-devel -y
+        sudo yum install git gcc gcc-c++ gmp-devel -y
         sudo yum install zlib-devel systemd-devel ncurses-devel -y
         curl -sSL https://get.haskellstack.org/ | sh
 

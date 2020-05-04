@@ -1,1 +1,7 @@
+*.yaml
 *.pdf
+*.pem
+*.putty
+data/
+static/
+templates/
