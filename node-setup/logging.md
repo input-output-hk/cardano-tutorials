@@ -24,7 +24,7 @@ We will see how to change all of these and more in this tutorial using various o
    The severity is displayed in the beginning of each log message (in this example, there is one message with severity `Debug`,
    and there are two with severity `Notice`):
 
-   ![Severities](severity.png)
+   ![Severities](images/severity.png)
 
    __Note:__ Lowering the minimal severity harms _efficiency_,
    so while using a low severity can be very helpful for debugging a problem, it should be used with care during normal operation.

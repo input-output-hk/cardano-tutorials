@@ -11,16 +11,16 @@ and that you know how to enable [EKG-monitoring](ekg.md).
 
    You can find the link in the _Instances_ dashboard of the AWS console
 
-   ![Launch Wizard](launch-wizard.png)
+   ![Launch Wizard](images/launch-wizard.png)
 
 
    Click "Edit inbound rules".
 
-   ![Edit inbound rules](edit-inbound-rules.png)
+   ![Edit inbound rules](images/edit-inbound-rules.png)
 
    Then add a new rule for "Custom TCP", port range 12789, source "Anywhere".
 
-   ![new inbound rules](new-inbound-rule.png)
+   ![new inbound rules](images/new-inbound-rule.png)
 
 2. On the AWS instance we edit the node configuration file (which we created in the
    [tutorial on EKG monitoring](ekg.md)),
@@ -60,4 +60,4 @@ and that you know how to enable [EKG-monitoring](ekg.md).
 7. Start Prometheus with this configurationi, open `localhost:9090`, pick one or more interesting metrics to graph
    and enjoy!
 
-   ![Prometheus](prometheus.png)
+   ![Prometheus](images/prometheus.png)

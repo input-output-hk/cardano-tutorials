@@ -64,4 +64,4 @@ This tutorial assumes that you have installed `cardano-node` as explained [here]
 5. On our local machine, we can go to `127.0.0.1:8080` in our browser
    and see the EKG monitoring information.
 
-   ![EKG in the browser.](ekg.png)
+   ![EKG in the browser.](images/ekg.png)

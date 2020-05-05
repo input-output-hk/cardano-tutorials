@@ -30,7 +30,7 @@
 
         ls cardano-node
 
-   ![Content of folder ``cardano-node``.](ls-cardano-node.png)
+   ![Content of folder ``cardano-node``.](images/ls-cardano-node.png)
    Note that the content of your ``cardano-node``-folder can slightly differ from this!
 
 3. We change our working directory to the downloaded source code folder:
@@ -63,6 +63,6 @@
 
         scripts/mainnet.sh
 
-   ![Node running on mainnet.](mainnet.png)
+   ![Node running on mainnet.](images/mainnet.png)
 
 Congratulations! You have installed the node, started it and connected it to the Cardano mainnet.
