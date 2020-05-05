@@ -35,3 +35,55 @@ We will see how to change all of these and more in this tutorial using various o
    but the amount of information contained in each message.
 
         TracingVerbosity: MinimalVerbosity
+
+4. As mentioned above, by default log output is directed to the console and to file `logs/mainnet.log`. 
+   This behavior is handled by so-called "scribes", 
+   which we can configure in sections `defaultScribes` and `setupScribes` of the configuration file.
+
+   Section `defaultScribes` makes types of scribes available.
+   By default these types are `FileSK` for writing to a file
+   and `StdoutSK` for writing to the console.
+   (There are also the types `JournalSK` for `systemd`'s journal system
+   and `DevNullSK` for directing the output to nowhere,
+   but those are not available by default.)
+
+   Section `setupScribes` lists those scribes that are actually used.
+   Their kinds must be configured in the `defaultScribes` section
+   before they can be used. For example, if we want logging to go to
+   `logs/mylog.log` in Json-format, we can configure this as follows:
+
+        setupScribes:
+          - scKind: FileSK
+            scName: "logs/mylog.log"
+            scFormat: ScJson
+
+   Scribes of type `FileSK` use _rotating_ log files
+   (keeping the newest log messages in the configured log file and moving
+   older messages to archive files), and the rotation-behavior can be
+   configured in section `rotation`.
+
+5. The configuration options discussed until now were all global,
+   they effected all subsystems simulatneously.
+   It is possible to activate or deactivate logging
+   for specific subsystems by setting the corresponding flags
+   to `True` or `False` accordingly.
+   Those flags can be found in the section starting with the comment
+   "`##### Coarse grained logging control #####`".
+
+   For example, if we want to activate logging for all subsystems related
+   to block fetching, we can achieve this as follows:
+
+        # Trace BlockFetch client.
+        TraceBlockFetchClient: True
+
+        # Trace BlockFetch decisions made by the BlockFetch client.
+        TraceBlockFetchDecisions: True
+
+        # Trace BlockFetch protocol messages.
+        TraceBlockFetchProtocol: True
+
+        # Serialised Trace BlockFetch protocol messages.
+        TraceBlockFetchProtocolSerialised: True
+
+        # Trace BlockFetch server.
+        TraceBlockFetchServer: True
