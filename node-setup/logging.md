@@ -87,3 +87,6 @@ We will see how to change all of these and more in this tutorial using various o
 
         # Trace BlockFetch server.
         TraceBlockFetchServer: True
+
+6. It is also possible to exert more fine-grained control on what information
+   to log, but we will not conver this in this tutoral. 
