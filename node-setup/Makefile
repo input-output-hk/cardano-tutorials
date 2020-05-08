@@ -1,4 +1,4 @@
-pdf_files = README.pdf AWS.pdf build.pdf ekg.pdf prometheus.pdf logging.pdf
+pdf_files = README.pdf AWS.pdf build.pdf ekg.pdf prometheus.pdf logging.pdf topology.pdf
 
 .PHONE: all
 all: $(pdf_files)
