@@ -8,3 +8,4 @@ In these tutorials, we will cover the following topics:
 - [Monitoring a node with Prometheus](prometheus.md).
 - [Configuring logging](logging.md).
 - [Block producers and relays](topology.md).
+- [Command line interface](cli.md).
