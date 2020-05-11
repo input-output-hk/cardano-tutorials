@@ -6,20 +6,40 @@
     - C++ support for ``gcc``,
     - developer libraries for the the arbitrary precision library ``gmp``,
     - developer libraries for the compression library ``zlib``,
-    - developer libraries for ``systemd``
+    - developer libraries for ``systemd``,
     - developer libraries for ``ncurses``,
-    - the Haskell build-tool ``stack``.
+    - ``ncurses` compatibility libraries,
+    - the Haskell build tool ``cabal`,
+    - the GHC Haskell compiler.
 
    If we are using an AWS instance running Amazon Linux AMI 2 (see the [AWS walk-through](AWS.md) for how to get such an instance up and running), 
    we can install these dependencies as follows:
 
         sudo yum update -y
-        sudo yum install git gcc gcc-c++ gmp-devel -y
-        sudo yum install zlib-devel systemd-devel ncurses-devel -y
-        curl -sSL https://get.haskellstack.org/ | sh
+        sudo yum install git gcc gcc-c++ gmp-devel zlib-devel -y
+        sudo yum install systemd-devel ncurses-devel ncurses-compat-libs -y
 
    If you are using a different flavor of Linux, you will need to use the package manager suitable for your platform instead of ``yum``,
    and the names of the packages you need to install might differ.
+
+   We download, unpack, install and update Cabal:
+
+        wget https://downloads.haskell.org/~cabal/cabal-install-3.2.0.0/cabal-install-3.2.0.0-x86_64-unknown-linux.tar.xz
+        tar -xf cabal-install-3.2.0.0-x86_64-unknown-linux.tar.xz
+        rm cabal-install-3.2.0.0-x86_64-unknown-linux.tar.xz cabal.sig
+        mkdir -p ~/.local/bin
+        mv cabal ~/.local/bin/
+        cabal update
+
+   Finally we download and install GHC:
+
+        wget https://downloads.haskell.org/~ghc/8.6.5/ghc-8.6.5-x86_64-deb9-linux.tar.xz
+        tar -xf ghc-8.6.5-x86_64-deb9-linux.tar.xz
+        rm ghc-8.6.5-x86_64-deb9-linux.tar.xz
+        cd ghc-8.6.5
+        ./configure
+        sudo make install
+        cd ..
 
 2. To download the source code, we use git:
 
@@ -42,11 +62,10 @@
         git fetch --all --tags
         git checkout tags/1.10.0
 
-5. Now we build and install the node with ``stack``, 
-   which will take a couple of minutes (``stack`` first needs to download and install the GHC Haskell compiler, then compile 250+ Haskell
-   packages to build the node):
+5. Now we build and install the node with ``cabal``, 
+   which will take a couple of minutes the first time you do a build. Later builds will be much faster, because everything that does not change will be cached.
 
-        stack install
+        cabal install cardano-node cardano-cli
 
 6. If you ever want to update the code to a newer version, go to the ``cardano-node`` directory, pull the latest code with ``git`` and rebuild. 
    This will be much faster than the initial build:
@@ -55,7 +74,7 @@
         git fetch --all --tags
         git tag
         git checkout tags/<the-tag-you-want>
-        stack install
+        cabal install cardano-node cardano-cli
 
    Note that it might be necessary to delete the `db`-folder (the database-folder) before running an updated version of the node.
 
