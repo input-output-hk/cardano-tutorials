@@ -41,3 +41,17 @@ which will enable us to receive and send ada.
 
    Instead of writing the generated address to the console, 
    this command will store it in file `addr`. 
+
+3. In order to query your address (see the utxo's at that address),
+   you first need to set environment variable `CARDANO_NODE_SOCKET_PATH`
+   to the socket-path specified in your node configuration:
+
+        export CARDANO_NODE_SOCKET_PATH=db/node-socket
+
+   Then use
+
+        cardano-cli shelley query filtered-utxo \
+            --address 820658... \
+            --network-magic 42
+
+   (The "network magic" 42 is specific to the testnet and will not be needed for the mainnet.)
