@@ -13,12 +13,17 @@
     - the GHC Haskell compiler.
 
    If we are using an AWS instance running Amazon Linux AMI 2 (see the [AWS walk-through](AWS.md) for how to get such an instance up and running), 
-   we can install these dependencies as follows:
+   we can install these dependencies as follows on CentOS/RHEL based systems:
 
         sudo yum update -y
         sudo yum install git gcc gcc-c++ gmp-devel zlib-devel -y
         sudo yum install systemd-devel ncurses-devel ncurses-compat-libs -y
 
+   instead for Debian/Ubuntu use
+   
+        sudo apt-get update -y
+        sudo apt-get -y install build-essential pkg-config libffi-dev libgmp-dev libssl-dev libtinfo-dev libsystemd-dev zlib1g-dev make g++ tmux git jq wget libncursesw5 -y
+   
    If you are using a different flavor of Linux, you will need to use the package manager suitable for your platform instead of ``yum``,
    and the names of the packages you need to install might differ.
 
