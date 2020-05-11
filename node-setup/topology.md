@@ -6,7 +6,7 @@ Each block producing node must be accompagnied by several relay nodes.
 To be clear: Both types of nodes run exactly the same program, _cardano-node_.
 The difference between the two types lies in how they are configured and how they are connected to each other:
 
-- A block producing nodes will be configured with various key-pairs needed for block generation (cold keys,
+- A block producing node will be configured with various key-pairs needed for block generation (cold keys,
   KES hot keys and VRF hot keys). It will only be connected to its relay nodes.
 
 - A relay node will not be in possession of any keys and will therefore be unable to produce blocks.
