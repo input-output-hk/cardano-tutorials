@@ -67,6 +67,13 @@
 
         cabal install cardano-node cardano-cli
 
+   __Note__: At the time of writing, there is a bug in the latest version of the software that prevents ``cabal install`` from working correctly.
+   As a workaround, you can use ``cabal build`` instead:
+
+        cabal build all
+        cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-node-1.11.0/x/cardano-node/build/cardano-node/cardano-node ~/.local/bin/
+        cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-cli-1.11.0/x/cardano-cli/build/cardano-cli/cardano-cli ~/.local/bin/
+
 6. If you ever want to update the code to a newer version, go to the ``cardano-node`` directory, pull the latest code with ``git`` and rebuild. 
    This will be much faster than the initial build:
 
