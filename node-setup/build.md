@@ -9,7 +9,7 @@
     - developer libraries for ``systemd``,
     - developer libraries for ``ncurses``,
     - ``ncurses`` compatibility libraries,
-    - the Haskell build tool ``cabal`,
+    - the Haskell build tool ``cabal``,
     - the GHC Haskell compiler.
 
    If we are using an AWS instance running Amazon Linux AMI 2 (see the [AWS walk-through](AWS.md) for how to get such an instance up and running), 
