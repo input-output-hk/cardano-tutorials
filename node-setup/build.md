@@ -8,7 +8,7 @@
     - developer libraries for the compression library ``zlib``,
     - developer libraries for ``systemd``,
     - developer libraries for ``ncurses``,
-    - ``ncurses` compatibility libraries,
+    - ``ncurses`` compatibility libraries,
     - the Haskell build tool ``cabal`,
     - the GHC Haskell compiler.
 
