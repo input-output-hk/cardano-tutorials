@@ -13,15 +13,15 @@ Welcome to the IOHK Pioneers Group!  We are excited to have you join us on this 
 3. Register on Telegram and provide IOHK with your Telegram handle.  We will use a dedicated Telegram channel as our main point of contact.
 
 4. Make sure you can access:
-    - The IOHK Tutorial Documentation at:
-https://github.com/input-output-hk/cardano-tutorials/tree/master/node-setup
-    - Shelley Testnet Documentation at  https://testnets.cardano.org/en/shelley-haskell/overview/
-    - The Cardano Node Github repository at https://github.com/input-output-hk/cardano-node
-    - The Shelley Genesis Documentation at: https://github.com/input-output-hk/cardano-node/blob/master/doc/shelley-genesis.md
+    - [The IOHK Tutorial Documentation](https://github.com/input-output-hk/cardano-tutorials/tree/master/node-setup)
+
+    - [Shelley Testnet Documentation](https://testnets.cardano.org/en/shelley-haskell/overview/)
+    - [Cardano Node Github repository](https://github.com/input-output-hk/cardano-node)
+    - [Shelley Genesis Documentation](https://github.com/input-output-hk/cardano-node/blob/master/doc/shelley-genesis.md)
 
   You should be comfortable with using Linux shell commands and have a basic understanding of cryptography and the Cardano ecosystem.
 
-1. Set up your platform:
+5. Set up your platform:
   - You will need an x86 host (AMD or Intel), Virtual Machine or AWS instance with at least 2 cores, 4GB of RAM and at least 10GB of free disk space;
   - You will need to install a recent version of Linux, not Windows or MacOS – this will help us isolate any issues that arise;
   - You will need to install: git, ghc, cabal.  Please make sure you install the correct versions (currently GHC 8.6.5 and Cabal 3.0).
@@ -34,7 +34,7 @@ In the first exercise, we will make sure that you can:
 
 1. set up and run a Cardano node;
 2. connect to the Pioneer Testnet Shelley blockchain in OBFT mode;
-3. request some test Ada to use in the Testnet. 
+3. request some test Ada to use in the Testnet.
 
 This should be everything that you need to get you up and running.
 
@@ -53,6 +53,8 @@ This should be everything that you need to get you up and running.
   Congratulations!  You have a working node connected to the first-ever public Shelley Cardano network!    In later exercises, we will first use this to submit transactions, and then set up a working stake pool, so that you can produce blocks yourself.
 
 4. Use the node CLI commands to generate an address key, utxo.txt, that will be used to provide you with funds.  Extract the address from your address key key as described in the IOHK tutorial (linked above), and record it in this [Google Doc](https://docs.google.com/spreadsheets/d/1o62S2_24bcZNIpT3FASKHVGHG-dQ4J0vDaVCEsxbVKU/edit?usp=sharing).
+
+   - (Tutorial on making an address](https://github.com/input-output-hk/cardano-tutorials/blob/master/node-setup/address.md)
 
 5. Confirm on [SurveyMonkey](https://www.surveymonkey.co.uk/r/S9N5M5H) that you have successfully completed this exercise, and provide any feedback on any problems you have encountered.  Once we are happy that all the Pioneers have installed and test run the node, and we have ironed out any issues that you experience, we will progress to the next step: building and submitting transactions.
 
