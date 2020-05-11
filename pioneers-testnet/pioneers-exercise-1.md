@@ -54,7 +54,7 @@ This should be everything that you need to get you up and running.
 
 4. Use the node CLI commands to generate an address key, utxo.txt, that will be used to provide you with funds.  Extract the address from your address key key as described in the IOHK tutorial (linked above), and record it in this [Google Doc](https://docs.google.com/spreadsheets/d/1o62S2_24bcZNIpT3FASKHVGHG-dQ4J0vDaVCEsxbVKU/edit?usp=sharing).
 
-   - (Tutorial on making an address](https://github.com/input-output-hk/cardano-tutorials/blob/master/node-setup/address.md)
+   - [Tutorial on making an address](https://github.com/input-output-hk/cardano-tutorials/blob/master/node-setup/address.md)
 
 5. Confirm on [SurveyMonkey](https://www.surveymonkey.co.uk/r/S9N5M5H) that you have successfully completed this exercise, and provide any feedback on any problems you have encountered.  Once we are happy that all the Pioneers have installed and test run the node, and we have ironed out any issues that you experience, we will progress to the next step: building and submitting transactions.
 
