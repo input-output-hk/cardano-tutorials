@@ -15,13 +15,13 @@ Welcome to the IOHK Pioneers Group!  We are excited to have you join us on this 
 4. Make sure you can access:
     - The IOHK Tutorial Documentation at:
 https://github.com/input-output-hk/cardano-tutorials/tree/master/node-setup
-    - General Cardano Documentation at  https://docs.cardano.org
+    - Shelley Testnet Documentation at  https://testnets.cardano.org/en/shelley-haskell/overview/
     - The Cardano Node Github repository at https://github.com/input-output-hk/cardano-node
     - The Shelley Genesis Documentation at: https://github.com/input-output-hk/cardano-node/blob/master/doc/shelley-genesis.md
 
   You should be comfortable with using Linux shell commands and have a basic understanding of cryptography and the Cardano ecosystem.
 
-5. Set up your platform:
+1. Set up your platform:
   - You will need an x86 host (AMD or Intel), Virtual Machine or AWS instance with at least 2 cores, 4GB of RAM and at least 10GB of free disk space;
   - You will need to install a recent version of Linux, not Windows or MacOS – this will help us isolate any issues that arise;
   - You will need to install: git, ghc, cabal.  Please make sure you install the correct versions (currently GHC 8.6.5 and Cabal 3.0).
