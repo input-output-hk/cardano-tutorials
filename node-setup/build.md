@@ -17,7 +17,7 @@
    we can install these dependencies as follows:
 
         sudo yum update -y
-        sudo yum install git gcc gcc-c++ gmp-devel zlib-devel -y
+        sudo yum install git gcc gcc-c++ gmp-devel wget zlib-devel -y
         sudo yum install systemd-devel ncurses-devel ncurses-compat-libs -y
 
    For Debian/Ubuntu use the following instead:
