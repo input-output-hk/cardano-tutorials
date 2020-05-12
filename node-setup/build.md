@@ -37,6 +37,17 @@
         mv cabal ~/.local/bin/
         cabal update
 
+   This will work on a fresh [AWS instance](AWS.md) and assumes that folder `~/.local/bin` is in your `PATH`.
+   On other systems, you must either move the executable to a folder that is in your `PATH` or modify your `PATH` by adding the line
+
+        export PATH="~/.local/bin:$PATH"
+
+   to your `.bashrc`-file.
+
+   Above instructions install Cabal version `3.2.0.0`. You can check the version by typing
+
+        cabal --version
+
    Finally we download and install GHC:
 
         wget https://downloads.haskell.org/~ghc/8.6.5/ghc-8.6.5-x86_64-deb9-linux.tar.xz
