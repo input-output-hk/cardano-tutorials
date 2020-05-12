@@ -57,7 +57,7 @@ $
 
 Your node should be connected to the Pioneer Testnet and verifying the blocks that it receives.
 
-2. 	Verify that you have received some test Ada at the address that you provided to IOHK in Exercise 1, myaddr.
+2. 	Verify that you have received some test Ada at the address that you provided to IOHK in Exercise 1, *myaddr*.
 
 ```
 $ cardano-cli shelley query filtered-utxo \
@@ -65,13 +65,13 @@ $ cardano-cli shelley query filtered-utxo \
  	--network-magic …
 ```
 
-Create a new address myaddr2:
+Create a new address *myaddr2*:
 
 ```bash
 $ cardano-cli shelley address key-gen …
 ```
 
-3. Build a transaction to transfer Ada from myaddr to myaddr2.  You will need to use the Shelley transaction processing operations:
+3. Build a transaction to transfer Ada from *myaddr* to *myaddr2*.  You will need to use the Shelley transaction processing operations:
 
 ```bash
 $ cardano-cli shelley transaction build-raw \
@@ -80,7 +80,7 @@ $ cardano-cli shelley transaction build-raw \
 
 This is the most basic form of transaction construction.  We will use more sophisticated ones later.  The transaction will be created in the file txbody. You will need to provide explicit transaction inputs and outputs.
 
-| Id#Index     | This identifies the UTxO that is the source of the Ada – you should get this from  myaddr. |
+| Id#Index     | This identifies the UTxO that is the source of the Ada – you should get this from  *myaddr*. |
 |--------------|--------------------------------------------------------------------------------------------|
 | Out+lovelace | Hex encoded address that will receive the Ada and the amount to send in Lovelace.          |
 
@@ -98,7 +98,7 @@ The settings that are used here indicate that the transaction should be processe
 $ cardano-cli keygen …
 ```
 
-Sign your transaction in txbody using the signing key that you have just produced:
+Sign your transaction in txbody using the signing key for *myaddr*:
 
 ```bash
 $ cardano-cli shelley transaction sign \
@@ -128,7 +128,7 @@ You should receive a confirmation that the transaction has been submitted to you
  	 	--network-magic …
 ```
 
-7. Finally, build a transaction that sends a total of 1,000 Ada to two different addresses (a multi-address transaction).   Generate two new address keys, and build a transaction that sends 250 Ada to the first address, and 750 Ada to the second address.  Record the details of these addresses so that you can use them again later.
+7. Finally, build a transaction that sends a total of 1,000 Ada from *myaddr* to two different addresses (a multi-address transaction).
 
 ```bash
 $ cardano-cli shelley address key-gen …
