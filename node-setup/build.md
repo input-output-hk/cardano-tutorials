@@ -63,10 +63,10 @@
 
         cd cardano-node
 
-4. For reproducible builds, we should check out a specific release. At the time of writing, the latest release has `tag 1.10.0`, and we can check it out as follows:
+4. For reproducible builds, we should check out a specific release. We can view the latest release on the [Releases](https://github.com/input-output-hk/cardano-node/releases/) page. At the time of writing, the latest release has `tag 1.11.0`, and we can check it out as follows:
 
         git fetch --all --tags
-        git checkout tags/1.10.0
+        git checkout tags/1.11.0
 
 5. Now we build and install the node with ``cabal``, 
    which will take a couple of minutes the first time you do a build. Later builds will be much faster, because everything that does not change will be cached.
