@@ -63,10 +63,10 @@
 
         cd cardano-node
 
-4. For reproducible builds, we should check out a specific release. At the time of writing, the latest release has `tag 1.10.0`, and we can check it out as follows:
+4. For reproducible builds, we should check out a specific release. At the time of writing, the latest release has `tag 1.11.0`, and we can check it out as follows:
 
         git fetch --all --tags
-        git checkout tags/1.10.0
+        git checkout tags/1.11.0
 
 5. Now we build and install the node with ``cabal``, 
    which will take a couple of minutes the first time you do a build. Later builds will be much faster, because everything that does not change will be cached.
@@ -77,8 +77,8 @@
    As a workaround, you can use ``cabal build`` instead:
 
         cabal build all
-        cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-node-1.10.0/x/cardano-node/build/cardano-node/cardano-node ~/.local/bin/
-        cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-cli-1.10.0/x/cardano-cli/build/cardano-cli/cardano-cli ~/.local/bin/
+        cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-node-1.11.0/x/cardano-node/build/cardano-node/cardano-node ~/.local/bin/
+        cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-cli-1.11.0/x/cardano-cli/build/cardano-cli/cardano-cli ~/.local/bin/
 
 6. If you ever want to update the code to a newer version, go to the ``cardano-node`` directory, pull the latest code with ``git`` and rebuild. 
    This will be much faster than the initial build:
