@@ -64,3 +64,7 @@ This should be everything that you need to get you up and running.
   https://github.com/input-output-hk/cardano-node/blob/master/doc/shelley-genesis.md
 
 The next Pioneer Testnet exercise will involve building, signing and submitting simple transactions using your own node.
+
+### Feedback
+
+Please provide any feedback or suggested changes by either raising an issue on the [cardano-tutorials repository](https://github.com/input-output-hk/cardano-tutorials) or by forking the repository and submitting a PR.
