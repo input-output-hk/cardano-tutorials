@@ -10,3 +10,4 @@ In these tutorials, we will cover the following topics:
 - [Block producers and relays](topology.md).
 - [Command line interface](cli.md).
 - [Creating an address](address.md).
+- [Creating a simple transaction](tx.md).
