@@ -92,6 +92,13 @@
         cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-node-1.11.0/x/cardano-node/build/cardano-node/cardano-node ~/.local/bin/
         cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-cli-1.11.0/x/cardano-cli/build/cardano-cli/cardano-cli ~/.local/bin/
 
+   The remark about your `PATH` from above applies here as well: Make sure folder `~/.local/bin` is in your path or copy the executables to a folder that is.
+   If you have old versions of `cardano-node` installed on your system, make sure that the new one will be picked! You can check by typing
+
+        which cardano-node
+
+        > ~/.local/bin/cardano-node
+
 6. If you ever want to update the code to a newer version, go to the ``cardano-node`` directory, pull the latest code with ``git`` and rebuild. 
    This will be much faster than the initial build:
 
