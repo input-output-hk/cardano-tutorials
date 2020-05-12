@@ -7,27 +7,28 @@ the Cardano blockchain on mainnet. If you just want to set up a local testnet or
 If you do not have access to a computer running Linux, you can use Amazon Web Services (AWS) to create a cloud-based virtual machine running Linux for free.
 To do so, please follow the steps below:
 
-1. Go to [Amazon Web Services (AWS)](https://aws.amazon.com/) and create a (free) account if you do not have one already.
+1. Go to [Amazon Web Services (AWS)](https://aws.amazon.com/) and create a (free) account if you do not have one already. Ensure that you log in as root user. 
 
 2. Go to the _AWS Management Console_.
 
-3. Go to the _EC2 Dashboard_.
+3. Expand _All Services_ and go to the _EC2 Dashboard_.
 
    ![AWS Management Console.](management_console.png)
 
 4. If you already have a running instance, go to step 9.
 
-5. We first make sure to get enough harddrive space (at least 24GB). Click on _Volumes_.
+5. Otherwise, first make sure to get enough harddrive space (at least 24GB). Under _Resources_ click _Volumes_.
 
    ![Volumes in the Management Console.](volumes.png)
 
-6. Under _Actions_, select _Modify Volume_.
+6. From the _Actions_ menu, select _Modify Volume_.
 
-   ![Volume Actions.](volume_actions.png)
+   ![Volume Actions](volume_actions.png)
+      
+7. In the _Modify Volume_ dialog, select a size of 24 and click _Modify_, then confirm in the next dialog.
 
-7. In the _Modify Volume_ diaglog, select a size of 24 and click _Modify_, then confirm in the next dialog.
-
-   ![Modify Volume.](modify_volume.png)
+   ![Modify Volume](modify_volume.png)
+   Otherwise, if you do not already have a volume, click _Create Volume_ and assign a size of 24. 
 
 8. Go back to the _EC2 Dashboard_.
 
@@ -37,11 +38,11 @@ To do so, please follow the steps below:
 
   ![Launch Instance.](launch_instance.png)
 
-10. As Amazon Machine Image, choose _Amazon Linux 2 (HVM), SSD Volume Type_, 64-bit (x86).
+10. As the Amazon Machine Image, choose _Amazon Linux 2 (HVM), SSD Volume Type_, 64-bit (x86).
 
   ![Amazon Machine Image.](AMI.png)
 
-11. As Instance Type, choose _t2.medium_, then click _Review and Launch_ and finally _Launch_ on the next screen.
+11. As the Instance Type, choose _t2.medium_, then click _Review and Launch_, and finally _Launch_ on the next screen.
 
   ![Instance Type.](Instance_Type.png)
 
