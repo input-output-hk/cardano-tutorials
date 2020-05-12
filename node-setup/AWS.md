@@ -13,53 +13,53 @@ To do so, please follow the steps below:
 
 3. Expand _All Services_ and go to the _EC2 Dashboard_.
 
-   ![AWS Management Console](management_console.png)
+   ![AWS Management Console.](management_console.png)
 
 4. If you already have a running instance, go to step 9.
 
 5. Otherwise, first make sure to get enough harddrive space (at least 24GB). Under _Resources_ click _Volumes_.
 
-   ![Volumes in the Management Console](volumes.png)
+   ![Volumes in the Management Console.](volumes.png)
 
 6. From the _Actions_ menu, select _Modify Volume_.
 
    ![Volume Actions](volume_actions.png)
       
-7. In the _Modify Volume_ diaglog, select a size of 24 and click _Modify_, then confirm in the next dialog.
+7. In the _Modify Volume_ dialog, select a size of 24 and click _Modify_, then confirm in the next dialog.
 
    ![Modify Volume](modify_volume.png)
    Otherwise, if you do not already have a volume, click _Create Volume_ and assign a size of 24. 
 
 8. Go back to the _EC2 Dashboard_.
 
-   ![EC2 Dashboard](dashboard.png) 
+   ![EC2 Dashboard.](dashboard.png) 
 
 9. Go to _Launch Instance_.
 
-  ![Launch Instance](launch_instance.png)
+  ![Launch Instance.](launch_instance.png)
 
 10. As the Amazon Machine Image, choose _Amazon Linux 2 (HVM), SSD Volume Type_, 64-bit (x86).
 
-  ![Amazon Machine Image](AMI.png)
+  ![Amazon Machine Image.](AMI.png)
 
 11. As the Instance Type, choose _t2.medium_, then click _Review and Launch_, and finally _Launch_ on the next screen.
 
-  ![Instance Type](Instance_Type.png)
+  ![Instance Type.](Instance_Type.png)
 
 12. Create a key pair (or use an existing one).
 
-  ![Create a key pair](key_pair.png)
+  ![Create a key pair.](key_pair.png)
 
 13. _Connect_ to your instance.
 
-  ![Connect](connect.png)
+  ![Connect.](connect.png)
 
 14. You can use the _EC2 Instance Connect_ connection method.
 
-  ![Choose connection method](connect2.png)
+  ![Choose connection method.](connect2.png)
 
 15. Type ``echo hello`` (and Enter) to try whether the connection works. This should print "hello" to the console.
 
-  ![Trying the console](connect3.png)
+  ![Trying the console.](connect3.png)
 
 Congratulations! You have now access to a machine running Linux.
