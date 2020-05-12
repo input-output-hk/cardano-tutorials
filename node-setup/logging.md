@@ -89,4 +89,4 @@ We will see how to change all of these and more in this tutorial using various o
         TraceBlockFetchServer: True
 
 6. It is also possible to exert more fine-grained control on what information
-   to log, but we will not cover this in this tutoral. 
+   to log, but we will not cover this in this tutorial. 
