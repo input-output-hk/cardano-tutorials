@@ -11,3 +11,4 @@ In these tutorials, we will cover the following topics:
 - [Command line interface](cli.md).
 - [Creating an address](address.md).
 - [Creating a simple transaction](tx.md).
+- [Staking keys and staking addresses](staking-key.md).
