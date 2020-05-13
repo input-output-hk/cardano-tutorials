@@ -26,6 +26,15 @@ Let us remedy this now and create staking keys and a staking address!
             --staking-verification-key-file staking.vkey \
             > addr.staking
 
-We can use this address in the same way as [before](tx.md) to receive and make payments: Others can send ada to this address,
-and we can spent from this address using the _payment_ signing key (which in our example would be the signing key belonging to
-the verification key `payment.vkey`).
+   We can use this address in the same way as [before](tx.md) to receive and make payments: Others can send ada to this address,
+   and we can spent from this address using the _payment_ signing key (which in our example would be the signing key belonging to
+   the verification key `payment.vkey`).
+
+3. While we are at it, let us also create a _reward address_ associated with our staking keys, a special address for the purpose
+   of receiving staking rewards:
+
+        cardano-cli shelley address build-reward \
+            --staking-verification-key-file staking.vkey \
+            > rewards
+
+   This will create a reward address for our staking key pair and save it to file `rewards`.
