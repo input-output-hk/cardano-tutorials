@@ -7,9 +7,11 @@ Set up your platform:
 
 You will need:
 
-* An x86 host (AMD or Intel), Virtual Machine or AWS instance with at least 2 cores, 4GB of RAM and at least 10GB of free disk space;
-* A recent version of Linux, not Windows or MacOS – this will help us isolate any issues that arise;
+* An x86 host (AMD or Intel), Virtual Machine or AWS instance with at least __2 cores, 4GB of RAM and at least 10GB of free disk space;__
+* A recent version of Linux, __not Windows or MacOS__ – this will help us isolate any issues that arise;
 * Make sure you are on a network that is not firewalled. In particular, we will be using TCP/IP port 3000 and 3001 by default to establish connections with other nodes, so this will need to be open.
+
+If you are not suro on how to configure your server, please read the [Getting access to Linux at AWS](https://github.com/input-output-hk/cardano-tutorials/blob/master/node-setup/AWS.md) tutorial. 
 
 ## Install dependencies
 
@@ -101,7 +103,7 @@ which will take a couple of minutes the first time you do a build. Later builds 
 
     cabal install cardano-node cardano-cli
 
-**Note**: At the time of writing, there is a bug in the latest version of the software that prevents ``cabal install`` from working correctly. As a workaround, you can use ``cabal build`` instead:
+__Note__: At the time of writing, there is a bug in the latest version of the software that prevents ``cabal install`` from working correctly. As a workaround, you can use ``cabal build`` instead:
 
     cabal build all
     cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-node-1.11.0/x/cardano-node/build/cardano-node/cardano-node ~/.local/bin/
@@ -144,7 +146,7 @@ Now you can start the node, double check that port 3001 is open. In the `cardano
        --port 3001 \
        --config ff-config.json
 
-    ![alt text](/Users/carloslopezdelara/Desktop/IOHK/imagesforex1/starting-single-node.png)
+![](https://github.com/CarlosLopezDeLara/cardano-tutorials/blob/CarlosLopezDeLara-QuickGuide-Excercise1/node-setup/images/starting-single-node.png)
 
 **Cool, you have just connected your node to the F&F Testnet.** 
 
@@ -224,7 +226,7 @@ You start `tmux` with
 
 Then you can split the screen with `Ctrl`-`b`-`%` and navigate between the two panes with `Ctrl`-`b`-`→` and `Ctrl`-`b`-`←`.
 
-![tmux with two panels](/Users/carloslopezdelara/Desktop/IOHK/imagesforex1/tmux-view.png)
+![tmux with two panels](https://github.com/CarlosLopezDeLara/cardano-tutorials/blob/CarlosLopezDeLara-QuickGuide-Excercise1/node-setup/images/tmux-view.png)
 
 
 From one `tmux`-panel we start the block-producing node with the following command. Under `host-addr` replace the x.x.x.x with your public ip
@@ -251,7 +253,7 @@ We switch to the other `tmux`-panel with `Ctrl`-`b`-`→` and start the relay no
 After a few seconds, both nodes should receive data.
    
    
-   ![tmux with two nodes](/Users/carloslopezdelara/Desktop/IOHK/imagesforex1/tmux-2-nodes.png)
+   ![tmux with two nodes](https://github.com/CarlosLopezDeLara/cardano-tutorials/blob/CarlosLopezDeLara-QuickGuide-Excercise1/node-setup/images/tmux-2-nodes.png)
 
 
 Cool, we have put a couple of nodes to work! But this nodes can't do anything more than read from the blockchain. To setup a stake pool and being able to produce blocks we will need a set of keys, addresses, and other things. Let's create some keys first.
