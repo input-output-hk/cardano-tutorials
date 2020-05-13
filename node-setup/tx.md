@@ -28,7 +28,8 @@ is in file `addr1.skey`.
 
         > 168141
 
-   (The `network-magic` 42 applies to the FF-testnet and would be different for other networks.)
+   (The `network-magic` is the number that identifies the network: No such number is used by the mainnet, and
+   42 applies to the FF-testnet.)
 
    So we need to pay 168141 lovelace fee.
 
