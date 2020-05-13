@@ -160,9 +160,6 @@ Exchange some Ada with another Pioneer
 
 Defragment your Ada so that it is all held in one place.
 
-10. Optional Exercise (Medium).
-
-Read about certificates and build and submit a transaction that requires a certificate.
 
 In the next exercise, we will set up a node so that it can run as a staking pool.
 
