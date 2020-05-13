@@ -152,7 +152,7 @@ Now you can start the node, double check that port 3001 is open. In the `cardano
 
 ## Configure block-producing and relay nodes
 
-Let's stop that single node now and do something more interesting
+Let's stop that single node now and do something more interesting.
 
 As stake pool operator, you will have two types of nodes, **block producing nodes** and **relay nodes**. Each block producing node must be accompagnied by several relay nodes.
 
@@ -170,7 +170,7 @@ We have explained how to run a single node, and now you have suitable configurat
 
 Both our nodes must use the same `ff-genesis.json`, they can use the same `ff-config.json` (but don't have to), and they need different `ff-topology.json` files.
 
-Let us create separate folders for the two nodes and simply copying the configuration files we have:
+Let us create separate folders for the two nodes and copy the configuration files to both directories.
 
     cd cardano-node
     mkdir block-producing
@@ -202,7 +202,7 @@ In the  `relay/topology.json` we instruct the node to "talk" to the block-produc
 	{
 	   "Producers": [
 	     {
-	       "addr": "116.203.202.196",
+	       "addr": x.x.x.x", # Replace with your public IP
 	       "port": 3000,
 	       "valency": 1
 	     },
@@ -270,13 +270,13 @@ We will be using the command line interface`cardano-cli`now. To learn about the 
     cardano-cli --help
 
      
-We need to generate an *payment key pair*:
+We need to generate a __payment key pair__:
 
     cardano-cli shelley address key-gen \
       --verification-key-file payment.vkey \
       --signing-key-file payment.skey
 
-This will create two files (here named `payment.vkey` and `payment.skey`), one containing the *public verification key*, one the *private signing key*.
+This will create two files (here named `payment.vkey` and `payment.skey`), one containing the __public verification key__, one the __private signing key__.
 
 The files are in plain-text format and human readable:
 
