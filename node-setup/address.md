@@ -52,6 +52,6 @@ which will enable us to receive and send ada.
 
         cardano-cli shelley query filtered-utxo \
             --address 820658... \
-            --network-magic 42
+            --testnet-magic 42
 
-   (The "network magic" 42 is specific to the testnet and will not be needed for the mainnet.)
+   (The `--testnet-magic 42` is specific to the FF-testnet, for mainnet we would use `--mainnet` instead.)

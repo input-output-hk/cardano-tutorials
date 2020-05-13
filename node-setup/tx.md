@@ -13,7 +13,7 @@ is in file `addr1.skey`.
    with
 
         cardano-cli shelley query protocol-parameters \
-            --network-magic 42 > protocol.json
+            --testnet-magic 42 > protocol.json
 
    Out simple transaction will have one input (from `addr1`) and two outputs,
    100 ada to `addr2` and the change back to `addr1`. We can calculate the fees with
@@ -22,14 +22,14 @@ is in file `addr1.skey`.
             --tx-in-count 1 \
             --tx-out-count 2 \
             --ttl 100000 \
-            --network-magic 42 \
+            --testnet-magic 42 \
             --signing-key-file addr1.skey \
             --protocol-params-file protocol.json
 
         > 168141
 
-   (The `network-magic` is the number that identifies the network: No such number is used by the mainnet, and
-   42 applies to the FF-testnet.)
+   (The `--testnet-magic 42` identifies the FF-testnet.
+   Other testnets will use other numbers, and mainnet uses `--mainnet` instead.)
 
    So we need to pay 168141 lovelace fee.
 
@@ -47,7 +47,7 @@ is in file `addr1.skey`.
 
         cardano-cli shelley query filtered-utxo \
             --address $(cat addr1) \
-            --network-magic 42
+            --testnet-magic 42
 
         >                            TxHash                                 TxIx        Lovelace
         > ----------------------------------------------------------------------------------------
@@ -70,7 +70,7 @@ is in file `addr1.skey`.
         cardano-cli shelley transaction sign \
             --tx-body-file tx001.raw \
             --signing-key-file addr1.skey \
-            --network-magic 42 \
+            --testnet-magic 42 \
             --tx-file tx001.signed
 
    This writes the signed transaction to file `tx001.signed`.
@@ -80,13 +80,13 @@ is in file `addr1.skey`.
         export CARDANO_NODE_SOCKET_PATH=db/node-socket
         cardano-cli shelley transaction submit \
             --tx-filepath tx001.signed \
-            --network-magic 42
+            --testnet-magic 42
 
 6. We must give it some time to get incorporated into the blockchain, but eventually, we will see the effect:
 
         cardano-cli shelley query filtered-utxo \
             --address $(cat addr1) \
-            --network-magic 42
+            --testnet-magic 42
 
         >                            TxHash                                 TxIx        Lovelace
         > ----------------------------------------------------------------------------------------
@@ -94,7 +94,7 @@ is in file `addr1.skey`.
 
         cardano-cli shelley query filtered-utxo \
             --address $(cat addr2) \
-            --network-magic 42
+            --testnet-magic 42
 
         >                            TxHash                                 TxIx        Lovelace
         > ----------------------------------------------------------------------------------------
