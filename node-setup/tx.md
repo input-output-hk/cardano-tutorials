@@ -76,6 +76,7 @@ is in file `addr1.skey`.
 
 5. Now we can submit the transaction with
 
+        export CARDANO_NODE_SOCKET_PATH=db/node-socket
         cardano-cli shelley transaction submit \
             --tx-filepath tx001.signed \
             --network-magic 42
