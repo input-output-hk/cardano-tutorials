@@ -28,16 +28,18 @@ which will enable us to receive and send ada.
 
 2. Now we can use the verification key we just created to make an address:
 
-        cardano-cli shelley address build \
-            --verification-key-file addr.vkey
+        cardano-cli shelley address build-enterprise \
+            --payment-verification-key-file addr.vkey
 
         > 820658...
 
+   The "enterprise" address type can just receive payments and does not participate in staking.
+   This is fine for the purpose of this tutorial, we will cover staking in other tutorials.
+
    It is probably a good idea to store this address in a file:
 
-
-        cardano-cli shelley address build \
-            --verification-key-file addr.vkey > addr
+        cardano-cli shelley address build-enterprise \
+            --payment-verification-key-file addr.vkey > addr
 
    Instead of writing the generated address to the console, 
    this command will store it in file `addr`. 
