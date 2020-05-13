@@ -110,7 +110,7 @@ $ cardano-cli shelley transaction sign \
 
 You will need to give the correct Network Magic Id for the Testnet, as supplied by IOHK in the Genesis file (e.g. 42).
 
-5. Confirm that your node is synced, and then submit your transaction to the Blockchain:
+5. Submit your transaction to the Blockchain:
 
 ```bash
 $ cardano-cli shelley transaction submit \
@@ -118,7 +118,7 @@ $ cardano-cli shelley transaction submit \
  	--tx-body-file txbody
 ```
 
-You should receive a confirmation that the transaction has been submitted to your local instance of the node, but it may not yet be recorded on the blockchain.  If the node is not running or it cannot be contacted, you will see an error.  Just kill/restart the node in this case and try again.
+If you made a mistake or if the node is not running or it cannot be contacted, you will see an error.  Just correct the error or kill/restart the node in this case and try again.
 
 6. After 2 minutes (possibly earlier), your Ada should be transferred to your new address.
 
