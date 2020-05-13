@@ -22,7 +22,7 @@ and by running both nodes on the same server.
 _This is insecure and only serves demonstration purposes!_
 
 1. We have explained how to run a single node [here](build.md) and [here](ekg.md),
-   so we assume that you have suitable configuration files `config.yaml`,
+   so we assume that you have suitable, working configuration files `config.yaml`,
    `topology.json` and `genesis.json` available.
 
    Both our nodes must use the same `genesis.json`, 
