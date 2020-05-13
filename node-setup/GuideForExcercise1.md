@@ -329,6 +329,8 @@ Then use
 
 Congratulations, you have finished excercise 1 !!
 
+## Node monitoring 
 
+Please read [Monitoring a node with EKG](https://github.com/input-output-hk/cardano-tutorials/blob/master/node-setup/ekg.md) and [Monitoring a node with Prometheus](https://github.com/input-output-hk/cardano-tutorials/blob/master/node-setup/prometheus.md) tutorials. 
 
 
