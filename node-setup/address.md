@@ -50,7 +50,7 @@ which will enable us to receive and send ada.
 
         export CARDANO_NODE_SOCKET_PATH=db/node-socket
 
-   Then use
+   and make sure that your node is running.  Then use
 
         cardano-cli shelley query filtered-utxo \
             --address 820658... \
