@@ -1,4 +1,4 @@
-# Installing and Running a Node
+# Installing and Running a Node: A quick guide
 
 
 ##PREREQUISITES
