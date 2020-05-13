@@ -17,12 +17,12 @@ This tutorial assumes that you have installed `cardano-node` as explained [here]
         rm -rf db
         rm -rf logs
 
-2. When we first started the node, we used the provided script `scripts/mainnet.sh`.
+3. When we first started the node, we used the provided script `scripts/mainnet.sh`.
    In order to enable EKG, we will need to tweak the configuration, 
    and for that it is better
    to start the node explicitly and work with our own copy of the configuration files:
     
-        cfg=configuration/defaults/mainnet
+        cfg=configuration/defaults/mainnet-silent
         cp $cfg/configuration.yaml config.yaml
         cp $cfg/topology.json .
         cp $cfg/genesis.json .
@@ -36,7 +36,7 @@ This tutorial assumes that you have installed `cardano-node` as explained [here]
             --port 8080 \
             --config config.yaml
 
-3. We locate the commented line
+4. We locate the commented line
     
         # hasEKG: 12788
 
@@ -59,9 +59,9 @@ This tutorial assumes that you have installed `cardano-node` as explained [here]
    (you can also change the port to something else if you like, just remember to modify SSH port forwarding accordingly
    in that case).
 
-4. We then restart the node as explained above.
+5. We then restart the node as explained above.
 
-5. On our local machine, we can go to `127.0.0.1:8080` in our browser
+6. On our local machine, we can go to `127.0.0.1:8080` in our browser
    and see the EKG monitoring information.
 
    ![EKG in the browser.](images/ekg.png)
