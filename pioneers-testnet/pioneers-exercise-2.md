@@ -139,7 +139,8 @@ $ cardano-node shelley transaction build-raw …
 The required fee will be higher than before, since part of the cost is based on the number of addresses that the output is sent to.  You can check that the fee will be sufficient before you build the transaction using:
 
 ```bash
-$ cardano-node shelley transaction calculate-min-fee …
+$ cardano-cli shelley query protocol-parameters --testnet-magic 42 > protocol-parameters.json
+$ cardano-node shelley transaction calculate-min-fee --protocol-params-file protocol-parameters.json …
 ```
 
 Sign, submit and wait for the transaction to be processed as before.
