@@ -29,9 +29,9 @@ We need the following packages and tools on our Linux system to download the sou
 
 If we are using an AWS instance running Amazon Linux AMI 2 (see the [AWS walk-through](AWS.md) for how to get such an instance up and running)or another CentOS/RHEL based system, we can install these dependencies as follows:
 
-        sudo yum update -y
-        sudo yum install git gcc gcc-c++ tmux gmp-devel make tar wget zlib-devel -y
-        sudo yum install systemd-devel ncurses-devel ncurses-compat-libs -y
+    sudo yum update -y
+    sudo yum install git gcc gcc-c++ tmux gmp-devel make tar wget zlib-devel -y
+    sudo yum install systemd-devel ncurses-devel ncurses-compat-libs -y
 
 For Debian/Ubuntu use the following instead:
    
@@ -63,13 +63,13 @@ Above instructions install Cabal version `3.2.0.0`. You can check the version by
 
 Finally we download and install GHC:
 
-        wget https://downloads.haskell.org/~ghc/8.6.5/ghc-8.6.5-x86_64-deb9-linux.tar.xz
-        tar -xf ghc-8.6.5-x86_64-deb9-linux.tar.xz
-        rm ghc-8.6.5-x86_64-deb9-linux.tar.xz
-        cd ghc-8.6.5
-        ./configure
-        sudo make install
-        cd ..
+    wget https://downloads.haskell.org/~ghc/8.6.5/ghc-8.6.5-x86_64-deb9-linux.tar.xz
+    tar -xf ghc-8.6.5-x86_64-deb9-linux.tar.xz
+    rm ghc-8.6.5-x86_64-deb9-linux.tar.xz
+    cd ghc-8.6.5
+    ./configure
+    sudo make install
+    cd ..
 
 ## Download the source code for cardano-node
 
