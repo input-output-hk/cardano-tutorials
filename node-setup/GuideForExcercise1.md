@@ -1,7 +1,7 @@
 # Installing and Running a Node: A quick guide
 
 
-## PREREQUISITES
+## REQUISITES
 
 Set up your platform:
 
