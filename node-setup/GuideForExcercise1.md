@@ -61,7 +61,7 @@ Above instructions install Cabal version `3.2.0.0`. You can check the version by
 
    cabal --version
 
-Finally we download and install GHC:
+Finally, we download and install GHC:
 
     wget https://downloads.haskell.org/~ghc/8.6.5/ghc-8.6.5-x86_64-deb9-linux.tar.xz
     tar -xf ghc-8.6.5-x86_64-deb9-linux.tar.xz
@@ -83,7 +83,7 @@ After the download has finished, we can check its content by
   
     ls cardano-node
 
-Note that the content of your ``cardano-node``-folder can slightly differ from this!
+__Note__ that the content of your `cardano-node`-folder can slightly differ from this!
 
 We change our working directory to the downloaded source code folder:
 
