@@ -1,4 +1,4 @@
-# Staking Keys and Stakind Addresses
+# Staking Keys and Staking Addresses
 
 In previous tutorials on [adresses](address.md) and [transactions](tx.md),
 we used "enterprise" addresses for simplicity. Such an address can receive payments,
@@ -27,5 +27,5 @@ Let us remedy this now and create staking keys and a staking address!
             > addr.staking
 
 We can use this address in the same way as [before](tx.md) to receive and make payments: Others can send ada to this address,
-and we can spent from this address using the _payment_ signing key (which in our example would be the signing key belonging to
+and we can spend from this address using the _payment_ signing key (which in our example would be the signing key belonging to
 the verification key `payment.vkey`).
