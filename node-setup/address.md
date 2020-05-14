@@ -48,7 +48,7 @@ which will enable us to receive and send ada.
    you first need to set environment variable `CARDANO_NODE_SOCKET_PATH`
    to the socket-path specified in your node configuration:
 
-        export CARDANO_NODE_SOCKET_PATH=db/node-socket
+        export CARDANO_NODE_SOCKET_PATH=db/node.socket
 
    and make sure that your node is running.  Then use
 
