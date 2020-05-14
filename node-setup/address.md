@@ -8,7 +8,7 @@ which will enable us to receive and send ada.
 
         cardano-cli shelley address key-gen \
             --verification-key-file addr.vkey \
-            --signing-key-file addr.skey \
+            --signing-key-file addr.skey
 
    This will create two files (here named `addr.vkey` and `addr.skey`),
    one containing the _public verification key_, one the _private signing key_.
