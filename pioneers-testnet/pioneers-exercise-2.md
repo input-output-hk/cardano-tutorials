@@ -9,8 +9,8 @@ In the first exercise, we set up a Cardano node and ran it.  In this exercise, w
 1. Complete Exercise Sheet 1, and confirm that you have successfully built and run a node.  Also make sure that you have requested some test Ada through the spreadsheet.
 
 2. Read the IOHK Tutorial Documentation and General Documentation on Basic Transactions, Metadata, Addresses, Blocks and Slots at:
-    a. [https://github.com/input-output-hk/cardano-tutorials/](https://github.com/input-output-hk/cardano-tutorials/)
-    b. [https://testnet.cardano.org/](b. https://testnet.cardano.org/)
+    a) [Cardano Tutorials](https://github.com/input-output-hk/cardano-tutorials/)
+    b) [Shelley Testnet Documentation](https://testnets.cardano.org/)
 
 3. Checkout the latest version of the Shelley node and CLI from source, and rebuild and reinstall them if they have changed:
 
@@ -33,6 +33,8 @@ If you have any questions or encounter any problems, please feel free to use the
 
 ### Exercises
 
+In this excercise we will be following steps from [Creating a Simple Transaction tutorial](https://github.com/input-output-hk/cardano-tutorials/blob/master/node-setup/tx.md)
+
 1. Make sure that you do not have an old instance of the node running:
 
         killall cardano-node
@@ -43,7 +45,9 @@ If you have any questions or encounter any problems, please feel free to use the
 
    Verify that your new node instance is running:
 
-        ps x | grep cardano-node 10765 pts/4 R + 1:20  cardano-node …
+        ps x | grep cardano-node 
+	>10765 pts/4 R + 1:20  cardano-node …
+
 
    Your node should be connected to the Pioneer Testnet and verifying the blocks that it receives.
 
@@ -51,7 +55,7 @@ If you have any questions or encounter any problems, please feel free to use the
 
         cardano-cli shelley query filtered-utxo \
             --address ... \
-            --network-magic …
+            --testnet-magic …
 
    Create a new address *myaddr2*:
 
@@ -78,16 +82,12 @@ If you have any questions or encounter any problems, please feel free to use the
 
    The settings that are used here indicate that the transaction should be processed before slot 500,000 and  that it will cost no more than 1 Ada to submit (a safe value for a simple transaction on the Testnet).  You must pay this (small) fee every time you successfully process a transaction on the Cardano Blockchain.  It will be distributed as part of the pool rewards.  The source of this fee is encoded in the transaction as a UTxO.  We are now ready to sign the transaction and submit it to the chain.
 
-4. Generate a signing key, txsign.
-
-        cardano-cli keygen …
-
-   Sign your transaction in txbody using the signing key for *myaddr*:
+4. Sign your transaction in txbody using the signing key for *myaddr* (created in Excercise 1) :
 
         cardano-cli shelley transaction sign \
             --tx-body-file txbody \
             --signing-key-file txsign \
-            --network-magic … \
+            --testnet-magic … \
             --tx-body-file txbody
 
    You will need to give the correct Network Magic Id for the Testnet, as supplied by IOHK in the Genesis file (e.g. 42).
@@ -95,7 +95,7 @@ If you have any questions or encounter any problems, please feel free to use the
 5. Submit your transaction to the Blockchain:
 
         cardano-cli shelley transaction submit \
-            --network-magic … \
+            --testnet-magic … \
             --tx-body-file txbody
 
    If you made a mistake or if the node is not running or it cannot be contacted, you will see an error.  Just correct the error or kill/restart the node in this case and try again.
@@ -104,23 +104,23 @@ If you have any questions or encounter any problems, please feel free to use the
 
  	    cardano-cli shelley query filtered-utxo \
             --address … \
-            --network-magic …
+            --testnet-magic …
 
 7. Finally, build a transaction that sends a total of 1,000 Ada from *myaddr* to two different addresses (a multi-address transaction).
 
         cardano-cli shelley address key-gen …
         cardano-cli shelley address key-gen …
-        cardano-node shelley transaction build-raw …
+        cardano-cli shelley transaction build-raw …
 
    The required fee will be higher than before, since part of the cost is based on the number of addresses that the output is sent to.  You can check that the fee will be sufficient before you build the transaction using:
 
         cardano-cli shelley query protocol-parameters --testnet-magic 42 > protocol-parameters.json
-        cardano-node shelley transaction calculate-min-fee --protocol-params-file protocol-parameters.json …
+        cardano-cli shelley transaction calculate-min-fee --protocol-params-file protocol-parameters.json …
 
    Sign, submit and wait for the transaction to be processed as before.
 
         cardano-cli shelley transaction sign …
-        cardano-node shelley transaction submit …
+        cardano-cli shelley transaction submit …
 
    Once the transaction has completed, you will be able to verify that each of the addresses has received the correct amount of Ada.  Note that you now own four different addresses, each of which holds some Ada.  As you continue to process transactions and send/receive Ada to more addresses, your Ada will gradually become split among many different addresses, creating fragmentation.  This is not normally a big problem for the typical user who only owns a small amount of Ada, but can become a large problem for exchanges (as well as for whales, like you on the Testnet).
 
