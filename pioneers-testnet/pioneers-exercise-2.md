@@ -14,10 +14,16 @@ In the first exercise, we set up a Cardano node and ran it.  In this exercise, w
 
 3. Checkout the latest version of the Shelley node and CLI from source, and rebuild and reinstall them if they have changed:
 
-        git checkout pioneer
+        git checkout pioneer-2
         cabal build all
         …
 
+    Before building, you might want to confirm that you are on the correct tagged version:
+
+        git branch
+        > * (HEAD detached at pioneer-2)
+        >  master
+	  
 ### Objectives
 
 In the second exercise, we will make sure that you can:
@@ -35,15 +41,18 @@ If you have any questions or encounter any problems, please feel free to use the
 
 In this excercise we will be following steps from [Creating a Simple Transaction tutorial](https://github.com/input-output-hk/cardano-tutorials/blob/master/node-setup/tx.md)
 
-1. Make sure that you do not have an old instance of the node running:
+1. If you are not on the correct version of the node, then some of these commands may not work.
+   It may be frustrating to stop and restart a working system, but it is better than discovering that
+   you do not have the correct version! Before starting the rest of the exercises, you may want
+   to make sure that you do not have an old instance of the node running:
 
         killall cardano-node
 
-   Start a new instance of the node, as you did in Exercise 1:
+   Then start a new instance of the node, as you did in Exercise 1:
 
         cardano-node run --config …
 
-   Verify that your new node instance is running:
+   and verify that your new node instance is running:
 
         ps x | grep cardano-node 
 	>10765 pts/4 R + 1:20  cardano-node …
@@ -137,4 +146,6 @@ In the next exercise, we will set up a node so that it can run as a staking pool
 
 ### Feedback
 
-Please provide any feedback or suggested changes by either raising an issue on the [cardano-tutorials repository](https://github.com/input-output-hk/cardano-tutorials) or by forking the repository and submitting a PR.
+Please provide any feedback or suggested changes to the tutorials or exercises by either raising an issue on the [cardano-tutorials repository](https://github.com/input-output-hk/cardano-tutorials) or by forking the repository and submitting a PR.
+
+Please provide any feedback or suggested changes on the node itself by raising an issue at the [cardano-node repository](https://github.com/input-output-hk/cardano-node).
