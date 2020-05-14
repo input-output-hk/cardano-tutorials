@@ -65,6 +65,8 @@ is in file `addr1.skey`.
             --fee 168141 \
             --tx-body-file tx001.raw
 
+Note: The TTL is an absolute slot number (not relative) this means that the `--ttl` value should be > than the current slot number
+
 4. We need to sign the transaction with the signing key for `addr1`:
 
         cardano-cli shelley transaction sign \
