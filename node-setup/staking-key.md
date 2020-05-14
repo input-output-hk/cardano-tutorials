@@ -1,4 +1,4 @@
-# Staking Keys and Stakind Addresses
+# Stake Keys and Stake Addresses
 
 In previous tutorials on [adresses](address.md) and [transactions](tx.md),
 we used "enterprise" addresses for simplicity. Such an address can receive payments,
