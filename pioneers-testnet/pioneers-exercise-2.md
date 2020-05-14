@@ -21,8 +21,8 @@ In the first exercise, we set up a Cardano node and ran it.  In this exercise, w
     Before building, you might want to confirm that you are on the correct tagged version:
 
         git branch
-        > * (HEAD detached at pioneer-2)
-        >  master
+	>* (HEAD detached at pioneer-2)
+	>  master
 	  
 ### Objectives
 
