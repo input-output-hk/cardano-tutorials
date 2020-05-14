@@ -22,6 +22,7 @@ In the first exercise, we set up a Cardano node and ran it.  In this exercise, w
 
         git branch
 	>* (HEAD detached at pioneer-2)
+	
 	>  master
 	  
 ### Objectives
