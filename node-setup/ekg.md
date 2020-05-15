@@ -22,7 +22,7 @@ This tutorial assumes that you have installed `cardano-node` as explained [here]
    and for that it is better
    to start the node explicitly and work with our own copy of the configuration files:
     
-        cfg=configuration/defaults/mainnet-silent
+        cfg=configuration/defaults/mainnet-via-fetcher
         cp $cfg/configuration.yaml config.yaml
         cp $cfg/topology.json .
         cp $cfg/genesis.json .
