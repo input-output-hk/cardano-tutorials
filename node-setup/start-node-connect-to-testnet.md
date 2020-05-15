@@ -117,7 +117,7 @@ The `genesis.json` file looks like the one below.
 	  "securityParam": 108
     }
 
-Here is a breif description of each parameter:
+Here is a brief description of each parameter. You can learn more in the [spec](https://github.com/input-output-hk/cardano-ledger-specs/tree/master/shelley/chain-and-ledger/executable-spec)
 
 
 | PARAMETER | MEANING | 
