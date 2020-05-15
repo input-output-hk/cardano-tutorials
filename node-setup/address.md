@@ -46,9 +46,10 @@ which will enable us to receive and send ada.
 
 3. In order to query your address (see the utxo's at that address),
    you first need to set environment variable `CARDANO_NODE_SOCKET_PATH`
-   to the socket-path specified in your node configuration:
+   to the socket-path specified in your node configuration. In this example we will use
+   the block-producing node created in the previous steps:
 
-        export CARDANO_NODE_SOCKET_PATH=db/node.socket
+        export CARDANO_NODE_SOCKET_PATH=~/cardano-node/block-producing/db/node.socket
 
    and make sure that your node is running.  Then use
 
