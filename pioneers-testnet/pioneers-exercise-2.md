@@ -99,7 +99,7 @@ In this excercise we will be following steps from [Creating a Simple Transaction
             --tx-body-file txbody \
             --signing-key-file txsign \
             --testnet-magic … \
-            --tx-body-file txbody
+            --tx-file txout
 
    You will need to give the correct Network Magic Id for the Testnet, as supplied by IOHK in the Genesis file (e.g. 42).
 
@@ -107,7 +107,7 @@ In this excercise we will be following steps from [Creating a Simple Transaction
 
         cardano-cli shelley transaction submit \
             --testnet-magic … \
-            --tx-body-file txbody
+            --tx-filepath txout
 
    If you made a mistake or if the node is not running or it cannot be contacted, you will see an error.  Just correct the error or kill/restart the node in this case and try again.
 
