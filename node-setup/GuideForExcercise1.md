@@ -142,7 +142,7 @@ Now you can start the node, double check that port 3001 is open. In the `cardano
     cardano-node run \
        --topology ff-topology.json \
        --database-path db \
-       --socket-path db/socket \
+       --socket-path db/node.socket \
        --port 3001 \
        --config ff-config.json
 
