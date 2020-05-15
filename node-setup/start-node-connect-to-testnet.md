@@ -19,9 +19,9 @@ Or from the command line with:
 
 ## Starting the node
 
-Starting the the node uses the command `cardano-node run` and a set of options that define the node configuration and to which network the node will connect among other parameters.  
+Starting the the node uses the command `cardano-node run` and a set of options.
 	
-You can get the complete list of options with `cardano-node -run --help`  
+You can get the complete list of available options with `cardano-node -run --help`  
 
 	--topology FILEPATH             The path to a file describing the topology.
   	--database-path FILEPATH        Directory where the state is stored.
