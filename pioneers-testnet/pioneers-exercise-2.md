@@ -76,7 +76,7 @@ In this excercise we will be following steps from [Creating a Simple Transaction
         cardano-cli shelley transaction build-raw \
             --tx-body-file txbody …
 
-   This is the most basic form of transaction construction.  We will use more sophisticated ones later.  The transaction will be created in the file txbody. You will need to provide explicit transaction inputs and outputs.
+   This is the most basic form of transaction construction.  We will use more sophisticated ones later.  The transaction will be created in the file txbody. You will need to provide explicit transaction inputs and outputs. Keep in mind that the output for the change needs to be specified as well, so the sum of your inputs needs to match the sum of your outputs + fee.
 
    | Format       | Explanation                                                                                  | 
    | ------------ | -------------------------------------------------------------------------------------------- |
