@@ -2,7 +2,7 @@
 
 ## Get some configuration files
 
-Starting the node and connecting to the network requires 3 important files: 
+Starting the node and connecting it to the network requires 3 important files: 
 
 * topology,json
 * genesis.json
