@@ -90,7 +90,7 @@ Let us remedy this now and create staking keys and a staking address!
    We sign it:
 
         cardano-cli shelley transaction sign \
-            --tx-body-file tx.raw
+            --tx-body-file tx.raw \
             --signing-key-file payment.skey \
             --signing-key-file staking.skey \
             --testnet-magic 42 \
