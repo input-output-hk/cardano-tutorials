@@ -38,9 +38,9 @@ You can get the complete list of options with `cardano-node -run --help`
 To start a passive node, do:
 
 	cardano-node run --topology path/to/ff-topology.json \
-						--database-path path/to/db \
-						--socket-path path/to/db/node.socket \
-						--host-addr 192.0.2.0 \ 
-						--port 3001 \
-						--config path/to/ff-config.json
+	                 --database-path path/to/db \
+  		       	 --socket-path path/to/db/node.socket \
+			 --host-addr 192.0.2.0 \
+			 --port PORT \
+			 --config path/to/ff-config.json
 
