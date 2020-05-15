@@ -42,7 +42,8 @@
         nano ~/.bashrc 
 
     add export PATH="~/.local/bin:$PATH" at the end of the your `.bashrc`-file.
-    
+    then run the following command to make it active:
+    source ~/.bashrc
 
    Above instructions install Cabal version `3.2.0.0`. You can check the version by typing
 
