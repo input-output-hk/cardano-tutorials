@@ -55,7 +55,10 @@ is in file `addr1.skey`.
 
 3. Now we have all the information we need to create the transaction (using a "time to live" of slot 100000,
    after which the transaction will become invalid) and writing the transaction
-   to file `tx001.raw`):
+   to file `tx001.raw`).
+   
+   __Note:__ The TTL is an absolute slot number (not relative), which means that the `--ttl` value 
+   should be greater than the current slot number.
 
         cardano-cli shelley transaction build-raw \
             --tx-in 4e3a6e7fdcb0d0efa17bf79c13aed2b4cb9baf37fb1aa2e39553d5bd720c5c99#4 \
@@ -64,8 +67,6 @@ is in file `addr1.skey`.
             --ttl 100000 \
             --fee 168141 \
             --tx-body-file tx001.raw
-
-Note: The TTL is an absolute slot number (not relative) this means that the `--ttl` value should be > than the current slot number
 
 4. We need to sign the transaction with the signing key for `addr1`:
 
