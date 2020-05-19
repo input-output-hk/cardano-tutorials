@@ -14,10 +14,9 @@ Welcome to the IOHK Pioneers Group!  We are excited to have you join us on this 
 
 4. Make sure you can access:
     - [The IOHK Tutorial Documentation](https://github.com/input-output-hk/cardano-tutorials/tree/master/node-setup)
-
     - [Shelley Testnet Documentation](https://testnets.cardano.org/en/shelley-haskell/overview/)
-    - [Cardano Node Github repository](https://github.com/input-output-hk/cardano-node)
-    - [Shelley Genesis Documentation](https://github.com/input-output-hk/cardano-node/blob/master/doc/shelley-genesis.md)
+    - [Cardano Node Github repository](https://github.com/input-output-hk/cardano-node) where you can find:
+      - [Shelley Genesis Documentation](https://github.com/input-output-hk/cardano-node/blob/master/doc/shelley-genesis.md)
 
   You should be comfortable with using Linux shell commands and have a basic understanding of cryptography and the Cardano ecosystem.
 

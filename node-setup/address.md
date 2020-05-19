@@ -35,6 +35,7 @@ which will enable us to receive and send ada.
 
    The "enterprise" address type can just receive payments and does not participate in staking.
    This is fine for the purpose of this tutorial, we will cover staking in other tutorials.
+   Note that in recent versions of the command, you should just use `build` rather than `build-enterprise`.
 
    It is probably a good idea to store this address in a file:
 
@@ -46,9 +47,10 @@ which will enable us to receive and send ada.
 
 3. In order to query your address (see the utxo's at that address),
    you first need to set environment variable `CARDANO_NODE_SOCKET_PATH`
-   to the socket-path specified in your node configuration:
+   to the socket-path specified in your node configuration. In this example we will use
+   the block-producing node created in the previous steps:
 
-        export CARDANO_NODE_SOCKET_PATH=db/node.socket
+        export CARDANO_NODE_SOCKET_PATH=~/cardano-node/block-producing/db/node.socket
 
    and make sure that your node is running.  Then use
 

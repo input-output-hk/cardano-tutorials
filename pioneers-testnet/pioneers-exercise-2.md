@@ -8,7 +8,7 @@ In the first exercise, we set up a Cardano node and ran it.  In this exercise, w
 
 ### Prerequisites
 
-1. Complete Exercise Sheet 1, and confirm that you have successfully built and run a node.  Also make sure that you have requested some test Ada through the spreadsheet.
+1. Complete Exercise Sheet 1, and confirm that you have successfully built and run a node.  Also make sure that you have requested some test Ada through the [spreadsheet](https://docs.google.com/spreadsheets/d/1o62S2_24bcZNIpT3FASKHVGHG-dQ4J0vDaVCEsxbVKU/edit?usp=sharing).
 
 2. Read the IOHK Tutorial Documentation and General Documentation on Basic Transactions, Metadata, Addresses, Blocks and Slots at:
     a) [Cardano Tutorials](https://github.com/input-output-hk/cardano-tutorials/)
@@ -85,7 +85,7 @@ You will need to give the correct Testnet Magic Id for the Testnet, as supplied 
             --ttl \
             --fee …
 
-   This is the most basic form of transaction construction.  We will use more sophisticated ones later.  The transaction will be created in the file txbody. You will need to provide explicit transaction inputs and outputs.
+   This is the most basic form of transaction construction.  We will use more sophisticated ones later.  The transaction will be created in the file txbody. You will need to provide explicit transaction inputs and outputs. Keep in mind that the output for the change needs to be specified as well, so the sum of your inputs needs to match the sum of your outputs + fee.
 
    | Format       | Explanation                                                                                  | 
    | ------------ | -------------------------------------------------------------------------------------------- |

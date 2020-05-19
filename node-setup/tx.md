@@ -10,13 +10,13 @@ is in file `addr1.skey`.
 
 1. We first want to calculate the necessary fees for this transaction.
    In order to do this, we need the _protocol parameters_, which we can save to file `protocol.json`
-   with
+   with:
 
         cardano-cli shelley query protocol-parameters \
             --testnet-magic 42 > protocol.json
 
    Out simple transaction will have one input (from `addr1`) and two outputs,
-   100 ada to `addr2` and the change back to `addr1`. We can calculate the fees with
+   100 ada to `addr2` and the change back to `addr1`. We can calculate the fees with:
 
         cardano-cli shelley transaction calculate-min-fee \
             --tx-in-count 1 \
@@ -34,7 +34,7 @@ is in file `addr1.skey`.
    So we need to pay 168141 lovelace fee.
 
    Assuming we want to spend an original utxo containing 1,000,000 ada (1,000,000,000,000 lovelace),
-   we therefore will have 
+   we therefore will have: 
 
         expr 1000000000000 - 100000000 - 168141
 
@@ -55,7 +55,10 @@ is in file `addr1.skey`.
 
 3. Now we have all the information we need to create the transaction (using a "time to live" of slot 100000,
    after which the transaction will become invalid) and writing the transaction
-   to file `tx001.raw`):
+   to file `tx001.raw`).
+   
+   __Note:__ The TTL is an absolute slot number (not relative), which means that the `--ttl` value 
+   should be greater than the current slot number.
 
         cardano-cli shelley transaction build-raw \
             --tx-in 4e3a6e7fdcb0d0efa17bf79c13aed2b4cb9baf37fb1aa2e39553d5bd720c5c99#4 \
@@ -75,7 +78,7 @@ is in file `addr1.skey`.
 
    This writes the signed transaction to file `tx001.signed`.
 
-5. Now we can submit the transaction with
+5. Now we can submit the transaction with:
 
         export CARDANO_NODE_SOCKET_PATH=db/node.socket
         cardano-cli shelley transaction submit \
