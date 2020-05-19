@@ -92,8 +92,36 @@ You will need to give the correct Testnet Magic Id for the Testnet, as supplied 
    | Id#Index     | This identifies the UTxO that is the source of the Ada – you should get this from  *myaddr*. |
    | Out+lovelace | Hex encoded address that will receive the Ada and the amount to send in Lovelace.            |
 
-   You will also need to give it a time to live in slots (ttl) and a fee (in lovelace). Use the following settings:
+   We will also need to give it time to live in slots (ttl) and a fee (in lovelace).
+   
+   To calculate the ttl you can query the tip for the current slot and calculate the ttl you want the transaction to have.
+        cardano-cli shelley query tip \
+            --testnet-magic … \
+            | awk '{ print $5 }' \
+            | grep -Eo '[0-9]{1,}'
+          >74376  
+   As an alternative you can query the prometheus metrics for the current slot:
+        curl -s http://localhost:12798/metrics \
+            | grep -i cardano_node_ChainDB_metrics_slotNum_int \
+            | awk '{print $2}'
+          >74376
+   Use the result and add the amount of slots you want your transaction to be considered for inclusion in the chain.
 
+   For calculating the fee we can use cardano-cli. First we need the protocol parameters file which can be created like this.
+        cardano-cli shelley query protocol-parameters \
+            --testnet-magic … \
+            --out-file protocol.json
+
+   Then we can calculate the minimum fees required for the transaction you are creating
+        cardano-cli shelley transaction calculate-min-fee \
+            --tx-in-count tx_in_count \
+            --tx-out-count tx_out_count \
+            --ttl ttl_slots \
+            --testnet-magic … \
+            --signing-key-file *myaddr*.skey \
+            --protocol-params-file protocol.json
+
+   We can also specify arbitrary values that are high enough so that the transaction will go through.
    | Parameter | Value   |
    | --------- | ------- |
    | ttl       | 500000  |

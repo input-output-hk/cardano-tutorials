@@ -33,10 +33,6 @@ which will enable us to receive and send ada.
 
         > 61...
 
-   The "enterprise" address type can just receive payments and does not participate in staking.
-   This is fine for the purpose of this tutorial, we will cover staking in other tutorials.
-   Note that in recent versions of the command, you should just use `build` rather than `build-enterprise`.
-
    It is probably a good idea to store this address in a file:
 
         cardano-cli shelley address build \
