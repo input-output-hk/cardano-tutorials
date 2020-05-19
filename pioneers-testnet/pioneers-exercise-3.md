@@ -142,7 +142,7 @@ The port can be anything you like, provided that the relay and pool agree on wha
         "valency": 1
       },
       {
-        "addr": "relays-new.cardano-mainnet.iohk.io",
+        "addr": "relays-new.ff.dev.cardano.org",
         "port": 3001,
         "valency": 1
       }
