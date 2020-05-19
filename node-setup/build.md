@@ -78,7 +78,7 @@
    For the FF-testnet, we will use tag `pioneer`, which we can check out as follows:
 
         git fetch --all --tags
-        git checkout tags/pioneer
+        git checkout tags/pioneer-3
 
 5. Now we build and install the node with ``cabal``, 
    which will take a couple of minutes the first time you do a build. Later builds will be much faster, because everything that does not change will be cached.
