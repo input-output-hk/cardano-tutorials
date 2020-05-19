@@ -90,10 +90,10 @@ We change our working directory to the downloaded source code folder:
     cd cardano-node
 
 For reproducible builds, we should check out a specific release, a specific "tag". 
-For the FF-testnet, we will use tag `pioneer`, which we can check out as follows:
+For the FF-testnet, we will use tag `pioneer-#`, which we can check out as follows:
 
     git fetch --all --tags
-    git checkout tags/pioneer
+    git checkout tags/pioneer-#
 
 
 ## Build and install the node
@@ -294,10 +294,10 @@ The files are in plain-text format and human readable:
 
 Now we can use the verification key we just created to make an address. For now, we will use an address type that can receive and send transactions, but cannot do staking: `enterprise` type. 
 
-    cardano-cli shelley address build-enterprise \
+    cardano-cli shelley address build \
         --payment-verification-key-file payment.vkey
 
-        > 820658...
+        > 61...
 
 Let's store this address in a file:
 
@@ -314,7 +314,7 @@ To query your address (see the utxo's at that address),you first need to set env
 Then use
    
     cardano-cli shelley query filtered-utxo \
-        --address 8206582..... \
+        --address 61... \
         --testnet-magic 42
   
  The output should look like this, note that we do not have any funds yet. 

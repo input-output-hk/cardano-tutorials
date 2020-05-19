@@ -79,7 +79,7 @@ is in file `addr1.skey`.
 
         export CARDANO_NODE_SOCKET_PATH=db/node.socket
         cardano-cli shelley transaction submit \
-            --tx-filepath tx001.signed \
+            --tx-file tx001.signed \
             --testnet-magic 42
 
 6. We must give it some time to get incorporated into the blockchain, but eventually, we will see the effect:

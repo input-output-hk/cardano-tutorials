@@ -4,6 +4,8 @@
 
 In the first exercise, we set up a Cardano node and ran it.  In this exercise, we will build transactions that are submitted to the Blockchain.  Transactions are the basic mechanism that is used to transfer Ada between stakeholders, register staking pools, stake Ada, and many other things.
 
+> This exercise has been created with the pioneer-3 build tag in mind and does not reflect any cli changes since this release.
+
 ### Prerequisites
 
 1. Complete Exercise Sheet 1, and confirm that you have successfully built and run a node.  Also make sure that you have requested some test Ada through the spreadsheet.
@@ -14,16 +16,16 @@ In the first exercise, we set up a Cardano node and ran it.  In this exercise, w
 
 3. Checkout the latest version of the Shelley node and CLI from source, and rebuild and reinstall them if they have changed:
 
-        git checkout pioneer-2
+        git checkout pioneer-3
         cabal build all
         …
 
     Before building, you might want to confirm that you are on the correct tagged version:
 
         git branch
-	>* (HEAD detached at pioneer-2)
+	>* (HEAD detached at pioneer-3)
 	
-	>  master
+	>*  master
 	  
 ### Objectives
 
@@ -41,6 +43,8 @@ If you have any questions or encounter any problems, please feel free to use the
 ### Exercises
 
 In this excercise we will be following steps from [Creating a Simple Transaction tutorial](https://github.com/input-output-hk/cardano-tutorials/blob/master/node-setup/tx.md)
+
+You will need to give the correct Testnet Magic Id for the Testnet, as supplied by IOHK in the Genesis file (e.g. 42).
 
 1. If you are not on the correct version of the node, then some of these commands may not work.
    It may be frustrating to stop and restart a working system, but it is better than discovering that
@@ -70,12 +74,16 @@ In this excercise we will be following steps from [Creating a Simple Transaction
    Create a new address *myaddr2*:
 
         cardano-cli shelley address key-gen …
-        cardano-cli shelley address build-enterprise …
+        cardano-cli shelley address build …
 
 3. Build a transaction to transfer Ada from *myaddr* to *myaddr2*.  You will need to use the Shelley transaction processing operations:
 
         cardano-cli shelley transaction build-raw \
-            --tx-body-file txbody …
+            --tx-body-file txbody \
+            --tx-in tx_in \
+            --tx-out tx_out \
+            --ttl \
+            --fee …
 
    This is the most basic form of transaction construction.  We will use more sophisticated ones later.  The transaction will be created in the file txbody. You will need to provide explicit transaction inputs and outputs.
 
@@ -91,7 +99,7 @@ In this excercise we will be following steps from [Creating a Simple Transaction
    | ttl       | 500000  |
    | fee       | 1000000 |
 
-   The settings that are used here indicate that the transaction should be processed before slot 500,000 and  that it will cost no more than 1 Ada to submit (a safe value for a simple transaction on the Testnet).  You must pay this (small) fee every time you successfully process a transaction on the Cardano Blockchain.  It will be distributed as part of the pool rewards.  The source of this fee is encoded in the transaction as a UTxO.  We are now ready to sign the transaction and submit it to the chain.
+   The settings that are used here indicate that the transaction should be processed before slot 500,000 and that it will cost no more than 1 Ada to submit (a safe value for a simple transaction on the Testnet).  You must pay this (small) fee every time you successfully process a transaction on the Cardano Blockchain.  It will be distributed as part of the pool rewards.  The source of this fee is encoded in the transaction as a UTxO.  We are now ready to sign the transaction and submit it to the chain.
 
 4. Sign your transaction in txbody using the signing key for *myaddr* (created in Excercise 1) :
 
@@ -99,15 +107,13 @@ In this excercise we will be following steps from [Creating a Simple Transaction
             --tx-body-file txbody \
             --signing-key-file txsign \
             --testnet-magic … \
-            --tx-body-file txbody
-
-   You will need to give the correct Network Magic Id for the Testnet, as supplied by IOHK in the Genesis file (e.g. 42).
+            --tx-file txfile
 
 5. Submit your transaction to the Blockchain:
 
         cardano-cli shelley transaction submit \
             --testnet-magic … \
-            --tx-body-file txbody
+            --tx-file txfile
 
    If you made a mistake or if the node is not running or it cannot be contacted, you will see an error.  Just correct the error or kill/restart the node in this case and try again.
 
@@ -120,14 +126,14 @@ In this excercise we will be following steps from [Creating a Simple Transaction
 7. Finally, build a transaction that sends a total of 1,000 Ada from *myaddr* to two different addresses (a multi-address transaction).
 
         cardano-cli shelley address key-gen …
-        cardano-cli shelley address build-enterprise …
+        cardano-cli shelley address build …
         cardano-cli shelley address key-gen …
-        cardano-cli shelley address build-enterprise …
+        cardano-cli shelley address build …
         cardano-cli shelley transaction build-raw …
 
    The required fee will be higher than before, since part of the cost is based on the number of addresses that the output is sent to.  You can check that the fee will be sufficient before you build the transaction using:
 
-        cardano-cli shelley query protocol-parameters --testnet-magic 42 > protocol-parameters.json
+        cardano-cli shelley query protocol-parameters --testnet-magic … > protocol-parameters.json
         cardano-cli shelley transaction calculate-min-fee --protocol-params-file protocol-parameters.json …
 
    Sign, submit and wait for the transaction to be processed as before.
