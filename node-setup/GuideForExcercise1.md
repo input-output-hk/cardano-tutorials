@@ -184,7 +184,7 @@ We will run our block-producing node on port 3000 (make sure it is opened) and o
 
 We must modify the block-producer's `ff-topology.json` to only "talk" to the relay:
 
-Navigate to `/block-producing` and open `topology.json` with your favorite text editor:
+Navigate to `/block-producing` and open `ff-topology.json` with your favorite text editor:
  
     {
       "Producers": [
@@ -196,7 +196,7 @@ Navigate to `/block-producing` and open `topology.json` with your favorite text 
       ]
     }
   
-In the  `relay/topology.json` we instruct the node to "talk" to the block-producer *and* an external node as before:
+In the  `relay/ff-topology.json` we instruct the node to "talk" to the block-producer *and* an external node as before:
 
 
 	{

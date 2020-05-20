@@ -35,17 +35,19 @@
         rm cabal-install-3.2.0.0-x86_64-unknown-linux.tar.xz cabal.sig
         mkdir -p ~/.local/bin
         mv cabal ~/.local/bin/
-        cabal update
 
    This will work on a fresh [AWS instance](AWS.md) and assumes that folder `~/.local/bin` is in your `PATH`.
    On other systems, you must either move the executable to a folder that is in your `PATH` or modify your `PATH` by adding the line
 
-        export PATH="~/.local/bin:$PATH"
+        nano ~/.bashrc 
 
-   to your `.bashrc`-file.
+    add export PATH="~/.local/bin:$PATH" at the end of the your `.bashrc`-file.
+    then run the following command to make it active:
+    source ~/.bashrc
 
    Above instructions install Cabal version `3.2.0.0`. You can check the version by typing
 
+        cabal update
         cabal --version
 
    Finally we download and install GHC:
@@ -78,15 +80,10 @@
    For the FF-testnet, we will use tag `pioneer`, which we can check out as follows:
 
         git fetch --all --tags
-        git checkout tags/pioneer
+        git checkout tags/pioneer-3
 
 5. Now we build and install the node with ``cabal``, 
    which will take a couple of minutes the first time you do a build. Later builds will be much faster, because everything that does not change will be cached.
-
-        cabal install cardano-node cardano-cli
-
-   __Note__: At the time of writing, there is a bug in the latest version of the software that prevents ``cabal install`` from working correctly.
-   As a workaround, you can use ``cabal build`` instead:
 
         cabal build all
         cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-node-1.11.0/x/cardano-node/build/cardano-node/cardano-node ~/.local/bin/

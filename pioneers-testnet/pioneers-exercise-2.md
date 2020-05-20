@@ -91,7 +91,21 @@ In this excercise we will be following steps from [Creating a Simple Transaction
    | ttl       | 500000  |
    | fee       | 1000000 |
 
-   The settings that are used here indicate that the transaction should be processed before slot 500,000 and  that it will cost no more than 1 Ada to submit (a safe value for a simple transaction on the Testnet).  You must pay this (small) fee every time you successfully process a transaction on the Cardano Blockchain.  It will be distributed as part of the pool rewards.  The source of this fee is encoded in the transaction as a UTxO.  We are now ready to sign the transaction and submit it to the chain.
+   The settings that are used here indicate that the transaction should be processed before slot 500,000 and  that it will cost no more than 1 Ada to submit (a safe value for a simple transaction on the Testnet).  You must pay this (small) fee every time you successfully process a transaction on the Cardano Blockchain.  It will be distributed as part of the pool rewards.  The source of this fee is encoded in the transaction as a UTxO.  
+
+Here's an **example** of a transaction that instructs the transfer of 100,000,000 lovelace from one account (account A) to another account (account B).
+
+	cardano-cli shelley transaction build-raw \
+		--tx-in a72ec98117def0939cc310b17de10d218f41ef5c84d94a89fe6097318d3de983#0 \
+		--tx-out 82065820acc8de978a8c484a6797a014c28f6746c98ebe93d7f4498d66ea639ec953933f+100000000 \
+		--tx-out a72ec98117def0939cc310b17de10d218f41ef5c84d94a89fe6097318d3de983+99899000000 \
+		--fee 1000000 \
+		--ttl 500000 \
+		--tx-body-file txbody
+		
+Note that account A's address ```(a72ec98117def0939cc310b17de10d218f41ef5c84d94a89fe6097318d3de983)``` appears twice. Once in the transaction input and again as an output. This is the change being returned to account A, where the change is equal to the input from account A, minus the value being transferred to account B, minus the fee.
+
+We are now ready to sign the transaction and submit it to the chain.
 
 4. Sign your transaction in txbody using the signing key for *myaddr* (created in Excercise 1) :
 
@@ -99,7 +113,7 @@ In this excercise we will be following steps from [Creating a Simple Transaction
             --tx-body-file txbody \
             --signing-key-file txsign \
             --testnet-magic … \
-            --tx-body-file txbody
+            --tx-file txout
 
    You will need to give the correct Network Magic Id for the Testnet, as supplied by IOHK in the Genesis file (e.g. 42).
 
@@ -107,7 +121,7 @@ In this excercise we will be following steps from [Creating a Simple Transaction
 
         cardano-cli shelley transaction submit \
             --testnet-magic … \
-            --tx-body-file txbody
+            --tx-filepath txout
 
    If you made a mistake or if the node is not running or it cannot be contacted, you will see an error.  Just correct the error or kill/restart the node in this case and try again.
 

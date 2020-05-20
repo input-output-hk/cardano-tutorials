@@ -108,7 +108,7 @@ $  chmod a-rwx ~/cold-keys
  
 This ensures that noone (including yourself) can read/modify your cold keys.  Whenever you need to create a new set of hot keys, you will need to:
 ```
-$  chmod u-rwx ~/cold-keys
+$  chmod u+rwx ~/cold-keys
 $  cardano-cli shelley node issue-op-cert ...
 $  chmod a-rwx ~/cold-keys
 ```
@@ -142,7 +142,7 @@ The port can be anything you like, provided that the relay and pool agree on wha
         "valency": 1
       },
       {
-        "addr": "relays-new.cardano-mainnet.iohk.io",
+        "addr": "relays-new.ff.dev.cardano.org",
         "port": 3001,
         "valency": 1
       }
