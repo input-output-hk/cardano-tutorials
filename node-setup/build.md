@@ -85,11 +85,6 @@
 5. Now we build and install the node with ``cabal``, 
    which will take a couple of minutes the first time you do a build. Later builds will be much faster, because everything that does not change will be cached.
 
-        cabal install cardano-node cardano-cli
-
-   __Note__: At the time of writing, there is a bug in the latest version of the software that prevents ``cabal install`` from working correctly.
-   As a workaround, you can use ``cabal build`` instead:
-
         cabal build all
         cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-node-1.11.0/x/cardano-node/build/cardano-node/cardano-node ~/.local/bin/
         cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-cli-1.11.0/x/cardano-cli/build/cardano-cli/cardano-cli ~/.local/bin/
