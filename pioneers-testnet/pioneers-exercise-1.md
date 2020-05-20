@@ -13,7 +13,7 @@ Welcome to the IOHK Pioneers Group!  We are excited to have you join us on this 
 3. Register on Telegram and provide IOHK with your Telegram handle.  We will use a dedicated Telegram channel as our main point of contact.
 
 4. Make sure you can access:
-    - [The IOHK Tutorial Documentation](https://github.com/input-output-hk/cardano-tutorials/tree/master/node-setup)
+    - [The Cardano Tutorial Documentation](https://github.com/input-output-hk/cardano-tutorials/tree/master/node-setup)
     - [Shelley Testnet Documentation](https://testnets.cardano.org/en/shelley-haskell/overview/)
     - [Cardano Node Github repository](https://github.com/input-output-hk/cardano-node) where you can find:
       - [Shelley Genesis Documentation](https://github.com/input-output-hk/cardano-node/blob/master/doc/shelley-genesis.md)
@@ -39,7 +39,7 @@ This should be everything that you need to get you up and running.
 
 ### Exercises
 
-1. Download, Build and Install the Cardano Node Software using the instructions in the [IOHK Tutorial](https://github.com/input-output-hk/cardano-tutorials/tree/master/node-setup).  You will need to do this repeatedly as the Pioneer Testnet progresses, so you may want to bookmark the instructions.  We will be updating the software regularly.  You will need to use the correctly tagged version at each stage.   Generally, you will be able to use the version that is tagged “latest” in the GitHub repository.
+1. Download, Build and Install the Cardano Node Software using the instructions in the [Cardano Tutorial](https://github.com/input-output-hk/cardano-tutorials/tree/master/node-setup).  You will need to do this repeatedly as the Pioneer Testnet progresses, so you may want to bookmark the instructions.  We will be updating the software regularly.  You will need to use the correctly tagged version at each stage.   Generally, you will be able to use the version that is tagged “latest” in the GitHub repository.
 
 2. Start the node using the genesis, topology, network and other configuration settings that will be given to you by IOHK. Follow the instructions in the IOHK tutorial. 
   
