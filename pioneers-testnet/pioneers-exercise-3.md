@@ -108,7 +108,7 @@ $  chmod a-rwx ~/cold-keys
  
 This ensures that noone (including yourself) can read/modify your cold keys.  Whenever you need to create a new set of hot keys, you will need to:
 ```
-$  chmod u-rwx ~/cold-keys
+$  chmod u+rwx ~/cold-keys
 $  cardano-cli shelley node issue-op-cert ...
 $  chmod a-rwx ~/cold-keys
 ```
