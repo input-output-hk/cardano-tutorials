@@ -113,7 +113,7 @@ We are now ready to sign the transaction and submit it to the chain.
             --tx-body-file txbody \
             --signing-key-file txsign \
             --testnet-magic … \
-            --tx-body-file txbody
+            --tx-file txout
 
    You will need to give the correct Network Magic Id for the Testnet, as supplied by IOHK in the Genesis file (e.g. 42).
 
@@ -121,7 +121,7 @@ We are now ready to sign the transaction and submit it to the chain.
 
         cardano-cli shelley transaction submit \
             --testnet-magic … \
-            --tx-body-file txbody
+            --tx-filepath txout
 
    If you made a mistake or if the node is not running or it cannot be contacted, you will see an error.  Just correct the error or kill/restart the node in this case and try again.
 
