@@ -12,4 +12,5 @@ In these tutorials, we will cover the following topics:
 - [Creating an address](address.md).
 - [Creating a simple transaction](tx.md).
 - [Stake keys and stake addresses](staking-key.md).
+- [Creating an operational node certificate](node-op-cert.md).
 - [Quick guide for excercise 1](GuideForExcercise1.md)
