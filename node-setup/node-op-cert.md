@@ -80,7 +80,7 @@ In this tutorial we will see how to generate those keys and the certificate and 
    Our node will include this certificate in the header of each block it creates,
    and it will sign each such block with the KES key.
 
-   The KES will evolve for 60 periods, which is also specified in our genesis file:
+   The KES key will evolve for 60 periods, which is also specified in our genesis file:
 
         "maxKESEvolutions": 60
 
