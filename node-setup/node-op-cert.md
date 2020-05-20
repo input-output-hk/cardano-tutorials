@@ -87,5 +87,5 @@ In this tutorial we will see how to generate those keys and the certificate and 
    So after `60 * 3600` slots (2.5 days), the KES key will become invalid.
    (These are the parameters for the FF-testnet. KES keys on the mainnet will be valid for 90 days.)
 
-   After this period, we will have to repeat steps 3.-5. to generate a new KES key pair, create a certificate for it and run our node with the new key and new certificate.
+   Before the end of that period, we will have to repeat steps 3.-5. to generate a new KES key pair, create a certificate for it and run our node with the new key and new certificate.
             
