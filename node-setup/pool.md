@@ -86,6 +86,8 @@ registered a [stake address](staking-key.md) and have some funds at your stake a
         ----------------------------------------------------------------------------------------
         9db6cf...                                                            0      999999267766
 
+   Note that the available funds are higher than the pledge, which is fine. They just must not be _lower_.
+
    In this example, we can now calculate our change:
 
         expr 999999267766 - 500000000 - 184685
