@@ -129,7 +129,7 @@ This will be much faster than the initial build:
 Note that it might be necessary to delete the `db`-folder (the database-folder) before running an updated version of the node.
 
 
-## Get genesis, configutarion, topology files, and start the node
+## Get genesis, configuration, topology files, and start the node
 
 To start your node and connect it to F&F testnet you will need three important files: `ff-config.json` `ff-genesis.json` and `ff-topology.json`. We will download them from <https://hydra.iohk.io/build/2622346/download/1/index.html>
 		

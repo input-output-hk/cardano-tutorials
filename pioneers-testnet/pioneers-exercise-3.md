@@ -31,7 +31,14 @@ cabal build all
 cp …/cardano-node ~/.local/bin
 cp …/cardano-cli ~/.local/bin
 ```
-Note that the address format has changed on the Pioneer testnet, so you will need to generate a new address, and request some Ada.
+Note that the address format has changed on the Pioneer testnet, so you will need to generate a new address, and [request](https://docs.google.com/spreadsheets/d/1o62S2_24bcZNIpT3FASKHVGHG-dQ4J0vDaVCEsxbVKU/edit?usp=sharing) some Ada.
+
+```
+cardano-cli shelley address key-gen …
+cardano-cli shelley address build …
+```
+
+You'll also need to get matching configuration files from <https://hydra.iohk.io/build/2674253/download/1/index.html>
 
 4. Create two new directories pool and relay, and copy the configuration files to them:
 ```
