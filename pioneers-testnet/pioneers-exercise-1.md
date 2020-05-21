@@ -42,8 +42,8 @@ This should be everything that you need to get you up and running.
 
 1. Download, Build and Install the Cardano Node Software using the instructions in the [IOHK Tutorial](https://github.com/input-output-hk/cardano-tutorials/tree/master/node-setup).  You will need to do this repeatedly as the Pioneer Testnet progresses, so you may want to bookmark the instructions.  We will be updating the software regularly.  You will need to use the correctly tagged version at each stage.   Generally, you will be able to use the version that is tagged “latest” in the GitHub repository.
 
-2. Start the node using the genesis, topology, network and other configuration settings that will be given to you by IOHK. Follow the instructions in the IOHK tutorial. 
-  
+2. Start the node using the genesis, topology, network and other configuration settings that will be given to you by IOHK. Follow the instructions in the IOHK tutorial.
+
 ```bash
  cardano-node run --config …
 ```
