@@ -12,9 +12,9 @@ You can download them [here](https://hydra.iohk.io/job/Cardano/cardano-node/card
 
 Or from the command line with: 
 
-    wget https://hydra.iohk.io/build/2628541/download/1/ff-topology.json
-    wget https://hydra.iohk.io/build/2628541/download/1/ff-genesis.json
-    wget https://hydra.iohk.io/build/2628541/download/1/ff-config.json
+    wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/ff-topology.json
+    wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/ff-genesis.json
+    wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/ff-config.json
     
 
 ## Starting the node
