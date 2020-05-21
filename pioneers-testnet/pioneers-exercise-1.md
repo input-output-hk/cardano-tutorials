@@ -8,7 +8,7 @@ Welcome to the IOHK Pioneers Group!  We are excited that you have joined us on t
 
 1. Attend the Pioneer briefing meeting or read the Pioneer briefing notes
 
-2. Read the Code of Conduct.  This governs your behaviour and responsibilities on the Pioneer testnet.
+2. Read the [Pioneer charter](pioneer_charter.md).  This governs your behaviour and responsibilities on the Pioneer testnet.
 
 3. Register on Telegram and provide IOHK with your Telegram handle.  We will use a dedicated Telegram channel as our main point of contact.
 
