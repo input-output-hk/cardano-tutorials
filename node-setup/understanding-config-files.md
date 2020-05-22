@@ -18,7 +18,7 @@ Tells your node to which nodes in the network it should talk to. A minimal versi
 	  ]
 	}
 
-* This means that your node will contact `relays-new.ff.dev.cardano.org` on `port 3001`. 
+* This means that your node will contact node at ip `x.x.x.x` on `port 3001`. 
 
 * `valency` tells the node how many connections your node should have. It only has an effect for dns addresses. If a dns asdress is given, valency governs to how many resolved ip addresses should we maintain acctive (hot) connection; for ip addresses, valency is used as a boolean value, where `0` means to ignore the address.
 
