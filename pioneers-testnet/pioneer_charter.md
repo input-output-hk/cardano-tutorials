@@ -1,4 +1,4 @@
-##PIONEER CHARTER
+## PIONEER CHARTER
 
 The early stage of the testnet will require pool operators to commit to undertake certain activities and collaborate closely. Therefore we are you to make some formal commitments; by taking part in our testnet program, as a ‘pioneer’ pool operator you will:
 
