@@ -6,7 +6,9 @@ Welcome to the IOHK Pioneers Group!  We are excited that you have joined us on t
 
 ### Prerequisites
 
-1. Attend the Pioneer briefing meeting or read the Pioneer briefing notes
+1. Attend the Pioneer briefing meetings or watch the Pioneer briefing videos:
+
+    - [Pioneers briefing 1](https://drive.google.com/file/d/1EuUdpxtpp6ixSxI1jBXV3RmoumsGt3so/view)
 
 2. Read the [Pioneer charter](pioneer_charter.md).  This governs your behaviour and responsibilities on the Pioneer testnet.
 
@@ -39,9 +41,10 @@ This should be everything that you need to get you up and running.
 
 ### Exercises
 
-1. Download, build, and install the Cardano node software using the instructions provided in the [Cardano Tutorial](https://github.com/input-output-hk/cardano-tutorials/tree/master/node-setup).  You will need to do this repeatedly as the Pioneer testnet progresses, so you may want to bookmark the instructions. We will be updating the software regularly.  You will need to use the correctly tagged version at each stage. Generally, you will be able to use the version that is tagged “latest” in the GitHub repository.
-2. Start the node using the genesis, topology, network and other configuration settings that can be found [here](https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/index.html). Follow the instructions in the IOHK tutorial. 
-  
+1. Download, Build and Install the Cardano Node Software using the instructions in the [IOHK Tutorial](https://github.com/input-output-hk/cardano-tutorials/tree/master/node-setup).  You will need to do this repeatedly as the Pioneer Testnet progresses, so you may want to bookmark the instructions.  We will be updating the software regularly.  You will need to use the correctly tagged version at each stage.   Generally, you will be able to use the version that is tagged “latest” in the GitHub repository.
+
+2. Start the node using the genesis, topology, network and other configuration settings that will be given to you by IOHK. Follow the instructions in the IOHK tutorial.
+
 ```bash
  cardano-node run --config …
 ```
