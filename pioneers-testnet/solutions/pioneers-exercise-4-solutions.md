@@ -63,7 +63,7 @@
             --payment-verification-key-file pay.vkey \
             --staking-verification-key-file stake.vkey > pay
 
-    _How to transfer funds to the new address of course depends on your current
+    How to transfer funds to the new address of course depends on your current
     UTxO's. Assuming you have an address saved to file `addr`
     and that the signing payment key for that address is in file `addr.skey`, 
     you can look for UTxO's at that address with
