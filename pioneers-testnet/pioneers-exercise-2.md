@@ -121,7 +121,7 @@ We are now ready to sign the transaction and submit it to the chain.
 
         cardano-cli shelley transaction submit \
             --testnet-magic … \
-            --tx-filepath txout
+            --tx-file txout
 
    If you made a mistake or if the node is not running or it cannot be contacted, you will see an error.  Just correct the error or kill/restart the node in this case and try again.
 
