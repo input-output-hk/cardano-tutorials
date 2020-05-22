@@ -68,7 +68,7 @@
     and that the signing payment key for that address is in file `addr.skey`, 
     you can look for UTxO's at that address with
 
-        cardano-cli shelley query utxo \
+        cardano-cli shelley query filtered-utxo \
             --address $(cat addr) \
             --testnet-magic 42
 
@@ -79,7 +79,7 @@
     We need to know the current _tip_ of the blockchain in order to set the 
     `ttl`-parameter of the transaction correctly.
 
-        cardano-cli query tip --testnet-magic 42
+        cardano-cli shelley query tip --testnet-magic 42
 
         > Tip (SlotNo {unSlotNo = 350160}) 
 
