@@ -10,10 +10,12 @@
         cd cardano-node
         git fetch --all --tags -f
         git checkout tags/1.12.0
-        cabal build all
-        cp dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-node-1.12.0/x/cardano-node/build/cardano-node/cardano-node ~/.local/bin/
-        cp dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-cli-1.12.0/x/cardano-cli/build/cardano-cli/cardano-cli ~/.local/bin/
+        cabal install cardano-node cardano-cli
         cd ..
+
+    __Remark:__ `cabal install` will symlink the binaries to `~/.cabal/bin`, so
+    make sure that folder is in your `PATH` and takes precedence over
+    other locations where old binaries might be lying around.
 
 4.	Start a node and obtain the protocol parameters.  
     Make sure you know what each of these is (especially the fees).

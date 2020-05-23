@@ -47,9 +47,9 @@ These can be anywhere in your filesystem that you have write access to.  The tut
  
 In the third exercise, we will make sure that you can:
 
-i)              Set up the keys for a relay and a stake pool;
-ii)             Handle the Key Evolving Signature Scheme;
-iii)            Start the relay and the stake pool.
+1.  Set up the keys for a relay and a stake pool;
+2.  Handle the Key Evolving Signature Scheme;
+3.  Start the relay and the stake pool.
  
 As before, if you have any questions or encounter any problems, please feel free to use the dedicated Telegram channel.  IOHK staff will be monitoring the channel, and other Pioneers may also be able to help you.
  
