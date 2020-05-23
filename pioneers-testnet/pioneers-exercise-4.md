@@ -12,8 +12,8 @@ In this exercise, we will set up staking keys and delegate some stake to an exis
 2. 	Read the IOHK Tutorial Documentation and General Documentation 
     on Stake Key Generation, Delegation, and Pledging at:
 
-    a. 	[https://github.com/input-output-hk/cardano-tutorials/](https://github.com/input-output-hk/cardano-tutorials/)
-    b. 	[https://testnets.cardano.org/](https://testnets.cardano.org/)
+    1. 	[https://github.com/input-output-hk/cardano-tutorials/](https://github.com/input-output-hk/cardano-tutorials/)
+    2. 	[https://testnets.cardano.org/](https://testnets.cardano.org/)
  
 3. 	Checkout and build the sources which have been tagged with `1.12.0`.
 

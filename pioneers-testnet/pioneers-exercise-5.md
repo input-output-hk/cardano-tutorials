@@ -12,17 +12,17 @@ In this exercise, we will register and run our own pool.
 2. 	Read the Cardano Tutorial Documentation and General Documentation on 
     Stake Pool Registration, Pledging and Stake Pool Operation at:
 
-    a. 	[https://github.com/input-output-hk/cardano-tutorials/](https://github.com/input-output-hk/cardano-tutorials/)
-    b. 	[https://testnets.cardano.org/](https://testnets.cardano.org/)
+    1. 	[https://github.com/input-output-hk/cardano-tutorials/](https://github.com/input-output-hk/cardano-tutorials/)
+    2. 	[https://testnets.cardano.org/](https://testnets.cardano.org/)
  
 3. 	Checkout and build the sources which have been tagged with `1.12.0`.
  
 4. 	Make sure you have access to:
  
-    a. 	One or more funded addresses;
-    b. 	The keys and operational certificate for the stake pool
+    1. 	One or more funded addresses;
+    2. 	The keys and operational certificate for the stake pool
         that you set up in Exercise 3;
-    c. 	The stake keys from Exercise 4.
+    3. 	The stake keys from Exercise 4.
  
 5. 	Start a relay node.
  
