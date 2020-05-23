@@ -202,7 +202,7 @@
 
     Generate the certificate:
 
-        cli stake-address delegation-certificate \
+        cardano-cli shelley stake-address delegation-certificate \
             --staking-verification-key-file stake.vkey \
             --stake-pool-verification-key-file IOHK.vkey \
             --out-file deleg.cert
