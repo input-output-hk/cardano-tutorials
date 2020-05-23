@@ -294,14 +294,14 @@ The files are in plain-text format and human readable:
 
 Now we can use the verification key we just created to make an address. For now, we will use an address type that can receive and send transactions, but cannot do staking: `enterprise` type. 
 
-    cardano-cli shelley address build-enterprise \
+    cardano-cli shelley address build \
         --payment-verification-key-file payment.vkey
 
         > 820658...
 
 Let's store this address in a file:
 
-    cardano-cli shelley address build-enterprise \
+    cardano-cli shelley address build \
         --payment-verification-key-file payment.vkey > address
 
 Instead of writing the generated address to the console, this command will store it in file `address`. 
