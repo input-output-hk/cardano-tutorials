@@ -68,7 +68,7 @@
     and that the signing payment key for that address is in file `addr.skey`, 
     you can look for UTxO's at that address with
 
-        cardano-cli shelley query filtered-utxo \
+        cardano-cli shelley query utxo \
             --address $(cat addr) \
             --testnet-magic 42
 
