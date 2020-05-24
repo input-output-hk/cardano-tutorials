@@ -16,6 +16,15 @@ In this exercise, we will set up staking keys and delegate some stake to an exis
     2. 	[https://testnets.cardano.org/](https://testnets.cardano.org/)
  
 3. 	Checkout and build the sources which have been tagged with `1.12.0`.
+	```
+	git checkout tags/1.12.0
+	git branch
+	> * (HEAD detached at 1.12.0)
+	…
+	cabal build all
+	cp …/cardano-node ~/.local/bin
+	cp …/cardano-cli ~/.local/bin
+	```
 
 4.	Start a node and obtain the protocol parameters.  
     Make sure you know what each of these is (especially the fees).
