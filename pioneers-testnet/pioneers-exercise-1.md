@@ -24,7 +24,7 @@ Welcome to the IOHK Pioneers Group!  We are excited that you have joined us on t
 
 5. Set up your platform:
   - You will need an x86 host (AMD or Intel), Virtual Machine or AWS instance with at least 2 cores, 4GB of RAM and at least 10GB of free disk space;
-  - You will need to install a recent version of Linux, not Windows or MacOS – this will help us isolate any issues that arise;
+  - You will need to install a recent version of Linux (We have tested it in Ubuntu 18.04 and 20.04, Fedora 30 and CentOS 8) We are not supporting Windows or MacOS at this moment – this will help us isolate any issues that arise;
   - You will need to install: git, ghc, cabal.  Please make sure you install the correct versions (currently GHC 8.6.5 and Cabal 3.0).
 
 6. Make sure you are on a network that is not firewalled. In particular, we will be using TCP/IP port 3001 by default to establish connections with other nodes, so this will need to be open.
