@@ -20,12 +20,12 @@ In the second exercise, we submitted transactions to the Testnet blockchain.  In
 
     b. https://testnets.cardano.org/
 
-3.  Update your node to the pioneer-3 tag, and check that you have the right version.
+3.  Make sure you are running cardano-node 1.12.0, 
 
 ```
-git checkout tags/pioneer-3
+git checkout master
 git branch
-> * (HEAD detached at pioneer-3)
+> * (master)
 …
 cabal build all
 cp …/cardano-node ~/.local/bin
