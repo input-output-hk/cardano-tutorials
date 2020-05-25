@@ -70,4 +70,4 @@ Let's produce our cryptographic keys first, as we will need them to later create
 		cardano-cli shelley stake-address build \
 		--staking-verification-key-file stake.vkey > addr.stake
 		
-Our stake address needs to be registered in the blockchain for it to be useful. We deal with that in the next tutorial __"Registering stake address to the blockchain"__  
+Our stake address needs to be registered in the blockchain for it to be useful. We deal with that in the next tutorial ["Registering stake address to the blockchain"] 
