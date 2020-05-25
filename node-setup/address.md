@@ -54,7 +54,7 @@ which will enable us to receive and send ada.
 
    and make sure that your node is running.  Then use
 
-        cardano-cli shelley query filtered-utxo \
+        cardano-cli shelley query utxo \
             --address 820658... \
             --testnet-magic 42
 
