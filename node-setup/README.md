@@ -11,9 +11,9 @@ In these tutorials, we will cover the following topics:
 - [Configuring logging](logging.md).
 - [Block producers and relays](topology.md).
 - [Command line interface](cli.md).
-- [Creating an address](address.md).
+- [Creating keys and addresses](address.md).
 - [Creating a simple transaction](tx.md).
-- [Stake keys and stake addresses](staking-key.md).
+- [Registering stake addresses to the blockchain](staking-key.md).
 - [Creating an operational node certificate](node-op-cert.md).
 - [Registering a stake pool](pool.md).
 - [Quick guide for excercise 1](GuideForExcercise1.md)
