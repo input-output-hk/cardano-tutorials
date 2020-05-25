@@ -80,14 +80,14 @@
    For the FF-testnet, we will use tag `pioneer`, which we can check out as follows:
 
         git fetch --all --tags
-        git checkout tags/pioneer-3
+        git checkout 1.12.0
 
 5. Now we build and install the node with ``cabal``, 
    which will take a couple of minutes the first time you do a build. Later builds will be much faster, because everything that does not change will be cached.
 
         cabal build all
-        cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-node-1.11.0/x/cardano-node/build/cardano-node/cardano-node ~/.local/bin/
-        cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-cli-1.11.0/x/cardano-cli/build/cardano-cli/cardano-cli ~/.local/bin/
+        cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-node-1.12.0/x/cardano-node/build/cardano-node/cardano-node ~/.local/bin/
+        cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-cli-1.12.0/x/cardano-cli/build/cardano-cli/cardano-cli ~/.local/bin/
 
    The remark about your `PATH` from above applies here as well: Make sure folder `~/.local/bin` is in your path or copy the executables to a folder that is.
    If you have old versions of `cardano-node` installed on your system, make sure that the new one will be picked! You can check by typing
