@@ -68,6 +68,6 @@ Let's produce our cryptographic keys first, as we will need them to later create
 5. Finnaly, we can create our stake address. This address __CAN'T__ receive payments but will receive the rewards from participating in the protocol. We will save this address in the file `addr.stake`
 
 		cardano-cli shelley stake-address build \
-		--staking-verification-key-file stake.vkey > address.stake
+		--staking-verification-key-file stake.vkey > addr.stake
 		
 Our stake address needs to be registered in the blockchain for it to be useful. We deal with that in the next tutorial __"Registering stake address to the blockchain"__  
