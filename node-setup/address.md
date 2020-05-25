@@ -28,7 +28,7 @@ which will enable us to receive and send ada.
 
 2. Now we can use the verification key we just created to make an address:
 
-        cardano-cli shelley address build-enterprise \
+        cardano-cli shelley address build \
             --payment-verification-key-file addr.vkey
 
         > 820658...
@@ -39,7 +39,7 @@ which will enable us to receive and send ada.
 
    It is probably a good idea to store this address in a file:
 
-        cardano-cli shelley address build-enterprise \
+        cardano-cli shelley address build \
             --payment-verification-key-file addr.vkey > addr
 
    Instead of writing the generated address to the console, 
