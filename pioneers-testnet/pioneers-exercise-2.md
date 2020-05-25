@@ -14,14 +14,14 @@ In the first exercise, we set up a Cardano node and ran it.  In this exercise, w
 
 3. Checkout the latest version of the Shelley node and CLI from source, and rebuild and reinstall them if they have changed:
 
-        git checkout pioneer-2
+        git checkout 1.12.0
         cabal build all
         …
 
     Before building, you might want to confirm that you are on the correct tagged version:
 
         git branch
-	>* (HEAD detached at pioneer-2)
+	>* (HEAD detached at 1.12.0)
 	
 	>  master
 	  
