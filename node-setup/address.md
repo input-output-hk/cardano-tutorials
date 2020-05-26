@@ -5,7 +5,7 @@ We need to create two sets of keys and addresses: One set to control our funds (
 Let's produce our cryptographic keys first, as we will need them to later create our addresses:
 
 ### Payment key pair
-1. First we need to generate our _paymet key pair_:
+1. First we need to generate our _payment key pair_:
 
         cardano-cli shelley address key-gen \
             --verification-key-file payment.vkey \
