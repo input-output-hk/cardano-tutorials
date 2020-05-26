@@ -45,7 +45,7 @@ is in file `addr1.skey`.
 2. We need the transaction hash and index of the utxo we want to spend, which we can find out
    as follows:
 
-        cardano-cli shelley query filtered-utxo \
+        cardano-cli shelley query utxo \
             --address $(cat addr1) \
             --testnet-magic 42
 
@@ -87,7 +87,7 @@ is in file `addr1.skey`.
 
 6. We must give it some time to get incorporated into the blockchain, but eventually, we will see the effect:
 
-        cardano-cli shelley query filtered-utxo \
+        cardano-cli shelley query utxo \
             --address $(cat addr1) \
             --testnet-magic 42
 
@@ -95,7 +95,7 @@ is in file `addr1.skey`.
         > ----------------------------------------------------------------------------------------
         > b64ae44e1195b04663ab863b62337e626c65b0c9855a9fbb9ef4458f81a6f5ee     1      999899831859
 
-        cardano-cli shelley query filtered-utxo \
+        cardano-cli shelley query utxo \
             --address $(cat addr2) \
             --testnet-magic 42
 
