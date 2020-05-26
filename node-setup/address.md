@@ -31,22 +31,23 @@ Let's produce our cryptographic keys first, as we will need them to later create
 2. Now let us create our _stake key pair_ : 
 
 		cardano-cli shelley stake-address key-gen \
-		--verification-key-file stake.vkey \ 
+		--verification-key-file stake.vkey \
 		--signing-key-file stake.skey
 
 ### Payment address
 3. We then use `payment.vkey` and `stake.vkey` to create our `payment address`: 
 
-        cardano-cli shelley address build --payment-verification-key-file payment.vkey --staking-verification-key-file stake.vkey 
-        
-        > 01df79ad8d...
+		cardano-cli shelley address build \
+		--payment-verification-key-file payment.vkey \
+		--stake-verification-key-file stake.vkey \
+		--out-file payment.addr  
+     
+This created the file payment.addr, let's check its content: 
 
-   It is a good idea to store this address in a file:
+		cat payment.addr 
+		
+		> 01ed8...
 
-        cardano-cli shelley address build \
-            --payment-verification-key-file payment.vkey > addr.payment
-
-   Instead of writing the generated address to the console,  this command will store it in file `addr.payment`. 
 
 4. In order to query your address (see the utxo's at that address),
    you first need to set environment variable `CARDANO_NODE_SOCKET_PATH`
@@ -68,6 +69,14 @@ Let's produce our cryptographic keys first, as we will need them to later create
 5. Finnaly, we can create our stake address. This address __CAN'T__ receive payments but will receive the rewards from participating in the protocol. We will save this address in the file `addr.stake`
 
 		cardano-cli shelley stake-address build \
-		--staking-verification-key-file stake.vkey > addr.stake
+		--staking-verification-key-file stake.vkey \
+		--out-file stake.addr 
+
+This created the file stake.addr, let's check its content: 
+
+		cat stake.addr 
 		
-Our stake address needs to be registered in the blockchain for it to be useful. We deal with that in the next tutorial ["Registering stake address to the blockchain"](staking-key.md) 
+		> 820058... 
+		
+Our stake address needs to be registered in the blockchain for it to be useful. We deal with that in another tutorial ["Registering stake address to the blockchain"](staking-key.md) 
+
