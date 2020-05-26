@@ -14,14 +14,14 @@ In the first exercise, we set up a Cardano node and ran it.  In this exercise, w
 
 3. Checkout the latest version of the Shelley node and CLI from source, and rebuild and reinstall them if they have changed:
 
-        git checkout pioneer-2
+        git checkout tags/pioneer-wave2 
         cabal build all
         …
 
     Before building, you might want to confirm that you are on the correct tagged version:
 
         git branch
-	>* (HEAD detached at pioneer-2)
+	> (HEAD detached at TAG)
 	
 	>  master
 	  
@@ -61,27 +61,27 @@ In this excercise we will be following steps from [Creating a Simple Transaction
 
    Your node should be connected to the Pioneer Testnet and verifying the blocks that it receives.
 
-2. Verify that you have received some test Ada at the address that you provided to IOHK in Exercise 1, *myaddr*.
+2. Verify that you have received some test Ada at the address that you provided to IOHK in Exercise 1, *payment.addr*.
 
-        cardano-cli shelley query filtered-utxo \
-            --address ... \
+        cardano-cli shelley query utxo \
+            --address … \
             --testnet-magic …
 
-   Create a new address *myaddr2*:
+   Create a new address *payment2.addr*:
 
         cardano-cli shelley address key-gen …
-        cardano-cli shelley address build-enterprise …
+        cardano-cli shelley address build …
 
-3. Build a transaction to transfer Ada from *myaddr* to *myaddr2*.  You will need to use the Shelley transaction processing operations:
+3. Build a transaction to transfer Ada from *payment.addr* to *payment2.addr*.  You will need to use the Shelley transaction processing operations:
 
         cardano-cli shelley transaction build-raw \
-            --tx-body-file txbody …
+            --tx-in …
 
    This is the most basic form of transaction construction.  We will use more sophisticated ones later.  The transaction will be created in the file txbody. You will need to provide explicit transaction inputs and outputs. Keep in mind that the output for the change needs to be specified as well, so the sum of your inputs needs to match the sum of your outputs + fee.
 
    | Format       | Explanation                                                                                  | 
    | ------------ | -------------------------------------------------------------------------------------------- |
-   | Id#Index     | This identifies the UTxO that is the source of the Ada – you should get this from  *myaddr*. |
+   | Id#Index     | This identifies the UTxO that is the source of the Ada – you should get this from  *payment.addr*. |
    | Out+lovelace | Hex encoded address that will receive the Ada and the amount to send in Lovelace.            |
 
    You will also need to give it a time to live in slots (ttl) and a fee (in lovelace). Use the following settings:
@@ -101,19 +101,19 @@ Here's an **example** of a transaction that instructs the transfer of 100,000,00
 		--tx-out a72ec98117def0939cc310b17de10d218f41ef5c84d94a89fe6097318d3de983+99899000000 \
 		--fee 1000000 \
 		--ttl 500000 \
-		--tx-body-file txbody
+		--out-file txbody
 		
 Note that account A's address ```(a72ec98117def0939cc310b17de10d218f41ef5c84d94a89fe6097318d3de983)``` appears twice. Once in the transaction input and again as an output. This is the change being returned to account A, where the change is equal to the input from account A, minus the value being transferred to account B, minus the fee.
 
 We are now ready to sign the transaction and submit it to the chain.
 
-4. Sign your transaction in txbody using the signing key for *myaddr* (created in Excercise 1) :
+4. Sign your transaction in txbody using the signing key for *payment.addr* (created in Excercise 1) :
 
         cardano-cli shelley transaction sign \
             --tx-body-file txbody \
             --signing-key-file txsign \
             --testnet-magic … \
-            --tx-file txout
+            --out-file txout
 
    You will need to give the correct Network Magic Id for the Testnet, as supplied by IOHK in the Genesis file (e.g. 42).
 
@@ -127,16 +127,16 @@ We are now ready to sign the transaction and submit it to the chain.
 
 6. After 2 minutes (possibly earlier), your Ada should be transferred to your new address.
 
- 	    cardano-cli shelley query filtered-utxo \
+ 	    cardano-cli shelley query utxo \
             --address … \
             --testnet-magic …
 
-7. Finally, build a transaction that sends a total of 1,000 Ada from *myaddr* to two different addresses (a multi-address transaction).
+7. Finally, build a transaction that sends a total of 1,000 Ada from *payment.addr* to two different addresses (a multi-address transaction).
 
         cardano-cli shelley address key-gen …
-        cardano-cli shelley address build-enterprise …
+        cardano-cli shelley address build …
         cardano-cli shelley address key-gen …
-        cardano-cli shelley address build-enterprise …
+        cardano-cli shelley address build …
         cardano-cli shelley transaction build-raw …
 
    The required fee will be higher than before, since part of the cost is based on the number of addresses that the output is sent to.  You can check that the fee will be sufficient before you build the transaction using:
