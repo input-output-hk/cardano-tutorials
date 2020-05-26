@@ -23,9 +23,9 @@ In the second exercise, we submitted transactions to the Testnet blockchain.  In
 3.  Update your node to the pioneer-3 tag, and check that you have the right version.
 
 ```
-git checkout tags/pioneer-3
+git checkout tags/pioneer-wave2
 git branch
-> * (HEAD detached at pioneer-3)
+> * (HEAD detached at pioneer-wave2)
 …
 cabal build all
 cp …/cardano-node ~/.local/bin
@@ -77,8 +77,8 @@ $ pushd ~/cold-keys
 Then generate a pair of cold keys and a cold counter file:
 ```
 $ cardano-cli shelley node key-gen \
-    --verification-key-file cold.vkey \
-    --signing-key-file cold.skey \
+    --cold-verification-key-file cold.vkey \
+    --cold-signing-key-file cold.skey \
     --operational-certificate-issue-counter coldcounter
 ```
             The cold counter file should look like:
@@ -93,7 +93,7 @@ cbor-hex:
 ``` 
 $ pushd +1
 $ cardano-cli shelley node issue-op-cert \
-    --hot-kes-verification-key-file kes.vkey \
+    --kes-verification-key-file kes.vkey \
     --cold-signing-key-file ~/cold-keys/cold.skey \
     --operational-certificate-issue-counter ~/cold-keys/coldcounter \
     --kes-period 0 \
