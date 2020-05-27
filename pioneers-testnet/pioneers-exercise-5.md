@@ -15,7 +15,7 @@ In this exercise, we will register and run our own pool.
     1. 	[https://github.com/input-output-hk/cardano-tutorials/](https://github.com/input-output-hk/cardano-tutorials/)
     2. 	[https://testnets.cardano.org/](https://testnets.cardano.org/)
  
-3. 	Checkout and build the sources which have been tagged with `1.12.0`.
+3. 	Checkout and build the sources which have been tagged with `pioneer-wave2`.
  
 4. 	Make sure you have access to:
  
