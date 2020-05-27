@@ -8,15 +8,17 @@ In this tutorial we will see how to generate those keys and the certificate and 
 
 1. We assume that you have access to the [command line interface](cli.md).
    First of all, we want to create a _cold key pair_ for our node. 
-   This key pair is called "cold", because ideally, it will be created and stored _offline_, not on a computer that is connected to the internet,
-   let alone on the computer running the node.
+   
+   __This key pair is called "cold", because ideally, it will be created and stored offline, not on a computer that is connected to the internet,
+   let alone on the computer running the node.__
+   
    The reason for this is security: Under no circumstances must these keys fall into the wrong hands!
 
    To create such a key pair (on our offline computer), we type
 
         cardano-cli shelley node key-gen \
-            --verification-key-file node.vkey \
-            --signing-key-file node.skey \
+            --cold-verification-key-file node.vkey \
+            --cold-signing-key-file node.skey \
             --operational-certificate-issue-counter node.counter
 
    This will create three files (which we named `node.vkey`, `node.skey` and `node.counter` here, but you can choose those names freely),
@@ -53,7 +55,7 @@ In this tutorial we will see how to generate those keys and the certificate and 
 4. Now we can create an operational node certificate:
 
         cardano-cli shelley node issue-op-cert \
-            --hot-kes-verification-key-file kes001.vkey \
+            --kes-verification-key-file kes001.vkey \
             --cold-signing-key-file node.skey \
             --operational-certificate-issue-counter node.counter \
             --kes-period 0 \
@@ -82,10 +84,12 @@ In this tutorial we will see how to generate those keys and the certificate and 
 
    The KES key will evolve for 60 periods, which is also specified in our genesis file:
 
-        "maxKESEvolutions": 60
+        "maxKESEvolutions": 120
 
-   So after `60 * 3600` slots (2.5 days), the KES key will become invalid.
+   So after `120 * 3600` slots (5 days), the KES key will become invalid.
    (These are the parameters for the FF-testnet. KES keys on the mainnet will be valid for 90 days.)
 
    Before the end of that period, we will have to repeat steps 3.-5. to generate a new KES key pair, create a certificate for it and run our node with the new key and new certificate.
+            
+
             
