@@ -11,7 +11,7 @@ You will need:
 * A recent version of Linux, __not Windows or MacOS__ – this will help us isolate any issues that arise;
 * Make sure you are on a network that is not firewalled. In particular, we will be using TCP/IP port 3000 and 3001 by default to establish connections with other nodes, so this will need to be open.
 
-If you are not suro on how to configure your server, please read the [Getting access to Linux at AWS](https://github.com/input-output-hk/cardano-tutorials/blob/master/node-setup/AWS.md) tutorial.
+If you are not suro on how to configure your server, please read the [Getting access to Linux at AWS](AWS.md) tutorial.
 
 ## Install dependencies
 
@@ -127,7 +127,7 @@ Note that it might be necessary to delete the `db`-folder (the database-folder) 
 
 ## Get genesis, configutarion, topology files, and start the node
 
-To start your node and connect it to F&F testnet you will need three important files: `ff-config.json` `ff-genesis.json` and `ff-topology.json`. We will download them from <https://hydra.iohk.io/build/2622346/download/1/index.html>
+To start your node and connect it to F&F testnet you will need three important files: `ff-config.json` `ff-genesis.json` and `ff-topology.json`. We will download them from <https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/index.html>
 
     wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/ff-topology.json
     wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/ff-genesis.json
