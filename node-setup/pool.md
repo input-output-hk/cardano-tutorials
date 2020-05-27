@@ -1,7 +1,5 @@
 # Registering a Stake Pool
 
-(__Note__: This won't work with tag `pioneer-3` and has only been tested with the latest version on `master`!)
-
 Let us register our own stake pool!
 
 For this tutorial we assume that you have set up a [block-producing node with one or more relays](topology.md),
@@ -11,13 +9,13 @@ registered a [stake address](staking-key.md) and have some funds at your stake a
 1. We need to create a _stake pool registration certificate_:
 
         cardano-cli shelley stake-pool registration-certificate \
-            --stake-pool-verification-key-file node.vkey \ 
+            --cold-verification-key-file node.vkey \ 
             --vrf-verification-key-file vrf.vkey \
             --pool-pledge 100000000000 \
             --pool-cost 10000000000 \
             --pool-margin 0.01 \
-            --reward-account-verification-key-file staking.vkey \
-            --pool-owner-staking-verification-key staking.vkey \
+            --reward-account-verification-key-file stake.vkey \
+            --pool-owner-staking-verification-key stake.vkey \
             --out-file pool.cert
 
    | Parameter                            | Explanation                                       |
@@ -40,16 +38,27 @@ registered a [stake address](staking-key.md) and have some funds at your stake a
    and use the same key as pool owner key for the pledge.
 
    We could use a different key for the rewards, and we could provide more than one owner key if there were multiple owners who share the pledge.
+   
+The __pool.cert__ file should look like this: 
+
+	type: StakePoolCertificateShelley
+	title: Free form text
+	cbor-hex:
+	 18b58a03582062d632e7ee8a83769bc108e3e42a674d8cb242d7375fc2d97db9b4dd6eded6fd5820
+	 48aa7b2c8deb8f6d2318e3bf3df885e22d5d63788153e7f4040c33ecae15d3e61b0000005d21dba0
+	 001b000000012a05f200d81e820001820058203a4e813b6340dc790f772b3d433ce1c371d5c5f5de
+	 46f1a68bdf8113f50e779d8158203a4e813b6340dc790f772b3d433ce1c371d5c5f5de46f1a68bdf
+	 8113f50e779d80f6   
 
 2. We have to honor our pledge by delegating at least the pledged amount to our pool,
    so we have to create a _delegation certificate_ to achieve this:
 
         cardano-cli shelley stake-address delegation-certificate \
-            --staking-verification-key-file staking.vkey \
+            --staking-verification-key-file stake.vkey \
             --stake-pool-verification-key-file node.vkey \
             --out-file delegation.cert 
 
-   This creates a delegation certificate which delegates funds from all stake addresses associated with key `staking.vkey` to 
+   This creates a delegation certificate which delegates funds from all stake addresses associated with key `stake.vkey` to 
    the pool belonging to cold key `node.vkey`. If we had used different staking keys for the pool owners in the first step,
    we would need to create delegation certificates for all of them instead.
 
@@ -62,11 +71,11 @@ registered a [stake address](staking-key.md) and have some funds at your stake a
             --tx-out-count 1 \ 
             --ttl 200000 \ 
             --testnet-magic 42 \
-            --signing-key-file addr1.skey \
-            --signing-key-file staking.skey \
+            --signing-key-file payment.skey \
+            --signing-key-file stake.skey \
             --signing-key-file node.skey \
-            --certificate pool.cert \
-            --certificate delegation.cert \ 
+            --certificate-file pool.cert \
+            --certificate-file delegation.cert \ 
             --protocol-params-file protocol.json 
 
         > 184685
@@ -97,22 +106,22 @@ registered a [stake address](staking-key.md) and have some funds at your stake a
 
         cardano-cli shelley transaction build-raw \
             --tx-in 9db6cf...#0 \ 
-            --tx-out $(cat addr1.staking)+999499083081 \
+            --tx-out $(cat payment.addr)+999499083081 \
             --ttl 200000 \
             --fee 184685 \
-            --tx-body-file tx003.raw \
-            --certificate pool.cert \
-            --certificate delegation.cert 
+            --out-file tx003.raw \
+            --certificate-file pool.cert \
+            --certificate-file delegation.cert 
 
    We sign:
 
         cardano-cli shelley transaction sign \ 
             --tx-body-file tx003.raw \
-            --signing-key-file addr1.skey \ 
-            --signing-key-file staking.skey \
+            --signing-key-file payment.skey \ 
+            --signing-key-file stake.skey \
             --signing-key-file node.skey \
             --testnet-magic 42 \
-            --tx-file tx003.signed
+            --out-file tx003.signed
 
    And submit:
 
