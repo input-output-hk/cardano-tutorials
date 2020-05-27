@@ -1,6 +1,6 @@
 # Register stake address in the blockchain
 
-Bwfore, we created our payment keys and address that allow us to control our funds; and our stake keys and stake address that allow us to partipate in the protocol.  
+Before, we created our payment keys and address that allow us to control our funds; we also created our stake keys and stake address that allow us to partipate in the protocol.  
 
 
 1. For us to later be able to delegate our stake to one or more pools, we need to _register_ our stake key in the blockchain.
@@ -25,7 +25,7 @@ Bwfore, we created our payment keys and address that allow us to control our fun
             --testnet-magic 42 \
             --signing-key-file payment.skey \
             --signing-key-file stake.skey \
-            --certificate stake.cert \
+            --certificate-file stake.cert \
             --protocol-params-file protocol.json
 
         > 171485
@@ -46,11 +46,11 @@ Bwfore, we created our payment keys and address that allow us to control our fun
 
         cardano-cli shelley transaction build-raw \
             --tx-in <the utxo used for paying fees and deposit> \
-            --tx-out $(cat addr.stake)+999428515 \
+            --tx-out $(cat payment.addr)+999428515 \
             --ttl 200000 \
             --fee 171485 \
-            --tx-body-file tx.raw \
-            --certificate stake.cert
+            --out-file tx.raw \
+            --certificate-file stake.cert
 
    We sign it:
 
@@ -59,10 +59,10 @@ Bwfore, we created our payment keys and address that allow us to control our fun
             --signing-key-file payment.skey \
             --signing-key-file stake.skey \
             --testnet-magic 42 \
-            --tx-file tx.signed
+            --out-file tx.signed
 
    And submit it:
 
         cardano-cli shelley transaction submit \
-            --tx-filepath tx.signed \
+            --tx-file tx.signed \
             --testnet-magic 42
