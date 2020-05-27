@@ -8,6 +8,8 @@ This folder contains exercises intended for pioneers in the Shelley Friends & Fa
 - [Exercise Sheet 4](pioneers-exercise-4.md)
 - [Exercise Sheet 5](pioneers-exercise-5.md)
 
+- [Example Solutions for Exercise Sheet 1](solutions/pioneers-exercise-1-solutions.md)
+- [Example Solutions for Exercise Sheet 2](solutions/pioneers-exercise-2-solutions.md)
 - [Example Solutions for Exercise Sheet 4](solutions/pioneers-exercise-4-solutions.md)
 - [Example Solutions for Exercise Sheet 5](solutions/pioneers-exercise-5-solutions.md)
 
