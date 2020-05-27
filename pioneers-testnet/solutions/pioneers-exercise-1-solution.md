@@ -142,7 +142,7 @@ Now you can start the node, double check that port 3001 is open. In the `cardano
        --port 3001 \
        --config ff-config.json
 
-![](https://github.com/CarlosLopezDeLara/cardano-tutorials/blob/CarlosLopezDeLara-QuickGuide-Excercise1/node-setup/images/starting-single-node.png)
+![](starting-single-node.png)
 
 **Cool, you have just connected your node to the F&F Testnet.**
 
@@ -222,7 +222,7 @@ You start `tmux` with
 
 Then you can split the screen with `Ctrl`-`b`-`%` and navigate between the two panes with `Ctrl`-`b`-`→` and `Ctrl`-`b`-`←`.
 
-![tmux with two panels](https://github.com/CarlosLopezDeLara/cardano-tutorials/blob/CarlosLopezDeLara-QuickGuide-Excercise1/node-setup/images/tmux-view.png)
+![tmux with two panels](tmux-view.png)
 
 
 From one `tmux`-panel we start the block-producing node with the following command. Under `host-addr` replace the x.x.x.x with your public ip
@@ -249,7 +249,7 @@ We switch to the other `tmux`-panel with `Ctrl`-`b`-`→` and start the relay no
 After a few seconds, both nodes should receive data.
 
 
-   ![tmux with two nodes](https://github.com/CarlosLopezDeLara/cardano-tutorials/blob/CarlosLopezDeLara-QuickGuide-Excercise1/node-setup/images/tmux-2-nodes.png)
+   ![tmux with two nodes](tmux-2-nodes.png)
 
 
 Cool, we have put a couple of nodes to work! But this nodes can't do anything more than read from the blockchain. To setup a stake pool and being able to produce blocks we will need a set of keys, addresses, and other things. Let's create some keys first.
@@ -327,4 +327,4 @@ Congratulations, You just need to request some funds and you have finished excer
 
 ## Node monitoring
 
-Please read [Monitoring a node with EKG](https://github.com/input-output-hk/cardano-tutorials/blob/master/node-setup/ekg.md) and [Monitoring a node with Prometheus](https://github.com/input-output-hk/cardano-tutorials/blob/master/node-setup/prometheus.md) tutorials.
+Please read [Monitoring a node with EKG](ekg.md) and [Monitoring a node with Prometheus](prometheus.md) tutorials.
