@@ -15,7 +15,7 @@ In this exercise, we will set up staking keys and delegate some stake to an exis
     1. 	[https://github.com/input-output-hk/cardano-tutorials/](https://github.com/input-output-hk/cardano-tutorials/)
     2. 	[https://testnets.cardano.org/](https://testnets.cardano.org/)
  
-3. 	Checkout and build the sources which have been tagged with `1.12.0`.
+3. 	Checkout and build the sources which have been tagged with `pioneer-wave2`.
 
 4.	Start a node and obtain the protocol parameters.  
     Make sure you know what each of these is (especially the fees).
@@ -92,8 +92,8 @@ GitHub repositories as usual.
     | `--ttl`                  | time to live (a slot in the future)     | depends...               | 
     | `--testnet-magic`        | network identifier                      | 42                       |
     | `--signing-key-file`     | singing key(s)                          | `pay.skey`, `stake.skey` |
-    | `--certificate`          | certificate(s) to include               | `stake.cert`             |
-    | `--protocol-params-file` | file containing the protocol parameters | `params.json`            |
+    | `--certificate-file`     | certificate(s) to include               | `stake.cert`             |
+    | `--protocol-params-file` | file containing the protocol parameters | `protocol.json`            |
 
     Now build the transaction to register your stake address.
 
@@ -110,7 +110,7 @@ GitHub repositories as usual.
 
     The residual amount is the amount that should be left over 
     having paid for the transaction fee 
-    and the registration fee (as given in the protocol parameters `params.json`).
+    and the registration fee (as given in the protocol parameters `protocol.json`).
 
     Sign the transaction with both the payment- and stake- signing keys:
 
@@ -126,7 +126,7 @@ GitHub repositories as usual.
     Again, there is a dedicated CLI command for this, 
     but we will use the basic transaction mechanism. 
 
-    First create a delegation certificate, `deleg.cert`. 
+    First create a delegation certificate, `delegation.cert`. 
     You will need to provide the verification key file for the pool 
     that you wish to delegate to.  
     This should be a running pool (e.g. one that is named in the Pioneer spreadsheet, 
@@ -134,7 +134,7 @@ GitHub repositories as usual.
 
         cardano-cli shelley stake-address delegation-certificate \
             --staking-verification-key-file stake.vkey \
-            --stake-pool-verification-key-file pool.vkey
+            --stake-pool-verification-key-file node.vkey
 
     Then build, sign and submit a transaction as before 
     (using a UTxO that has some funds associated with it).
