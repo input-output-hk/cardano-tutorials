@@ -177,7 +177,7 @@ Also enable the EKG backend if you want to use the EKG or Prometheus monitoring 
 `setupScribes` and `defaultScribes`: For the Katip logging backend we must set up outputs (called scribes) The available types of scribe are:
 
 * FileSK: for files
-* StdoutSK/StdoutSK: for stdout/stderr
+* StdoutSK/StderrSK: for stdout/stderr
 * JournalSK: for systemd's journal system
 * DevNullSK
 * The scribe output format can be ScText or ScJson. 
