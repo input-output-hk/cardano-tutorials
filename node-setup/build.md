@@ -86,20 +86,19 @@
    which will take a couple of minutes the first time you do a build. Later builds will be much faster, because everything that does not change will be cached.
    
    		cabal install cardano-node cardano-cli 
-  
-  Alternatively, you can use:  
-   
 
-        cabal build all
-        cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-node-1.12.0/x/cardano-node/build/cardano-node/cardano-node ~/.local/bin/
-        cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-cli-1.12.0/x/cardano-cli/build/cardano-cli/cardano-cli ~/.local/bin/
-
-   The remark about your `PATH` from above applies here as well: Make sure folder `~/.local/bin` is in your path or copy the executables to a folder that is.
+   This will build and install `cardano-node` and `cardano-cli` in folder `~/.cabal/bin` by default, so the remark about your `PATH` from above
+   applies here as well: Make sure folder `~/.cabal/bin` is in your path or copy the executables to a folder that is.
    If you have old versions of `cardano-node` installed on your system, make sure that the new one will be picked! You can check by typing
 
         which cardano-node
+        > ~/.cabal/bin/cardano-node
+  
+   Alternatively, you can use:  
 
-        > ~/.local/bin/cardano-node
+        cabal build all
+        cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-node-1.12.0/x/cardano-node/build/cardano-node/cardano-node ~/.cabal/bin/
+        cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-cli-1.12.0/x/cardano-cli/build/cardano-cli/cardano-cli ~/.cabal/bin/
 
 6. If you ever want to update the code to a newer version, go to the ``cardano-node`` directory, pull the latest code with ``git`` and rebuild. 
    This will be much faster than the initial build:
@@ -110,7 +109,14 @@
         git checkout tags/<the-tag-you-want>
         cabal install cardano-node cardano-cli
 
-   Note that it might be necessary to delete the `db`-folder (the database-folder) before running an updated version of the node.
+   __Note:__ It might be necessary to delete the `db`-folder (the database-folder) before running an updated version of the node.
+
+   __Note:__ By default `cabal install` will not overwrite an existing link in `~/.cabal/bin`, so you would need to delete old versions of
+   `cardano-node` and `cardano-cli` before installing new ones. Alternatively you can set
+
+        overwrite-policy: always
+
+   in your `cabal`-configuration at `~/.cabal/config`.
 
 7. We can start a node on the Cardano mainnet with
 
