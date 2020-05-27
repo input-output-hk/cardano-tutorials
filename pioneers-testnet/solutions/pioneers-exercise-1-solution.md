@@ -11,7 +11,7 @@ You will need:
 * A recent version of Linux, __not Windows or MacOS__ – this will help us isolate any issues that arise;
 * Make sure you are on a network that is not firewalled. In particular, we will be using TCP/IP port 3000 and 3001 by default to establish connections with other nodes, so this will need to be open.
 
-If you are not suro on how to configure your server, please read the [Getting access to Linux at AWS](https://github.com/input-output-hk/cardano-tutorials/blob/master/node-setup/AWS.md) tutorial. 
+If you are not suro on how to configure your server, please read the [Getting access to Linux at AWS](https://github.com/input-output-hk/cardano-tutorials/blob/master/node-setup/AWS.md) tutorial.
 
 ## Install dependencies
 
@@ -34,11 +34,11 @@ If we are using an AWS instance running Amazon Linux AMI 2 (see the [AWS walk-th
     sudo yum install systemd-devel ncurses-devel ncurses-compat-libs -y
 
 For Debian/Ubuntu use the following instead:
-   
-        
+
+
     sudo apt-get update -y
     sudo apt-get -y install build-essential pkg-config libffi-dev libgmp-dev libssl-dev libtinfo-dev libsystemd-dev zlib1g-dev make g++ tmux git jq wget libncursesw5 -y
-   
+
 If you are using a different flavor of Linux, you will need to use the package manager suitable for your platform instead of `yum` or `apt-get`, and the names of the packages you need to install might differ.
 
 Download, unpack, install and update Cabal:
@@ -74,13 +74,13 @@ Finally, we download and install GHC:
 ## Download the source code for cardano-node
 
 To download the source code, we use git:
-    
+
     git clone https://github.com/input-output-hk/cardano-node.git
-    
+
 
 This should create a folder ``cardano-node``, then download the latest source code from git into it.
 After the download has finished, we can check its content by
-  
+
     ls cardano-node
 
 __Note__ that the content of your `cardano-node`-folder can slightly differ from this!
@@ -89,35 +89,31 @@ We change our working directory to the downloaded source code folder:
 
     cd cardano-node
 
-For reproducible builds, we should check out a specific release, a specific "tag". 
+For reproducible builds, we should check out a specific release, a specific "tag".
 For the FF-testnet, we will use tag `pioneer`, which we can check out as follows:
 
     git fetch --all --tags
-    git checkout tags/pioneer
+    git checkout tags/pioneer-wave2
 
 
 ## Build and install the node
 
-Now we build and install the node with ``cabal``, 
+Now we build and install the node with ``cabal``,
 which will take a couple of minutes the first time you do a build. Later builds will be much faster, because everything that does not change will be cached.
+
+__Note__: When using __cabal install__, make sure you have `overwrite-policy: always`in your `.cabal/config` or delete old version of `cardano-node` and `cardano-cli` from `~/.cabal/bin`
 
     cabal install cardano-node cardano-cli
 
-__Note__: At the time of writing, there is a bug in the latest version of the software that prevents ``cabal install`` from working correctly. As a workaround, you can use ``cabal build`` instead:
+Alternatively you can use:
 
     cabal build all
-    cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-node-1.11.0/x/cardano-node/build/cardano-node/cardano-node ~/.local/bin/
-    cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-cli-1.11.0/x/cardano-cli/build/cardano-cli/cardano-cli ~/.local/bin/
+    cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-node-1.12.0/x/cardano-node/build/cardano-node/cardano-node ~/.local/bin/
+    cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-cli-1.12.0/x/cardano-cli/build/cardano-cli/cardano-cli ~/.local/bin/
 
 The remark about your `PATH` from above applies here as well: Make sure folder `~/.local/bin` is in your path or copy the executables to a folder that is.
 
-If you have old versions of `cardano-node` installed on your system, make sure that the new one will be picked! You can check by typing
-
-    which cardano-node
-
-    > ~/.local/bin/cardano-node
-
-If you ever want to update the code to a newer version, go to the ``cardano-node`` directory, pull the latest code with ``git`` and rebuild. 
+If you ever want to update the code to a newer version, go to the ``cardano-node`` directory, pull the latest code with ``git`` and rebuild.
 This will be much faster than the initial build:
 
     cd cardano-node
@@ -132,11 +128,11 @@ Note that it might be necessary to delete the `db`-folder (the database-folder) 
 ## Get genesis, configutarion, topology files, and start the node
 
 To start your node and connect it to F&F testnet you will need three important files: `ff-config.json` `ff-genesis.json` and `ff-topology.json`. We will download them from <https://hydra.iohk.io/build/2622346/download/1/index.html>
-		
-    wget https://hydra.iohk.io/build/2622346/download/1/ff-config.json 
-    wget https://hydra.iohk.io/build/2622346/download/1/ff-genesis.json
-    wget https://hydra.iohk.io/build/2622346/download/1/ff-topology.json
-    
+
+    wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/ff-topology.json
+    wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/ff-genesis.json
+    wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/ff-config.json
+
 Now you can start the node, double check that port 3001 is open. In the `cardano-node` directory run:
 
     cardano-node run \
@@ -148,7 +144,7 @@ Now you can start the node, double check that port 3001 is open. In the `cardano
 
 ![](https://github.com/CarlosLopezDeLara/cardano-tutorials/blob/CarlosLopezDeLara-QuickGuide-Excercise1/node-setup/images/starting-single-node.png)
 
-**Cool, you have just connected your node to the F&F Testnet.** 
+**Cool, you have just connected your node to the F&F Testnet.**
 
 ## Configure block-producing and relay nodes
 
@@ -157,14 +153,14 @@ Let's stop that single node now and do something more interesting.
 As stake pool operator, you will have two types of nodes, **block producing nodes** and **relay nodes**. Each block producing node must be accompagnied by several relay nodes.
 
 To be clear: Both types of nodes run exactly the same program, **cardano-node**. The difference between the two types lies in how they are configured and how they are connected to each other:
-	
+
 * A **block producing** node will be configured with various key-pairs needed for block generation (cold keys, KES hot keys and VRF hot keys). It will only be connected to its relay nodes.
 
 * A **relay node** will not be in possession of any keys and will therefore be unable to produce blocks. It will be connected to its block producing node, other relays and external nodes.
 
 Each node should run on a dedicated server, and the block producing node's server's firewall should be configured to only allow incoming connections from its relays.
 
-In this tutorial, we will simplify matters by having a block producing node (It won't produce blocks yet), and by using a single relay. For now, we will run both nodes on the same server. 
+In this tutorial, we will simplify matters by having a block producing node (It won't produce blocks yet), and by using a single relay. For now, we will run both nodes on the same server.
 
 We have explained how to run a single node, and now you have suitable configuration files `ff-config.json`,`ff-topology.json` and `ff-genesis.json` available.
 
@@ -179,13 +175,13 @@ Let us create separate folders for the two nodes and copy the configuration file
     cp ff-config.json ff-genesis.json ff-topology.json relay/
 
 
-We will run our block-producing node on port 3000 (make sure it is opened) and our relay on port 3001 
+We will run our block-producing node on port 3000 (make sure it is opened) and our relay on port 3001
 (you can of course use different ports if you like)
 
 We must modify the block-producer's `ff-topology.json` to only "talk" to the relay:
 
 Navigate to `/block-producing` and open `ff-topology.json` with your favorite text editor:
- 
+
     {
       "Producers": [
         {
@@ -195,7 +191,7 @@ Navigate to `/block-producing` and open `ff-topology.json` with your favorite te
         }
       ]
     }
-  
+
 In the  `relay/ff-topology.json` we instruct the node to "talk" to the block-producer *and* an external node as before:
 
 
@@ -213,12 +209,12 @@ In the  `relay/ff-topology.json` we instruct the node to "talk" to the block-pro
 	     }
 	   ]
 	 }
-    
-To start your nodes on our AWS instance, a terminal multiplexer like [`tmux`](https://github.com/tmux/tmux/wiki) is useful, because it allows us to open different panes in a single terminal window. 
+
+To start your nodes on our AWS instance, a terminal multiplexer like [`tmux`](https://github.com/tmux/tmux/wiki) is useful, because it allows us to open different panes in a single terminal window.
 
 We have already installed `tmux` when we installed dependencies.
 
-You can find a short overview of available commands [here](https://tmuxcheatsheet.com/). 
+You can find a short overview of available commands [here](https://tmuxcheatsheet.com/).
 
 You start `tmux` with
 
@@ -249,10 +245,10 @@ We switch to the other `tmux`-panel with `Ctrl`-`b`-`→` and start the relay no
      --host-addr x.x.x.x \
      --port 3001 \
      --config relay/ff-config.json
-                  
+
 After a few seconds, both nodes should receive data.
-   
-   
+
+
    ![tmux with two nodes](https://github.com/CarlosLopezDeLara/cardano-tutorials/blob/CarlosLopezDeLara-QuickGuide-Excercise1/node-setup/images/tmux-2-nodes.png)
 
 
@@ -260,16 +256,16 @@ Cool, we have put a couple of nodes to work! But this nodes can't do anything mo
 
 ## Create key pair and an address
 
-Create a new SSH connection with your server. 
-Go to `cardano-node` directory with 
-   
+Create a new SSH connection with your server.
+Go to `cardano-node` directory with
+
     cd cardano-node
 
-We will be using the command line interface`cardano-cli`now. To learn about the usage of this tool type: 
-   
+We will be using the command line interface`cardano-cli`now. To learn about the usage of this tool type:
+
     cardano-cli --help
 
-     
+
 We need to generate a __payment key pair__:
 
     cardano-cli shelley address key-gen \
@@ -290,47 +286,45 @@ The files are in plain-text format and human readable:
 * The first line describes the file type and should not be changed.
 * The second line is a free form text that we could change if we so wished.
 * The key itself is the cbor-encoded byte-string in the fourth line.
-   
 
-Now we can use the verification key we just created to make an address. For now, we will use an address type that can receive and send transactions, but cannot do staking: `enterprise` type. 
 
-    cardano-cli shelley address build-enterprise \
+Now we can use the verification key we just created to make an address. For now, we will use an address type that can receive and send transactions, but cannot do staking: `enterprise` type.
+
+    cardano-cli shelley address build \
         --payment-verification-key-file payment.vkey
 
-        > 820658...
+        > 01ed8ae0843a3...
 
 Let's store this address in a file:
 
     cardano-cli shelley address build-enterprise \
         --payment-verification-key-file payment.vkey > address
 
-Instead of writing the generated address to the console, this command will store it in file `address`. 
-   
+Instead of writing the generated address to the console, this command will store it in file `address`.
+
 
 To query your address (see the utxo's at that address),you first need to set environment variable `CARDANO_NODE_SOCKET_PATH` to the socket-path specified in your node configuration, we will use our relay node for that.
 
     export CARDANO_NODE_SOCKET_PATH=relay/db/node.socket      
-   
+
 Then use
-   
-    cardano-cli shelley query filtered-utxo \
-        --address 8206582..... \
+
+    cardano-cli shelley query utxo \
+        --address 01ed8ae0843a3..... \
         --testnet-magic 42
-  
- The output should look like this, note that we do not have any funds yet. 
-   
+
+ The output should look like this, note that we do not have any funds yet.
+
    ```
                               TxHash                                 TxIx        Lovelace
 ----------------------------------------------------------------------------------------
    ```
-   
-   
 
 
-Congratulations, you have finished excercise 1 !!
-
-## Node monitoring 
-
-Please read [Monitoring a node with EKG](https://github.com/input-output-hk/cardano-tutorials/blob/master/node-setup/ekg.md) and [Monitoring a node with Prometheus](https://github.com/input-output-hk/cardano-tutorials/blob/master/node-setup/prometheus.md) tutorials. 
 
 
+Congratulations, You just need to request some funds and you have finished excercise 1 !!
+
+## Node monitoring
+
+Please read [Monitoring a node with EKG](https://github.com/input-output-hk/cardano-tutorials/blob/master/node-setup/ekg.md) and [Monitoring a node with Prometheus](https://github.com/input-output-hk/cardano-tutorials/blob/master/node-setup/prometheus.md) tutorials.
