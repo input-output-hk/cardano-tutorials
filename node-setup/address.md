@@ -66,7 +66,7 @@ This created the file payment.addr, let's check its content:
    
    
 ### Stake address
-5. Finnaly, we can create our stake address. This address __CAN'T__ receive payments but will receive the rewards from participating in the protocol. We will save this address in the file `addr.stake`
+5. Finnaly, we can create our stake address. This address __CAN'T__ receive payments but will receive the rewards from participating in the protocol. We will save this address in the file `stake.addr`
 
 		cardano-cli shelley stake-address build \
 		--staking-verification-key-file stake.vkey \
