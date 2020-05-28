@@ -81,8 +81,7 @@ Now we will use both `payment2.vkey` and `stake2.vkey`to build a **payment addre
 
 	$ cardano-cli shelley address build \
 	--payment-verification-key-file payment.vkey \
-	--stake-verification-key-file stake.vkey \
-	--out-file payment2.addr
+	--staking-verification-key-file stake.vkey > payment2.addr
 
 
 **Generate Stake Address**
