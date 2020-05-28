@@ -55,7 +55,7 @@ In this tutorial we will see how to generate those keys and the certificate and 
 4. Now we can create an operational node certificate:
 
         cardano-cli shelley node issue-op-cert \
-            --kes-verification-key-file kes001.vkey \
+            --hot-kes-verification-key-file kes001.vkey \
             --cold-signing-key-file node.skey \
             --operational-certificate-issue-counter node.counter \
             --kes-period 0 \
