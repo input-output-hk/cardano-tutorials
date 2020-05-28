@@ -17,8 +17,8 @@ In this tutorial we will see how to generate those keys and the certificate and 
    To create such a key pair (on our offline computer), we type
 
         cardano-cli shelley node key-gen \
-            --cold-verification-key-file node.vkey \
-            --cold-signing-key-file node.skey \
+            --verification-key-file node.vkey \
+            --signing-key-file node.skey \
             --operational-certificate-issue-counter node.counter
 
    This will create three files (which we named `node.vkey`, `node.skey` and `node.counter` here, but you can choose those names freely),
