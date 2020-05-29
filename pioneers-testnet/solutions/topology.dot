@@ -1,0 +1,19 @@
+strict digraph G {
+
+    concentrate = true;
+    rankdir = LR;
+
+    node [style = filled, color = black, fillcolor = red, fontsize = 24];
+    edge [penwidth = 3];
+
+    node1  [label = "Pool 1"];
+    node2  [label = "Pool 2"];
+    relay  [label = "Relay"         , fillcolor = blue];
+    iohk   [label = "External Relay", fillcolor = gray];
+
+    {rank = same; node1; node2;};
+
+    node1 -> relay; relay -> node1;
+    node2 -> relay; relay -> node2;
+    relay -> iohk;
+}

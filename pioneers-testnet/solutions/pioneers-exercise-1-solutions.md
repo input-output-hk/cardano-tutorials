@@ -1,7 +1,8 @@
-# Installing and Running a Node: A quick guide
+# Example Solution for Shelley Stakepool Pioneers Exercise Sheet 1
 
+## Installing and Running a Node: A quick guide
 
-## REQUISITES
+### REQUISITES
 
 Set up your platform:
 
@@ -13,7 +14,7 @@ You will need:
 
 If you are not sure on how to configure your server, please read the [Getting access to Linux at AWS](https://github.com/input-output-hk/cardano-tutorials/blob/master/node-setup/AWS.md) tutorial.
 
-## Install dependencies
+### Install dependencies
 
 We need the following packages and tools on our Linux system to download the source code and build it:
     - the version control system ``git``,
@@ -71,7 +72,7 @@ Finally, we download and install GHC:
     sudo make install
     cd ..
 
-## Download the source code for cardano-node
+### Download the source code for cardano-node
 
 To download the source code, we use git:
 
@@ -96,7 +97,7 @@ For the FF-testnet, we will use tag `pioneer`, which we can check out as follows
     git checkout tags/pioneer-wave2
 
 
-## Build and install the node
+### Build and install the node
 
 Now we build and install the node with ``cabal``,
 which will take a couple of minutes the first time you do a build. Later builds will be much faster, because everything that does not change will be cached.
@@ -125,7 +126,7 @@ This will be much faster than the initial build:
 Note that it might be necessary to delete the `db`-folder (the database-folder) before running an updated version of the node.
 
 
-## Get genesis, configutarion, topology files, and start the node
+### Get genesis, configutarion, topology files, and start the node
 
 To start your node and connect it to F&F testnet you will need three important files: `ff-config.json` `ff-genesis.json` and `ff-topology.json`. We will download them from <https://hydra.iohk.io/build/2622346/download/1/index.html>
 
@@ -142,11 +143,11 @@ Now you can start the node, double check that port 3001 is open. In the `cardano
        --port 3001 \
        --config ff-config.json
 
-![](https://github.com/CarlosLopezDeLara/cardano-tutorials/blob/CarlosLopezDeLara-QuickGuide-Excercise1/node-setup/images/starting-single-node.png)
+![](../../node-setup/images/starting-single-node.png)
 
 **Cool, you have just connected your node to the F&F Testnet.**
 
-## Configure block-producing and relay nodes
+### Configure block-producing and relay nodes
 
 Let's stop that single node now and do something more interesting.
 
@@ -222,7 +223,7 @@ You start `tmux` with
 
 Then you can split the screen with `Ctrl`-`b`-`%` and navigate between the two panes with `Ctrl`-`b`-`→` and `Ctrl`-`b`-`←`.
 
-![tmux with two panels](https://github.com/CarlosLopezDeLara/cardano-tutorials/blob/CarlosLopezDeLara-QuickGuide-Excercise1/node-setup/images/tmux-view.png)
+![tmux with two panels](../../node-setup/images/tmux-view.png)
 
 
 From one `tmux`-panel we start the block-producing node with the following command. Under `host-addr` replace the x.x.x.x with your public ip
@@ -249,12 +250,12 @@ We switch to the other `tmux`-panel with `Ctrl`-`b`-`→` and start the relay no
 After a few seconds, both nodes should receive data.
 
 
-   ![tmux with two nodes](https://github.com/CarlosLopezDeLara/cardano-tutorials/blob/CarlosLopezDeLara-QuickGuide-Excercise1/node-setup/images/tmux-2-nodes.png)
+   ![tmux with two nodes](../../node-setup/images/tmux-2-nodes.png)
 
 
 Cool, we have put a couple of nodes to work! But this nodes can't do anything more than read from the blockchain. To setup a stake pool and being able to produce blocks we will need a set of keys, addresses, and other things. Let's create some keys first.
 
-## Create key pair and an address
+### Create key pair and an address
 
 Create a new SSH connection with your server.
 Go to `cardano-node` directory with
@@ -305,7 +306,7 @@ Instead of writing the generated address to the console, this command will store
 
 To query your address (see the utxo's at that address),you first need to set environment variable `CARDANO_NODE_SOCKET_PATH` to the socket-path specified in your node configuration, we will use our relay node for that.
 
-    export CARDANO_NODE_SOCKET_PATH=relay/db/node.socket      
+    export CARDANO_NODE_SOCKET_PATH=relay/db/node.socket
 
 Then use
 
@@ -325,6 +326,6 @@ Then use
 
 Congratulations, You just need to request some funds and you have finished excercise 1 !!
 
-## Node monitoring
+### Node monitoring
 
 Please read [Monitoring a node with EKG](https://github.com/input-output-hk/cardano-tutorials/blob/master/node-setup/ekg.md) and [Monitoring a node with Prometheus](https://github.com/input-output-hk/cardano-tutorials/blob/master/node-setup/prometheus.md) tutorials.
