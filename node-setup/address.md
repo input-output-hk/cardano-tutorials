@@ -39,8 +39,8 @@ Let's produce our cryptographic keys first, as we will need them to later create
 
 		cardano-cli shelley address build \
 		--payment-verification-key-file payment.vkey \
-		--stake-verification-key-file stake.vkey \
-		--out-file payment.addr  
+		--staking-verification-key-file stake.vkey \
+		> payment.addr  
      
 This created the file payment.addr, let's check its content: 
 
