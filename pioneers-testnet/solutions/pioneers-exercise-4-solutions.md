@@ -115,7 +115,7 @@
             --tx-in e4962d...#0 \
             --tx-out $(cat pay)+100000000000 \
             --tx-out $(cat addr)+899498915116 \
-            --ttl 355000 \ 
+            --ttl 355000 \
             --fee 167965 \
             --tx-body-file tx.raw   
 
