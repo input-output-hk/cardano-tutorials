@@ -238,10 +238,10 @@
             --tx-out $(cat pay)+99999255886 \
             --ttl 360000 \
             --fee 172805 \
-            --tx-body-file tx.raw \
+            --out-file tx.raw \
             --certificate deleg.cert 
 
-        shelley transaction sign \
+        cardano-cli shelley transaction sign \
             --tx-body-file tx.raw \
             --signing-key-file pay.skey \
             --signing-key-file stake.skey \
