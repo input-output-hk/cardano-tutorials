@@ -12,7 +12,7 @@ In these tutorials, we will cover the following topics:
 - [Creating keys and addresses](address.md).
 - [Creating a simple transaction](tx.md).
 - [Registering stake addresses to the blockchain](staking-key.md).
-- [KES Period] (KES_period.md)
+- [KES Period](KES_period.md)
 - [Creating an operational node certificate](node-op-cert.md).
 - [Registering a stake pool](pool.md).
 - [Monitoring a node with EKG](ekg.md).
