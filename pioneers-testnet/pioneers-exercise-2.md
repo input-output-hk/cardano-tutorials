@@ -81,7 +81,7 @@ In this excercise we will be following steps from [Creating a Simple Transaction
 
    | Format       | Explanation                                                                                  | 
    | ------------ | -------------------------------------------------------------------------------------------- |
-   | Id#Index     | This identifies the UTxO that is the source of the Ada – you should get this from  *payment.addr*. |
+   | Id#Index     | This identifies the UTxO that is the source of the Ada – you should get this from query utxo  |
    | Out+lovelace | Hex encoded address that will receive the Ada and the amount to send in Lovelace.            |
 
    You will also need to give it a time to live in slots (ttl) and a fee (in lovelace). Use the following settings:
@@ -96,14 +96,14 @@ In this excercise we will be following steps from [Creating a Simple Transaction
 Here's an **example** of a transaction that instructs the transfer of 100,000,000 lovelace from one account (account A) to another account (account B).
 
 	cardano-cli shelley transaction build-raw \
-		--tx-in a72ec98117def0939cc310b17de10d218f41ef5c84d94a89fe6097318d3de983#0 \
+		--tx-in 91999ea21177b33ebe6b8690724a0c026d410a11ad7521caa350abdafa5394c3#0 \
 		--tx-out 82065820acc8de978a8c484a6797a014c28f6746c98ebe93d7f4498d66ea639ec953933f+100000000 \
 		--tx-out a72ec98117def0939cc310b17de10d218f41ef5c84d94a89fe6097318d3de983+99899000000 \
 		--fee 1000000 \
 		--ttl 500000 \
 		--out-file txbody
 		
-Note that account A's address ```(a72ec98117def0939cc310b17de10d218f41ef5c84d94a89fe6097318d3de983)``` appears twice. Once in the transaction input and again as an output. This is the change being returned to account A, where the change is equal to the input from account A, minus the value being transferred to account B, minus the fee.
+Note that there are two outputs. First is the amount sent to account B, second is the change being returned to account A, where the change is equal to the input from account A, minus the value being transferred to account B, minus the fee.
 
 We are now ready to sign the transaction and submit it to the chain.
 
