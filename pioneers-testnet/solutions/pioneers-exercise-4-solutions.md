@@ -115,13 +115,13 @@
             --tx-in e4962d...#0 \
             --tx-out $(cat pay)+100000000000 \
             --tx-out $(cat addr)+899498915116 \
-            --ttl 355000 \ 
+            --ttl 355000 \
             --fee 167965 \
             --tx-body-file tx.raw   
 
     Sign it:
 
-        cardano-cli shelley transaction sign \ 
+        cardano-cli shelley transaction sign \
             --tx-body-file tx.raw \
             --signing-key-file addr.skey \
             --testnet-magic 42 \
@@ -144,7 +144,7 @@
     but it is more cost efficient to pay the correct amount.  
     You can use a CLI command to calculate the fee.
 
-        cardano-cli shelley transaction calculate-min-fee \ 
+        cardano-cli shelley transaction calculate-min-fee \
             --tx-in-count 1 \
             --tx-out-count 1 \
             --ttl 355000 \
@@ -241,7 +241,7 @@
             --tx-body-file tx.raw \
             --certificate deleg.cert 
 
-        shelley transaction sign \
+        cardano-cli shelley transaction sign \
             --tx-body-file tx.raw \
             --signing-key-file pay.skey \
             --signing-key-file stake.skey \
