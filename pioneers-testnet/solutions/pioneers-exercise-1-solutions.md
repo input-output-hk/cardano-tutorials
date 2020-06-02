@@ -293,16 +293,10 @@ Now we can use the verification key we just created to make an address. For now,
 
     cardano-cli shelley address build \
         --payment-verification-key-file payment.vkey
+	--stake-verification-key stake.vkey 
+	--out-file payment.addr
 
         > 01ed8ae0843a3...
-
-Let's store this address in a file:
-
-    cardano-cli shelley address build-enterprise \
-        --payment-verification-key-file payment.vkey > address
-
-Instead of writing the generated address to the console, this command will store it in file `address`.
-
 
 To query your address (see the utxo's at that address),you first need to set environment variable `CARDANO_NODE_SOCKET_PATH` to the socket-path specified in your node configuration, we will use our relay node for that.
 
