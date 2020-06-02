@@ -41,14 +41,14 @@ Let's create a second __payment key pair__ and __address__ (You should have crea
 
 This has created two files containging our signing key and our verification key, let's take a look.
 
-	$ cat payment.skey
+	$ cat payment2.skey
 
 	> type: SigningKeyShelley
 	> title: Free form text
 	> cbor-hex:
 	>  18ad58202bd444b77c3149a31a59729c91691ff14dccf0a0891d6c6630668007f27e5806
 
-	$ cat payment.vkey
+	$ cat payment2.vkey
 
 	> type: PaymentVerificationKeyShelley
 	> title: Free form text
