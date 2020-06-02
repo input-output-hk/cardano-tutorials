@@ -103,7 +103,7 @@ Here's an **example** of a transaction that instructs the transfer of 100,000,00
 		--ttl 500000 \
 		--out-file txbody
 		
-Note that there are two outputs. First is the change on account B, second is the change being returned to account A, where the change is equal to the input from account A, minus the value being transferred to account B, minus the fee.
+Note that there are two outputs. First is the amount sent to account B, second is the change being returned to account A, where the change is equal to the input from account A, minus the value being transferred to account B, minus the fee.
 
 We are now ready to sign the transaction and submit it to the chain.
 
