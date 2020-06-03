@@ -15,6 +15,7 @@ In these tutorials, we will cover the following topics:
 - [KES Period](KES_period.md)
 - [Creating an operational node certificate](node-op-cert.md).
 - [Registering a stake pool](pool.md).
+- [Retiring a stake pool](retire.md).
 - [Monitoring a node with EKG](ekg.md).
 - [Monitoring a node with Prometheus](prometheus.md).
 - [Quick guide for excercise 1](GuideForExcercise1.md)
