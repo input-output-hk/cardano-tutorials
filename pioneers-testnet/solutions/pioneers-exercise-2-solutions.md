@@ -83,8 +83,8 @@ This has created another set of keys, these ones will later allow us to delegate
 Now we will use both `payment2.vkey` and `stake2.vkey`to build a **payment address**. This will link our payment address to our **stake keys** and **stake address**.
 
 	$ cardano-cli shelley address build \
-	--payment-verification-key-file payment.vkey \
-	--stake-verification-key-file stake.vkey \
+	--payment-verification-key-file payment2.vkey \
+	--stake-verification-key-file stake2.vkey \
 	--out-file payment2.addr
 
 
@@ -107,7 +107,7 @@ To create our transaction we will need the protocl parameters, so let's query th
 	    --testnet-magic 42 \
 	    --out-file protocol.json
 
-We also need the UTXO details of the payment address that will send the funds.
+We also need the UTXO details of the __payment.addr__ that will send the funds.
 
 	$ cardano-cli shelley query utxo \
 	    --address $(cat payment.addr) \
@@ -177,7 +177,7 @@ Again, you may want to open a text editor to work on building the transaction, a
 
 * tx-in  --> the UTXO from where you are sending funds__#TxIx__ from above (0 in this case).
 * tx-out --> receiving address (payment2.addr)
-* tx-out --> sending the change back
+* tx-out --> sending the change back to payment.addr
 * ttl    --> absolute slot number
 * fee    --> the result from calculate-min-fee
 * out-file --> the output raw file
@@ -202,6 +202,7 @@ We use the __payment.skey__ to sign the transaction
 
 
 **QUERY THE UTXOS OF BOTH ADDRESSES**
+Once the transaction has been submitted, we can check the balances of our two addresses: 
 
 	$ cardano-cli shelley query utxo --address $(cat payment.addr) --testnet-magic 42
 
