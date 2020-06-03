@@ -61,8 +61,14 @@ This created the file payment.addr, let's check its content:
         cardano-cli shelley query utxo \
             --address 01df79ad8d... \
             --testnet-magic 42
+	    
+	    >                           TxHash                                 TxIx        Lovelace
+	    ---------------------------------------------------------------------------------------
 
-   (The `--testnet-magic 42` is specific to the FF-testnet, for mainnet we would use `--mainnet` instead.)
+__Note__ At this moment there is no balance displayed since we just created this address. Once you get funds you will find the UTXO hash under TxHash, its Index under TxIx and the balance in lovelaces under Lovelace. 
+
+   
+(The `--testnet-magic 42` is specific to the FF-testnet, for mainnet we would use `--mainnet` instead.)
    
    
 ### Stake address
