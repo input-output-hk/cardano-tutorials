@@ -1,5 +1,7 @@
 # Shelley Stakepool Pioneers Exercise Sheet 6
 
+LATEST TAG: 1.13.0
+
 ## Stake Pool Parameters and Protocol Parameters
 
 In the [fifth exercise](pioneers-exercise-5.md),
@@ -16,7 +18,7 @@ You may have already done some of these exercises as optional exercises on
 2. 	Read the
     [Cardano Tutorial Documentation](https://github.com/input-output-hk/cardano-tutorials)
     and [General Documentation on Stake Pool Parameters, Pool De-Registration and Protocol Parameters](https://testnets.cardano.org).
-3. 	Checkout and build the sources which have been tagged with `pioneer-wave2`.
+3. 	Checkout and build the sources which have been tagged with `1.13.0`.
 4. 	Start a relay node and the node running your stake pool from [Exercise Sheet 5](pioneers-exercise-5.md).
 
 ### Objectives
@@ -55,7 +57,7 @@ GitHub repositories.
     Pledge the required ada to your pool if you didn’t do that when you registered it
     (you did remember not to pledge all your ada to your first pool, didn’t you?).
 
-3. 	Record your “pool id” in the Pioneer spreadsheet, to advertise that it is running,
+3. 	Record your “pool id” in the Shelley Testnet spreadsheet, to advertise that it is running,
     and advertise the new pool cost and margin settings in the spreadsheet,
     as well as those for your original pool.
 
@@ -129,7 +131,7 @@ GitHub repositories.
 
     Run a stake pool on a different OS (e.g. MacOS, FreeBSD or a different flavour of Linux),
     perhaps under a Virtual Machine.
-    Integrate this stake pool into the Pioneer Testnet.
+    Integrate this stake pool into the Shelley Testnet.
     NB: do not try to run a stake pool on Windows unless you are very experienced –
     there are many networking issues you could encounter, for example –
     you will probably find it easiest to use the Windows Subsystem for Linux (WSL) if you do this.

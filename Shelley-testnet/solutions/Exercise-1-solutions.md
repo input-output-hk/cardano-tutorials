@@ -91,10 +91,10 @@ We change our working directory to the downloaded source code folder:
     cd cardano-node
 
 For reproducible builds, we should check out a specific release, a specific "tag".
-For the FF-testnet, we will use tag `pioneer`, which we can check out as follows:
+For the FF-testnet, we will use tag `1.13.0`, which we can check out as follows:
 
     git fetch --all --tags
-    git checkout tags/pioneer-wave2
+    git checkout tags/1.13.0
 
 
 ### Build and install the node
@@ -106,11 +106,6 @@ __Note__: When using __cabal install__, make sure you have `overwrite-policy: al
 
     cabal install cardano-node cardano-cli
 
-Alternatively you can use:
-
-    cabal build all
-    cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-node-1.12.0/x/cardano-node/build/cardano-node/cardano-node ~/.local/bin/
-    cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-cli-1.12.0/x/cardano-cli/build/cardano-cli/cardano-cli ~/.local/bin/
 
 The remark about your `PATH` from above applies here as well: Make sure folder `~/.local/bin` is in your path or copy the executables to a folder that is.
 
@@ -293,7 +288,7 @@ Now we can use the verification key we just created to make an address. For now,
 
     cardano-cli shelley address build \
         --payment-verification-key-file payment.vkey
-	--stake-verification-key stake.vkey 
+	--stake-verification-key stake.vkey
 	--out-file payment.addr
 
         > 01ed8ae0843a3...

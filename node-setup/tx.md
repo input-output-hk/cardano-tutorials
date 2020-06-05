@@ -35,7 +35,7 @@ is in file `payment.skey`.
    So we need to pay 167965 lovelace fee.
 
    Assuming we want to spend an original utxo containing 1,000,000 ada (1,000,000,000,000 lovelace),
-   we therefore will have: 
+   we therefore will have:
 
         expr 1000000000000 - 100000000 - 167965
 
@@ -57,8 +57,8 @@ is in file `payment.skey`.
 3. Now we have all the information we need to create the transaction (using a "time to live" of slot 100000,
    after which the transaction will become invalid) and writing the transaction
    to file `tx001.raw`).
-   
-   __Note:__ The TTL is an absolute slot number (not relative), which means that the `--ttl` value 
+
+   __Note:__ The TTL is an absolute slot number (not relative), which means that the `--ttl` value
    should be greater than the current slot number.
 
         cardano-cli shelley transaction build-raw \
