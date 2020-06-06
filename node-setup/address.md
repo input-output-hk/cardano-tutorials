@@ -40,7 +40,8 @@ Let's produce our cryptographic keys first, as we will need them to later create
 		cardano-cli shelley address build \
 		--payment-verification-key-file payment.vkey \
 		--stake-verification-key-file stake.vkey \
-		--out-file payment.addr  
+		--out-file payment.addr \
+		--testnet-magic 42
      
 This created the file payment.addr, let's check its content: 
 
@@ -76,7 +77,8 @@ __Note__ At this moment there is no balance displayed since we just created this
 
 		cardano-cli shelley stake-address build \
 		--staking-verification-key-file stake.vkey \
-		--out-file stake.addr 
+		--out-file stake.addr \
+		--testnet-magic 42 
 
 This created the file stake.addr, let's check its content: 
 
