@@ -129,6 +129,8 @@
             --tx-body-file tx.raw \
             --certificate pool.cert \
             --certificate deleg.cert
+        
+__Remark:__ orders matters : the pool.cert must be added before the deleg.cert
 
         cardano-cli shelley transaction sign \
             --tx-body-file tx.raw \
