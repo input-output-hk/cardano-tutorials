@@ -70,8 +70,8 @@ Please report any bugs through the cardano-node and cardano-tutorials github rep
 3. 	Register the pool online.  
     Registration is done by submitting a transaction that contains the
     pool registration certificate. 
-    You can include the pledge delegation certificate in the same transaction. 
-
+    You can include the pledge delegation certificate in the same transaction. ( Note that the certificates order matters : you    must add the pool registration certificate first then the pledge delegation certificate. )
+    
     In addition to the usual transaction fees, you will also have to pay the
     pool deposit (specified in the genesis file) in that transaction.
 
