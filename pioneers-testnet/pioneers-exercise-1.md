@@ -49,7 +49,7 @@ This should be everything that you need to get you up and running.
  cardano-node run --config …
 ```
 
-1. Check that your instance of the node is properly connected to the Pioneer testnet and is verifying the blocks that are produced, as described in the IOHK tutorial.
+3. Check that your instance of the node is properly connected to the Pioneer testnet and is verifying the blocks that are produced, as described in the IOHK tutorial.
 
   Congratulations!  You now have a working node that is connected to the first-ever public Shelley Cardano network! In our later exercises, we will first use this to submit transactions, and then set up a working stake pool, so that you can produce blocks yourself.
 
