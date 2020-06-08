@@ -22,7 +22,7 @@ In the first exercise, we set up a Cardano node and ran it.  In this exercise, w
         …
 ```
 
-    Before building, you might want to confirm that you are on the correct tagged version:
+Before building, you might want to confirm that you are on the correct tagged version:
 
 ```bash
         git branch
@@ -41,7 +41,8 @@ In the second exercise, we will make sure that you can:
 
 This unlocks many of the things that we will want to do with the Cardano Blockchain in future, including transferring Ada, stake pool registration, and staking.
 
-If you have any questions or encounter any problems, please feel free to use the dedicated Friend & Family Telegram channel.  IOHK staff will be monitoring the channel, and other Pioneers may also be able to help you.
+As before, if you have any questions or encounter any problems, please feel free to use the dedicated Cardano Forum channel.  IOHK staff will be monitoring the channel, and other pool operators may also be able to help you.
+
 
 ### Exercises
 

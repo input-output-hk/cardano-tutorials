@@ -31,10 +31,6 @@ In the sixth exercise, we will make sure that you can:
 
 As before, if you have any questions or encounter any problems, please feel free to use the dedicated Cardano Forum channel.  IOHK staff will be monitoring the channel, and other pool operators may also be able to help you.
 
-Please report any bugs or improvements through the
-[cardano-node](https://github.com/input-output-hk/cardano-node)
-and [cardano-tutorials](https://github.com/input-output-hk/cardano-tutorials)
-GitHub repositories.
 
 ### Exercises
 
@@ -137,3 +133,10 @@ GitHub repositories.
 You have now learnt the rudiments of how to operate a stake pool,
 and can consider yourself to be a Graduate Stakepool Operator.
 Congratulations!
+
+
+### Feedback
+
+Please provide any feedback or suggested changes to the tutorials or exercises by either raising an issue on the [cardano-tutorials repository](https://github.com/input-output-hk/cardano-tutorials) or by forking the repository and submitting a PR.
+
+Please provide any feedback or suggested changes on the node itself by raising an issue at the [cardano-node repository](https://github.com/input-output-hk/cardano-node).
