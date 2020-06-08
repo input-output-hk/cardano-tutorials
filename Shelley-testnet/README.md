@@ -1,6 +1,6 @@
-# Shelley Friends & Family Testnet Exercises
+# Shelley Testnet Exercises
 
-This folder contains exercises intended for pioneers in the Shelley Friends & Family Testnet.
+This folder contains exercises intended users of the Shelley Testnet.
 
 - [Exercise Sheet 1](pioneers-exercise-1.md)
 - [Exercise Sheet 2](pioneers-exercise-2.md)
