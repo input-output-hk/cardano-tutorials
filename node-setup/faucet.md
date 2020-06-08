@@ -1,4 +1,4 @@
-# Using the Faucet
+# Using the faucet
 
 The faucet allows you to get some "test ada",
 so that you can try out features that require funds.
