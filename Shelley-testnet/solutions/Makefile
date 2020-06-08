@@ -1,8 +1,8 @@
-pdf_files = pioneers-exercise-1-solutions.pdf pioneers-exercise-2-solutions.pdf pioneers-exercise-4-solutions.pdf pioneers-exercise-5-solutions.pdf
+pdf_files = Exercise-1-solutions.pdf Exercise-2-solutions.pdf Exercise-4-solutions.pdf Exercise-5-solutions.pdf
 png_files = topology.png
 
 .PHONE: all
-all: $(pdf_files) pioneers-exercise-6-solutions.pdf
+all: $(pdf_files) Exercise-6-solutions.pdf
 
 $(pdf_files): %.pdf: %.md
 	pandoc -f markdown -t latex -o $@ $<
@@ -10,5 +10,5 @@ $(pdf_files): %.pdf: %.md
 $(png_files): %.png: %.dot
 	dot -Tpng $< -o $@
 
-pioneers-exercise-6-solutions.pdf: topology.png pioneers-exercise-6-solutions.md
-	pandoc -f markdown -t latex -o pioneers-exercise-6-solutions.pdf pioneers-exercise-6-solutions.md
+Exercise-6-solutions.pdf: topology.png Exercise-6-solutions.md
+	pandoc -f markdown -t latex -o Exercise-6-solutions.pdf Exercise-6-solutions.md
