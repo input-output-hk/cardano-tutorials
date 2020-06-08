@@ -44,7 +44,7 @@ As before, if you have any questions or encounter any problems, please feel free
     Do not attempt to replicate the keys and certificates from your original pool.
     This will make you an adversarial pool.
 
-    As before, you will need to decide on the three key settings: cost, margin and pledge.
+    As before, you will need to decide on the three key settings: *cost*, *margin* and *pledge*.
     Set these to different values from your main pool.
 
     Pledge the required ada to your pool if you didn’t do that when you registered it

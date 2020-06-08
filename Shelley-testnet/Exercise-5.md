@@ -21,8 +21,8 @@ In this exercise, we will register and run our own pool.
 
     1. 	One or more funded addresses;
     2. 	The keys and operational certificate for the stake pool
-        that you set up in Exercise 3;
-    3. 	The stake keys from Exercise 4.
+        that you set up in [Exercise 3](Exercise-3.md);
+    3. 	The stake keys from [Exercise 4](Exercise-4.md).
 
 4. 	Update your instances of *cardano-node* and *cardano-cli* if you need to.
 
