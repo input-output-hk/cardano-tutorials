@@ -62,7 +62,7 @@ As before, if you have any questions or encounter any problems, please feel free
     Choose a suitable pledge value.
     Advertise these new settings in the spreadsheet.
 
-5. 	IOHK will change the following general protocol parameter settings over the course of a few epochs:
+5. 	We will change the following general protocol parameter settings over the course of a few epochs:
 
     1.  Saturation threshold (`k`);
     2.  Influence factor (`a0`);

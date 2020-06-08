@@ -73,7 +73,7 @@ and verify that your new node instance is running:
 
    Your node should be connected to the Shelley Testnet and verifying the blocks that it receives.
 
-2. Verify that you have received some test Ada at the address that you provided to IOHK in Exercise 1, *payment.addr*.
+2. Verify that you have received some test Ada at the address that you created in Exercise 1, *payment.addr*.
 
 ```bash
         cardano-cli shelley query utxo \
@@ -141,7 +141,7 @@ We are now ready to sign the transaction and submit it to the chain.
             --out-file txout
 ```
 
-   You will need to give the correct Network Magic Id for the Testnet, as supplied by IOHK in the Genesis file (e.g. 42).
+You will need to give the correct Network Magic Id for the Testnet, as supplied in the Genesis file (e.g. 42).
 
 5. Submit your transaction to the Blockchain:
 
