@@ -19,4 +19,4 @@ In these tutorials, we will cover the following topics:
 - [Retiring a stake pool](retire.md)
 - [Monitoring a node with EKG](ekg.md)
 - [Monitoring a node with Prometheus](prometheus.md)
-- [Quick guide for exercise 1](GuideForExcercise1.md)
+
