@@ -1,4 +1,4 @@
-# Example Solution for Shelley Stakepool Pioneers Exercise Sheet 4
+# Example Solution for Shelley Stakepool Exercise Sheet 4
 LATEST NODE TAG: 1.13.0
 ## Delegation
 
@@ -17,7 +17,7 @@ LATEST NODE TAG: 1.13.0
     make sure that folder is in your `PATH` and takes precedence over
     other locations where old binaries might be lying around.
 
-4.	Start a node and obtain the protocol parameters.  
+4.	Start a node and obtain the protocol parameters.
     Make sure you know what each of these is (especially the fees).
 
         wget https://hydra.iohk.io/build/2715059/download/1/ff-config.json
@@ -117,7 +117,7 @@ LATEST NODE TAG: 1.13.0
             --tx-out $(cat addr)+899498915116 \
             --ttl 355000 \
             --fee 167965 \
-            --tx-body-file tx.raw   
+            --tx-body-file tx.raw
 
     Sign it:
 
@@ -141,7 +141,7 @@ LATEST NODE TAG: 1.13.0
             --out-file stake.cert
 
     We can pay an arbitrary fee for the transaction as we did before,
-    but it is more cost efficient to pay the correct amount.  
+    but it is more cost efficient to pay the correct amount.
     You can use a CLI command to calculate the fee.
 
         cardano-cli shelley transaction calculate-min-fee \

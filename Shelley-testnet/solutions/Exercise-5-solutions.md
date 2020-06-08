@@ -1,4 +1,4 @@
-# Example Solution for Shelley Stakepool Pioneers Exercise Sheet 5
+# Example Solution for Shelley Stakepool Exercise Sheet 5
 
 LATEST NODE TAG: 1.13.0
 
@@ -81,14 +81,14 @@ LATEST NODE TAG: 1.13.0
             --pool-owner-staking-verification-key stake.vkey \
             --out-file pool.cert
 
-2. 	Pledge some stake to your stake pool.  
+2. 	Pledge some stake to your stake pool.
 
         cardano-cli shelley stake-address delegation-certificate \
             --staking-verification-key-file stake.vkey \
             --stake-pool-verification-key-file node.vkey \
             --out-file deleg.cert
 
-3. 	Register the pool online.  
+3. 	Register the pool online.
 
         cardano-cli shelley transaction calculate-min-fee \
             --tx-in-count 1 \

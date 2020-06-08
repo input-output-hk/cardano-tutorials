@@ -1,4 +1,4 @@
-# Example Solution for Shelley Stakepool Pioneers Exercise Sheet 6
+# Example Solution for Shelley Stakepool Exercise Sheet 6
 
 ## Stake Pool Parameters and Protocol Parameters
 

@@ -1,4 +1,4 @@
-# Example Solution for Shelley Stakepool Pioneers Exercise Sheet 2
+# Example Solution for Shelley Stakepool Exercise Sheet 2
 LATEST NODE TAG: 1.13.0
 
 ## Objectives

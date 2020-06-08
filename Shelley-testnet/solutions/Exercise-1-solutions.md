@@ -1,4 +1,4 @@
-# Example Solution for Shelley Stakepool Pioneers Exercise Sheet 1
+# Example Solution for Shelley Stakepool Exercise Sheet 1
 
 ## Installing and Running a Node: A quick guide
 
