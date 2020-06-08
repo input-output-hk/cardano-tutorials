@@ -1,7 +1,7 @@
 # Block producers and Relays
 
 There are two types of nodes, _block producing nodes_ and _relay nodes_. 
-Each block producing node must be accompanied by several relay nodes.
+Each block producing node must be accompanied by one or more relay nodes.
 
 To be clear: Both types of nodes run exactly the same program, _cardano-node_.
 The difference between the two types lies in how they are configured and how they are connected to each other:
