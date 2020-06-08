@@ -61,8 +61,8 @@ Please report any bugs through the cardano-node and cardano-tutorials github rep
     and the pledge to 1,000 ada.
 
 2. 	Pledge some stake to your stake pool.
-    You do this by creating a delegation certificate as explained
-    on [Exercise Sheet 4](Exercise-4.md) that delegates
+    You do this by creating a delegation certificate (as you did in
+    [Exercise 4](Exercise-4.md)) that delegates
     enough stake from the "owner staking key" specified in the registration certificate
     to your own pool to cover your pledge promise.
 
@@ -92,7 +92,7 @@ Please report any bugs through the cardano-node and cardano-tutorials github rep
     Also confirm that your pool is receiving the correct rewards.
     Congratulations, you are now a fully fledged Shelley Testnet pool operator!
 
-    __Note:__ At the time of writing, there is no way to check rewards yet.
+    __Note:__ At the time of writing, there is no way to check rewards yet. This feature is coming very soon.
 
 7. 	Optional Exercise (Easy).
 
