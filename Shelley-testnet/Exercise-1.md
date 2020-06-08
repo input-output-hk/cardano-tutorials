@@ -62,8 +62,8 @@ This should be everything that you need to get you up and running.
 
 5. Request funds from the faucet with
 
-    curl -v -XPOST “https://faucet.ff.dev.cardano.org/send-money/<YOURADDR>?apiKey=<APIKEY>”
-
+    curl -v -XPOST “https://faucet.ff.dev.cardano.org/send-money/<YOURADDR>
+    
 You can also hit it once a day without the API key to get 1K.
 
 Extra funds can be returned to    
