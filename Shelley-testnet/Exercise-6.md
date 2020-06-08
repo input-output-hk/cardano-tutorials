@@ -1,25 +1,25 @@
-# Shelley Stakepool Pioneers Exercise Sheet 6
+# Shelley Stakepool Exercise Sheet 6
 
 LATEST TAG: 1.13.0
 
 ## Stake Pool Parameters and Protocol Parameters
 
-In the [fifth exercise](pioneers-exercise-5.md),
+In the [fifth exercise](Exercise-5.md),
 we registered a stake pool, pledged to it, started it and produced blocks.
 
 In this exercise, we will investigate some additional pool parameters.
 
 You may have already done some of these exercises as optional exercises on
-[Exercise Sheet 5](pioneers-exercise-5.md). Feel free to skip these if so.
+[Exercise Sheet 5](Exercise-5.md). Feel free to skip these if so.
 
 ### Prerequisites
 
-1. 	Complete [Exercise Sheet 5](pioneers-exercise-5.md).
+1. 	Complete [Exercise Sheet 5](Exercise-5.md).
 2. 	Read the
     [Cardano Tutorial Documentation](https://github.com/input-output-hk/cardano-tutorials)
     and [General Documentation on Stake Pool Parameters, Pool De-Registration and Protocol Parameters](https://testnets.cardano.org).
 3. 	Checkout and build the sources which have been tagged with `1.13.0`.
-4. 	Start a relay node and the node running your stake pool from [Exercise Sheet 5](pioneers-exercise-5.md).
+4. 	Start a relay node and the node running your stake pool from [Exercise Sheet 5](Exercise-5.md).
 
 ### Objectives
 
@@ -29,10 +29,7 @@ In the sixth exercise, we will make sure that you can:
 2. 	Vary the stake pool parameters;
 3. 	Retire Stake Pools.
 
-As before, if you have any questions or encounter any problems,
-please feel free to use the dedicated Telegram channel.
-
-IOHK staff will be monitoring the channel, and other Pioneers may also be able to help you.
+As before, if you have any questions or encounter any problems, please feel free to use the dedicated Cardano Forum channel.  IOHK staff will be monitoring the channel, and other pool operators may also be able to help you.
 
 Please report any bugs or improvements through the
 [cardano-node](https://github.com/input-output-hk/cardano-node)
@@ -43,7 +40,7 @@ GitHub repositories.
 
 1. 	Create a new set of hot keys for your stake pool and restart it with those keys.
 
-2. 	Register and start a second stake pool, as you did in [Exercise 5](pioneers-exercise-4.md).
+2. 	Register and start a second stake pool, as you did in [Exercise 5](Exercise-5.md).
     You can connect the pool to the same relay node as your first stake pool if you like,
     but you should give it different port connections (e.g. 127.0.0.1:4244)
     and may need to update your local topology.
@@ -82,9 +79,9 @@ GitHub repositories.
 
 6.  _Optional Exercise (Easy)._
 
-    Persuade 5 or more additional Pioneers to delegate to your pools.
+    Persuade 5 or more additional Testnet users to delegate to your pools.
     Check your rewards.
-    Compete with other Pioneers to offer the most attractive pool.
+    Compete with other Testnet Stakepool operators to offer the most attractive pool.
 
 7. 	_Optional Exercise (Medium)._
 
@@ -93,7 +90,7 @@ GitHub repositories.
 
 8. 	_Optional Exercise (Easy to Medium)._
 
-    Work with other Pioneers to explore the network topology
+    Work with other Testnet stakepool operators to explore the network topology
     by testing connections between relays within and across different countries and continents.
     What is the longest connection you can make and still have a good chance of producing blocks?
     What is the optimal node setup? Is network bandwidth more important than latency?
@@ -118,7 +115,7 @@ GitHub repositories.
 
             cardano-node … +RTS -qg
 
-    Share your findings with the other Pioneers.
+    Share your findings with the other Stakepool operators.
     Note that you may need to add the `-rtsopts` flag to the `cabal install`
     to be able to use some of the tuning options.
 
@@ -138,5 +135,5 @@ GitHub repositories.
 
 
 You have now learnt the rudiments of how to operate a stake pool,
-and can consider yourself to be a Master Pioneer.
-Congratulations! Please let us know about your journey by completing the exit survey.
+and can consider yourself to be a Graduate Stakepool Operator.
+Congratulations!

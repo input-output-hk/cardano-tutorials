@@ -1,4 +1,4 @@
-# Shelley Stakepool Pioneers Exercise Sheet 3
+# Shelley Stakepool Exercise Sheet 3
 
 LATEST TAG: 1.13.0
 
@@ -51,7 +51,8 @@ In the third exercise, we will make sure that you can:
 2.  Handle the Key Evolving Signature Scheme;
 3.  Start the relay and the stake pool.
 
-As before, if you have any questions or encounter any problems, please feel free to use the dedicated Telegram channel.  IOHK staff will be monitoring the channel, and other Pioneers may also be able to help you.
+As before, if you have any questions or encounter any problems, please feel free to use the dedicated Cardano Forum channel.  IOHK staff will be monitoring the channel, and other pool operators may also be able to help you.
+
 
 Please report any bugs or issues through the relevant github repository.
 
@@ -197,14 +198,21 @@ Run your relay and pool independently.  This can either be on different physical
 
 13.  Optional Exercise (Easy).
 
-Inspect the Genesis JSON file.  This contains the key settings for the Testnet Blockchain. Do you know what each of the parameters does?  If not, ask the other Pioneers on the Telegram channel.
+Inspect the Genesis JSON file.  This contains the key settings for the Testnet Blockchain. Do you know what each of the parameters does?  If not, ask one of your peers.
 
 
 14.  Optional Exercise (Easy).
 
-Similarly, inspect the Configuration JSON file.  This contains the settings for your node. As with the Genesis file, make sure you know what each of the parameters does, and if not, ask the other Pioneers on the Telegram channel.
+Similarly, inspect the Configuration JSON file.  This contains the settings for your node. As with the Genesis file, make sure you know what each of the parameters does, and if not, ask one of your peers.
 
 
 You now have a setup that will let you run a pool and have gained experienced with the node and CLI, but we have not set up a proper staking key and we have not yet registered the pool on-chain, so it is not possible to delegate to it, or to produce any blocks.  We have made good progress, but there will certainly be more Bears that we will encounter!
 
 In the next exercise, we will set up staking keys and use the official staking commands to delegate funds to different pools.
+
+
+### Feedback
+
+Please provide any feedback or suggested changes to the tutorials or exercises by either raising an issue on the [cardano-tutorials repository](https://github.com/input-output-hk/cardano-tutorials) or by forking the repository and submitting a PR.
+
+Please provide any feedback or suggested changes on the node itself by raising an issue at the [cardano-node repository](https://github.com/input-output-hk/cardano-node).

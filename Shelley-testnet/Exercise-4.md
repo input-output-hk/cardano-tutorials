@@ -1,10 +1,10 @@
-# Shelley Stakepool Pioneers Exercise Sheet 4
+# Shelley Stakepool Exercise Sheet 4
 
 LATEST TAG: 1.13.0
 
 ## Delegation
 
-In the third exercise, we created relay and pool nodes.  
+In the third exercise, we created relay and pool nodes.
 In this exercise, we will set up staking keys and delegate some stake to an existing pool.
 
 ### Prerequisites
@@ -19,7 +19,7 @@ In this exercise, we will set up staking keys and delegate some stake to an exis
 
 3. 	Checkout and build the sources which have been tagged with `1.13.0`.
 
-4.	Start a node and obtain the protocol parameters.  
+4.	Start a node and obtain the protocol parameters.
     Make sure you know what each of these is (especially the fees).
 
         cardano-node ...
@@ -33,10 +33,7 @@ In the fourth exercise, we will make sure that you can:
 1.  Create staking keys;
 2.  Delegate stake to existing stake pools.
 
-As before, if you have any questions or encounter any problems,
-please feel free to use the dedicated Telegram channel.  
-IOHK staff will be monitoring the channel,
-and other Pioneers may also be able to help you.
+As before, if you have any questions or encounter any problems, please feel free to use the dedicated Cardano Forum channel.  IOHK staff will be monitoring the channel, and other pool operators may also be able to help you.
 
 Please report any bugs through the `cardano-node` and `cardano-tutorials`
 GitHub repositories as usual.
@@ -64,7 +61,7 @@ GitHub repositories as usual.
         cardano-cli shelley address build ...
 
 4. 	Before you can actually stake any ada,
-    your stake address must be registered on-chain.  
+    your stake address must be registered on-chain.
     Registration is just a special kind of transaction whose payload is a certificate.
     The CLI has a special command to do this, but we will build the transaction
     by hand to give you experience with this.
@@ -75,15 +72,15 @@ GitHub repositories as usual.
 	    cardano-cli shelley stake-address registration-certificate ...
 
     We can pay an arbitrary fee for the transaction as we did before,
-    but it is more cost efficient to pay the correct amount.  
+    but it is more cost efficient to pay the correct amount.
     You can use a CLI command to calculate the fee.
 
 	    cardano-cli shelley transaction calculate-min-fee \
 	        --certificate stakecert ...
 
     You should pass in both your stake address signing key and your UTxO signing key
-    from Step 1.  
-    The UTxO will be used to pay the fees for the transaction.  
+    from Step 1.
+    The UTxO will be used to pay the fees for the transaction.
     You also need to specify the numbers of inputs to, and outputs from, the transaction.
     The fee calculation is based on the size of the transaction, plus some fixed fee.
 
@@ -124,13 +121,13 @@ GitHub repositories as usual.
 
         cardano-cli shelley transaction submit ...
 
-5. 	Delegate some stake from your personal address to a running stake pool.  
+5. 	Delegate some stake from your personal address to a running stake pool.
     Again, there is a dedicated CLI command for this,
     but we will use the basic transaction mechanism.
 
     First create a delegation certificate, `delegation.cert`.
     You will need to provide the verification key file for the pool
-    that you wish to delegate to.  
+    that you wish to delegate to.
     This should be a running pool.
     one that IOHK is running, or one that a friend is running).
 
@@ -142,26 +139,26 @@ GitHub repositories as usual.
     (using a UTxO that has some funds associated with it).
 
     As with the Incentivised Testnet, your delegation will take effect
-    from the start of the next epoch.  
+    from the start of the next epoch.
     On the Shelley Testnet, epochs are only 6 hours long,
-    so you will not have to wait too long.  
+    so you will not have to wait too long.
     Unlike the Incentivised Testnet, each stake address must be completely delegated
-    to a single pool.  
+    to a single pool.
     It cannot be subdivided.
     If you want to subdivide your funds, simply create several different stake addresses
     and split your funds among them.
 
-6. 	Once the epoch has ended, check that you have received your rewards.  
+6. 	Once the epoch has ended, check that you have received your rewards.
     Unlike the Incentivised Testnet,
     there is no separate rewards address in the Haskell Shelley system:
-    All the rewards will automatically be added to your staking address.  
-    Congratulations, you have gained your first rewards for your (Pioneer) Ada!
+    All the rewards will automatically be added to your staking address.
+    Congratulations, you have gained your first rewards for your (Test) Ada!
 
     __Note__: At the time of writing, it is not yet possible to check rewards!
 
 7. 	_Optional Exercise (Easy)_
 
-    How do you know how much your rewards should be?  
+    How do you know how much your rewards should be?
     Did you receive the correct reward in Step 6?
 
     __Note__: At the time of writing, it is not yet possible to check rewards!
@@ -175,27 +172,27 @@ GitHub repositories as usual.
 
 9. 	_Optional Exercise (Easy)_
 
-    Delegate stake to a stake pool using a relay node that is run by another Pioneer.
+    Delegate stake to a stake pool using a relay node that is run by another Testnet operator.
 
 10.	_Optional Exercise (Easy)_
 
-    How are transaction fees calculated?  
-    Check your formula against the node calculation.  
+    How are transaction fees calculated?
+    Check your formula against the node calculation.
     Is it correct?
 
 11. _Optional Exercise (Easy)_
 
-    What do you expect to happen if you get the leftover amount wrong?  
+    What do you expect to happen if you get the leftover amount wrong?
     Feel free to experiment, but use small differences...
 
 12. _Optional Exercise (Easy)_
 
     In the Haskell Shelley system, a pool may have several owners in addition
-    to the operator.  
+    to the operator.
     The operator and the owners will enter into an agreement on how the pool’s rewards
-    are to be distributed.  
-    In addition, pool owner(s) may choose to delegate some ada to their own pool.  
-    Any ada that they delegate is referred to as the _pledge_.  
+    are to be distributed.
+    In addition, pool owner(s) may choose to delegate some ada to their own pool.
+    Any ada that they delegate is referred to as the _pledge_.
     Pledging is important because it affects the rewards that the pool obtains
     and how desirable the pool is, and also provides additional
     Sybil protection for the system.
@@ -203,6 +200,6 @@ GitHub repositories as usual.
     given the protocol parameters that have been set on the Shelley Testnet?
 
 You can now manage various kinds of keys,
-submit transactions, start nodes and relays, and delegate stake.  
+submit transactions, start nodes and relays, and delegate stake.
 In the next exercise, you will finally be able to start your own stake pool
-and receive delegation from other Pioneers.
+and receive delegation from other Testnet users.
