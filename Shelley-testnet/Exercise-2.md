@@ -156,7 +156,7 @@ You will need to give the correct Network Magic Id for the Testnet, as supplied 
 6. After 2 minutes (possibly earlier), your Ada should be transferred to your new address.
 
 ```bash
- 	    cardano-cli shelley query utxo \
+        cardano-cli shelley query utxo \
             --address … \
             --testnet-magic …
 ```
