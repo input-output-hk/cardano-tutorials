@@ -13,7 +13,7 @@
     - the GHC Haskell compiler.
 
    If we are using an AWS instance running Amazon Linux AMI 2 (see the [AWS walk-through](AWS.md) for how to get such an instance up and running)
-   or another CentOS/RHEL based system, 
+   or another CentOS/RHEL based system,
    we can install these dependencies as follows:
 
         sudo yum update -y
@@ -21,10 +21,10 @@
         sudo yum install systemd-devel ncurses-devel ncurses-compat-libs -y
 
    For Debian/Ubuntu use the following instead:
-   
+
         sudo apt-get update -y
         sudo apt-get -y install build-essential pkg-config libffi-dev libgmp-dev libssl-dev libtinfo-dev libsystemd-dev zlib1g-dev make g++ tmux git jq wget libncursesw5 -y
-   
+
    If you are using a different flavor of Linux, you will need to use the package manager suitable for your platform instead of `yum` or `apt-get`,
    and the names of the packages you need to install might differ.
 
@@ -39,7 +39,7 @@
    This will work on a fresh [AWS instance](AWS.md) and assumes that folder `~/.local/bin` is in your `PATH`.
    On other systems, you must either move the executable to a folder that is in your `PATH` or modify your `PATH` by adding the line
 
-        nano ~/.bashrc 
+        nano ~/.bashrc
 
     add export PATH="~/.local/bin:$PATH" at the end of the your `.bashrc`-file.
     then run the following command to make it active:
@@ -76,31 +76,23 @@
 
         cd cardano-node
 
-4. For reproducible builds, we should check out a specific release, a specific "tag". 
-   For the FF-testnet, we will use tag `pioneer-wave2`, which we can check out as follows:
+4. For reproducible builds, we should check out a specific release, a specific "tag".
+   For the FF-testnet, we will use tag `1.13.0`, which we can check out as follows:
 
         git fetch --all --tags
-        git checkout tags/pioneer-wave2 
+        git checkout tags/1.13.0
 
-5. Now we build and install the node with ``cabal``, 
+5. Now we build and install the node with ``cabal``,
    which will take a couple of minutes the first time you do a build. Later builds will be much faster, because everything that does not change will be cached.
-   
-   		cabal install cardano-node cardano-cli 
 
-   This will build and install `cardano-node` and `cardano-cli` in folder `~/.cabal/bin` by default, so the remark about your `PATH` from above
-   applies here as well: Make sure folder `~/.cabal/bin` is in your path or copy the executables to a folder that is.
-   If you have old versions of `cardano-node` installed on your system, make sure that the new one will be picked! You can check by typing
+   		cabal install cardano-node cardano-cli
 
-        which cardano-node
-        > ~/.cabal/bin/cardano-node
-  
-   Alternatively, you can use:  
+   This will build and install `cardano-node` and `cardano-cli` in folder `~/.cabal/bin` by default, so the remark about your `PATH` from above applies here as well: Make sure folder `~/.cabal/bin` is in your path or copy the executables to a folder that is.
 
-        cabal build all
-        cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-node-1.12.0/x/cardano-node/build/cardano-node/cardano-node ~/.cabal/bin/
-        cp -p dist-newstyle/build/x86_64-linux/ghc-8.6.5/cardano-cli-1.12.0/x/cardano-cli/build/cardano-cli/cardano-cli ~/.cabal/bin/
+   __Note__: When using __cabal install__, make sure you have `overwrite-policy: always` in your `.cabal/config` or delete old version of `cardano-node` and `cardano-cli` from `~/.cabal/bin`. Otherwise cabal install will not overwrite the old executables.
 
-6. If you ever want to update the code to a newer version, go to the ``cardano-node`` directory, pull the latest code with ``git`` and rebuild. 
+6. If you ever want to update the code to a newer version, go to the `cardano-node` directory, pull the latest code with ``git`` and rebuild.
+
    This will be much faster than the initial build:
 
         cd cardano-node
@@ -125,4 +117,3 @@
    ![Node running on mainnet.](images/mainnet.png)
 
 Congratulations! You have installed the node, started it and connected it to the Cardano mainnet.
-

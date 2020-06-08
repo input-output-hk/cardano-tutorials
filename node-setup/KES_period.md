@@ -1,4 +1,6 @@
-Before we can create a operational certificate, we need to figure out start of the KES validity period.
+## KES Periods
+
+Before we can create a operational certificate for our stake pool, we need to figure out start of the KES validity period.
 We need to know how long a period is from the genesis file:
 
     cat ff-genesis.json | grep KESPeriod

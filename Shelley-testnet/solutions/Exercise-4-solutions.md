@@ -1,15 +1,15 @@
 # Example Solution for Shelley Stakepool Pioneers Exercise Sheet 4
-
+LATEST NODE TAG: 1.13.0
 ## Delegation
 
 ### Prerequisites
 
-3. 	Checkout and build the sources which have been tagged with `1.12.0`.
+3. 	Checkout and build the sources which have been tagged with `1.13.0`.
 
         cabal update
         cd cardano-node
         git fetch --all --tags -f
-        git checkout tags/1.12.0
+        git checkout tags/1.13.0
         cabal install cardano-node cardano-cli
         cd ..
 
@@ -39,7 +39,7 @@
             --out-file params.json
 
 ### Exercises
- 
+
 1. 	Create a new payment key pair `pay.skey`/`pay.vkey`.
 
         cardano-cli shelley address key-gen \
@@ -67,7 +67,7 @@
 
     How to transfer funds to the new address of course depends on your current
     UTxO's. Assuming you have an address saved to file `addr`
-    and that the signing payment key for that address is in file `addr.skey`, 
+    and that the signing payment key for that address is in file `addr.skey`,
     you can look for UTxO's at that address with
 
         cardano-cli shelley query utxo \
@@ -78,12 +78,12 @@
         --------------------------------------------------------------------
         e4962d...                                        0      999499083081
 
-    We need to know the current _tip_ of the blockchain in order to set the 
+    We need to know the current _tip_ of the blockchain in order to set the
     `ttl`-parameter of the transaction correctly.
 
         cardano-cli shelley query tip --testnet-magic 42
 
-        > Tip (SlotNo {unSlotNo = 350160}) 
+        > Tip (SlotNo {unSlotNo = 350160})
 
     So in this example the tip is at slot 350160, so we can choose something like
     355000 as `ttl`.
@@ -133,14 +133,14 @@
             --tx-file tx.signed \
             --testnet-magic 42
 
-4.  First create a certificate, `stake.cert`, 
+4.  First create a certificate, `stake.cert`,
     using the `stake.vkey` from Step 1.
 
         cardano-cli shelley stake-address registration-certificate \
             --staking-verification-key-file stake.vkey \
             --out-file stake.cert
-        
-    We can pay an arbitrary fee for the transaction as we did before, 
+
+    We can pay an arbitrary fee for the transaction as we did before,
     but it is more cost efficient to pay the correct amount.  
     You can use a CLI command to calculate the fee.
 
@@ -184,13 +184,13 @@
             --testnet-magic 42 \
             --tx-file tx.signed
 
-    And, finally, submit the signed transaction: 
+    And, finally, submit the signed transaction:
 
         cardano-cli shelley transaction submit \
             --tx-file tx.signed \
             --testnet-magic 42
 
-5.  First create a delegation certificate, `deleg.cert`. 
+5.  First create a delegation certificate, `deleg.cert`.
 
     Assuming we have a stake pool verification key file `IOHK.vkey` with the
     following content:
@@ -218,7 +218,7 @@
             --signing-key-file pay.skey \
             --signing-key-file stake.skey \
             --certificate deleg.cert \
-            --protocol-params-file params.json 
+            --protocol-params-file params.json
 
         > runTxCalculateMinFee: 172805
 
@@ -239,7 +239,7 @@
             --ttl 360000 \
             --fee 172805 \
             --out-file tx.raw \
-            --certificate deleg.cert 
+            --certificate deleg.cert
 
         cardano-cli shelley transaction sign \
             --tx-body-file tx.raw \

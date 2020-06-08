@@ -1,4 +1,5 @@
 # Example Solution for Shelley Stakepool Pioneers Exercise Sheet 2
+LATEST NODE TAG: 1.13.0
 
 ## Objectives
 
@@ -6,7 +7,7 @@ In the second exercise, we will make sure that you can:
 
 * Build simple transactions using the basic transaction mechanism;
 * Sign transactions and confirm that the transaction is complete;
-* Submit transactions to the Pioneer Blockchain;
+* Submit transactions to the Shelley Testnet Blockchain;
 * Verify that the transactions have been processed by inspecting the addresses that they have been sent to.
 
 
@@ -202,7 +203,7 @@ We use the __payment.skey__ to sign the transaction
 
 
 **QUERY THE UTXOS OF BOTH ADDRESSES**
-Once the transaction has been submitted, we can check the balances of our two addresses: 
+Once the transaction has been submitted, we can check the balances of our two addresses:
 
 	$ cardano-cli shelley query utxo --address $(cat payment.addr) --testnet-magic 42
 

@@ -9,12 +9,12 @@
     [Cardano Tutorial Documentation](https://github.com/input-output-hk/cardano-tutorials)
     and [General Documentation on Stake Pool Parameters,
     Pool De-Registration and Protocol Parameters](https://testnets.cardano.org).
-3. 	Checkout and build the sources which have been tagged with `pioneer-wave2`.
+3. 	Checkout and build the sources which have been tagged with `1.13.0`.
 
         cabal update
         cd cardano-node
         git fetch --all --tags -f
-        git checkout tags/pioneer-wave2
+        git checkout tags/1.13.0
         cabal install cardano-node cardano-cli
         cd ..
 
@@ -371,7 +371,7 @@ GitHub repositories.
             --tx-file tx.signed \
             --testnet-magic 42
 
-3. 	Record your “pool id” in the Pioneer spreadsheet, to advertise that it is running,
+3. 	Record your “pool id” in the Shelley Testnet spreadsheet, to advertise that it is running,
     and advertise the new pool cost and margin settings in the spreadsheet,
     as well as those for your original pool.
 

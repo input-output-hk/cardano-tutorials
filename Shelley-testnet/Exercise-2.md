@@ -1,5 +1,7 @@
 # Shelley Stakepool Pioneers Exercise Sheet 2
 
+LATEST TAG: 1.13.0
+
 ## Basic Transactions on the Cardano Blockchain
 
 In the first exercise, we set up a Cardano node and ran it.  In this exercise, we will build transactions that are submitted to the Blockchain.  Transactions are the basic mechanism that is used to transfer Ada between stakeholders, register staking pools, stake Ada, and many other things.
@@ -14,7 +16,7 @@ In the first exercise, we set up a Cardano node and ran it.  In this exercise, w
 
 3. Checkout the latest version of the Shelley node and CLI from source, and rebuild and reinstall them if they have changed:
 
-        git checkout tags/pioneer-wave2 
+        git checkout tags/1.13.0
         cabal build all
         …
 
@@ -22,16 +24,16 @@ In the first exercise, we set up a Cardano node and ran it.  In this exercise, w
 
         git branch
 	> (HEAD detached at TAG)
-	
+
 	>  master
-	  
+
 ### Objectives
 
 In the second exercise, we will make sure that you can:
 
 1. Build simple transactions using the basic transaction mechanism;
 2. Sign transactions and confirm that the transaction is complete;
-3. Submit transactions to the Pioneer Blockchain;
+3. Submit transactions to the Shelley Testnet Blockchain;
 4. Verify that the transactions have been processed by inspecting the addresses that they have been sent to.
 
 This unlocks many of the things that we will want to do with the Cardano Blockchain in future, including transferring Ada, stake pool registration, and staking.
@@ -55,11 +57,11 @@ In this excercise we will be following steps from [Creating a Simple Transaction
 
    and verify that your new node instance is running:
 
-        ps x | grep cardano-node 
+        ps x | grep cardano-node
 	>10765 pts/4 R + 1:20  cardano-node …
 
 
-   Your node should be connected to the Pioneer Testnet and verifying the blocks that it receives.
+   Your node should be connected to the Shelley Testnet and verifying the blocks that it receives.
 
 2. Verify that you have received some test Ada at the address that you provided to IOHK in Exercise 1, *payment.addr*.
 
@@ -79,7 +81,7 @@ In this excercise we will be following steps from [Creating a Simple Transaction
 
    This is the most basic form of transaction construction.  We will use more sophisticated ones later.  The transaction will be created in the file txbody. You will need to provide explicit transaction inputs and outputs. Keep in mind that the output for the change needs to be specified as well, so the sum of your inputs needs to match the sum of your outputs + fee.
 
-   | Format       | Explanation                                                                                  | 
+   | Format       | Explanation                                                                                  |
    | ------------ | -------------------------------------------------------------------------------------------- |
    | Id#Index     | This identifies the UTxO that is the source of the Ada – you should get this from query utxo  |
    | Out+lovelace | Hex encoded address that will receive the Ada and the amount to send in Lovelace.            |
@@ -102,7 +104,7 @@ Here's an **example** of a transaction that instructs the transfer of 100,000,00
 		--fee 1000000 \
 		--ttl 500000 \
 		--out-file txbody
-		
+
 Note that there are two outputs. First is the amount sent to account B, second is the change being returned to account A, where the change is equal to the input from account A, minus the value being transferred to account B, minus the fee.
 
 We are now ready to sign the transaction and submit it to the chain.
