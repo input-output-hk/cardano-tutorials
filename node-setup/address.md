@@ -43,11 +43,11 @@ Let's produce our cryptographic keys first, as we will need them to later create
 		--out-file payment.addr \
 		--testnet-magic 42
      
-This created the file payment.addr, let's check its content: 
+   This created the file payment.addr, let's check its content: 
 
 		cat payment.addr 
 		
-		> 01ed8...
+		> 01df79ad8d...
 
 
 4. In order to query your address (see the utxo's at that address),
@@ -66,10 +66,9 @@ This created the file payment.addr, let's check its content:
 	    >                           TxHash                                 TxIx        Lovelace
 	    ---------------------------------------------------------------------------------------
 
-__Note__ At this moment there is no balance displayed since we just created this address. Once you get funds you will find the UTXO hash under TxHash, its Index under TxIx and the balance in lovelaces under Lovelace. 
 
-   
-(The `--testnet-magic 42` is specific to the FF-testnet, for mainnet we would use `--mainnet` instead.)
+   __Note__ At this moment there is no balance displayed since we just created this address. Once you get funds you will find the UTXO hash under TxHash, its Index under TxIx and the balance in lovelaces under Lovelace.
+   (To get test ADA requested it through the FF Telegram channel. The `--testnet-magic 42` is specific to the FF-testnet, for mainnet we would use `--mainnet` instead.)
    
    
 ### Stake address
@@ -80,11 +79,11 @@ __Note__ At this moment there is no balance displayed since we just created this
 		--out-file stake.addr \
 		--testnet-magic 42 
 
-This created the file stake.addr, let's check its content: 
+   This created the file stake.addr, let's check its content: 
 
 		cat stake.addr 
 		
 		> 820058... 
 		
-Our stake address needs to be registered in the blockchain for it to be useful. We deal with that in another tutorial ["Registering stake address to the blockchain"](staking-key.md) 
+   Our stake address needs to be registered in the blockchain for it to be useful. We deal with that in another tutorial ["Registering stake address to the blockchain"](staking-key.md) 
 
