@@ -126,7 +126,7 @@ This will be much faster than the initial build:
 Note that it might be necessary to delete the `db`-folder (the database-folder) before running an updated version of the node.
 
 
-### Get genesis, configutarion, topology files, and start the node
+### Get genesis, configuration, topology files, and start the node
 
 To start your node and connect it to F&F testnet you will need three important files: `ff-config.json` `ff-genesis.json` and `ff-topology.json`. We will download them from <https://hydra.iohk.io/build/2622346/download/1/index.html>
 
@@ -151,7 +151,7 @@ Now you can start the node, double check that port 3001 is open. In the `cardano
 
 Let's stop that single node now and do something more interesting.
 
-As stake pool operator, you will have two types of nodes, **block producing nodes** and **relay nodes**. Each block producing node must be accompagnied by several relay nodes.
+As stake pool operator, you will have two types of nodes, **block producing nodes** and **relay nodes**. Each block producing node must be accompanied by several relay nodes.
 
 To be clear: Both types of nodes run exactly the same program, **cardano-node**. The difference between the two types lies in how they are configured and how they are connected to each other:
 
