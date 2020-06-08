@@ -1,15 +1,17 @@
 # Example Solution for Shelley Stakepool Pioneers Exercise Sheet 5
 
+LATEST NODE TAG: 1.13.0
+
 ## Running a Stake Pool
 
 ### Prerequisites
 
-3. 	Checkout and build the sources which have been tagged with `1.12.0`.
+3. 	Checkout and build the sources which have been tagged with `1.13.0`.
 
         cabal update
         cd cardano-node
         git fetch --all --tags -f
-        git checkout tags/1.12.0
+        git checkout tags/1.13.0
         cabal install cardano-node cardano-cli
         cd ..
 
@@ -29,7 +31,7 @@
     Let's assume for this solution that we have
 
     | File           | Content                           |
-    | -------------- | --------------------------------  | 
+    | -------------- | --------------------------------  |
     | `pay.vkey`     | payment verification key          |
     | `pay.skey`     | payment signing key               |
     | `stake.vkey`   | staking verification key          |
@@ -66,7 +68,7 @@
             --out-file params.json
 
 ### Exercises
- 
+
 1. 	Generate a registration certificate for your stake pool:
 
         cardano-cli shelley stake-pool registration-certificate \
@@ -101,13 +103,13 @@
             --protocol-params-file params.json
 
         > runTxCalculateMinFee: 184377
-    
+
         cat ff-genesis.json | grep poolDeposit
         > "poolDeposit": 500000000,
 
         cardano-cli shelley query utxo \
             --testnet-magic 42 \
-            --address 
+            --address
 
         cardano-cli shelley query utxo \
             --address $(cat pay) \
@@ -141,4 +143,3 @@
         cardano-cli shelley transaction submit \
             --tx-file tx.signed \
             --testnet-magic 42
-         
