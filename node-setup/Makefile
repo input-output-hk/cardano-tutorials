@@ -1,4 +1,4 @@
-pdf_files = README.pdf AWS.pdf build.pdf ekg.pdf prometheus.pdf logging.pdf topology.pdf address.pdf tx.pdf staking-key.pdf node-op-cert.pdf pool.pdf retire.pdf
+pdf_files = README.pdf AWS.pdf build.pdf ekg.pdf prometheus.pdf logging.pdf topology.pdf address.pdf tx.pdf staking-key.pdf node-op-cert.pdf pool.pdf retire.pdf faucet.pdf
 png_files = cli.png
 
 .PHONE: all
