@@ -23,5 +23,5 @@ With this we are able to generate a operational certificate for our stake pool:
         --hot-kes-verification-key-file kes1-002.vkey \
         --cold-signing-key-file node1.skey \
         --operational-certificate-issue-counter node1.counter \
-        __--kes-period 120 \__
+        --kes-period 120 \
         --out-file node1-002.cert
