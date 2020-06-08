@@ -29,9 +29,8 @@ git checkout tags/1.13.0
 git branch
 > * (HEAD detached at 1.13.0)
 …
-cabal build all
-cp …/cardano-node ~/.local/bin
-cp …/cardano-cli ~/.local/bin
+cabal install cardano-node cardano-cli
+cardano-node --version
 ```
 
 4. Create two new directories pool and relay, and copy the configuration files to them:
