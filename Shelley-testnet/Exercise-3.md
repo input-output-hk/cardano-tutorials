@@ -62,7 +62,7 @@ Please report any bugs or issues through the relevant github repository.
 
 First produce the KES key pair:
 ```
-$ cardano-cli shelley node key-gen-KES \
+cardano-cli shelley node key-gen-KES \
     --verification-key-file kes.vkey \
     --signing-key-file kes.skey
 ```
@@ -71,17 +71,17 @@ On the mainnet, block signing keys will be forced to evolve every 90 days (that 
 
 2. Create a new directory to hold your cold keys
 ```
-$ mkdir ~/cold-keys
-$ pushd ~/cold-keys
+mkdir ~/cold-keys
+pushd ~/cold-keys
 ```
 Then generate a pair of cold keys and a cold counter file:
 ```
-$ cardano-cli shelley node key-gen \
+cardano-cli shelley node key-gen \
     --cold-verification-key-file cold.vkey \
     --cold-signing-key-file cold.skey \
     --operational-certificate-issue-counter coldcounter
 ```
-            The cold counter file should look like:
+The cold counter file should look like:
 ```
 type: Node operational certificate issue counter
 title: Next certificate issue number: 0
@@ -89,33 +89,34 @@ cbor-hex:
  00
 ```
 
-3. We now have all the components that we need to create the operational certificate for your pool.  You will need to pass in the hot KES verification key file that you generated in Step 1, the cold signing key from step 2, and you will also need to specify the period from which the KES key will be valid.  We will use 0 for the KES period, since we are creating the first KES key.
+3. We now have all the components that we need to create the operational certificate for your pool.  You will need to pass in the hot KES verification key file that you generated in Step 1, the cold signing key from step 2, and you will also need to specify the period for which the KES key will be valid.  Here we chose 10,000.
 ```
-$ pushd +1
-$ cardano-cli shelley node issue-op-cert \
+pushd +1
+export KES_PERIOD=10000
+cardano-cli shelley node issue-op-cert \
     --kes-verification-key-file kes.vkey \
     --cold-signing-key-file ~/cold-keys/cold.skey \
     --operational-certificate-issue-counter ~/cold-keys/coldcounter \
-    --kes-period 0 \
+    --kes-period ${KES_PERIOD} \
     --out-file opcert
 ```
-You will need to regenerate the hot keys and issue a new operational certificate (rotate the KES keys) whenever the hot keys expire.  Otherwise you will no longer be able to sign blocks.  
+You will need to regenerate the hot keys and issue a new operational certificate (rotate the KES keys) whenever the hot keys expire.  Otherwise you will no longer be able to sign blocks.
 
 4. Having created the hot keys, we will now make sure that no-one can access our cold keys.
 ```
-$  chmod a-rwx ~/cold-keys
+ chmod a-rwx ~/cold-keys
 ```
 
 This ensures that noone (including yourself) can read/modify your cold keys.  Whenever you need to create a new set of hot keys, you will need to:
 ```
-$  chmod u+rwx ~/cold-keys
-$  cardano-cli shelley node issue-op-cert ...
-$  chmod a-rwx ~/cold-keys
+ chmod u+rwx ~/cold-keys
+ cardano-cli shelley node issue-op-cert ...
+ chmod a-rwx ~/cold-keys
 ```
 
 5. Generate a VRF key pair for your new stake pool, in the same way as we did before.
 ```
-$ cardano-cli shelley node key-gen-VRF \
+cardano-cli shelley node key-gen-VRF \
     --verification-key-file vrf.vkey \
     --signing-key-file vrf.skey
 ```
@@ -156,7 +157,7 @@ Choose any port that you like.
 7. Now start the relay, exactly as you have done for a node before.
 ```
 # relay
-$ cardano-node run \
+cardano-node run \
     --config ... \
     ... \
     --port 4242
@@ -165,13 +166,13 @@ $ cardano-node run \
 8. Note that the pool needs additional KES and VRF signing keys and the operational certificate that you created above.  You will probably want to open a second Linux terminal window.
 ```
 # pool
-$ cardano-node run \
+cardano-node run \
     --config ... \
     ... \
     --shelley-kes-key ... \
     --shelley-vrf-key ... \
     --shelley-operational-certificate ... \
-    --port 4240  
+    --port 4240
 ```
 
 9. Check that your two nodes are properly connected to each other, that the relay node is responding to external requests, and that both the relay and the pool are syncing to the blockchain.  Congratulations, you now have a functioning system that can be used to base your pool operations on!
