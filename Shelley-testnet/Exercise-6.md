@@ -50,8 +50,7 @@ As before, if you have any questions or encounter any problems, please feel free
     Pledge the required ada to your pool if you didn’t do that when you registered it
     (you did remember not to pledge all your ada to your first pool, didn’t you?).
 
-3. 	Record your “pool id” in the Shelley Testnet spreadsheet, to advertise that it is running,
-    and advertise the new pool cost and margin settings in the spreadsheet,
+3. 	Advertise the new pool cost and margin settings,
     as well as those for your original pool.
 
     __Note:__ At the time of writing, proper pool id's have not been implemented yet.
@@ -60,7 +59,7 @@ As before, if you have any questions or encounter any problems, please feel free
 4. 	Change the parameters for your original pool.
     Increase the cost by 10,000 ada and set the margin to 20%.
     Choose a suitable pledge value.
-    Advertise these new settings in the spreadsheet.
+    Advertise these new settings.
 
 5. 	We will change the following general protocol parameter settings over the course of a few epochs:
 

@@ -22,7 +22,7 @@ In the second exercise, we submitted transactions to the Testnet blockchain.  In
 
     b. https://testnets.cardano.org/
 
-3.  Make sure you are on tag 1.13.0, and check that you have the right version.
+4. Checkout the latest version of the Shelley node and CLI from source, and rebuild and reinstall them if they have changed:
 
 ```
 git checkout tags/1.13.0

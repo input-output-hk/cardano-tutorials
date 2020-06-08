@@ -19,7 +19,7 @@ In this exercise, we will register and run our own pool.
 
 3. 	Make sure you have access to:
 
-    a. 	One or more funded addresses;
+    1. 	One or more funded addresses;
     2. 	The keys and operational certificate for the stake pool
         that you set up in Exercise 3;
     3. 	The stake keys from Exercise 4.
@@ -82,16 +82,15 @@ Please report any bugs through the cardano-node and cardano-tutorials github rep
 
         cardano-node run ...
 
-5. 	Record your pool id in the Testnet spreadsheet, to advertise that it is running.
+5. 	Advertise that your pool is running.
 
-    __Note:__ At the time of writing, there is no way to determine your pool id yet.
+    __Note:__ At the time of writing, there is no way to determine your pool id yet.  Please use the CBOR-hex from the cold key verification file instead.
 
 6. 	Check that you are delegating to your own pool,
     then wait until the following epoch (around 6 hours),
     and confirm that your pool is producing blocks by e.g. inspecting the log data.
     Also confirm that your pool is receiving the correct rewards.
     Congratulations, you are now a fully fledged Shelley Testnet pool operator!
-    Record the date and value of your rewards in the SHelley Testnet spreadsheet.
 
     __Note:__ At the time of writing, there is no way to check rewards yet.
 
@@ -114,12 +113,12 @@ Please report any bugs through the cardano-node and cardano-tutorials github rep
 10. Optional Exercise (Easy).
 
     Retire (de-register) your original pool, and start a new one with different cost,
-    margin and pledge.  Update the Shelley Testnet spreadsheet.
+    margin and pledge.  Update your pool advertisement.
 
 11. Optional Exercise (Medium).
 
     Set up two stake pools, each behind its own relay node.
-    Record both pools in the Shelley Testnet spreadsheet.
+    Advertise both pools.
 
 You have now successfully set up and run your own stake pool and learnt the basics of how to manage it.  In the final exercises, we will test some operational parameters that are relevant to running a pool and see how to submit more forms of transaction.
 
