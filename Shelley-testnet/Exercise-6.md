@@ -18,8 +18,8 @@ You may have already done some of these exercises as optional exercises on
 2. 	Read the
     [Cardano Tutorial Documentation](https://github.com/input-output-hk/cardano-tutorials)
     and [General Documentation on Stake Pool Parameters, Pool De-Registration and Protocol Parameters](https://testnets.cardano.org).
-3. 	Checkout and build the sources which have been tagged with `1.13.0`.
-4. 	Start a relay node and the node running your stake pool from [Exercise Sheet 5](Exercise-5.md).
+4. 	Update your instances of *cardano-node* and *cardano-cli* if you need to.
+5. 	Start a relay node and your stake pool from [Exercise Sheet 5](Exercise-5.md).
 
 ### Objectives
 

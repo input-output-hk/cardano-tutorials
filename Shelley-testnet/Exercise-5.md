@@ -11,20 +11,20 @@ In this exercise, we will register and run our own pool.
 
 1. 	Complete [Exercise Sheet 4](Exercise-4.md).
 
-2. 	Read the Cardano Tutorial Documentation and General Documentation on
+2. 	Read the Cardano Tutorials  and General Documentation on
     Stake Pool Registration, Pledging and Stake Pool Operation at:
 
     1. 	[https://github.com/input-output-hk/cardano-tutorials/](https://github.com/input-output-hk/cardano-tutorials/)
     2. 	[https://testnets.cardano.org/](https://testnets.cardano.org/)
 
-3. 	Checkout and build the sources which have been tagged with `1.13.0`.
+3. 	Make sure you have access to:
 
-4. 	Make sure you have access to:
-
-    1. 	One or more funded addresses;
+    a. 	One or more funded addresses;
     2. 	The keys and operational certificate for the stake pool
         that you set up in Exercise 3;
     3. 	The stake keys from Exercise 4.
+
+4. 	Update your instances of *cardano-node* and *cardano-cli* if you need to.
 
 5. 	Start a relay node.
 
@@ -122,3 +122,9 @@ Please report any bugs through the cardano-node and cardano-tutorials github rep
     Record both pools in the Shelley Testnet spreadsheet.
 
 You have now successfully set up and run your own stake pool and learnt the basics of how to manage it.  In the final exercises, we will test some operational parameters that are relevant to running a pool and see how to submit more forms of transaction.
+
+### Feedback
+
+Please provide any feedback or suggested changes to the tutorials or exercises by either raising an issue on the [cardano-tutorials repository](https://github.com/input-output-hk/cardano-tutorials) or by forking the repository and submitting a PR.
+
+Please provide any feedback or suggested changes on the node itself by raising an issue at the [cardano-node repository](https://github.com/input-output-hk/cardano-node).

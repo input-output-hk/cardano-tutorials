@@ -16,7 +16,7 @@ In the second exercise, we submitted transactions to the Testnet blockchain.  In
 
     c. Build, sign and submit basic transactions.
 
-2. Read the IOHK Tutorial Documentation and General Documentation on Stake Pools,  Key generation, Operational Certificates and Key Evolving Signatures at:
+2. Read the Cardano Tutorials and General Documentation on Stake Pools,  Key generation, Operational Certificates and Key Evolving Signatures at:
 
     a. https://github.com/input-output-hk/cardano-tutorials/
 
@@ -31,6 +31,7 @@ git branch
 …
 cabal install cardano-node cardano-cli
 cardano-node --version
+> cardano-node 1.13.0 - linux-x86_64 - ghc-8.6
 ```
 
 4. Create two new directories pool and relay, and copy the configuration files to them:
@@ -188,7 +189,7 @@ Create a new user account on a second physical or virtual machine, and install t
 
 11. Optional Exercise (Easy).
 
-Extend your topology file so that you are connecting to a few other peers, and not just to the IOHK relays.  Confirm that you are receiving blocks.  If you are feeling brave, create a different configuration that doesn’t include the IOHK relays.
+Extend your topology file so that you are connecting to a few other peers, and not just to the IOHK Testnet relays.  Confirm that you are receiving blocks.  If you are feeling brave, create a different configuration that doesn’t include the IOHK Testnet relays.
 
 
 12. Optional Exercise (Easy).

@@ -11,7 +11,7 @@ In this exercise, we will set up staking keys and delegate some stake to an exis
 
 1.  Complete Exercise 3.
 
-2. 	Read the IOHK Tutorial Documentation and General Documentation
+2. 	Read the Cardano Tutorials and General Documentation
     on Stake Key Generation, Delegation, and Pledging at:
 
     1. 	[https://github.com/input-output-hk/cardano-tutorials/](https://github.com/input-output-hk/cardano-tutorials/)
