@@ -18,7 +18,8 @@ In the first exercise, we set up a Cardano node and ran it.  In this exercise, w
 
 ```bash
         git checkout tags/1.13.0
-        cabal build all
+        …
+        cabal install cardano-node cardano-cli
         …
 ```
 
@@ -26,8 +27,10 @@ Before building, you might want to confirm that you are on the correct tagged ve
 
 ```bash
         git branch
-	> (HEAD detached at TAG)
+	> (HEAD detached at 1.13.0)
 	>  master
+        cardano-node
+  > cardano-node 1.13.0 - linux-x86_64 - ghc-8.6
 ```
 
 ### Objectives
