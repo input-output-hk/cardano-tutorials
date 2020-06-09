@@ -15,7 +15,7 @@ Welcome to the Shelley Testnet!  We are excited that you have joined us on this 
     - [Shelley Genesis Documentation](https://github.com/input-output-hk/cardano-node/blob/master/doc/shelley-genesis.md)
 
 2. Subscribe to:
-    - [The Staking/Delegation Area on the Cardano Forum](https://https://forum.cardano.org/c/stakingdelegation/116)
+    - [The Staking/Delegation Area on the Cardano Forum](https://forum.cardano.org/c/stakingdelegation/116)
 
   You should be comfortable with using Linux shell commands and have a basic understanding of cryptography and the Cardano ecosystem.
 
