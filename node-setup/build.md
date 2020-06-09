@@ -85,7 +85,7 @@
 5. Now we build and install the node with ``cabal``,
    which will take a couple of minutes the first time you do a build. Later builds will be much faster, because everything that does not change will be cached.
 
-   		cabal install cardano-node cardano-cli
+   		cabal install cardano-node cardano-cli --installdir="$HOME/.local/bin"
 
    This will build and install `cardano-node` and `cardano-cli` in folder `~/.cabal/bin` by default, so the remark about your `PATH` from above applies here as well: Make sure folder `~/.cabal/bin` is in your path or copy the executables to a folder that is.
 
