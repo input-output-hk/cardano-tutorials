@@ -287,8 +287,8 @@ The files are in plain-text format and human readable:
 Now we can use the verification key we just created to make an address. For now, we will use an address type that can receive and send transactions, but cannot do staking: `enterprise` type.
 
     cardano-cli shelley address build \
-        --payment-verification-key-file payment.vkey
-	--stake-verification-key stake.vkey
+        --payment-verification-key-file payment.vkey \
+	--stake-verification-key-file stake.vkey \
 	--out-file payment.addr
 
         > 01ed8ae0843a3...
