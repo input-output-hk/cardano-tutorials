@@ -89,7 +89,7 @@
 
    		cabal install cardano-node cardano-cli
 
-   This will build and install `cardano-node` and `cardano-cli` into your `~/.cabal/bin` folder by default, so the remark about your `PATH` from above applies here as well: Make sure folder `~/.cabal/bin` is in your path or copy the executables to a folder that is. Alternatively you can add ` --installdir="$HOME/.local/bin"` to the `cabal install` command to install the `cardano-node` and `cardano-cli` directly into your `~/.local/bin` folder.
+   This will build and install `cardano-node` and `cardano-cli` into your `~/.cabal/bin` folder by default, so the remark about your `PATH` from above applies here as well: Make sure folder `~/.cabal/bin` is in your path or copy the executables to a folder that is. Alternatively you can run `cabal install cardano-node cardano-cli --installdir="$HOME/.local/bin"` to install the `cardano-node` and `cardano-cli` directly into your `~/.local/bin` folder.
 
    __Note__: When using __cabal install__, make sure you have `overwrite-policy: always` in your `.cabal/config` or delete old version of `cardano-node` and `cardano-cli` from `~/.cabal/bin`. Otherwise cabal install will not overwrite the old executables.
 
@@ -102,6 +102,8 @@
         git tag
         git checkout tags/<the-tag-you-want>
         cabal install cardano-node cardano-cli
+        
+   This will build and install `cardano-node` and `cardano-cli` into your `~/.cabal/bin` folder. Alternatively you can run `cabal install cardano-node cardano-cli --installdir="$HOME/.local/bin"` to install the `cardano-node` and `cardano-cli` directly into your `~/.local/bin` folder.
 
    __Note:__ It might be necessary to delete the `db`-folder (the database-folder) before running an updated version of the node.
 
@@ -110,7 +112,7 @@
 
         overwrite-policy: always
 
-   in your `cabal`-configuration at `~/.cabal/config`. Alternatively you can add ` --installdir="$HOME/.local/bin"` to the `cabal install` command to install the `cardano-node` and `cardano-cli` directly into your `~/.local/bin` folder.
+   in your `cabal`-configuration at `~/.cabal/config`.
 
 7. We can start a node on the Cardano mainnet with
 
