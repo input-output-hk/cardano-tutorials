@@ -22,7 +22,7 @@ First, we need to setup our __block-producing node__. You can build the node fro
 ### Basic relay node firewall configuration:
 
  * Make sure you can only login with SSH Keys, not password.
- * Make sure to setup SSH connections in a port different than the the default 22.
+ * Make sure to setup SSH connections in a port different than the default 22.
  * Make sure you only have the strictly necessary ports opened.
 
 ## Crating keys for our block-producing node
