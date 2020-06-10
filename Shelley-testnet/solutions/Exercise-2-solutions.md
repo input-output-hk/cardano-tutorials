@@ -87,6 +87,7 @@ Now we will use both `payment2.vkey` and `stake2.vkey`to build a **payment addre
 	--payment-verification-key-file payment2.vkey \
 	--stake-verification-key-file stake2.vkey \
 	--out-file payment2.addr
+	--testnet-magic 42
 
 
 **Generate Stake Address**
@@ -96,6 +97,7 @@ And, now generate you stake address. This will collect your rewards from delegat
 	cardano-cli shelley stake-address build \
 	--staking-verification-key-file stake2.vkey \
 	--out-file stake2.addr
+	--testnet-magic 42
 
 
 **Yei!! Now we have two payment addresses, we can send a transaction.**

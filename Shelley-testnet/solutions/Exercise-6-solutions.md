@@ -265,11 +265,13 @@ GitHub repositories.
         cardano-cli shelley stake-address build \
             --stake-verification-key-file stake2.vkey \
             --out-file stake2
+            --tesntet-magic 42
 
         cardano-cli shelley address build \
             --payment-verification-key-file pay.vkey \
             --stake-verification-key-file stake2.vkey \
             --out-file pay2
+            --testnet-magic 42
 
     Now we can create the three certificates we need, the _registration certificate_ for the new pool,
     the _registration certificate_ for the new stake address and the _delegation certificate_ from

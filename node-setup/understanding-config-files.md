@@ -5,7 +5,7 @@
 
 ## The topology.json file
 
-Tells your node to which nodes in the network it should talk to. A minimal version of this file looks like this: 
+Tells your node to which nodes in the network it should talk to. A minimal version of this file looks like this:
 
 
 	{
@@ -18,20 +18,20 @@ Tells your node to which nodes in the network it should talk to. A minimal versi
 	  ]
 	}
 
-* This means that your node will contact node at ip `x.x.x.x` on `port 3001`. 
+* This means that your node will contact node at ip `x.x.x.x` on `port 3001`.
 
 * `valency` tells the node how many connections your node should have. It only has an effect for dns addresses. If a dns asdress is given, valency governs to how many resolved ip addresses should we maintain acctive (hot) connection; for ip addresses, valency is used as a boolean value, where `0` means to ignore the address.
 
-Your __block-producing__ node must __ONLY__ talk to your __relay nodes__, and the relay node should talk to other relay nodes in the network. Go to our telegram channel to find out IP addresses and ports of peers. 
+Your __block-producing__ node must __ONLY__ talk to your __relay nodes__, and the relay node should talk to other relay nodes in the network. Go to our telegram channel to find out IP addresses and ports of peers.
 
 
 ## The genesis.json file
 
-The genesis file is generated with the `cardano-cli` by reading a `genesis.spec.json` file, which is out of scope for this document. 
+The genesis file is generated with the `cardano-cli` by reading a `genesis.spec.json` file, which is out of scope for this document.
 But it is important because it is used to set:
 
 * `genDelegs`, a mapping from genesis keys to genesis delegates.
-* `initialFunds`, a mapping from the initial addresses to the initial values at those address. 
+* `initialFunds`, a mapping from the initial addresses to the initial values at those address.
 * `MaxLovelaceSupply`, the total amount of lovelaces in the blockchain.  
 * `startTime`, the time of slot zero.
 
@@ -75,7 +75,7 @@ The `genesis.json` file looks like the one below.
 	  "updateQuorum": 3,                                              
 	  "maxMajorPV": 0,                    
 	  "initialFunds": {                    
-	 
+
 
 	  },
 	  "maxLovelaceSupply": 45000000000000000, 	                                        
@@ -91,59 +91,59 @@ The `genesis.json` file looks like the one below.
 Here is a brief description of each parameter. You can learn more in the [spec](https://github.com/input-output-hk/cardano-ledger-specs/tree/master/shelley/chain-and-ledger/executable-spec)
 
 
-| PARAMETER | MEANING | 
+| PARAMETER | MEANING |
 |----------| --------- |
-| activeSlotsCoeff | The proportion of slots in which blocks should be issued. | 
+| activeSlotsCoeff | The proportion of slots in which blocks should be issued. |
 | poolDecayRate | Decay rate for pool deposits |
 | poolDeposit | The amount of a pool registration deposit |
 | protocolVersion| Accepted protocol versions |
 | decentralisationParam | Percentage of blocks produced by stake pools |
-| maxTxSize | Maximal transaction size | 
-| minFeeA | The linear factor for the minimum fee calculation | 
+| maxTxSize | Maximal transaction size |
+| minFeeA | The linear factor for the minimum fee calculation |
 | maxBlockBodySize | Maximal block body size |
 | keyMinRefund | The minimum percent refund guarantee |
 | minFeeB | The constant factor for the minimum fee calculation |
-| maxBlockBodySize | Maximal block body size | 
+| maxBlockBodySize | Maximal block body size |
 | keyMinRefund | The minimum percent refund guarantee |
-| minFeeB | The constant factor for the minimum fee calculation | 
-| eMax | Epoch bound on pool retirement | 
+| minFeeB | The constant factor for the minimum fee calculation |
+| eMax | Epoch bound on pool retirement |
 | extraEntropy | Well, extra entropy =) |
-| maxBlockHeaderSize | | 
+| maxBlockHeaderSize | |
 | keyDeposit | The amount of a key registration deposit |
-| keyDecayRate | The deposit decay rate | 
-| nOpt | Desired number of pools | 
-| rho | Treasury expansion | 
-|	poolMinRefund | The minimum percent pool refund | 
-|	tau | Monetary expansion | 
-|	a0 | Pool influence | 
-| protocolMagicId | | 
+| keyDecayRate | The deposit decay rate |
+| nOpt | Desired number of pools |
+| rho | Treasury expansion |
+|	poolMinRefund | The minimum percent pool refund |
+|	tau | Monetary expansion |
+|	a0 | Pool influence |
+| protocolMagicId | |
 | startTime | Time of slot 0 |
 | genDelegs | Mapping from genesis keys to genesis delegate |                
 | updateQuorum | Determines the quorum needed for votes on the protocol parameter updates |
 | maxMajorPV | Provides a mechanism for halting outdated nodes |
-| initialFunds | Mapping address to values | 
+| initialFunds | Mapping address to values |
 | maxLovelaceSupply | The total number of lovelace in the system, used in the reward calculation. |
-| networkMagic | | 
+| networkMagic | |
 | epochLength | Number of slots in an epoch. |
-| staking | | 
+| staking | |
 | slotsPerKESPeriod | Number of slots in an KES period |
-| slotLength | | 
+| slotLength | |
 | maxKESEvolutions | The maximum number of time a KES key can be evolved before a pool operator must create a new operational certificate |
 | securityParam | Security parameter k |
 
 
-## The config.json file 
+## The config.json file
 
 The default `config.json` file that we downloaded is shown below.
 
-This file has __4__ sections that allow you to have full control on what your node does and how the informtion is presented. 
+This file has __4__ sections that allow you to have full control on what your node does and how the informtion is presented.
 
 __NOTE Due to how the config.json file is generated, fields on the real file are shown in a different (less coherent) order. Here we present them in a more structured way__
 
 ### 1 Basic Node Configuration.
 
-First section relates the basic node configuration parameters. Make sure you have to `TPraos`as the protocol, the correct path to the `ff-genesis.json` file, `RequiresMagic`for its use in a testnet. 
-Note that in this example we are using the SimpleView. This will send the output to `stdout`. Other option is `LiveView` which uses a terminal multiplexer to generate a fancy view. We will cover this topic later. 
+First section relates the basic node configuration parameters. Make sure you have to `TPraos`as the protocol, the correct path to the `ff-genesis.json` file, `RequiresMagic`for its use in a testnet.
+Note that in this example we are using the SimpleView. This will send the output to `stdout`. Other option is `LiveView` which uses a terminal multiplexer to generate a fancy view. We will cover this topic later.
 
 	{
 	  "Protocol": "TPraos",
@@ -151,9 +151,9 @@ Note that in this example we are using the SimpleView. This will send the output
 	  "RequiresNetworkMagic": "RequiresMagic",
 
 ### 2 Update parameteres
- 
-This protocol version number gets used by block producing nodes as part of the system for agreeing on and synchronising protocol updates.You just need to be aware of the latest version supported by the network. You dont need to change anything here. 
- 
+
+This protocol version number gets used by block producing nodes as part of the system for agreeing on and synchronising protocol updates.You just need to be aware of the latest version supported by the network. You dont need to change anything here.
+
 	  "ApplicationName": "cardano-sl",
 	  "ApplicationVersion": 0,
 	  "LastKnownBlockVersion-Alt": 0,
@@ -171,8 +171,8 @@ The node can run in either the `SimpleView` or `LiveView`. The `SimpleView` just
 
 `TurnOnLogMetrics`: Enable the collection of various OS metrics such as memory and CPU use. These metrics can be directed to the logs or monitoring backends.
 
-`setupBackends`, `defaultBackends`, `hasEKG`and `hasPrometheus`: The system supports a number of backends for logging and monitoring. This settings list the the backends available to use in the configuration. The logging backend is called `Katip`. 
-Also enable the EKG backend if you want to use the EKG or Prometheus monitoring interfaces. 
+`setupBackends`, `defaultBackends`, `hasEKG`and `hasPrometheus`: The system supports a number of backends for logging and monitoring. This settings list the the backends available to use in the configuration. The logging backend is called `Katip`.
+Also enable the EKG backend if you want to use the EKG or Prometheus monitoring interfaces.
 
 `setupScribes` and `defaultScribes`: For the Katip logging backend we must set up outputs (called scribes) The available types of scribe are:
 
@@ -180,7 +180,7 @@ Also enable the EKG backend if you want to use the EKG or Prometheus monitoring 
 * StdoutSK/StderrSK: for stdout/stderr
 * JournalSK: for systemd's journal system
 * DevNullSK
-* The scribe output format can be ScText or ScJson. 
+* The scribe output format can be ScText or ScJson.
 
 `rotation` The default file rotation settings for katip scribes, unless overridden in the setupScribes above for specific scribes.
 
@@ -253,9 +253,9 @@ It is also possible to have more fine grained control over filtering of trace ou
 
 `mapBackends`This routes metrics matching specific names to particular backends. This overrides the defaultBackends listed above. And note that it is an **override** and not an extension so anything matched here will not go to the default backend, only to the explicitly listed backends.
 
-`mapSubtrace` This section is more expressive, we are working on its documentation. 
-	    
- 
+`mapSubtrace` This section is more expressive, we are working on its documentation.
+
+
 	  "options": {
 	    "mapBackends": {
 	      "cardano.node-metrics": [
@@ -349,4 +349,3 @@ It is also possible to have more fine grained control over filtering of trace ou
 	    }
 	  }
 	}
-
