@@ -288,8 +288,8 @@ Now we can use the verification key we just created to make an address. For now,
 
     cardano-cli shelley address build \
         --payment-verification-key-file payment.vkey \
-	--stake-verification-key-file stake.vkey \
-	--out-file payment.addr
+	--out-file payment.addr \
+	--testnet-magic 42
 
         > 01ed8ae0843a3...
 
