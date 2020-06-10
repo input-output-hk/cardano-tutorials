@@ -11,7 +11,7 @@ A good setup for a stake pool is to have (at least) one block-producing node con
 
 ![network diagram](producer-relay-diagram.png)
 
-First, we need to setup our __block-producing node__. You can build the node from source or maintain a single build on your relay and copy the binaries to you block-producing node. Just make sure you have consistent versions across them.
+First, we need to setup our __block-producing node__. You can build the node from source or maintain a single build on your relay and copy the binaries to your block-producing node. Just make sure you have consistent versions across them.
 
 ### Basic block-producing node firewall configuration:
 
