@@ -49,6 +49,8 @@
 
         cabal update
         cabal --version
+        
+   __Note__: You may need to run `cabal user-config update` to make sure the cabal configuration is amended to the installed version of cabal. Doing this will make sure `cabal install ...` correctly symlinks the binaries created into `~/.cabal/bin` when the `--installdir` option is omitted.
 
    Finally we download and install GHC:
 
@@ -85,9 +87,9 @@
 5. Now we build and install the node with ``cabal``,
    which will take a couple of minutes the first time you do a build. Later builds will be much faster, because everything that does not change will be cached.
 
-   		cabal install cardano-node cardano-cli --installdir="$HOME/.local/bin"
+   		cabal install cardano-node cardano-cli
 
-   This will build and install `cardano-node` and `cardano-cli` in folder `~/.cabal/bin` by default, so the remark about your `PATH` from above applies here as well: Make sure folder `~/.cabal/bin` is in your path or copy the executables to a folder that is.
+   This will build and install `cardano-node` and `cardano-cli` into your `~/.cabal/bin` folder by default, so the remark about your `PATH` from above applies here as well: Make sure folder `~/.cabal/bin` is in your path or copy the executables to a folder that is. Alternatively you can run `cabal install cardano-node cardano-cli --installdir="$HOME/.local/bin"` to install the `cardano-node` and `cardano-cli` directly into your `~/.local/bin` folder.
 
    __Note__: When using __cabal install__, make sure you have `overwrite-policy: always` in your `.cabal/config` or delete old version of `cardano-node` and `cardano-cli` from `~/.cabal/bin`. Otherwise cabal install will not overwrite the old executables.
 
@@ -100,6 +102,8 @@
         git tag
         git checkout tags/<the-tag-you-want>
         cabal install cardano-node cardano-cli
+        
+   This will build and install `cardano-node` and `cardano-cli` into your `~/.cabal/bin` folder. Alternatively you can run `cabal install cardano-node cardano-cli --installdir="$HOME/.local/bin"` to install the `cardano-node` and `cardano-cli` directly into your `~/.local/bin` folder.
 
    __Note:__ It might be necessary to delete the `db`-folder (the database-folder) before running an updated version of the node.
 
