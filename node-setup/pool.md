@@ -130,3 +130,15 @@ The __pool.cert__ file should look like this:
             --testnet-magic 42
 
   That's it! Our stake pool has been registered.
+  
+  To verify that your stake pool registration was indeed successful, you can perform the following steps:
+  
+  	cardano-cli shelley stake-pool id --verification-key-file <path to your node.vkey>
+  
+  will output your poolID. You can then check for the presence of your poolID in the network ledger state, with the following command:
+  
+  	cardano-cli shelley query ledger-state --testnet-magic 42 | grep poolPubKey | grep <poolId>
+
+which should return a non-empty string if your poolID is located in the ledger. You can then then head over to a pool listing website such as https://ff.pooltool.io/ and (providing it is up and running and showing a list of registered stake pools) you should hopefully be able to find your pool in there by searching using your poolID, and subsequently claiming it (might require registration on the website) and giving it a customized name.
+  
+  
