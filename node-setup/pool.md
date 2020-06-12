@@ -9,14 +9,15 @@ registered a [stake address](staking-key.md) and have some funds at your stake a
 1. We need to create a _stake pool registration certificate_:
 
         cardano-cli shelley stake-pool registration-certificate \
-            --cold-verification-key-file node.vkey \ 
+            --cold-verification-key-file node.vkey \
             --vrf-verification-key-file vrf.vkey \
             --pool-pledge 100000000000 \
             --pool-cost 10000000000 \
             --pool-margin 0.01 \
-            --reward-account-verification-key-file stake.vkey \
-            --pool-owner-staking-verification-key stake.vkey \
+            --pool-reward-account-verification-key-file stake.vkey \
+            --pool-owner-stake-verification-key stake.vkey \
             --out-file pool.cert
+            --testnet-magic 42
 
    | Parameter                            | Explanation                                       |
    |--------------------------------------|---------------------------------------------------|
@@ -38,8 +39,8 @@ registered a [stake address](staking-key.md) and have some funds at your stake a
    and use the same key as pool owner key for the pledge.
 
    We could use a different key for the rewards, and we could provide more than one owner key if there were multiple owners who share the pledge.
-   
-The __pool.cert__ file should look like this: 
+
+The __pool.cert__ file should look like this:
 
 	type: StakePoolCertificateShelley
 	title: Free form text
@@ -56,9 +57,9 @@ The __pool.cert__ file should look like this:
         cardano-cli shelley stake-address delegation-certificate \
             --staking-verification-key-file stake.vkey \
             --stake-pool-verification-key-file node.vkey \
-            --out-file delegation.cert 
+            --out-file delegation.cert
 
-   This creates a delegation certificate which delegates funds from all stake addresses associated with key `stake.vkey` to 
+   This creates a delegation certificate which delegates funds from all stake addresses associated with key `stake.vkey` to
    the pool belonging to cold key `node.vkey`. If we had used different staking keys for the pool owners in the first step,
    we would need to create delegation certificates for all of them instead.
 
@@ -66,29 +67,29 @@ The __pool.cert__ file should look like this:
    by including them in one or more transactions. We can use one transaction for multiple certificates, the certificates will be applied in order.
    We start by calculating the fees (as explained [here](tx.md)):
 
-        cardano-cli shelley transaction calculate-min-fee \ 
+        cardano-cli shelley transaction calculate-min-fee \
             --tx-in-count 1 \
-            --tx-out-count 1 \ 
-            --ttl 200000 \ 
+            --tx-out-count 1 \
+            --ttl 200000 \
             --testnet-magic 42 \
             --signing-key-file payment.skey \
             --signing-key-file stake.skey \
             --signing-key-file node.skey \
             --certificate-file pool.cert \
-            --certificate-file delegation.cert \ 
-            --protocol-params-file protocol.json 
+            --certificate-file delegation.cert \
+            --protocol-params-file protocol.json
 
         > 184685
 
    Note how we included the two certificates in the call to `calculate-min-fee` and that the transaction will have to be signed by the payment key corresponding to the
-   address we use to pay for the transaction, 
+   address we use to pay for the transaction,
    the staking key(s) of the owner(s) and the cold key of the node.
-   We will also have to pay a deposit for the stake pool registration. 
+   We will also have to pay a deposit for the stake pool registration.
    The deposit amount is specified in the genesis file:
 
         "poolDeposit": 500000000
 
-   In order to calculate the correct amounts, we first query our stake address as explained [here](tx.md). 
+   In order to calculate the correct amounts, we first query our stake address as explained [here](tx.md).
    We might get somethin like
 
                                    TxHash                                 TxIx        Lovelace
@@ -105,19 +106,19 @@ The __pool.cert__ file should look like this:
    Now we can build our transaction:
 
         cardano-cli shelley transaction build-raw \
-            --tx-in 9db6cf...#0 \ 
+            --tx-in 9db6cf...#0 \
             --tx-out $(cat payment.addr)+999499083081 \
             --ttl 200000 \
             --fee 184685 \
             --out-file tx003.raw \
             --certificate-file pool.cert \
-            --certificate-file delegation.cert 
+            --certificate-file delegation.cert
 
    We sign:
 
-        cardano-cli shelley transaction sign \ 
+        cardano-cli shelley transaction sign \
             --tx-body-file tx003.raw \
-            --signing-key-file payment.skey \ 
+            --signing-key-file payment.skey \
             --signing-key-file stake.skey \
             --signing-key-file node.skey \
             --testnet-magic 42 \
@@ -130,15 +131,13 @@ The __pool.cert__ file should look like this:
             --testnet-magic 42
 
   That's it! Our stake pool has been registered.
-  
+
   To verify that your stake pool registration was indeed successful, you can perform the following steps:
-  
+
   	cardano-cli shelley stake-pool id --verification-key-file <path to your node.vkey>
-  
+
   will output your poolID. You can then check for the presence of your poolID in the network ledger state, with the following command:
-  
+
   	cardano-cli shelley query ledger-state --testnet-magic 42 | grep poolPubKey | grep <poolId>
 
 which should return a non-empty string if your poolID is located in the ledger. You can then then head over to a pool listing website such as https://ff.pooltool.io/ and (providing it is up and running and showing a list of registered stake pools) you should hopefully be able to find your pool in there by searching using your poolID, and subsequently claiming it (might require registration on the website) and giving it a customized name.
-  
-  
