@@ -2,16 +2,16 @@
 
 With the setup described in previous tutorials,
 our node was able to synchronize with the blockchain and process [transactions](tx.md),
-but it was not able to _produce blocks_. 
+but it was not able to _produce blocks_.
 A block producing node needs a _cold key pair_, a _KES key pair_, a _VRF key pair_ and an _operational node certificate_.
 In this tutorial we will see how to generate those keys and the certificate and how to start a node that is configured to use them.
 
 1. We assume that you have access to the [command line interface](cli.md).
-   First of all, we want to create a _cold key pair_ for our node. 
-   
+   First of all, we want to create a _cold key pair_ for our node.
+
    __This key pair is called "cold", because ideally, it will be created and stored offline, not on a computer that is connected to the internet,
    let alone on the computer running the node.__
-   
+
    The reason for this is security: Under no circumstances must these keys fall into the wrong hands!
 
    To create such a key pair (on our offline computer), we type
@@ -54,14 +54,31 @@ In this tutorial we will see how to generate those keys and the certificate and 
 
 4. Now we can create an operational node certificate:
 
-        cardano-cli shelley node issue-op-cert \
-            --kes-verification-key-file kes001.vkey \
-            --cold-signing-key-file node.skey \
-            --operational-certificate-issue-counter node.counter \
-            --kes-period 0 \
-            --out-file node001.cert
+We have learned that  `"slotsPerKESPeriod": 3600`
 
-   This will create a certificate and save it to file `node001.cert`. 
+So one period lasts 3600 slots. What is the current tip of the blockchain?,
+We can use our node to query the tip:
+
+    export CARDANO_NODE_SOCKET_PATH=path/to/node-socket
+    cardano-cli shelley query tip --testnet-magic 42
+    > Tip (SlotNo {unSlotNo = 432571}) ...
+
+Look for Tip `unSlotNo` value. In this example we are on slot 432571. so now we can calculate KES period:
+
+    expr 432571 / 3600
+    > 120
+
+With this information we can generate our opertional certificate:
+
+    cardano-cli shelley node issue-op-cert \
+    --kes-verification-key-file kes.vkey \
+    --cold-signing-key-file cold.skey \
+    --operational-certificate-issue-counter coldcounter \
+    --kes-period 120 \
+    --out-file node001.cert
+
+
+   This will create a certificate and save it to file `node001.cert`.
    It will update the "serial number" saved in the previously generated `node.counter`,
    and it will link our secure "cold" key to the operational "hot" KES key.
 
@@ -90,6 +107,3 @@ In this tutorial we will see how to generate those keys and the certificate and 
    (These are the parameters for the FF-testnet. KES keys on the mainnet will be valid for 90 days.)
 
    Before the end of that period, we will have to repeat steps 3.-5. to generate a new KES key pair, create a certificate for it and run our node with the new key and new certificate.
-            
-
-            
