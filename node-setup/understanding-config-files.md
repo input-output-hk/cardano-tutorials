@@ -124,10 +124,10 @@ Here is a brief description of each parameter. You can learn more in the [spec](
 | keyDeposit | The amount of a key registration deposit |
 | keyDecayRate | The deposit decay rate |
 | nOpt | Desired number of pools |
-| rho | Treasury expansion |
+| rho | Monetary expansion  |
 |	poolMinRefund | The minimum percent pool refund |
-|	tau | Monetary expansion |
-|	a0 | Pool influence |
+|	tau | Treasury expansion |
+|	a0 | Pledge influence |
 | protocolMagicId | |
 | systemStart | Time of slot 0 |
 | genDelegs | Mapping from genesis keys to genesis delegate |                
@@ -137,7 +137,7 @@ Here is a brief description of each parameter. You can learn more in the [spec](
 | maxLovelaceSupply | The total number of lovelace in the system, used in the reward calculation. |
 | networkMagic | |
 | epochLength | Number of slots in an epoch. |
-| staking | | 
+| staking | |
 | slotsPerKESPeriod | Number of slots in an KES period |
 | slotLength | The length of each slot in seconds|
 | maxKESEvolutions | The maximum number of time a KES key can be evolved before a pool operator must create a new operational certificate |
