@@ -56,14 +56,18 @@ LATEST NODE TAG: 1.13.0
     Save the address in file `stake`.
 
         cardano-cli shelley stake-address build \
-            --staking-verification-key-file stake.vkey > stake
+            --staking-verification-key-file stake.vkey
+            --out-file stake.addr
+            --testnet-magic 42
 
 3.  Build a payment address `pay` for the payment key `pay.vkey` which delegates to the
     new stake address from Step 2 and transfer some funds to your new address.
 
         cardano-cli shelley address build \
             --payment-verification-key-file pay.vkey \
-            --staking-verification-key-file stake.vkey > pay
+            --staking-verification-key-file stake.vkey
+            --out-file pay.addr
+            --testnet-magic 42
 
     How to transfer funds to the new address of course depends on your current
     UTxO's. Assuming you have an address saved to file `addr`

@@ -91,7 +91,7 @@ cbor-hex:
  00
 ```
 
-3. We now have all the components that we need to create the operational certificate for your pool.  You will need to pass in the hot KES verification key file that you generated in Step 1, the cold signing key from step 2, and you will also need to specify the period for which the KES key will be valid.  Here we choose 10,000, but you may specify anything which will be valid.
+3. We now have all the components that we need to create the operational certificate for your pool.  You will need to pass in the hot KES verification key file that you generated in Step 1, the cold signing key from step 2, and you will also need to specify the period for which the KES key will be valid.  Here we choose 10,000, but you should choose a valid period.
 ```
 pushd +1
 export KES_PERIOD=10000

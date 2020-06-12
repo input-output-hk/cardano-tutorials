@@ -22,7 +22,7 @@ is in file `payment.skey`.
         cardano-cli shelley transaction calculate-min-fee \
             --tx-in-count 1 \
             --tx-out-count 2 \
-            --ttl 250000 \
+            --ttl 250000000 \
             --testnet-magic 42 \
             --signing-key-file payment.skey \
             --protocol-params-file protocol.json
@@ -30,7 +30,7 @@ is in file `payment.skey`.
         > 167965
 
    (The `--testnet-magic 42` identifies the FF-testnet.
-   Other testnets will use other numbers, and mainnet uses `--mainnet` instead.)
+   Other testnets will use other numbers, and mainnet uses `--mainnet` instead. The -ttl parameter specifies a slot number, after which this transaction is considered to be expired and will be purged from the mempool if not processed / included in a block by that slot. We are using a hard-coded large value of 250000000 for this simplistic exercise but, in real life you would most likely check the current slot number on the network, by executing 'cardano-cli shelley query tip --testnet-magic 42' command and looking at unSlotNo value in the summary returned - then adding a safety value on top of it, e.g. add 10000)
 
    So we need to pay 167965 lovelace fee.
 
@@ -54,7 +54,7 @@ is in file `payment.skey`.
         > ----------------------------------------------------------------------------------------
         > 4e3a6e7fdcb0d0efa17bf79c13aed2b4cb9baf37fb1aa2e39553d5bd720c5c99     4     1000000000000
 
-3. Now we have all the information we need to create the transaction (using a "time to live" of slot 100000,
+3. Now we have all the information we need to create the transaction (using a "time to live" of slot 250000000,
    after which the transaction will become invalid) and writing the transaction
    to file `tx001.raw`).
 
@@ -65,7 +65,7 @@ is in file `payment.skey`.
             --tx-in 4e3a6e7fdcb0d0efa17bf79c13aed2b4cb9baf37fb1aa2e39553d5bd720c5c99#4 \
             --tx-out $(cat payment2.addr)+100000000 \
             --tx-out $(cat payment.addr)+999899832035 \
-            --ttl 200000 \
+            --ttl 250000000 \
             --fee 167965 \
             --out-file tx001.raw
 
