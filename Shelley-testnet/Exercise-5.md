@@ -71,7 +71,7 @@ Please report any bugs through the cardano-node and cardano-tutorials github rep
     pool registration certificate.
     You can include the pledge delegation certificate in the same transaction.
 
-    __Note:__ the certificates order matters : you must add the pool registration certificate first then the pledge delegation certificate.
+    __Note:__ the certificate order matters : you must add the pool registration certificate first then the pledge delegation certificate.
 
 In addition to the usual transaction fees, you will also have to pay the
     pool deposit (specified in the genesis file) in that transaction.
