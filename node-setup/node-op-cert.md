@@ -58,12 +58,14 @@ In this tutorial we will see how to generate those keys and the certificate and 
             --kes-verification-key-file kes001.vkey \
             --cold-signing-key-file node.skey \
             --operational-certificate-issue-counter node.counter \
-            --kes-period 0 \
+            --kes-period {calculate-value} \
             --out-file node001.cert
 
    This will create a certificate and save it to file `node001.cert`. 
    It will update the "serial number" saved in the previously generated `node.counter`,
    and it will link our secure "cold" key to the operational "hot" KES key.
+   
+   __Important Note__: The `--kes-period` value needs to be calculated following the instructions in [Creating keys for our block-producing node](https://github.com/input-output-hk/cardano-tutorials/blob/master/Shelley-testnet/solutions/Exercise-3-solutions.md#crating-keys-for-our-block-producing-node)
 
 5. After all this work, we can move the KES- and VRF- keys and the certificate to the computer running our node and start the node as follows:
 
