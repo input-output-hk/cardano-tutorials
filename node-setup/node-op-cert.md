@@ -99,7 +99,7 @@ With this information we can generate our opertional certificate:
    Our node will include this certificate in the header of each block it creates,
    and it will sign each such block with the KES key.
 
-   The KES key will evolve for 60 periods, which is also specified in our genesis file:
+   The KES key will evolve for 120 periods, which is also specified in our genesis file:
 
         "maxKESEvolutions": 120
 
