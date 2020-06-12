@@ -10,6 +10,7 @@ The current release of tutorials focus on setting up & monitoring the node and u
 .. toctree::
    :maxdepth: 3
    :titlesonly:
+   :hidden:
 
    node-setup/address
    node-setup/AWS
