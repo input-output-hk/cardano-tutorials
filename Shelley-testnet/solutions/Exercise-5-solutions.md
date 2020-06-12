@@ -78,7 +78,8 @@ LATEST NODE TAG: 1.13.0
             --pool-cost 256000000 \
             --pool-margin 0.07 \
             --reward-account-verification-key-file stake.vkey \
-            --pool-owner-staking-verification-key-file stake.vkey \
+            --pool-owner-stake-verification-key-file stake.vkey \
+	    --testnet-magic 42 \
             --out-file pool.cert
 
 2. 	Pledge some stake to your stake pool.
