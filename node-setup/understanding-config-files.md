@@ -109,7 +109,7 @@ Here is a brief description of each parameter. You can learn more in the [spec](
 | poolDecayRate | Decay rate for pool deposits |
 | poolDeposit | The amount of a pool registration deposit |
 | protocolVersion| Accepted protocol versions |
-| decentralisationParam | Percentage of blocks produced by stake pools |
+| decentralisationParam | Percentage of blocks produced by federated nodes |
 | maxTxSize | Maximal transaction size |
 | minFeeA | The linear factor for the minimum fee calculation |
 | maxBlockBodySize | Maximal block body size |
@@ -128,16 +128,16 @@ Here is a brief description of each parameter. You can learn more in the [spec](
 |	poolMinRefund | The minimum percent pool refund |
 |	tau | Treasury expansion |
 |	a0 | Pledge influence |
-| protocolMagicId | |
+| protocolMagicId | Testnet identifier |
 | systemStart | Time of slot 0 |
 | genDelegs | Mapping from genesis keys to genesis delegate |                
 | updateQuorum | Determines the quorum needed for votes on the protocol parameter updates |
 | maxMajorPV | Provides a mechanism for halting outdated nodes |
 | initialFunds | Mapping address to values |
 | maxLovelaceSupply | The total number of lovelace in the system, used in the reward calculation. |
-| networkMagic | |
+| networkMagic | Used to distinguish between mainnet |
 | epochLength | Number of slots in an epoch. |
-| staking | |
+| staking | Initial stake delegation |
 | slotsPerKESPeriod | Number of slots in an KES period |
 | slotLength | The length of each slot in seconds|
 | maxKESEvolutions | The maximum number of time a KES key can be evolved before a pool operator must create a new operational certificate |
