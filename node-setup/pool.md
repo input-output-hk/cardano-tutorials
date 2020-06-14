@@ -9,25 +9,27 @@ registered a [stake address](staking-key.md) and have some funds at your stake a
 1. We need to create a _stake pool registration certificate_:
 
         cardano-cli shelley stake-pool registration-certificate \
-            --cold-verification-key-file node.vkey \ 
+            --cold-verification-key-file node.vkey \
             --vrf-verification-key-file vrf.vkey \
             --pool-pledge 100000000000 \
             --pool-cost 10000000000 \
             --pool-margin 0.01 \
-            --reward-account-verification-key-file stake.vkey \
-            --pool-owner-staking-verification-key stake.vkey \
+            --pool-reward-account-verification-key-file stake.vkey \
+            --pool-owner-stake-verification-key-file stake.vkey \
+            --testnet-magic 42 \
             --out-file pool.cert
 
-   | Parameter                            | Explanation                                       |
-   |--------------------------------------|---------------------------------------------------|
-   | stake-pool-verification-key-file     | verification _cold_ key                           |
-   | vrf-verification-key-file            | verification _VRS_ key                            |
-   | pool-pledge                          | pledge (lovelace)                                 |
-   | pool-cost                            | operational costs per epoch (lovelace)            |
-   | pool-margin                          | operator margin                                   |
-   | reward-account-verification-key-file | verification staking key for the rewards          |
-   | pool-owner-staking-verification-key  | verification staking key(s) for the pool owner(s) |
-   | out-file                             | output file to write the certificate to           |
+   | Parameter                                 | Explanation                                       |
+   |-------------------------------------------|---------------------------------------------------|
+   | stake-pool-verification-key-file          | verification _cold_ key                           |
+   | vrf-verification-key-file                 | verification _VRS_ key                            |
+   | pool-pledge                               | pledge (lovelace)                                 |
+   | pool-cost                                 | operational costs per epoch (lovelace)            |
+   | pool-margin                               | operator margin                                   |
+   | pool-reward-account-verification-key-file | verification staking key for the rewards          |
+   | pool-owner-stake-verification-key-file    | verification staking key(s) for the pool owner(s) |
+   | testnet-magic                             | testnet identifier number                         |
+   | out-file                                  | output file to write the certificate to           |
 
    So in the example aboce, we use the cold- and VRF-keys that we created [here](node-op-cert.md),
    promise to pledge 100,000 ada to our pool,
