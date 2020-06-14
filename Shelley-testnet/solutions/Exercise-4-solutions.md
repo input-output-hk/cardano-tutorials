@@ -250,7 +250,7 @@ LATEST NODE TAG: 1.13.0
             --signing-key-file pay.skey \
             --signing-key-file stake.skey \
             --testnet-magic 42 \
-            --tx-file tx.signed
+            --out-file tx.signed
 
         cardano-cli shelley transaction submit \
             --tx-file tx.signed \
