@@ -17,7 +17,7 @@ registered a [stake address](staking-key.md) and have some funds at your stake a
             --pool-reward-account-verification-key-file stake.vkey \
             --pool-owner-staking-verification-key stake.vkey \
             --out-file pool.cert \
-	    --testnet-magic 42
+	     --testnet-magic 42
 
    | Parameter                            | Explanation                                       |
    |--------------------------------------|---------------------------------------------------|
