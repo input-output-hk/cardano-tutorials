@@ -3,7 +3,7 @@
 In these tutorials, we will cover the following topics:
 
 - [SET UP AN AWS ENVIRONMENT](000_AWS.md)
-- [INSTALL](000_install.md)
+- [INSTALLING CARDANO-NODE AND CARDANO-CLI](000_install.md)
 - [GET CONFIGURATION FILES](010_getConfigFiles_AND_Connect.md)
 - [COMMAND LINE INTERFACE](011_cli.md)
 - [UNDERSTANDING CONFIGURATION FILES](012_understanding-config-files.md)
