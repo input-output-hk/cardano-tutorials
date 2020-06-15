@@ -2,7 +2,7 @@
 
 In these tutorials, we will cover the following topics:
 
-- [SETTIP UP AN AWS ENVIRONMENT](000_AWS.md)
+- [SET UP AN AWS ENVIRONMENT](000_AWS.md)
 - [INSTALL](000_install.md)
 - [GET CONFIGURATION FILES](010_getConfigFiles_AND_Connect.md)
 - [COMMAND LINE INTERFACE](011_cli.md)
