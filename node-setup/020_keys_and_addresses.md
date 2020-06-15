@@ -43,11 +43,11 @@ Let's produce our cryptographic keys first, as we will need them to later create
 		--out-file payment.addr \
 		--testnet-magic 42
 
-   This created the file payment.addr, let's check its content:
+This created the file payment.addr, let's check its content:
 
 		cat payment.addr
 
-		> 01df79ad8d...
+		> 01ed8...
 
 
 4. In order to query your address (see the utxo's at that address),
@@ -55,34 +55,32 @@ Let's produce our cryptographic keys first, as we will need them to later create
    to the socket-path specified in your node configuration. In this example we will use
    the block-producing node created in the previous steps:
 
-        export CARDANO_NODE_SOCKET_PATH=~/cardano-node/block-producing/db/node.socket
+        export CARDANO_NODE_SOCKET_PATH=~/cardano-node/relay/db/node.socket
 
    and make sure that your node is running.  Then use
 
-        cardano-cli shelley query utxo \
-            --address 01df79ad8d... \
+    cardano-cli shelley query utxo \
+            --address $(cat payment.addr) \
             --testnet-magic 42
 
-	    >                           TxHash                                 TxIx        Lovelace
-	    ---------------------------------------------------------------------------------------
+   you should see something like this:
 
+                              TxHash                                 TxIx        Lovelace
+    ----------------------------------------------------------------------------------------
 
-   __Note__ At this moment there is no balance displayed since we just created this address. Once you get funds you will find the UTXO hash under TxHash, its Index under TxIx and the balance in lovelaces under Lovelace.
-You can request test ADA through the public "faucet". The `--testnet-magic 42` is specific to the FF-testnet, for mainnet we would use `--mainnet` instead.)
+   (The `--testnet-magic 42` is specific to the FF-testnet, for mainnet we would use `--mainnet` instead.)
 
 
 ### Stake address
-5. Finaly, we can create our stake address. This address __CAN'T__ receive payments but will receive the rewards from participating in the protocol. We will save this address in the file `stake.addr`
+5. Finnaly, we can create our stake address. This address __CAN'T__ receive payments but will receive the rewards from participating in the protocol. We will save this address in the file `stake.addr`
 
 		cardano-cli shelley stake-address build \
-		--staking-verification-key-file stake.vkey \
+		--stake-verification-key-file stake.vkey \
 		--out-file stake.addr \
 		--testnet-magic 42
 
-   This created the file stake.addr, let's check its content:
+This created the file stake.addr, let's check its content:
 
 		cat stake.addr
 
 		> 820058...
-
-   Our stake address needs to be registered in the blockchain for it to be useful. We deal with that in another tutorial ["Registering stake address to the blockchain"](staking-key.md)
