@@ -32,7 +32,7 @@ We are using the node socket to submit transactions, so let's set environment va
 
    	export CARDANO_NODE_SOCKET_PATH=relay/db/node.socket
 
-Let's create a second __payment key pair__ and __address__ (You should have created one in Exercise 1). We need to create also a __stake key pair__ and a 	__stake address__. The payment set, gives you control of your funds, the stake set, allows you to participate in the 	protocol, by delegating tour stake or creating your own stake pool.
+Let's create a second __payment key pair__ and __address__ (You should have created one in Exercise 1). We need to create also a __stake key pair__ and a 	__stake address__. The payment set, gives you control of your funds, the stake set, allows you to participate in the 	protocol, by delegating your stake or creating your own stake pool.
 
 **Generate Payment Key Pair**
 
@@ -167,7 +167,7 @@ Now we need to make some quick math, lets say we want to send 100 tADA to `payme
 
 **BUILD TRANSACTION**
 
-Again, you may want to open a text editor to work on building the transaction, and then when it is ready yo con go to the CLI
+Again, you may want to open a text editor to work on building the transaction, and then when it is ready you can go to the CLI
 
 	$ cardano-cli shelley transaction build-raw \
 		--tx-in e757f08b856c5f12d5784f749c4fc2b1fda8b48299b520f29f6055ce94a5d8cf#0 \

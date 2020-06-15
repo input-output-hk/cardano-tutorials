@@ -72,15 +72,15 @@ LATEST NODE TAG: 1.13.0
 1. 	Generate a registration certificate for your stake pool:
 
         cardano-cli shelley stake-pool registration-certificate \
-	        --stake-pool-verification-key-file node.vkey \
+	        --cold-verification-key-file node.vkey \
             --vrf-verification-key-file vrf.vkey \
             --pool-pledge 1000000000 \
             --pool-cost 256000000 \
             --pool-margin 0.07 \
-            --reward-account-verification-key-file stake.vkey \
+            --pool-reward-account-verification-key-file stake.vkey \
             --pool-owner-stake-verification-key-file stake.vkey \
-	    --testnet-magic 42 \
-            --out-file pool.cert
+            --out-file pool.cert \
+	    --testnet-magic 42
 
 2. 	Pledge some stake to your stake pool.
 

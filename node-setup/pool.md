@@ -31,7 +31,7 @@ registered a [stake address](staking-key.md) and have some funds at your stake a
    | testnet-magic                             | testnet identifier number                         |
    | out-file                                  | output file to write the certificate to           |
 
-   So in the example aboce, we use the cold- and VRF-keys that we created [here](node-op-cert.md),
+   So in the example above, we use the cold- and VRF-keys that we created [here](node-op-cert.md),
    promise to pledge 100,000 ada to our pool,
    declare operational costs of 10,000 ada per epoch,
    set the operational margin (i.e. the ratio of rewards we take after taking our costs and before the rest is distributed amongst owners and delegators
