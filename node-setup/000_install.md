@@ -10,7 +10,7 @@ You will need:
 * An x86 host (AMD or Intel), Virtual Machine or AWS instance with at least 2 cores, 4GB of RAM and at least 10GB of free disk space;
 * A recent version of Linux, not Windows or MacOS – this will help us isolate any issues that arise;
 * Make sure you are on a network that is not firewalled. In particular, we will be using TCP/IP port 3000 and 3001 by default to establish connections with other nodes, so this will need to be open.
-* You can follow this [SERVER TUTORIAL](https://github.com/input-output-hk/cardano-tutorials/blob/master/node-setup/AWS.md) to get the server up and running. Alternatively, and only for learning purposes you can try this guide on VirtualBox [UBUNTU IMAGE FOR VIRTUAL BOX](https://linuxhint.com/install_ubuntu_virtualbox_2004/)
+* You can follow this [SERVER TUTORIAL](000_AWS.md) to get the server up and running.
 
 ## Install dependencies
 
