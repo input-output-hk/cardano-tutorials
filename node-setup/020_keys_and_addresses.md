@@ -88,6 +88,5 @@ This created the file payment.addr that is already associated with our stake key
 
 This created the file stake.addr, let's check its content:
 
-		cat stake.addr
-
-		> 820058...
+    cat stake.addr
+    > 5821e0872296956a4d86ee9654060734e83dddc56016fb2ecc7cbb435ee8e3c1053d9d
