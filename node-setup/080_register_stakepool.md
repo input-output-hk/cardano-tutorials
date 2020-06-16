@@ -4,11 +4,9 @@
 
 Make sure you have access to:
 
-    a. 	One or more funded addresses.
-
-    b. 	The keys and operational certificate for the stake pool
-
-    c. 	The stake keys
+* One or more funded addresses.
+* The keys and operational certificate for the stake pool.
+* The stake keys.
 
 At this moment we have:
 
@@ -36,7 +34,7 @@ Registering your stake pool requires:
 * Create a delegation certificate (pledge)
 * Submit the certificates to the blockchain
 
-__Note__ Generating the __stake pool registration certificate__ and the __delegation certificate__ requires our __cold keys__ So, you may want to generate these certificates in your local machine taking the proper security measures to avoid exposing your cold keys to the internet.  
+**WARNING:** Generating the __stake pool registration certificate__ and the __delegation certificate__ requires the __cold keys__ So, you may want to generate these certificates in your local machine taking the proper security measures to avoid exposing your cold keys to the internet.  
 
 ### 1. Generate Stake pool registration certificate
 
