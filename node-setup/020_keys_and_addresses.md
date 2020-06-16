@@ -34,6 +34,15 @@ Let's produce our cryptographic keys first, as we will need them to later create
 		--verification-key-file stake.vkey \
 		--signing-key-file stake.skey
 
+It's content look like this:
+
+    cat stake.vkey
+
+    type: StakingVerificationKeyShelley
+    title: Free form text
+    cbor-hex:
+    18b958203e...
+
 ### Payment address
 3. We then use `payment.vkey` and `stake.vkey` to create our `payment address`:
 
@@ -43,12 +52,7 @@ Let's produce our cryptographic keys first, as we will need them to later create
 		--out-file payment.addr \
 		--testnet-magic 42
 
-This created the file payment.addr, let's check its content:
-
-		cat payment.addr
-
-		> 01ed8...
-
+This created the file payment.addr that is already associated with our stake keys.
 
 4. In order to query your address (see the utxo's at that address),
    you first need to set environment variable `CARDANO_NODE_SOCKET_PATH`
