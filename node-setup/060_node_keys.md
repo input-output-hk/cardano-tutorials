@@ -68,7 +68,7 @@ So one period lasts 3600 slots.
 
 Then we need the current tip of the blockchain:
 
-We can use your relay node (from [](010_getConfigFiles.md))to query the tip:
+We can use your relay node to query the tip:
 
     cardano-cli shelley query tip --testnet-magic 42
     > Tip (SlotNo {unSlotNo = 432571}) ...
