@@ -22,7 +22,7 @@ Make the __block-producing__ node to "talk" only to __YOUR__ relay node. Do not 
   	{
   	  "Producers": [
   	    {
-  	      "addr": "<RELAY NODE PUBLIC IP",
+  	      "addr": "<RELAY IP ADDRESS",
   	      "port": <PORT>,
   	      "valency": 1
   	    }
@@ -39,7 +39,7 @@ Make your __relay node__ `talk` to your __block-producing__ node and __other rel
     {
       "Producers": [
         {
-          "addr": "<Block-producing IP ADDRESS",
+          "addr": "<BLOCK-PRODUCING IP ADDRESS",
           "port": PORT,
           "valency": 1
         },
