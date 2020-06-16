@@ -86,7 +86,7 @@ We need the transaction hash and index of the __UTXO__ we want to spend:
 
 We write the transaction in a file, we will name it `tx.raw`.
 
-Not that for `--tx-in` we use the following syntax: `TxId#TxIx` where `TxId` is the transaction hash and `TxIx` is the index
+Note that for `--tx-in` we use the following syntax: `TxId#TxIx` where `TxId` is the transaction hash and `TxIx` is the index
 and for `--tx-out` we use: `TxOut+Lovelace` where `TxOut` is the hex encoded address followed by the amount in `Lovelace`.
 
     cardano-cli shelley transaction build-raw \
