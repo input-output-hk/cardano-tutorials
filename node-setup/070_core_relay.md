@@ -47,7 +47,7 @@ Make your __relay node__ `talk` to your __block-producing__ node and __other rel
           "addr": "<IP ADDRESS>",
           "port": <PORT>,
           "valency": 1
-        }
+        },
         {
           "addr": "<IP ADDRESS",
           "port": <PORT>,
