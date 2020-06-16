@@ -35,19 +35,20 @@ You can get the complete list of available options with `cardano-node run --help
   	                                specified slot
     -h,--help                       Show this help text
 
-Now you can start the node, double check that the port you have chosen is open. In the `cardano-node` directory run:
+Start your node:
 
-    cardano-node run \
-       --topology relay/ff-topology.json \
-       --database-path relay/db \
-       --socket-path relay/db/node.socket \
+
+     cardano-node run \
+       --topology path/to/ff-topology.json \
+       --database-path path/to/db \
+       --socket-path path/to/db/node.socket \
        --host-addr x.x.x.x \
        --port 3001 \
-       --config relay/ff-config.json
+       --config path/to/ff-config.json
 
-__NOTE__ you need to replace x.x.x.x with your public IP. In a VPS server, it is the one you use connect to the server.
+__NOTE__ you need to replace x.x.x.x with your public IP and indicate the correct paths to the required files.
 
-you can check whether the node is syncing by fetching the current tip. (The `--testnet-magic 42` identifies the FF-testnet)
+You can check whether the node is syncing by fetching the current tip. (The `--testnet-magic 42` identifies the FF-testnet)
 
         export CARDANO_NODE_SOCKET_PATH=path/to/db/node.socket
         cardano-cli shelley query tip --testnet-magic 42
