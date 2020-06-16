@@ -14,7 +14,7 @@ To use the faucet, simply enter
 into a terminal window.
 If your address is saved to a file, for example `payment.addr`, you can instead type
 
-    curl -v -XPOST "https://faucet.ff.dev.cardano.org/send-money/$(cat payment.addr)
+    curl -v -XPOST "https://faucet.ff.dev.cardano.org/send-money/$(cat payment.addr)"
 
 If all goes well, the last line of the output should declare success and say how much funds where sent to your address.
 
