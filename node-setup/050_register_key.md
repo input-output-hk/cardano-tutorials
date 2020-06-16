@@ -36,11 +36,11 @@ This transaction has only 1 input (the UTXO used to pay the transaction fee) and
     --certificate-file stake.cert \
     --protocol-params-file protocol.json
 
-        > 171485
+    > 171485
 
 In this transaction we have to not only pay transaction fees, but also include a _deposit_ (which we will get back when we deregister the key) as stated in the protocol parameters:
 
-The deposit amount can be found in the `protocol.json` under key `keyDeposit`:
+The deposit amount can be found in the `protocol.json` under `keyDeposit`:
 
         ...
         "keyDeposit": 400000,
