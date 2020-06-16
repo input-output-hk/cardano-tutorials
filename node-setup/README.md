@@ -7,7 +7,7 @@ In these tutorials, we will cover the following topics:
 - [GET CONFIGURATION FILES](010_getConfigFiles_AND_Connect.md)
 - [COMMAND LINE INTERFACE](011_cli.md)
 - [UNDERSTANDING CONFIGURATION FILES](012_understanding-config-files.md)
-- [GENERATE KEYS](020_keys_and_addresses.md)
+- [GENERATE KEYS AND ADDRESSES](020_keys_and_addresses.md)
 - [GET FUNDS](030_faucet.md)
 - [CREATE A TRANSACTION](040_transactions.md)
 - [REGISTER YOUR STAKE ADDRESS](050_register_key.md)
