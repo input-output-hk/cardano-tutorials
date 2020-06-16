@@ -17,7 +17,7 @@ At this moment we have:
     | `stake.vkey`   | staking verification key          |
     | `stake.skey`   | staking signing key               |
     | `stake.addr`   | registered stake address          |
-    | `payment.addr` | funded address linked to `stake` |
+    | `payment.addr` | funded address linked to `stake`  |
     | `cold.vkey`    | cold verification key             |
     | `cold.skey`    | cold signing key                  |
     | `cold.counter` | issue counter                     |
