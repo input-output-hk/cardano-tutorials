@@ -57,7 +57,7 @@ This should be everything that you need to get you up and running.
 
 5. Use the node CLI commands to generate an address key, utxo.txt, that will be used to provide you with funds.
 
-   - [Tutorial on making an address](node-setup/020_keys_and_addresses.md)
+   - [Tutorial on making an address](cardano-tutorials/node-setup/020_keys_and_addresses.md)
 
 6. Request funds from the faucet with
 
