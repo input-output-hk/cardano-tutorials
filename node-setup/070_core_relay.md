@@ -2,7 +2,7 @@
 
 Before we register our stake pool, let's configure our __block-producing__ and __relay__ nodes:
 
-__NOTE:__ Here you can find peers to connect to, and submit your own stake pool data:  https://github.com/input-output-hk/cardano-ops/blob/master/topologies/ff-peers.nix#L5-L10
+__NOTE:__ Here you can find peers to connect to, and submit your own relay's data:  https://github.com/input-output-hk/cardano-ops/blob/master/topologies/ff-peers.nix#L5-L10
 
 ### Configure the block-producing node
 
