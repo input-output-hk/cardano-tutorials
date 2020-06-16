@@ -87,6 +87,12 @@ To generate the certificate:
     --kes-period 120 \
     --out-file node.cert
 
+### Move the cold keys to secure storage and remove them from your local machine.
+
+The best place for your cold keys is a __SECURE USB__ or other __SECURE EXTERNAL DEVICE__, not a computer with internet access.
+
+### Copy the files to the server:
+
 Copy your VRF keys, KES Keys, and Operational Certificate to your __block-producing__ server. For example:
 
     scp -rv -P<SSH PORT> -i ~/.ssh/<SSH_PRIVATE_KEY> ~/pool-keys USER@<PUBLIC_IP>:~/
@@ -103,9 +109,3 @@ Log in to your server and verify that the files are there:
     > kes.skey  kes.vkey  node.cert  vrf.skey  vrf.vkey  
 
 Later on we will learn how to register our pool in the blockchain.
-
-### Move the cold keys to secure storage and remove them from your local machine.
-
-The best place for your cold keys is a __SECURE USB__ or other __SECURE EXTERNAL DEVICE__, not a computer with internet access.
-
-**IMPORTANT: Move your cold keys to cold storage and delete the files from your local machine.**
