@@ -46,7 +46,7 @@ So at this moment the tip is on block 795346.
 
 To build the transaction we need to specify the __TTL (Time to live)__, this is the block height limit for our transaction to be included in a block, if it is not in a block by that slot the transaction will be cancelled.
 
-From protocol.json we know that we have 1 slot per second. Lets say that it will take us 10 minutes to build the transaction, and that we want to give it another 10 minutes window to be included in a block.  So we need 20 minutes or 1200 slots. So we add 1200 to the current tip: 795346 + 1200 = 796546. So our TTL is 796546.
+From `protocol.json` we know that we have 1 slot per second. Lets say that it will take us 10 minutes to build the transaction, and that we want to give it another 10 minutes window to be included in a block.  So we need 20 minutes or 1200 slots. So we add 1200 to the current tip: 795346 + 1200 = 796546. So our TTL is 796546.
 
 ### Calculate the fee
 The transaction needs one (1) input: a valid UTXO from `payment.addr`, and two (2) outputs: The receiving address __payment2.addr__ and an address to send the change back, in this case we use __payment.addr__
