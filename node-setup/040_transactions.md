@@ -13,7 +13,7 @@ To generate __payment2.addr__ we can use the same stake key pair that we already
     cardano-cli shelley address build \
     --payment-verification-key-file payment2.vkey \
     --stake-verification-key-file stake.vkey \
-    --out-file payment2.addr
+    --out-file payment2.addr \
     --testnet-magic 42
 
 Let's send 100 ada from `payment.addr` to `payment2.addr`
