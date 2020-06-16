@@ -55,4 +55,4 @@ You can check whether the node is syncing by fetching the current tip. (The `--t
 
         > Tip (SlotNo {unSlotNo = 74680}) (ShelleyHash {unShelleyHash = HashHeader {unHashHeader = edfefc4ac1e6a6ad1551bcf0650ade22f2e99937936bb61d8d7d5fae2e6a19aa}}) (BlockNo {unBlockNo = 2030})
 
-Note, that syncing phase can take some time.
+The syncing phase can take some time.
