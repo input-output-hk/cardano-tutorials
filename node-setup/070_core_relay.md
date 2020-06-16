@@ -32,26 +32,26 @@ Make the __block-producing__ node to "talk" only to __YOUR__ relay node. Do not 
 ### Configure the relay node:
 
 Make your __relay node__ `talk` to your __block-producing__ node and __other relays__ in the network by editing the `ff-topology.json` file:
-  
+
 
     nano ff-topology.json
 
-  	{
-  		"Producers": [
-  			{
-  			   "addr": "<BLOCK-PRODUCING NODE IP",
-  		      "port": <PORT>,
-  		      "valency": 1
-  			},
-  			{
-  				"addr": "<IP ADDRESS>",
-  				"port": <PORT>,
-  				"valency": 1
-  			},
-  			{
-  				"addr": "<IP ADDRESS>",
-  				"port": <PORT>,
-  				"valency": 1
-  			}
-  		]
-  	}
+    {
+      "Producers": [
+        {
+          "addr": "<Block-producing IP ADDRESS",
+          "port": PORT,
+          "valency": 1
+        },
+        {
+          "addr": "<IP ADDRESS>",
+          "port": <PORT>,
+          "valency": 1
+        }
+        {
+          "addr": "<IP ADDRESS",
+          "port": <PORT>,
+          "valency": 1
+        }
+      ]
+    }
