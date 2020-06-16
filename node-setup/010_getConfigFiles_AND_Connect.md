@@ -11,7 +11,9 @@ Let us create a new directory inside `cardano-node`to store the configuration fi
     mkdir cardano-node/relay
     cd cardano-node/relay
 
-Now, to start your node and connect it to F&F testnet you will need three important files: `ff-config.json` `ff-genesis.json` and `ff-topology.json`. We will download them from <https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/index.html>
+Now, you can download `ff-config.json` `ff-genesis.json` and `ff-topology.json`. from: https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/index.html
+
+Or with the command line using:
 
     wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/ff-config.json
     wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/ff-genesis.json
