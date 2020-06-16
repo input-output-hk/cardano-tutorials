@@ -49,7 +49,7 @@ As before, if you have any questions or encounter any problems, please feel free
 
 ### Exercises
 
-In this excercise we will be following steps from [Creating a Simple Transaction tutorial](https://github.com/input-output-hk/cardano-tutorials/blob/master/node-setup/tx.md)
+In this excercise we will be following steps from [Creating a Simple Transaction tutorial](node-setup/040_transactions.md)
 
 1. If you are not on the correct version of the node, then some of these commands may not work.
    It may be frustrating to stop and restart a working system, but it is better than discovering that
@@ -127,7 +127,7 @@ Here's an **example** of a transaction that instructs the transfer of 100,000,00
 		--tx-out a72ec98117def0939cc310b17de10d218f41ef5c84d94a89fe6097318d3de983+99899000000 \
 		--fee 1000000 \
 		--ttl 500000 \
-		--out-file txbody
+		--out-file tx.raw
 ```
 
 Note that there are two outputs. First is the amount sent to account B, second is the change being returned to account A, where the change is equal to the input from account A, minus the value being transferred to account B, minus the fee.
@@ -138,10 +138,10 @@ We are now ready to sign the transaction and submit it to the chain.
 
 ```bash
         cardano-cli shelley transaction sign \
-            --tx-body-file txbody \
+            --tx-body-file tx.raw \
             --signing-key-file txsign \
             --testnet-magic … \
-            --out-file txout
+            --out-file tx.signed
 ```
 
 You will need to give the correct Network Magic Id for the Testnet, as supplied in the Genesis file (e.g. 42).
