@@ -5,7 +5,7 @@ you need to create a _KES key pair_.
 
 Here "KES" stands for _**K**ey **E**volving **S**ignature_, which means that after a certain _period_, the key will _evolve_ to a new key
 and discard its old version. This is useful, because it means that even if an attacker compromises the key and gets access to the signing key,
-it can only use that to sign blocks _from now on_, but not blocks dating from _earlier periods_, making it impossible for the attacker to rewrite history.
+he can only use that to sign blocks _from now on_, but not blocks dating from _earlier periods_, making it impossible for the attacker to rewrite history.
 
 Unfortunately, there is a catch: A KES key can only evolve for a certain number of periods and becomes useless afterwards.
 This means that before that number of periods has passed, the node operator has to generate a new KES key pair,
