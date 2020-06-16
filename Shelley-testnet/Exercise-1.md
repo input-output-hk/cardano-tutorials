@@ -38,7 +38,7 @@ This should be everything that you need to get you up and running.
 
 ### Exercises
 
-1. Download, Build and Install the Cardano Node Software using the instructions in the [Cardano Tutorial](020_keys_and_addresses.md).  You may need to do this repeatedly, so you may want to bookmark the instructions.  You will need to use the correctly tagged version at each stage. The most recent tag at the time of writing is 1.13.0.
+1. Download, Build and Install the Cardano Node Software using the instructions in the [Cardano Tutorial](../node-setup/020_keys_and_addresses.md).  You may need to do this repeatedly, so you may want to bookmark the instructions.  You will need to use the correctly tagged version at each stage. The most recent tag at the time of writing is 1.13.0.
 
 2. Download the genesis, topology, and configuration files, as described in the tutorial.
 
@@ -57,7 +57,7 @@ This should be everything that you need to get you up and running.
 
 5. Use the node CLI commands to generate an address key, utxo.txt, that will be used to provide you with funds.
 
-   - [Tutorial on making an address](cardano-tutorials/node-setup/020_keys_and_addresses.md)
+   - [Tutorial on making an address](../node-setup/020_keys_and_addresses.md)
 
 6. Request funds from the faucet with
 

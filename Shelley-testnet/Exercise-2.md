@@ -49,7 +49,7 @@ As before, if you have any questions or encounter any problems, please feel free
 
 ### Exercises
 
-In this excercise we will be following steps from [Creating a Simple Transaction tutorial](node-setup/040_transactions.md)
+In this excercise we will be following steps from [Creating a Simple Transaction tutorial](../node-setup/040_transactions.md)
 
 1. If you are not on the correct version of the node, then some of these commands may not work.
    It may be frustrating to stop and restart a working system, but it is better than discovering that
