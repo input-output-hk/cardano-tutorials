@@ -17,11 +17,11 @@ In this tutorial we will see how to generate those keys and the certificate and 
    To create such a key pair (on our offline computer), we type
 
         cardano-cli shelley node key-gen \
-            --cold-verification-key-file cold.vkey \
-            --cold-signing-key-file cold.skey \
+            --cold-verification-key-file node.vkey \
+            --cold-signing-key-file node.skey \
             --operational-certificate-issue-counter issue-counter.cert
 
-   This will create three files (which we named `cold.vkey`, `cold.skey` and `issue-counter.cert` here, but you can choose those names freely),
+   This will create three files (which we named `node.vkey`, `node.skey` and `issue-counter.cert` here, but you can choose those names freely),
    one for the (public) verification key, one for the (private) signing key and one for the "operational certificate counter".
    The counter will keep track of the number of certificates you have issued, so that each certificate can get the correct "serial number".
 
@@ -72,7 +72,7 @@ With this information we can generate our opertional certificate:
 
     cardano-cli shelley node issue-op-cert \
     --kes-verification-key-file kes.vkey \
-    --cold-signing-key-file cold.skey \
+    --cold-signing-key-file node.skey \
     --operational-certificate-issue-counter issue-counter.cert \
     --kes-period 120 \
     --out-file shelley-op.cert
