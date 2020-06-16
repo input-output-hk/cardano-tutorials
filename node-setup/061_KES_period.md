@@ -33,7 +33,7 @@ In this example, we are currently in slot 432571, and we know from the genesis f
     expr 432571 / 3600
     > 120
 
-With this we are able to generate a operational certificate for our stake pool (assuming the same file names as [here](060_node_keys.md)):
+With this we are able to generate an operational certificate for our stake pool (assuming the same file names as [here](060_node_keys.md)):
 
     cardano-cli shelley node issue-op-cert \
         --kes-verification-key-file kes.vkey \
