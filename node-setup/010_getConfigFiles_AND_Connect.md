@@ -6,7 +6,7 @@ Starting the node and connecting it to the testnet requires 3 configuration file
 * ff-genesis.json
 * ff-config.json
 
-Let us create a new directory inside `cardano-node`to store the configuration files that we will need no start the node.
+Let us create a new directory inside `cardano-node`to store the configuration files that we need no start the node.
 
     mkdir cardano-node/relay
     cd cardano-node/relay
