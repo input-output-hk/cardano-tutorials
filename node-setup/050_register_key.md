@@ -1,4 +1,3 @@
-# Register stake address :
 
 # Register stake address in the blockchain
 
