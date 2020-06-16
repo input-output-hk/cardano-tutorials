@@ -102,7 +102,7 @@ Log in to your server and verify that the files are there:
 
     > kes.skey  kes.vkey  node.cert  vrf.skey  vrf.vkey  
 
-Later on we will learn how to register the node.cert in the blockchain.
+Later on we will learn how to register our pool in the blockchain.
 
 ### Move the cold keys to secure storage and remove them from your local machine.
 
