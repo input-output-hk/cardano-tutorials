@@ -21,7 +21,7 @@ Let's send 100 ada from `payment.addr` to `payment2.addr`
 Creating a transaction is a process that requires various steps:
 
 * Get the protocol parameters
-* Define the TTL (time to live) for the transaction
+* Define the time-to-live (TTL) for the transaction
 * Calculate the fee
 * Build the transaction
 * Sign the transaction
