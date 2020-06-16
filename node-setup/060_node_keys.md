@@ -6,7 +6,7 @@ We need to setup our __block-producing__ node. You can build the node from sourc
 
 
 
-![network diagram](basic-network-with-relays-producers-passivenodes-walletnodes.png)
+![network diagram](node-setup/060_node_keys.md)
 
 The __block-producing__ node will only connect with it's __relay__, while the __relay__ will establish connections with other relays in the network.  Each node must run in an independent server.
 
