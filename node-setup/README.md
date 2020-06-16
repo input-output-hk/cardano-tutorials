@@ -15,7 +15,7 @@ In these tutorials, we will cover the following topics:
 - [KES PERIOD](061_KES_period.md)
 - [CONFIGURE CORE AND RELAY NODES](070_core_relay.md)
 - [REGISTER YOUR STAKE POOL](080_register_stakepool.md)
-- [RETIRING A SATAKE POOL](090_retire_stakepool.md)
+- [RETIRING A STAKE POOL](090_retire_stakepool.md)
 - [CONFIGURE LOGGING](091_logging.md)
 - [MONITORING NODE WITH EKG](092_ekg.md)
 - [MONITORING NODE WITH PROMETHEUS](093_prometheus.md)
