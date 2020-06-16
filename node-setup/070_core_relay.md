@@ -31,7 +31,7 @@ Make the __block-producing__ node to "talk" only to __YOUR__ relay node. Do not 
 
 ### Configure the relay node:
 
-Make your __relay node__ `talk` to your __block-producing node__ and `other relays` in the network by editing the `ff-topology.json` file.
+Make your __relay node__ `talk` to your __block-producing__ node and __other relays__ in the network by editing the `ff-topology.json` file:
 
 This is a good moment to add other relay nodes in the network.  
 
