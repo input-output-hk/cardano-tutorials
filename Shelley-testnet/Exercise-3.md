@@ -81,7 +81,7 @@ Then generate a pair of cold keys and a cold counter file:
 cardano-cli shelley node key-gen \
     --cold-verification-key-file cold.vkey \
     --cold-signing-key-file cold.skey \
-    --operational-certificate-issue-counter coldcounter
+    --operational-certificate-issue-counter cold.counter
 ```
 The cold counter file should look like:
 ```
@@ -100,7 +100,7 @@ cardano-cli shelley node issue-op-cert \
     --cold-signing-key-file ~/cold-keys/cold.skey \
     --operational-certificate-issue-counter ~/cold-keys/coldcounter \
     --kes-period ${KES_PERIOD} \
-    --out-file opcert
+    --out-file node.cert
 ```
 You will need to regenerate the hot keys and issue a new operational certificate (rotate the KES keys) whenever the hot keys expire.  Otherwise you will no longer be able to sign blocks.
 
