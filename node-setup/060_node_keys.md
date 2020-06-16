@@ -24,7 +24,7 @@ The __block-producing__ node will only connect with it's __relay__, while the __
 
 ### Creating keys for our block-producing node
 
-**WARNING:** You may want to use your __local machine__ for this process. Make sure you are not online until you have put your __cold keys__ in a secure storage and deleted the files from you local machine.
+**WARNING:** You may want to use your __local machine__ for this process. (Assuming you have cardano-node and cardano-cli on it). Make sure you are not online until you have put your __cold keys__ in a secure storage and deleted the files from you local machine.
 
 The __block-producing node__ or __pool node__ needs:
 
