@@ -20,7 +20,7 @@ We need to _register_ our __stake key__ in the blockchain. To achieve this, we:
 Once the certificate has been created, we must include it in a transaction to post it to the blockchain.
 
 ### Determine the TTL
-As before, to create the transaction you need to determine the TTL.
+As before, to create the transaction you need to determine the TTL querying the tip and adding some slots to give you sufficient time to build the transaction.
 
 ### Calculate fees and deposit
 
@@ -29,7 +29,7 @@ This transaction has only 1 input (the UTXO used to pay the transaction fee) and
     cardano-cli shelley transaction calculate-min-fee \
     --tx-in-count 1 \
     --tx-out-count 1 \
-    --ttl 200000 \
+    --ttl 987654 \
     --testnet-magic 42 \
     --signing-key-file payment.skey \
     --signing-key-file stake.skey \
@@ -46,7 +46,17 @@ The deposit amount can be found in the `protocol.json` under `keyDeposit`:
         "keyDeposit": 400000,
         ...
 
-Assuming we have a UTXO containing 1000 ada, we get:
+Query the UTXO:
+
+        cardano-cli shelley query utxo \
+            --address $(cat payment.addr) \
+            --testnet-magic 42
+
+        >                            TxHash                                 TxIx        Lovelace
+        > ----------------------------------------------------------------------------------------
+        > b64ae44e1195b04663ab863b62337e626c65b0c9855a9fbb9ef4458f81a6f5ee     1      1000000000
+
+So we have 1000 ada, calculate the change to send back to `payment.addr`:
 
     expr 1000000000 - 171485 - 400000
 
@@ -57,9 +67,9 @@ Assuming we have a UTXO containing 1000 ada, we get:
 Build the transaction:
 
     cardano-cli shelley transaction build-raw \
-    --tx-in <the utxo used for paying fees and deposit>#<TxIX> \
+    --tx-in b64ae44e1195b04663ab863b62337e626c65b0c9855a9fbb9ef4458f81a6f5ee#1 \
     --tx-out $(cat payment.addr)+999428515 \
-    --ttl 200000 \
+    --ttl 987654 \
     --fee 171485 \
     --out-file tx.raw \
     --certificate-file stake.cert
