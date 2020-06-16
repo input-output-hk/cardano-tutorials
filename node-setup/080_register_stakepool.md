@@ -12,12 +12,12 @@ At this moment we have:
 
     | File           | Content                           |
     | -------------- | --------------------------------  |
-    | `payment.vkey`     | payment verification key          |
-    | `payment.skey`     | payment signing key               |
+    | `payment.vkey` | payment verification key          |
+    | `payment.skey` | payment signing key               |
     | `stake.vkey`   | staking verification key          |
     | `stake.skey`   | staking signing key               |
-    | `stake.addr`        | registered stake address          |
-    | `payment.addr`          | funded address linked to `stake` |
+    | `stake.addr`   | registered stake address          |
+    | `payment.addr` | funded address linked to `stake` |
     | `cold.vkey`    | cold verification key             |
     | `cold.skey`    | cold signing key                  |
     | `cold.counter` | issue counter                     |
