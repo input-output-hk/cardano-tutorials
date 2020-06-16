@@ -52,9 +52,12 @@ It's content look like this:
 		--out-file payment.addr \
 		--testnet-magic 42
 
-This created the file payment.addr that is already associated with our stake keys.
+This created the file payment.addr that is already associated with our stake keys:
 
-4. In order to query your address (see the utxo's at that address),
+    cat payment.address
+    > 00ec78e3d3916636101f6d9539c451f248ba200f38f2c33129f7ef36d66853603e872296956a4d86
+
+4. To query your address (see the utxo's at that address),
    you first need to set environment variable `CARDANO_NODE_SOCKET_PATH`
    to the socket-path specified in your node configuration. In this example we will use
    the block-producing node created in the previous steps:
@@ -76,7 +79,7 @@ This created the file payment.addr that is already associated with our stake key
 
 
 ### Stake address
-5. Finnaly, we can create our stake address. This address __CAN'T__ receive payments but will receive the rewards from participating in the protocol. We will save this address in the file `stake.addr`
+5. Finally, we can create our stake address. This address __CAN'T__ receive payments but will receive the rewards from participating in the protocol. We will save this address in the file `stake.addr`
 
 		cardano-cli shelley stake-address build \
 		--stake-verification-key-file stake.vkey \
