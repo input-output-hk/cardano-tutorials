@@ -1,8 +1,26 @@
-pdf_files = README.pdf AWS.pdf build.pdf ekg.pdf prometheus.pdf logging.pdf topology.pdf address.pdf tx.pdf staking-key.pdf node-op-cert.pdf pool.pdf retire.pdf faucet.pdf
-png_files = cli.png
+pdf_files = README.pdf \
+			000_AWS.pdf \
+			000_install.pdf \
+			010_getConfigFiles_AND_Connect.pdf \
+			011_cli.pdf \
+			012_understanding-config-files.pdf \
+			020_keys_and_addresses.pdf \
+			030_faucet.pdf \
+			040_transactions.pdf \
+			050_register_key.pdf \
+			060_node_keys.pdf \
+			061_KES_period.pdf \
+			070_core_relay.pdf \
+			080_register_stakepool.pdf \
+			081_start_your_nodes.pdf \
+			090_retire_stakepool.pdf \
+			091_logging.pdf \
+			092_ekg.pdf \
+			093_prometheus.pdf
+png_files = 011_cli.png
 
 .PHONE: all
-all: $(pdf_files) cli.pdf
+all: $(pdf_files) 011_cli.pdf
 
 $(pdf_files): %.pdf: %.md
 	pandoc -f markdown -t latex -o $@ $<
@@ -10,5 +28,5 @@ $(pdf_files): %.pdf: %.md
 $(png_files): %.png: %.dot
 	dot -Tpng $< -o $@
 
-cli.pdf: cli.png cli.md
-	pandoc -f markdown -t latex -o cli.pdf cli.md
+011_cli.pdf: 011_cli.png 011_cli.md
+	pandoc -f markdown -t latex -o 011_cli.pdf 011_cli.md
