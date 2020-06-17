@@ -144,7 +144,7 @@ So we are currently on slot 266201, __Let's make our transaction TTL 267500__. W
 
 **CALCULATE FEE**
 
-Our transaction will have 1 input (tx-in-count), the UTXO from our sending address `e757f0...5d8cf` from above,  and 2 outputs (tx-out-count), the receiveing address (payment2.addr) and a second ouput to send the change (payment.addr)
+Our transaction will have 1 input (tx-in-count), the UTXO from our sending address `e757f0...5d8cf` from above,  and 2 outputs (tx-out-count), the receiving address (payment2.addr) and a second ouput to send the change (payment.addr)
 
 	$ cardano-cli shelley transaction calculate-min-fee \
 	    --tx-in-count 1 \
