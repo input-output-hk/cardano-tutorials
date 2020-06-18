@@ -59,7 +59,7 @@ Create a _stake pool registration certificate_:
 | pool-cost                            | operational costs per epoch (lovelace)            |
 | pool-margin                          | operator margin                                   |
 | pool-reward-account-verification-key-file | verification staking key for the rewards          |
-| pool-owner-staking-verification-key  | verification staking key(s) for the pool owner(s) |
+| pool-owner-staking-verification-key-file  | verification staking key(s) for the pool owner(s) |
 | out-file                             | output file to write the certificate to           |
 
 So in the example above, we use the cold- and VRF-keys that we created [here](060_node_keys.md),
