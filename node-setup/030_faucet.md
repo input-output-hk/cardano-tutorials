@@ -25,7 +25,6 @@ If all goes well, the last line of the output should declare success and say how
     * Connection #0 to host faucet.ff.dev.cardano.org left intact
     {"success":true,"amount":1000000000,"fee":168141,"txid":"8ed4383f7af20e81c9cef88b8aab0ff2b1b284dff0ed6614480f8dbfec7d6fb5"}
 
-
 Now, check the balance of your address to see if you have got the funds:
 
     export CARDANO_NODE_SOCKET_PATH=~/cardano-node/relay/db/node.socket
@@ -42,3 +41,6 @@ You should see something like this:
                               TxHash                                 TxIx        Lovelace
     ----------------------------------------------------------------------------------------
     65e99578e91dbf400c42989b5b5ae6dde877510900074f4afd8ff472639da6b3     0     1000000000000
+
+
+IMPORTANT: Extra funds can be returned to 00677291d73b71471afa49fe2d20b96f7227b05f863dafe802598964533e0dc3bc0cf7eb8153441db271a2288560378b209014350792f273bdc307f06ca34f0c6f
