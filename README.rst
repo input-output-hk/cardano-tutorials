@@ -15,9 +15,7 @@ The current release of tutorials focus on setting up & monitoring the node and u
    node-setup/000_AWS.md
    node-setup/000_install.md
    node-setup/010_getConfigFiles_AND_Connect.md
-   node-setup/011_cli.dot
    node-setup/011_cli.md
-   node-setup/011_cli.png
    node-setup/012_understanding-config-files.md
    node-setup/020_keys_and_addresses.md
    node-setup/030_faucet.md
