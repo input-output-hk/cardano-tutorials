@@ -47,7 +47,7 @@ Create a _stake pool registration certificate_:
     --pool-cost 10000000000 \
     --pool-margin 0.05 \
     --pool-reward-account-verification-key-file stake.vkey \
-    --pool-owner-stake-verification-key stake.vkey \
+    --pool-owner-stake-verification-key-file stake.vkey \
     --testnet-magic 42 \
     --out-file pool.cert
 
