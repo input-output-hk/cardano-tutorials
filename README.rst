@@ -17,7 +17,7 @@ The current release of tutorials focus on setting up & monitoring the node and u
    node-setup/start-node-connect-to-testnet
    node-setup/understanding-config-files
    node-setup/logging
-   node-setup/tolology
+   node-setup/topology
    node-setup/cli
    node-setup/address
    node-setup/faucet
