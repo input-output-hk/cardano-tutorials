@@ -194,7 +194,7 @@ In the  `relay/ff-topology.json` we instruct the node to "talk" to the block-pro
 	{
 	   "Producers": [
 	     {
-	       "addr": x.x.x.x", # Replace with your public IP
+	       "addr": "x.x.x.x", # Replace with your public IP
 	       "port": 3000,
 	       "valency": 1
 	     },

@@ -24,7 +24,7 @@ In this exercise, we will set up staking keys and delegate some stake to an exis
 
         cardano-node ...
         cardano-cli shelley query protocol-parameters \
-            --testnet-magic 42 --out-file params.json
+            --testnet-magic 42 --out-file protocol.json
 
 ### Objectives
 
@@ -40,22 +40,22 @@ GitHub repositories as usual.
 
 ### Exercises
 
-1. 	Create a new payment key pair `pay.skey`/`pay.vkey`.
+1. 	Create a new payment key pair `payment2.skey`/`payment2.vkey`.
 
         cardano-cli shelley address key-gen ...
 
-    Create a new stake address key pair, `stake.skey`/`stake.vkey`.
+    Create a new stake address key pair, `stake2.skey`/`stake2.vkey`.
 
         cardano-cli shelley stake-address key-gen ...
 
     Don’t forget to record all the keys somewhere safe!
 
 2.  Use the stake address verification key from Step 1 to build your stake address.
-    Save the address in file `stake`.
+    Save the address in file `stake.addr`.
 
         cardano-cli shelley stake-address build ...
 
-3.  Build a payment address `pay` for the payment key `pay.vkey` which delegates to the
+3.  Build a payment address `payment2.addr` for the payment key `payment2.vkey` which delegates to the
     new stake address from Step 2 and transfer some funds to your new address.
 
         cardano-cli shelley address build ...
@@ -66,8 +66,8 @@ GitHub repositories as usual.
     The CLI has a special command to do this, but we will build the transaction
     by hand to give you experience with this.
 
-    First create a certificate, `stake.cert`,
-    using the `stake.vkey` from Step 1.
+    First create a certificate, `stake2.cert`,
+    using the `stake2.vkey` from Step 1.
 
 	    cardano-cli shelley stake-address registration-certificate ...
 
@@ -76,7 +76,7 @@ GitHub repositories as usual.
     You can use a CLI command to calculate the fee.
 
 	    cardano-cli shelley transaction calculate-min-fee \
-	        --certificate stakecert ...
+	        --certificate-file stake2.cert ...
 
     You should pass in both your stake address signing key and your UTxO signing key
     from Step 1.
@@ -90,8 +90,8 @@ GitHub repositories as usual.
     | `--tx-out-count`         | number of outputs to the transaction    | 1                        |
     | `--ttl`                  | time to live (a slot in the future)     | depends...               |
     | `--testnet-magic`        | network identifier                      | 42                       |
-    | `--signing-key-file`     | singing key(s)                          | `pay.skey`, `stake.skey` |
-    | `--certificate-file`     | certificate(s) to include               | `stake.cert`             |
+    | `--signing-key-file`     | singing key(s)                          | `payment2.skey`, `stake2.skey` |
+    | `--certificate-file`     | certificate(s) to include               | `stake2.cert`             |
     | `--protocol-params-file` | file containing the protocol parameters | `protocol.json`            |
 
     Now build the transaction to register your stake address.
@@ -132,8 +132,8 @@ GitHub repositories as usual.
     one that IOHK is running, or one that a friend is running).
 
         cardano-cli shelley stake-address delegation-certificate \
-            --staking-verification-key-file stake.vkey \
-            --stake-pool-verification-key-file node.vkey
+            --stake-verification-key-file stake.vkey \
+            --cold-verification-key-file cold.vkey
 
     Then build, sign and submit a transaction as before
     (using a UTxO that has some funds associated with it).

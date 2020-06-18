@@ -32,11 +32,11 @@ We are using the node socket to submit transactions, so let's set environment va
 
    	export CARDANO_NODE_SOCKET_PATH=relay/db/node.socket
 
-Let's create a second __payment key pair__ and __address__ (You should have created one in Exercise 1). We need to create also a __stake key pair__ and a 	__stake address__. The payment set, gives you control of your funds, the stake set, allows you to participate in the 	protocol, by delegating tour stake or creating your own stake pool.
+Let's create a second __payment key pair__ and __address__ (You should have created one in Exercise 1). We need to create also a __stake key pair__ and a 	__stake address__. The payment set, gives you control of your funds, the stake set, allows you to participate in the 	protocol, by delegating your stake or creating your own stake pool.
 
 **Generate Payment Key Pair**
 
-	$ cardano-cli shelley address key-gen \
+	cardano-cli shelley address key-gen \
 	    --verification-key-file payment2.vkey \
 	    --signing-key-file payment2.skey
 
@@ -83,10 +83,10 @@ This has created another set of keys, these ones will later allow us to delegate
 
 Now we will use both `payment2.vkey` and `stake2.vkey`to build a **payment address**. This will link our payment address to our **stake keys** and **stake address**.
 
-	$ cardano-cli shelley address build \
+	cardano-cli shelley address build \
 	--payment-verification-key-file payment2.vkey \
 	--stake-verification-key-file stake2.vkey \
-	--out-file payment2.addr
+	--out-file payment2.addr \
 	--testnet-magic 42
 
 
@@ -96,7 +96,7 @@ And, now generate you stake address. This will collect your rewards from delegat
 
 	cardano-cli shelley stake-address build \
 	--staking-verification-key-file stake2.vkey \
-	--out-file stake2.addr
+	--out-file stake2.addr \
 	--testnet-magic 42
 
 
@@ -106,13 +106,13 @@ And, now generate you stake address. This will collect your rewards from delegat
 
 To create our transaction we will need the protocl parameters, so let's query the parameters and save them in `protocol.json`
 
-	$ cardano-cli shelley query protocol-parameters \
+	cardano-cli shelley query protocol-parameters \
 	    --testnet-magic 42 \
 	    --out-file protocol.json
 
 We also need the UTXO details of the __payment.addr__ that will send the funds.
 
-	$ cardano-cli shelley query utxo \
+	cardano-cli shelley query utxo \
 	    --address $(cat payment.addr) \
 	    --testnet-magic 42
 
@@ -144,7 +144,7 @@ So we are currently on slot 266201, __Let's make our transaction TTL 267500__. W
 
 **CALCULATE FEE**
 
-Our transaction will have 1 input (tx-in-count), the UTXO from our sending address `e757f0...5d8cf` from above,  and 2 outputs (tx-in-count), the receiveing address (payment2.addr) and a second ouput to send the change (payment.addr)
+Our transaction will have 1 input (tx-in-count), the UTXO from our sending address `e757f0...5d8cf` from above,  and 2 outputs (tx-out-count), the receiving address (payment2.addr) and a second ouput to send the change (payment.addr)
 
 	$ cardano-cli shelley transaction calculate-min-fee \
 	    --tx-in-count 1 \
@@ -167,9 +167,9 @@ Now we need to make some quick math, lets say we want to send 100 tADA to `payme
 
 **BUILD TRANSACTION**
 
-Again, you may want to open a text editor to work on building the transaction, and then when it is ready yo con go to the CLI
+Again, you may want to open a text editor to work on building the transaction, and then when it is ready you can go to the CLI
 
-	$ cardano-cli shelley transaction build-raw \
+	 cardano-cli shelley transaction build-raw \
 		--tx-in e757f08b856c5f12d5784f749c4fc2b1fda8b48299b520f29f6055ce94a5d8cf#0 \
 		--tx-out $(cat payment2.addr)+100000000 \
 		--tx-out $(cat payment.addr)+499398236348 \
@@ -190,7 +190,7 @@ Again, you may want to open a text editor to work on building the transaction, a
 
 We use the __payment.skey__ to sign the transaction
 
-	$ cardano-cli shelley transaction sign \
+	 cardano-cli shelley transaction sign \
 	    --tx-body-file tx008.raw \
 	    --signing-key-file payment.skey \
 	    --testnet-magic 42 \
@@ -199,7 +199,7 @@ We use the __payment.skey__ to sign the transaction
 
 **SUBMIT TRANSACTION**
 
-	$ cardano-cli shelley transaction submit \
+	 cardano-cli shelley transaction submit \
 	    --tx-file tx008.signed \
 	    --testnet-magic 42
 
