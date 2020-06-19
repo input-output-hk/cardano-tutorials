@@ -1,4 +1,5 @@
-# Creating keys and addresses
+Creating keys and addresses
+===========================
 
 We need to create two sets of keys and addresses: One set to control our funds (make and receive payments) and one set to control our stake (to participate in the protocol delegating our stake)
 

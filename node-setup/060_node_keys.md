@@ -1,4 +1,5 @@
-# Generate your stake pool keys
+Generate your stake pool keys
+=============================
 
 A stake pool needs at least 2 running nodes: A __block-producing__ node and a __relay__ node.
 

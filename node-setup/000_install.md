@@ -1,5 +1,5 @@
-# Installing and Running a Node
-
+Installing and Running a Node
+=============================
 
 ## PREREQUISITES
 

@@ -1,4 +1,5 @@
-# Configure topology files for block-producing and relay nodes.
+Configure topology files for block-producing and relay nodes
+============================================================
 
 Before we register our stake pool, let's configure our __block-producing__ and __relay__ nodes:
 

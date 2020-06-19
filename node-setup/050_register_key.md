@@ -1,5 +1,6 @@
 
-# Register stake address in the blockchain
+Register stake address in the blockchain
+========================================
 
 Before, we created our payment keys and address, which allow us to control our funds; we also created our stake keys and stake address, which allow us to participate in the protocol by delegating our stake or by creating a stake pool.  
 
