@@ -41,6 +41,8 @@ You should see something like this:
                               TxHash                                 TxIx        Lovelace
     ----------------------------------------------------------------------------------------
     65e99578e91dbf400c42989b5b5ae6dde877510900074f4afd8ff472639da6b3     0     1000000000000
+    
+    (Please note: In practice just after fetching of the funds from the faucet(using the POST QUERY), will not reflect in the above command using cardano-cli shelly query. Normally only after quite some time , maybe in hours this would be possible.)
 
 
 IMPORTANT: Extra funds can be returned to 00677291d73b71471afa49fe2d20b96f7227b05f863dafe802598964533e0dc3bc0cf7eb8153441db271a2288560378b209014350792f273bdc307f06ca34f0c6f
