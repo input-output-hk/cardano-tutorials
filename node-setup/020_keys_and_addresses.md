@@ -66,9 +66,9 @@ This created the file payment.addr that is already associated with our stake key
 
    and make sure that your node is running.  Then use
 
-    cardano-cli shelley query utxo \
-            --address $(cat payment.addr) \
-            --testnet-magic 42
+       cardano-cli shelley query utxo \
+       --address $(cat payment.addr) \
+       --testnet-magic 42
 
    you should see something like this:
 
