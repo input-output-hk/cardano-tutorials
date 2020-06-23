@@ -47,7 +47,7 @@ Registering your stake pool requires:
     "homepage": "https://teststakepool.com"
     }
 
-Store the file in your node and in a url you maintain, for example [https://gist.githubusercontent.com/testPool/.../testPool.json](shorturl.at/gDV47)
+Store the file in a url you control, for example [https://gist.githubusercontent.com/testPool/.../testPool.json](shorturl.at/gDV47)
 
 ### 2. Get the hash of your file:
 
