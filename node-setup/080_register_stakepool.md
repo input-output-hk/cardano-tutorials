@@ -61,12 +61,12 @@ Submit a PR to add your pool data to https://github.com/input-output-hk/cardano-
 You will need to provide your IP address/DNS host name and port.
 
     {
-        operator = “testPool”;
-        poolId = “<poolid>”;
-        metadataUrl = “https://gist.githubusercontent.com/testPool/.../testPool.json”
-        meatadataHash = “6bf124f217d0e5a0a8adb1dbd8540e1334280d49ab861127868339f43b3948af”;
-        addr = “123.123.123.123”;
-        port = 3001;
+       operator = “testPool”;
+       poolId = “<poolid>”;
+       metadataUrl = “https://gist.githubusercontent.com/testPool/.../testPool.json”
+       meatadataHash = “6bf124f217d0e5a0a8adb1dbd8540e1334280d49ab861127868339f43b3948af”;
+       addr = “123.123.123.123”;
+       port = 3001;
     }
 
 ### 3. Generate Stake pool registration certificate
