@@ -60,14 +60,14 @@ Store the file in your node and in a url you maintain, for example [https://gist
 Submit a PR to add your pool data to https://github.com/input-output-hk/cardano-ops/blob/master/topologies/ff-peers.nix 
 You will need to provide your IP address/DNS host name and port.
 
-{
-   operator = “testPool”;
-   poolId = “<poolid>”;
-   metadataUrl = “https://gist.githubusercontent.com/testPool/.../testPool.json”
-   meatadataHash = “6bf124f217d0e5a0a8adb1dbd8540e1334280d49ab861127868339f43b3948af”;
-   addr = “127.0.0.1”;
-   port = 3001;
-}
+    {
+        operator = “testPool”;
+        poolId = “<poolid>”;
+        metadataUrl = “https://gist.githubusercontent.com/testPool/.../testPool.json”
+        meatadataHash = “6bf124f217d0e5a0a8adb1dbd8540e1334280d49ab861127868339f43b3948af”;
+        addr = “123.123.123.123”;
+        port = 3001;
+    }
 
 ### 3. Generate Stake pool registration certificate
 
@@ -76,14 +76,14 @@ Create a _stake pool registration certificate_:
     cardano-cli shelley stake-pool registration-certificate \
     --cold-verification-key-file cold.vkey \
     --vrf-verification-key-file vrf.vkey \
-    --pool-pledge <LOVELACE> \
-    --pool-cost <LOVELACE> \
-    --pool-margin <PERCENTAGE> \
+    --pool-pledge 1000000000 \
+    --pool-cost 100000000 \
+    --pool-margin .05 \
     --pool-reward-account-verification-key-file stake.vkey \
     --pool-owner-stake-verification-key-file stake.vkey \
     --testnet-magic 42 \
-    --pool-relay-port <PORT> \
-    --pool-relay-ipv4 <IP ADDRESS> \
+    --pool-relay-port 3001 \
+    --pool-relay-ipv4 123.123.123.123 \
     --metadata-url https://gist.githubusercontent.com/testPool/.../testPool.json \
     --metadata-hash 6bf124f217d0e5a0a8adb1dbd8540e1334280d49ab861127868339f43b3948af \
     --out-file pool.cert
@@ -213,5 +213,10 @@ To verify that your stake pool registration was indeed successful, you can perfo
 will output your poolID. You can then check for the presence of your poolID in the network ledger state, with the following command:
 
     cardano-cli shelley query ledger-state --testnet-magic 42 | grep poolPubKey | grep <poolId>
+
+or 
+
+    cardano-cli shelley query ledger-state --testnet-magic 42 \
+    | jq '._delegationState._pstate._pParams.<poolid>' 
 
 which should return a non-empty string if your poolID is located in the ledger. You can then then head over to a pool listing website such as https://ff.pooltool.io/ and (providing it is up and running and showing a list of registered stake pools) you should hopefully be able to find your pool in there by searching using your poolID, and subsequently claiming it (might require registration on the website) and giving it a customized name.
