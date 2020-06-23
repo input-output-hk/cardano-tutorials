@@ -410,6 +410,7 @@ GitHub repositories.
             --pool-reward-account-verification-key-file stake2.vkey \
             --pool-owner-stake-verification-key-file stake1.vkey \
             --out-file pool1.cert
+            --testnet-magic 42
 
     Here we have additionally (although this was not required) changed the reward account to `stake2.vkey`,
     so the rewards from both our pools will go to the same stake key `stake2.vkey` from now on.
