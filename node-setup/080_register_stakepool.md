@@ -1,5 +1,7 @@
 # Register a Stake Pool with Metadata
 
+__USE TAG: 1.14.0__ 
+
 ### Prerequisites
 
 Make sure you have access to:
