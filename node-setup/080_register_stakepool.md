@@ -35,6 +35,7 @@ Registering your stake pool requires:
 * Generate the stake pool registration certificate
 * Create a delegation certificate (pledge)
 * Submit the certificates to the blockchain
+* Submit a PR with pool metadata (Temporary step until DB-sync is upgraded)
 
 **WARNING:** Generating the __stake pool registration certificate__ and the __delegation certificate__ requires the __cold keys__ So, you may want to generate these certificates in your local machine taking the proper security measures to avoid exposing your cold keys to the internet.  
 
