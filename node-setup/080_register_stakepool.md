@@ -221,3 +221,5 @@ You will need to provide your IP address/DNS host name and port.
        addr = “123.123.123.123”;
        port = 3001;
     }
+
+Note that your relays can also be registered on-chain, it can support multiple IPs/DNS names. This relay registering scheme is also temporary.
