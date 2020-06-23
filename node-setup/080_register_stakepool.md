@@ -52,6 +52,8 @@ Store the file in a url you control, for example [https://gist.githubusercontent
 
 ### 2. Get the hash of your file:
 
+This validates that the JSON fits the required schema, if it does, you will get the hash of your file. 
+
     cardano-cli shelley stake-pool metadata-hash --pool-metadata-file testPool.json
 
     >6bf124f217d0e5a0a8adb1dbd8540e1334280d49ab861127868339f43b3948af
