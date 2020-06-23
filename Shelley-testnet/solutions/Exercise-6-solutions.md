@@ -285,7 +285,8 @@ GitHub repositories.
             --pool-margin 0.03 \
             --pool-reward-account-verification-key-file stake2.vkey \
             --pool-owner-stake-verification-key-file stake2.vkey \
-            --out-file pool2.cert
+            --out-file pool2.cert \
+            --testnet-magic 42 
 
         cardano-cli shelley stake-address registration-certificate \
             --stake-verification-key-file stake2.vkey \
