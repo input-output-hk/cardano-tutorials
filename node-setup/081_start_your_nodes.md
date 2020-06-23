@@ -22,4 +22,3 @@ then, we start our __block producing__ node with:
     --shelley-kes-key kes.skey \
     --shelley-vrf-key vrf.skey \
     --shelley-operational-certificate node.cert
-    --signing-key ********** WHAT IS THIS????
