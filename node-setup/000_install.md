@@ -36,7 +36,7 @@ For Debian/Ubuntu use the following instead:
 
 
     sudo apt-get update -y
-    sudo apt-get install build-essential pkg-config libffi-dev libgmp-dev libssl-dev libtinfo-dev libsystemd-dev zlib1g-dev make g++ tmux git jq wget libncursesw5 -y
+    sudo apt-get install build-essential pkg-config libffi-dev libgmp-dev libssl-dev libtinfo-dev libsystemd-dev zlib1g-dev make g++ tmux git jq wget libncursesw5 libtool autoconf -y
 
 If you are using a different flavor of Linux, you will need to use the package manager suitable for your platform instead of `yum` or `apt-get`, and the names of the packages you need to install might differ.
 
@@ -82,7 +82,7 @@ Above instructions install Cabal version `3.2.0.0`. You can check the version by
 
    cabal --version
 
-Finally we download and install GHC:
+Download and install GHC:
 
     wget https://downloads.haskell.org/~ghc/8.6.5/ghc-8.6.5-x86_64-deb9-linux.tar.xz
     tar -xf ghc-8.6.5-x86_64-deb9-linux.tar.xz
@@ -91,6 +91,19 @@ Finally we download and install GHC:
     ./configure
     sudo make install
     cd ..
+    
+Install Libsodium 
+git clone https://github.com/input-output-hk/libsodium
+
+cd libsodium
+git checkout 66f017f1
+./autogen.sh
+./configure
+make
+sudo make install
+
+export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
+
 
 ## Download the source code for cardano-node
 
@@ -116,7 +129,7 @@ For the FF-testnet, we will use tag `1.13.0`, which we can check out as follows:
 
     git fetch --all --tags
     git tag
-    git checkout tags/1.13.0
+    git checkout tags/1.14.0
 
 
 ## Build and install the node
