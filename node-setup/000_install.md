@@ -95,14 +95,14 @@ Download and install GHC:
 Install Libsodium 
 git clone https://github.com/input-output-hk/libsodium
 
-cd libsodium
-git checkout 66f017f1
-./autogen.sh
-./configure
-make
-sudo make install
+    cd libsodium
+    git checkout 66f017f1
+    ./autogen.sh
+    ./configure
+    make
+    sudo make install
 
-export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
+    export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
 
 
 ## Download the source code for cardano-node
