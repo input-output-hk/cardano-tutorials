@@ -69,7 +69,7 @@ Create a _stake pool registration certificate_:
     --vrf-verification-key-file vrf.vkey \
     --pool-pledge 1000000000 \
     --pool-cost 100000000 \
-    --pool-margin .05 \
+    --pool-margin 0.05 \
     --pool-reward-account-verification-key-file stake.vkey \
     --pool-owner-stake-verification-key-file stake.vkey \
     --testnet-magic 42 \
