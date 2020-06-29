@@ -30,7 +30,7 @@ If we are using an AWS instance running Amazon Linux AMI 2 (see the [AWS walk-th
 
     sudo yum update -y
     sudo yum install git gcc gcc-c++ tmux gmp-devel make tar wget zlib-devel -y
-    sudo yum install systemd-devel ncurses-devel ncurses-compat-libs -y
+    sudo yum install systemd-devel ncurses-devel ncurses-compat-libs libsodium-devel -y
 
 For Debian/Ubuntu use the following instead:
 
@@ -137,6 +137,8 @@ For the FF-testnet, we will use tag `1.13.0`, which we can check out as follows:
 Now we build and install the node with ``cabal``, which will take a couple of minutes the first time you do a build. Later builds will be much faster, because everything that does not change will be cached.
 
    		cabal install cardano-node cardano-cli
+
+#### Building 1.14.x has an added dependency. See [Cabal dependencies](https://github.com/input-output-hk/cardano-node/blob/master/README.md#dependencies) for instructions. 
 
 This will build and install `cardano-node` and `cardano-cli` into your `~/.cabal/bin` folder by default, so the remark about your `PATH` from above applies here as well: Make sure folder `~/.cabal/bin` is in your path or copy the executables to a folder that is. Alternatively you can run `cabal install cardano-node cardano-cli --installdir="$HOME/.local/bin"` to install the `cardano-node` and `cardano-cli` directly into your `~/.local/bin` folder.
 
