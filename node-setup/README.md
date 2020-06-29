@@ -14,7 +14,7 @@ In these tutorials, we will cover the following topics:
 - [GENERATE STAKE POOL KEYS](060_node_keys.md)
 - [KES PERIOD](061_KES_period.md)
 - [CONFIGURE CORE AND RELAY NODES](070_core_relay.md)
-- [REGISTER YOUR STAKE POOL](080_register_stakepool.md)
+- [REGISTER YOUR STAKE POOL WITH METADATA](080_register_stakepool.md)
 - [RETIRING A STAKE POOL](090_retire_stakepool.md)
 - [START YOUR NODES](081_start_your_nodes.md)
 - [CONFIGURE LOGGING](091_logging.md)
