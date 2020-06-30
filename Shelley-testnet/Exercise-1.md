@@ -1,6 +1,6 @@
 # Shelley Stakepool Exercise Sheet 1
 
-LATEST TAG: 1.13.0
+LATEST TAG: 1.14.2
 
 ## Getting Started
 
@@ -38,7 +38,7 @@ This should be everything that you need to get you up and running.
 
 ### Exercises
 
-1. Download, Build and Install the Cardano Node Software using the instructions in the [Cardano Tutorial](../node-setup/000_install.md).  You may need to do this repeatedly, so you may want to bookmark the instructions.  You will need to use the correctly tagged version at each stage. The most recent tag at the time of writing is 1.13.0.
+1. Download, Build and Install the Cardano Node Software using the instructions in the [Cardano Tutorial](../node-setup/000_install.md).  You may need to do this repeatedly, so you may want to bookmark the instructions.  You will need to use the correctly tagged version at each stage. The most recent tag at the time of writing is 1.14.2.
 
 2. Download the genesis, topology, and configuration files, as described in the tutorial.
 
@@ -62,7 +62,7 @@ This should be everything that you need to get you up and running.
 6. Request funds from the faucet with
 
 
-    curl -v -XPOST “https://faucet.ff.dev.cardano.org/send-money/$(cat payment.addr)"
+    curl -v -XPOST “hhttps://faucet.shelley-testnet.dev.cardano.org/send-money/$(cat payment.addr)"
 
 
 You can also hit it once a day without the API key to get 1K.

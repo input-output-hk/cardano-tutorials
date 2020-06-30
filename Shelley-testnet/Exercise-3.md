@@ -1,6 +1,6 @@
 # Shelley Stakepool Exercise Sheet 3
 
-LATEST TAG: 1.13.0
+LATEST TAG: 1.14.2
 
 ## Starting a Stake Pool: First Steps
 
@@ -25,13 +25,13 @@ In the second exercise, we submitted transactions to the Testnet blockchain.  In
 4. Checkout the latest version of the Shelley node and CLI from source, and rebuild and reinstall them if they have changed:
 
 ```
-git checkout tags/1.13.0
+git checkout tags/1.14.2
 git branch
-> * (HEAD detached at 1.13.0)
+> * (HEAD detached at 1.14.2)
 …
 cabal install cardano-node cardano-cli
 cardano-node --version
-> cardano-node 1.13.0 - linux-x86_64 - ghc-8.6
+> cardano-node 1.14.2 - linux-x86_64 - ghc-8.6
 ```
 
 4. Create two new directories pool and relay, and copy the configuration files to them:

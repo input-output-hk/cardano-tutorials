@@ -1,5 +1,6 @@
 # Installing and Running a Node
 
+UPDATED FOR TAG: 1.14.2
 
 ## PREREQUISITES
 
@@ -29,7 +30,7 @@ We need the following packages and tools on our Linux system to download the sou
 If we are using an AWS instance running Amazon Linux AMI 2 (see the [AWS walk-through](000_AWS.md) for how to get such an instance up and running)or another CentOS/RHEL based system, we can install these dependencies as follows:
 
     sudo yum update -y
-    sudo yum install git gcc gcc-c++ tmux gmp-devel make tar wget zlib-devel -y
+    sudo yum install git gcc gcc-c++ tmux gmp-devel make tar wget zlib-devel libtool autoconf -y
     sudo yum install systemd-devel ncurses-devel ncurses-compat-libs -y
 
 For Debian/Ubuntu use the following instead:
@@ -91,9 +92,9 @@ Download and install GHC:
     ./configure
     sudo make install
     cd ..
-    
-Install Libsodium 
-    
+
+Install Libsodium
+
     git clone https://github.com/input-output-hk/libsodium
     cd libsodium
     git checkout 66f017f1
@@ -125,11 +126,11 @@ We change our working directory to the downloaded source code folder:
     cd cardano-node
 
 For reproducible builds, we should check out a specific release, a specific "tag".
-For the FF-testnet, we will use tag `1.13.0`, which we can check out as follows:
+For the Shelley Testnet, we will use tag `1.14.2`, which we can check out as follows:
 
     git fetch --all --tags
     git tag
-    git checkout tags/1.14.0
+    git checkout tags/1.14.2
 
 
 ## Build and install the node

@@ -11,10 +11,10 @@ Unfortunately, there is a catch: A KES key can only evolve for a certain number 
 This means that before that number of periods has passed, the node operator has to generate a new KES key pair,
 issue a new operational node certificate with that new key pair and restart the node with the new certificate.
 
-In order to find out how long one period is and for how long a key can evolve, we can look into the _genesis file_. If that file is called `ff-genesis.json`,
+In order to find out how long one period is and for how long a key can evolve, we can look into the _genesis file_. If that file is called `shelley_testnet-genesis.json`,
 we can type
 
-    cat ff-genesis.json | grep KES
+    cat shelley_testnet-genesis.json | grep KES
 
     > "slotsPerKESPeriod": 3600,
     > "maxKESEvolutions": 120,

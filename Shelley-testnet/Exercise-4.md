@@ -1,6 +1,6 @@
 # Shelley Stakepool Exercise Sheet 4
 
-LATEST TAG: 1.13.0
+LATEST TAG: 1.14.2
 
 ## Delegation
 
@@ -17,7 +17,7 @@ In this exercise, we will set up staking keys and delegate some stake to an exis
     1. 	[https://github.com/input-output-hk/cardano-tutorials/](https://github.com/input-output-hk/cardano-tutorials/)
     2. 	[https://testnets.cardano.org/](https://testnets.cardano.org/)
 
-3. 	Checkout and build the sources which have been tagged with `1.13.0`.
+3. 	Checkout and build the sources which have been tagged with `1.14.2`.
 
 4.	Start a node and obtain the protocol parameters.
     Make sure you know what each of these is (especially the fees).
