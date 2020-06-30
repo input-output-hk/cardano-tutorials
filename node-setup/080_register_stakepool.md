@@ -1,7 +1,7 @@
 Register a Stake Pool with Metadata
 ===================================
 
-__USE TAG: 1.14.2__ 
+__USE TAG: 1.14.2__
 
 ### Prerequisites
 
@@ -14,7 +14,7 @@ Make sure you have access to:
 At this moment we have:
 
     | File           | Content                           |
-    | -------------- | --------------------------------  |
+    |----------------|-----------------------------------|
     | `payment.vkey` | payment verification key          |
     | `payment.skey` | payment signing key               |
     | `stake.vkey`   | staking verification key          |
@@ -30,7 +30,6 @@ At this moment we have:
     | `vrf.vkey`     | VRF verification key              |
     | `vrf.skey`     | VRF signing key                   |
 
-
 Registering your stake pool requires:
 
 * Create JSON file with your metadata and store it in the node and in a url you maintain.
@@ -40,7 +39,7 @@ Registering your stake pool requires:
 * Submit the certificates to the blockchain
 * Submit a PR with pool metadata (Temporary step until DB-sync is upgraded)
 
-**WARNING:** Generating the __stake pool registration certificate__ and the __delegation certificate__ requires the __cold keys__ So, you may want to generate these certificates in your local machine taking the proper security measures to avoid exposing your cold keys to the internet.  
+**WARNING:** Generating the __stake pool registration certificate__ and the __delegation certificate__ requires the __cold keys__ So, you may want to generate these certificates in your local machine taking the proper security measures to avoid exposing your cold keys to the internet.
 
 ### 1. Create a JSON file with your pool's metadata
 
@@ -55,12 +54,12 @@ Store the file in a url you control, for example [https://gist.githubusercontent
 
 ### 2. Get the hash of your file:
 
-This validates that the JSON fits the required schema, if it does, you will get the hash of your file. 
+This validates that the JSON fits the required schema, if it does, you will get the hash of your file.
 
     cardano-cli shelley stake-pool metadata-hash --pool-metadata-file testPool.json
 
     >6bf124f217d0e5a0a8adb1dbd8540e1334280d49ab861127868339f43b3948af
-    
+
 ### 3. Generate Stake pool registration certificate
 
 Create a _stake pool registration certificate_:
@@ -113,7 +112,7 @@ The __pool.cert__ file should look like this:
     48aa7b2c8deb8f6d2318e3bf3df885e22d5d63788153e7f4040c33ecae15d3e61b0000005d21dba0
     001b000000012a05f200d81e820001820058203a4e813b6340dc790f772b3d433ce1c371d5c5f5de
     46f1a68bdf8113f50e779d8158203a4e813b6340dc790f772b3d433ce1c371d5c5f5de46f1a68bdf
-    8113f50e779d80f6   
+    8113f50e779d80f6
 
 ### 4. Generate delegation certificate (pledge)
 
@@ -204,16 +203,16 @@ will output your poolID. You can then check for the presence of your poolID in t
 
     cardano-cli shelley query ledger-state --testnet-magic 42 | grep publicKey | grep <poolId>
 
-or 
+or
 
     cardano-cli shelley query ledger-state --testnet-magic 42 \
-    | jq '._delegationState._pstate._pParams.<poolid>' 
+    | jq '._delegationState._pstate._pParams.<poolid>'
 
 which should return a non-empty string if your poolID is located in the ledger. You can then then head over to a pool listing website such as https://ff.pooltool.io/ and (providing it is up and running and showing a list of registered stake pools) you should hopefully be able to find your pool in there by searching using your poolID, and subsequently claiming it (might require registration on the website) and giving it a customized name.
 
 ### 6. Temporary step until DB-sync is upgraded
 
-Submit a PR to add your pool data to https://github.com/input-output-hk/cardano-ops/blob/master/topologies/ff-peers.nix 
+Submit a PR to add your pool data to https://github.com/input-output-hk/cardano-ops/blob/master/topologies/ff-peers.nix
 You will need to provide your IP address/DNS host name and port.
 
     {
