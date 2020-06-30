@@ -13,22 +13,22 @@ Make sure you have access to:
 
 At this moment we have:
 
-    | File           | Content                           |
-    |----------------|-----------------------------------|
-    | `payment.vkey` | payment verification key          |
-    | `payment.skey` | payment signing key               |
-    | `stake.vkey`   | staking verification key          |
-    | `stake.skey`   | staking signing key               |
-    | `stake.addr`   | registered stake address          |
-    | `payment.addr` | funded address linked to `stake`  |
-    | `cold.vkey`    | cold verification key             |
-    | `cold.skey`    | cold signing key                  |
-    | `cold.counter` | issue counter                     |
-    | `node.cert`    | operational certificate           |
-    | `kes.vkey`     | KES verification key              |
-    | `kes.skey`     | KES signing key                   |
-    | `vrf.vkey`     | VRF verification key              |
-    | `vrf.skey`     | VRF signing key                   |
+| File           | Content                           |
+|----------------|-----------------------------------|
+| `payment.vkey` | payment verification key          |
+| `payment.skey` | payment signing key               |
+| `stake.vkey`   | staking verification key          |
+| `stake.skey`   | staking signing key               |
+| `stake.addr`   | registered stake address          |
+| `payment.addr` | funded address linked to `stake`  |
+| `cold.vkey`    | cold verification key             |
+| `cold.skey`    | cold signing key                  |
+| `cold.counter` | issue counter                     |
+| `node.cert`    | operational certificate           |
+| `kes.vkey`     | KES verification key              |
+| `kes.skey`     | KES signing key                   |
+| `vrf.vkey`     | VRF verification key              |
+| `vrf.skey`     | VRF signing key                   |
 
 Registering your stake pool requires:
 
