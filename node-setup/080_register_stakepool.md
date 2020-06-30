@@ -210,18 +210,4 @@ or
 
 which should return a non-empty string if your poolID is located in the ledger. You can then then head over to a pool listing website such as https://ff.pooltool.io/ and (providing it is up and running and showing a list of registered stake pools) you should hopefully be able to find your pool in there by searching using your poolID, and subsequently claiming it (might require registration on the website) and giving it a customized name.
 
-### 6. Temporary step until DB-sync is upgraded
 
-Submit a PR to add your pool data to https://github.com/input-output-hk/cardano-ops/blob/master/topologies/ff-peers.nix 
-You will need to provide your IP address/DNS host name and port.
-
-    {
-       operator = “testPool”;
-       poolId = “<poolid>”;
-       metadataUrl = “https://gist.githubusercontent.com/testPool/.../testPool.json”
-       meatadataHash = “6bf124f217d0e5a0a8adb1dbd8540e1334280d49ab861127868339f43b3948af”;
-       addr = “123.123.123.123”;
-       port = 3001;
-    }
-
-Note that your relays can also be registered on-chain, it can support multiple IPs/DNS names. This relay registering scheme is also temporary.
