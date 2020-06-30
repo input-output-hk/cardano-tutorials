@@ -1,5 +1,5 @@
 # Example Solution for Shelley Stakepool Exercise Sheet 2
-LATEST NODE TAG: 1.13.0
+LATEST NODE TAG: 1.14.2
 
 ## Objectives
 
@@ -16,12 +16,12 @@ In the second exercise, we will make sure that you can:
 1. Have a node running
 
 		cardano-node run \
-		--topology relay/ff-topology.json \
+		--topology relay/shelley_testnet-topology.json \
 		--database-path relay/db \
 		--socket-path relay/db/node.socket \
 		--host-addr x.x.x.x \
 		--port 3001 \
-		--config relay/ff-config.json
+		--config relay/shelley_testnet-config.json
 2. Have funds in you payment.addr . If you don't, please register your address on the spreadsheet.
 
 

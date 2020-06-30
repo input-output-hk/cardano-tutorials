@@ -1,15 +1,15 @@
 # Example Solution for Shelley Stakepool Exercise Sheet 4
-LATEST NODE TAG: 1.13.0
+LATEST NODE TAG: 1.14.2
 ## Delegation
 
 ### Prerequisites
 
-3. 	Checkout and build the sources which have been tagged with `1.13.0`.
+3. 	Checkout and build the sources which have been tagged with `1.14.2`.
 
         cabal update
         cd cardano-node
         git fetch --all --tags -f
-        git checkout tags/1.13.0
+        git checkout tags/1.14.2
         cabal install cardano-node cardano-cli
         cd ..
 
@@ -20,18 +20,18 @@ LATEST NODE TAG: 1.13.0
 4.	Start a node and obtain the protocol parameters.
     Make sure you know what each of these is (especially the fees).
 
-        wget https://hydra.iohk.io/build/2715059/download/1/ff-config.json
-        wget https://hydra.iohk.io/build/2715059/download/1/ff-genesis.json
-        wget https://hydra.iohk.io/build/2715059/download/1/ff-topology.json
+        wget https://hydra.iohk.io/build/2715059/download/1/shelley_testnet-config.json
+        wget https://hydra.iohk.io/build/2715059/download/1/shelley_testnet-genesis.json
+        wget https://hydra.iohk.io/build/2715059/download/1/shelley_testnet-topology.json
 
         rm -rf db logs
 
         cardano-node run \
-            --topology ff-topology.json \
+            --topology shelley_testnet-topology.json \
             --database-path db \
             --socket-path db/node-socket \
             --port 8080 \
-            --config ff-config.json
+            --config shelley_testnet-config.json
 
         export CARDANO_NODE_SOCKET_PATH=db/node-socket
         cardano-cli shelley query protocol-parameters \

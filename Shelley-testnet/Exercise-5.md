@@ -1,6 +1,6 @@
 # Shelley Stakepool Exercise Sheet 5
 
-LATEST TAG: 1.14.0
+LATEST TAG: 1.14.2
 
 ## Running a Stake Pool
 

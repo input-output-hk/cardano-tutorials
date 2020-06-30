@@ -61,7 +61,7 @@ Create a directory on your local machine to store your keys:
 
 We need to know the slots per KES period, we get it from the genesis file:
 
-    cat ff-genesis.json | grep KESPeriod
+    cat shelley_testnet-genesis.json | grep KESPeriod
     > "slotsPerKESPeriod": 3600,
 
 So one period lasts 3600 slots.

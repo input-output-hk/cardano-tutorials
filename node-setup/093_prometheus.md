@@ -20,7 +20,7 @@
 
    ![new inbound rules](images/new-inbound-rule.png)
 
-2. On the AWS instance we edit the node configuration file ff-config.json providing the host and port:
+2. On the AWS instance we edit the node configuration file shelley_testnet-config.json providing the host and port:
 
         hasPrometheus:
           - "0.0.0.0"
@@ -30,7 +30,7 @@
    You can be more selective if you want and provide a specific IP-address instead.)
 
 3. We restart the node, and it will now make Prometheus metrics available
-   at port 12789 (or whatever port you specified in `ff-config.json`).
+   at port 12789 (or whatever port you specified in `shelley_testnet-config.json`).
 
 4. You need to have Prometheus installed on your local machine.
    How to do this depends on your platform and setup, but you can find documentation

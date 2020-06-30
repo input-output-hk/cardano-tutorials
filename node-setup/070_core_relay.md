@@ -11,13 +11,13 @@ Get the configuration files for your block-producing node if you don't have them
     mkdir config-files
     cd config-files     
 
-    wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/ff-config.json
-    wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/ff-genesis.json
-    wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/ff-topology.json
+    wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/shelley_testnet-config.json
+    wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/shelley_testnet-genesis.json
+    wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/shelley_testnet-topology.json
 
 Make the __block-producing__ node to "talk" only to __YOUR__ relay node. Do not forget to configure your firewall also:
 
-    nano ff-topology.json
+    nano shelley_testnet-topology.json
 
   	{
   	  "Producers": [
@@ -31,10 +31,10 @@ Make the __block-producing__ node to "talk" only to __YOUR__ relay node. Do not 
 
 ### Configure the relay node:
 
-Make your __relay node__ `talk` to your __block-producing__ node and __other relays__ in the network by editing the `ff-topology.json` file:
+Make your __relay node__ `talk` to your __block-producing__ node and __other relays__ in the network by editing the `shelley_testnet-topology.json` file:
 
 
-    nano ff-topology.json
+    nano shelley_testnet-topology.json
 
     {
       "Producers": [
