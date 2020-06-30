@@ -9,12 +9,12 @@
     [Cardano Tutorial Documentation](https://github.com/input-output-hk/cardano-tutorials)
     and [General Documentation on Stake Pool Parameters,
     Pool De-Registration and Protocol Parameters](https://testnets.cardano.org).
-3. 	Checkout and build the sources which have been tagged with `1.13.0`.
+3. 	Checkout and build the sources which have been tagged with `1.14.2`.
 
         cabal update
         cd cardano-node
         git fetch --all --tags -f
-        git checkout tags/1.13.0
+        git checkout tags/1.14.2
         cabal install cardano-node cardano-cli
         cd ..
 
@@ -27,9 +27,9 @@
 
     Let us assume that we have configuration files
 
-    -   `ff-config.json`
-    -   `ff-genesis.json`
-    -   `ff-topology.json`
+    -   `shelley_testnet-config.json`
+    -   `shelley_testnet-genesis.json`
+    -   `shelley_testnet-topology.json`
 
     We can download the latest versions of these files at
     [https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/index.html](https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/index.html), but we might want to tweak the config-file and the topology (to add more peers).
@@ -184,7 +184,7 @@ GitHub repositories.
     Before we can create a new operational certificate, we need to figure out start of the KES validity period.
     We need to know how long a period is from the genesis file:
 
-        cat ff-genesis.json | grep KESPeriod
+        cat shelley_testnet-genesis.json | grep KESPeriod
         > "slotsPerKESPeriod": 3600,
 
     So one period lasts 3600 slots. What slot are we currently in?
@@ -285,7 +285,8 @@ GitHub repositories.
             --pool-margin 0.03 \
             --pool-reward-account-verification-key-file stake2.vkey \
             --pool-owner-stake-verification-key-file stake2.vkey \
-            --out-file pool2.cert
+            --out-file pool2.cert \
+            --testnet-magic 42 
 
         cardano-cli shelley stake-address registration-certificate \
             --stake-verification-key-file stake2.vkey \
@@ -339,7 +340,7 @@ GitHub repositories.
 
     We look up deposits for pool- and key-registration:
 
-        cat ff-genesis.json | grep Deposit
+        cat shelley_testnet-genesis.json | grep Deposit
             "poolDeposit": 500000000,
             "keyDeposit": 400000,
 
@@ -410,6 +411,7 @@ GitHub repositories.
             --pool-reward-account-verification-key-file stake2.vkey \
             --pool-owner-stake-verification-key-file stake1.vkey \
             --out-file pool1.cert
+            --testnet-magic 42
 
     Here we have additionally (although this was not required) changed the reward account to `stake2.vkey`,
     so the rewards from both our pools will go to the same stake key `stake2.vkey` from now on.

@@ -15,7 +15,7 @@ This epoch must be _after_ the current epoch and _not later than_ `eMax` epochs 
 
 So we first need to figure out the current epoch. The number of _slots per epoch_ is recorded in the genesis file, and we can get it with
 
-    cat ff-genesis.json | grep epoch
+    cat shelley_testnet-genesis.json | grep epoch
     > "epochLength": 21600,
 
 So one epoch lasts for 21600 slots. We get the current slot by querying the tip:

@@ -1,6 +1,8 @@
 Creating keys and addresses
 ===========================
 
+UPDATED FOR TAG: 1.14.2
+
 We need to create two sets of keys and addresses: One set to control our funds (make and receive payments) and one set to control our stake (to participate in the protocol delegating our stake)
 
 Let's produce our cryptographic keys first, as we will need them to later create our addresses:
@@ -55,7 +57,7 @@ It's content look like this:
 
 This created the file payment.addr that is already associated with our stake keys:
 
-    cat payment.address
+    cat payment.addr
     > 00ec78e3d3916636101f6d9539c451f248ba200f38f2c33129f7ef36d66853603e872296956a4d86
 
 4. To query your address (see the utxo's at that address),
@@ -67,16 +69,16 @@ This created the file payment.addr that is already associated with our stake key
 
    and make sure that your node is running.  Then use
 
-    cardano-cli shelley query utxo \
-            --address $(cat payment.addr) \
-            --testnet-magic 42
+       cardano-cli shelley query utxo \
+       --address $(cat payment.addr) \
+       --testnet-magic 42
 
    you should see something like this:
 
                               TxHash                                 TxIx        Lovelace
     ----------------------------------------------------------------------------------------
 
-   (The `--testnet-magic 42` is specific to the FF-testnet, for mainnet we would use `--mainnet` instead.)
+   (The `--testnet-magic 42` is specific to the Shelley Testnet, for mainnet we would use `--mainnet` instead.)
 
 
 ### Stake address

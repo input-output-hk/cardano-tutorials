@@ -1,5 +1,7 @@
-Register a Stake Pool
-=====================
+Register a Stake Pool with Metadata
+===================================
+
+__USE TAG: 1.14.2__ 
 
 ### Prerequisites
 
@@ -31,25 +33,51 @@ At this moment we have:
 
 Registering your stake pool requires:
 
+* Create JSON file with your metadata and store it in the node and in a url you maintain.
+* Get the hash of your JSON file
 * Generate the stake pool registration certificate
 * Create a delegation certificate (pledge)
 * Submit the certificates to the blockchain
+* Submit a PR with pool metadata (Temporary step until DB-sync is upgraded)
 
 **WARNING:** Generating the __stake pool registration certificate__ and the __delegation certificate__ requires the __cold keys__ So, you may want to generate these certificates in your local machine taking the proper security measures to avoid exposing your cold keys to the internet.  
 
-### 1. Generate Stake pool registration certificate
+### 1. Create a JSON file with your pool's metadata
+
+    {
+    "name": "TestPool",
+    "description": "The pool that tests all the pools",
+    "ticker": "TEST",
+    "homepage": "https://teststakepool.com"
+    }
+
+Store the file in a url you control, for example [https://gist.githubusercontent.com/testPool/.../testPool.json](shorturl.at/gDV47)
+
+### 2. Get the hash of your file:
+
+This validates that the JSON fits the required schema, if it does, you will get the hash of your file. 
+
+    cardano-cli shelley stake-pool metadata-hash --pool-metadata-file testPool.json
+
+    >6bf124f217d0e5a0a8adb1dbd8540e1334280d49ab861127868339f43b3948af
+    
+### 3. Generate Stake pool registration certificate
 
 Create a _stake pool registration certificate_:
 
     cardano-cli shelley stake-pool registration-certificate \
     --cold-verification-key-file cold.vkey \
     --vrf-verification-key-file vrf.vkey \
-    --pool-pledge 100000000000 \
-    --pool-cost 10000000000 \
+    --pool-pledge 1000000000 \
+    --pool-cost 100000000 \
     --pool-margin 0.05 \
     --pool-reward-account-verification-key-file stake.vkey \
     --pool-owner-stake-verification-key-file stake.vkey \
     --testnet-magic 42 \
+    --pool-relay-port 3001 \
+    --pool-relay-ipv4 123.123.123.123 \
+    --metadata-url https://gist.githubusercontent.com/testPool/.../testPool.json \
+    --metadata-hash 6bf124f217d0e5a0a8adb1dbd8540e1334280d49ab861127868339f43b3948af \
     --out-file pool.cert
 
 | Parameter                            | Explanation                                       |
@@ -62,6 +90,11 @@ Create a _stake pool registration certificate_:
 | pool-reward-account-verification-key-file | verification staking key for the rewards          |
 | pool-owner-staking-verification-key-file  | verification staking key(s) for the pool owner(s) |
 | out-file                             | output file to write the certificate to           |
+| pool-relay-port                      | port                                              |
+| pool-relay-ipv4                      | relay node ip address                             |
+| metadata-url                         | url of your json file                             |
+| metadata-hash                        | the hash of pools json metadata file              |
+
 
 So in the example above, we use the cold- and VRF-keys that we created [here](060_node_keys.md),
 promise to pledge 100,000 ada to our pool, declare operational costs of 10,000 ada per epoch,
@@ -82,7 +115,7 @@ The __pool.cert__ file should look like this:
     46f1a68bdf8113f50e779d8158203a4e813b6340dc790f772b3d433ce1c371d5c5f5de46f1a68bdf
     8113f50e779d80f6   
 
-### 2. Generate delegation certificate (pledge)
+### 4. Generate delegation certificate (pledge)
 
 We have to honor our pledge by delegating at least the pledged amount to our pool, so we have to create a _delegation certificate_ to achieve this:
 
@@ -95,7 +128,7 @@ This creates a delegation certificate which delegates funds from all stake addre
 the pool belonging to cold key `cold.vkey`. If we had used different staking keys for the pool owners in the first step,
 we would need to create delegation certificates for all of them instead.
 
-### 3. Submit the pool certificate and delegation certificate to the blockchain
+### 5. Submit the pool certificate and delegation certificate to the blockchain
 
 Finally we need to submit the pool registration certificate and the delegation certificate(s) to the blockchain by including them in one or more transactions. We can use one transaction for multiple certificates, the certificates will be applied in order.
 
@@ -163,14 +196,33 @@ And submit:
     --tx-file tx.signed \
     --testnet-magic 42
 
-That's it! Our stake pool has been registered.
-
 To verify that your stake pool registration was indeed successful, you can perform the following steps:
 
     cardano-cli shelley stake-pool id --verification-key-file <path to your cold.vkey>
 
 will output your poolID. You can then check for the presence of your poolID in the network ledger state, with the following command:
 
-    cardano-cli shelley query ledger-state --testnet-magic 42 | grep poolPubKey | grep <poolId>
+    cardano-cli shelley query ledger-state --testnet-magic 42 | grep publicKey | grep <poolId>
+
+or 
+
+    cardano-cli shelley query ledger-state --testnet-magic 42 \
+    | jq '._delegationState._pstate._pParams.<poolid>' 
 
 which should return a non-empty string if your poolID is located in the ledger. You can then then head over to a pool listing website such as https://ff.pooltool.io/ and (providing it is up and running and showing a list of registered stake pools) you should hopefully be able to find your pool in there by searching using your poolID, and subsequently claiming it (might require registration on the website) and giving it a customized name.
+
+### 6. Temporary step until DB-sync is upgraded
+
+Submit a PR to add your pool data to https://github.com/input-output-hk/cardano-ops/blob/master/topologies/ff-peers.nix 
+You will need to provide your IP address/DNS host name and port.
+
+    {
+       operator = “testPool”;
+       poolId = “<poolid>”;
+       metadataUrl = “https://gist.githubusercontent.com/testPool/.../testPool.json”
+       meatadataHash = “6bf124f217d0e5a0a8adb1dbd8540e1334280d49ab861127868339f43b3948af”;
+       addr = “123.123.123.123”;
+       port = 3001;
+    }
+
+Note that your relays can also be registered on-chain, it can support multiple IPs/DNS names. This relay registering scheme is also temporary.

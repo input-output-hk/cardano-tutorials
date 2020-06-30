@@ -1,6 +1,6 @@
 # Shelley Stakepool Exercise Sheet 5
 
-LATEST TAG: 1.13.0
+LATEST TAG: 1.14.2
 
 ## Running a Stake Pool
 
@@ -43,7 +43,13 @@ Please report any bugs through the cardano-node and cardano-tutorials github rep
 
 ### Exercises
 
-1. 	Generate a registration certificate for your stake pool:
+1. Generate a JSON file containing the _metadata_ for your stake pool, and get the hash:
+
+        cardano-cli shelley stake-pool metadata-hash ...
+
+    Put the file somewhere accessible, and obtain its URL.
+
+2.  Generate a registration certificate for your stake pool:
 
    	    cardano-cli shelley stake-pool registration-certificate ...
 
@@ -59,14 +65,16 @@ Please report any bugs through the cardano-node and cardano-tutorials github rep
     If you don’t know what to choose, set the cost to 256 ada,
     the margin to 0.07 (i.e. 7%)
     and the pledge to 1,000 ada.
+    
+    You will also need to specify the metadata URL and hash for your pool from Step 1.
 
-2. 	Pledge some stake to your stake pool.
+3. 	Pledge some stake to your stake pool.
     You do this by creating a delegation certificate (as you did in
     [Exercise 4](Exercise-4.md)) that delegates
     enough stake from the "owner staking key" specified in the registration certificate
     to your own pool to cover your pledge promise.
 
-3. 	Register the pool online.
+4. 	Register the pool online.
     Registration is done by submitting a transaction that contains the
     pool registration certificate.
     You can include the pledge delegation certificate in the same transaction.
@@ -79,47 +87,49 @@ In addition to the usual transaction fees, you will also have to pay the
     Note that this transaction will have to be signed by the payment key,
     the cold key and the staking key.
 
-4. 	Start your stake pool, and link it to the relay node as you did in
+5. 	Start your stake pool, and link it to the relay node as you did in
     [Exercise 3](Exercise-3.md).
 
         cardano-node run ...
 
-5. 	Advertise that your pool is running.
+6. 	Obtain your stake pool id
 
-    __Note:__ At the time of writing, there is no way to determine your pool id yet.  Please use the CBOR-hex from the cold key verification file instead.
+        cardano-cli shelley stake-pool id ...
 
-6. 	Check that you are delegating to your own pool,
+    If necessary, advertise that your pool is running using the P2P and off-chain registration workarounds that are described in the tutorials.
+
+
+7. 	Check that you are delegating to your own pool through the pledge address,
     then wait until the following epoch (around 6 hours),
     and confirm that your pool is producing blocks by e.g. inspecting the log data.
     Also confirm that your pool is receiving the correct rewards.
     Congratulations, you are now a fully fledged Shelley Testnet pool operator!
 
-    __Note:__ At the time of writing, there is no way to check rewards yet. This feature is coming very soon.
 
-7. 	Optional Exercise (Easy).
+8. 	Optional Exercise (Easy).
 
     Persuade other Testnet users to delegate to your pool.
 
-8. 	Optional Exercise (Medium).
+9. 	Optional Exercise (Medium).
 
     Join forces with one or more other Testnet stakepool operators
     to run a new stake pool that you jointly own.
     What happens if you fail to collectively meet the pledge that you have promised?
 
-9. 	Optional Exercise (Easy).
+10. 	Optional Exercise (Easy).
 
     Change your pool’s cost, margin and pledge.
     What is the effect on the rewards that you receive?
     How long does it take for the change to take effect?
 
-10. Optional Exercise (Easy).
+11. Optional Exercise (Easy).
 
     Retire (de-register) your original pool, and start a new one with different cost,
-    margin and pledge.  Update your pool advertisement.
+    margin and pledge.  Update your pool advertisement if you need to.
 
-11. Optional Exercise (Medium).
+12. Optional Exercise (Medium).
 
-    Set up two stake pools, each behind its own relay node.
+    Set up two new stake pools, each behind its own relay node.
     Advertise both pools.
 
 You have now successfully set up and run your own stake pool and learnt the basics of how to manage it.  In the final exercises, we will test some operational parameters that are relevant to running a pool and see how to submit more forms of transaction.

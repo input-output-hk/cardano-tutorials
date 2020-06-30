@@ -1,6 +1,8 @@
 Understanding your configuration files and how to use them
 ==========================================================
 
+UPDATED FOR TAG: 1.14.2
+
 ## The topology.json file
 
 Tells your node to which nodes in the network it should talk to. A minimal version of this file looks like this:
@@ -36,65 +38,65 @@ But it is important because it is used to set:
 The `genesis.json` file looks like the one below.
 
 		{
-		  "activeSlotsCoeff": 0.05,
-		  "protocolParams": {
-		    "poolDecayRate": 0,
-		    "poolDeposit": 500000000,
-		    "protocolVersion": {
-		      "minor": 0,
-		      "major": 0
-		    },
-		    "minUTxOValue": 0,
-		    "decentralisationParam": 1,
-		    "maxTxSize": 16384,
-		    "minFeeA": 44,
-		    "maxBlockBodySize": 65536,
-		    "keyMinRefund": 0,
-		    "minFeeB": 155381,
-		    "eMax": 100,
-		    "extraEntropy": {
-		      "tag": "NeutralNonce"
-		    },
-		    "maxBlockHeaderSize": 1400,
-		    "keyDeposit": 400000,
-		    "keyDecayRate": 0,
-		    "nOpt": 50,
-		    "rho": 0.00178650067,
-		    "poolMinRefund": 0,
-		    "tau": 0.1,
-		    "a0": 0.1
-		  },
-		  "protocolMagicId": 42,
-		  "genDelegs": {
-		    "68c3462163394860dbea2153d9969c7493c3aedcafa951cce80d54f009179c6e": {
-		      "delegate": "1b63914346d3e21616cac6d9b8ed31817b946b352ff139beb3fd93d5befbb4ec",
-		      "vrf": "f953e5e3daf47891592579ec3a6b2dd7f12a3984a5bc2d57f8181b5664da29cd"
-		    },
-		    "68791cb64465ad87af62485c84a8c7c784879c52a3a10166371a02d3f8b4fcee": {
-		      "delegate": "fb6867d5f5cab90c1f394cd5d09323989e6ec7a429aa02d17f09bba3341c83a0",
-		      "vrf": "90bb9758eae5f945c9a57ca776289c0dddcb81bf2683dad6903bc80fe6747e3f"
-		    },
-		    "57991844610f49632e2b4055f5ae2f8678c6fbfb4062466cd56a6a6a3711e3e1": {
-		      "delegate": "1f93c26b4b6a5663cf366e00f8d8fcb623bd3e1a1e8bd1ac2cfe0e6a60978ef1",
-		      "vrf": "6f668ce3fd93011e11576986ef778f6a1c8e8773ae43720509725f57697e9b45"
-		    }
-		  },
-		  "updateQuorum": 3,
-		  "networkId": "Testnet",
-		  "maxMajorPV": 0,
-		  "initialFunds": {
-		    "605b9f3715742489a4c5a138e4a47984a41a6623aab620037ee67baed820521ba5": 1e+16,
-		    "604f01b17ab652e625f8e274c3c1a142097ba828e7e8afe7f2c73aab4544261aa7": 1000000000000000
-		  },
-		  "maxLovelaceSupply": 45000000000000000,
-		  "networkMagic": 42,
-		  "epochLength": 21600,
-		  "staking": null,
-		  "systemStart": "2020-06-05T01:00:00.000000000Z",
-		  "slotsPerKESPeriod": 3600,
-		  "slotLength": 1,
-		  "maxKESEvolutions": 120,
-		  "securityParam": 108
+		"activeSlotsCoeff": 0.05,
+		"protocolParams": {
+		"poolDeposit": 500000000,
+		"protocolVersion": {
+			"minor": 0,
+			"major": 0
+		},
+		"minUTxOValue": 0,
+		"decentralisationParam": 1,
+		"maxTxSize": 16384,
+		"minPoolCost": 0,
+		"minFeeA": 44,
+		"maxBlockBodySize": 65536,
+		"minFeeB": 155381,
+		"eMax": 18,
+		"extraEntropy": {
+			"tag": "NeutralNonce"
+		},
+		"maxBlockHeaderSize": 1100,
+		"keyDeposit": 400000,
+		"nOpt": 250,
+		"rho": 0.0022,
+		"tau": 0.05,
+		"a0": 0.3
+		},
+		"protocolMagicId": 42,
+		"genDelegs": {
+		"acded41a3329534b4a138a6262fc89ed84ab84a47439820027a1cfde": {
+			"delegate": "3006bbc11b9587f758f818e55d376173894f3119fa9f3bb506b39014",
+			"vrf": "4591768a404433121c891f4dcc72db18945f8f05c51b990c2ef32135f585ae5b"
+		},
+		"0e549da1e802e993fd67d0da974f8d64148417ded9ace34a38ee842e": {
+			"delegate": "17d2ab1bd33faeb975ce82f531cffb4c956acf14fc5fe62a30209b55",
+			"vrf": "f086cf388d1c9de15b5100da4198b5724ac65bab87ee25d1a7b34cbebd0dad36"
+		},
+		"a8fc4c8befb7a818fb86e68ec2bab42e90efb7833d6854e2d29570e7": {
+			"delegate": "65a6cf060d4b537ecca6b09690740cf7633941dd1de086c06652461f",
+			"vrf": "f92d64e5c607c3ff94ca8614781c5fc015d12c72c642b919e4d5665e765295b1"
+		}
+		},
+		"updateQuorum": 3,
+		"networkId": "Testnet",
+		"initialFunds": {
+		"60c307230dbe3be32364f2c3386c61b9a065b36635705f6feac72c4802": 1e+16,
+		"60be9af17be11a9c959721278f7a4be0161688df2ff1965444f8f50d53": 1000000000000000
+		},
+		"maxLovelaceSupply": 45000000000000000,
+		"networkMagic": 42,
+		"epochLength": 21600,
+		"staking": {
+		"pools": {},
+		"stake": {}
+		},
+		"systemStart": "2020-06-28T21:00:00Z",
+		"slotsPerKESPeriod": 3600,
+		"slotLength": 1,
+		"maxKESEvolutions": 120,
+		"securityParam": 108
+		}
 
 Here is a brief description of each parameter. You can learn more in the [spec](https://github.com/input-output-hk/cardano-ledger-specs/tree/master/shelley/chain-and-ledger/executable-spec)
 
@@ -107,6 +109,7 @@ Here is a brief description of each parameter. You can learn more in the [spec](
 | protocolVersion| Accepted protocol versions |
 | decentralisationParam | Percentage of blocks produced by federated nodes |
 | maxTxSize | Maximal transaction size |
+| minPoolCost | Stake pools cannot register/re-register their stake cost below this value |
 | minFeeA | The linear factor for the minimum fee calculation |
 | maxBlockBodySize | Maximal block body size |
 | keyMinRefund | The minimum percent refund guarantee |
@@ -150,12 +153,12 @@ __NOTE Due to how the config.json file is generated, fields on the real file are
 
 ### 1 Basic Node Configuration.
 
-First section relates the basic node configuration parameters. Make sure you have to `TPraos`as the protocol, the correct path to the `ff-genesis.json` file, `RequiresMagic`for its use in a testnet.
+First section relates the basic node configuration parameters. Make sure you have to `TPraos`as the protocol, the correct path to the `shelley_testnet-genesis.json` file, `RequiresMagic`for its use in a testnet.
 Note that in this example we are using the SimpleView. This will send the output to `stdout`. Other option is `LiveView` which uses a terminal multiplexer to generate a fancy view. We will cover this topic later.
 
 	{
 	  "Protocol": "TPraos",
-	  "GenesisFile": "ff-genesis.json",
+	  "GenesisFile": "shelley_testnet-genesis.json",
 	  "RequiresNetworkMagic": "RequiresMagic",
 
 ### 2 Update parameteres

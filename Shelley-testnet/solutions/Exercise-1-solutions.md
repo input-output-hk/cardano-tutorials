@@ -91,10 +91,10 @@ We change our working directory to the downloaded source code folder:
     cd cardano-node
 
 For reproducible builds, we should check out a specific release, a specific "tag".
-For the FF-testnet, we will use tag `1.13.0`, which we can check out as follows:
+For the Shelley Testnet, we will use tag `1.14.2`, which we can check out as follows:
 
     git fetch --all --tags
-    git checkout tags/1.13.0
+    git checkout tags/1.14.2
 
 
 ### Build and install the node
@@ -123,20 +123,20 @@ Note that it might be necessary to delete the `db`-folder (the database-folder) 
 
 ### Get genesis, configuration, topology files, and start the node
 
-To start your node and connect it to F&F testnet you will need three important files: `ff-config.json` `ff-genesis.json` and `ff-topology.json`. We will download them from <https://hydra.iohk.io/build/2622346/download/1/index.html>
+To start your node and connect it to F&F testnet you will need three important files: `shelley_testnet-config.json` `shelley_testnet-genesis.json` and `shelley_testnet-topology.json`. We will download them from <https://hydra.iohk.io/build/2622346/download/1/index.html>
 
-    wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/ff-topology.json
-    wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/ff-genesis.json
-    wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/ff-config.json
+    wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/shelley_testnet-topology.json
+    wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/shelley_testnet-genesis.json
+    wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/shelley_testnet-config.json
 
 Now you can start the node, double check that port 3001 is open. In the `cardano-node` directory run:
 
     cardano-node run \
-       --topology ff-topology.json \
+       --topology shelley_testnet-topology.json \
        --database-path db \
        --socket-path db/node.socket \
        --port 3001 \
-       --config ff-config.json
+       --config shelley_testnet-config.json
 
 ![](../../node-setup/images/starting-single-node.png)
 
@@ -158,25 +158,25 @@ Each node should run on a dedicated server, and the block producing node's serve
 
 In this tutorial, we will simplify matters by having a block producing node (It won't produce blocks yet), and by using a single relay. For now, we will run both nodes on the same server.
 
-We have explained how to run a single node, and now you have suitable configuration files `ff-config.json`,`ff-topology.json` and `ff-genesis.json` available.
+We have explained how to run a single node, and now you have suitable configuration files `shelley_testnet-config.json`,`shelley_testnet-topology.json` and `shelley_testnet-genesis.json` available.
 
-Both our nodes must use the same `ff-genesis.json`, they can use the same `ff-config.json` (but don't have to), and they need different `ff-topology.json` files.
+Both our nodes must use the same `shelley_testnet-genesis.json`, they can use the same `shelley_testnet-config.json` (but don't have to), and they need different `shelley_testnet-topology.json` files.
 
 Let us create separate folders for the two nodes and copy the configuration files to both directories.
 
     cd cardano-node
     mkdir block-producing
     mkdir relay
-    cp ff-config.json ff-genesis.json ff-topology.json block-producing/
-    cp ff-config.json ff-genesis.json ff-topology.json relay/
+    cp shelley_testnet-config.json shelley_testnet-genesis.json shelley_testnet-topology.json block-producing/
+    cp shelley_testnet-config.json shelley_testnet-genesis.json shelley_testnet-topology.json relay/
 
 
 We will run our block-producing node on port 3000 (make sure it is opened) and our relay on port 3001
 (you can of course use different ports if you like)
 
-We must modify the block-producer's `ff-topology.json` to only "talk" to the relay:
+We must modify the block-producer's `shelley_testnet-topology.json` to only "talk" to the relay:
 
-Navigate to `/block-producing` and open `ff-topology.json` with your favorite text editor:
+Navigate to `/block-producing` and open `shelley_testnet-topology.json` with your favorite text editor:
 
     {
       "Producers": [
@@ -188,7 +188,7 @@ Navigate to `/block-producing` and open `ff-topology.json` with your favorite te
       ]
     }
 
-In the  `relay/ff-topology.json` we instruct the node to "talk" to the block-producer *and* an external node as before:
+In the  `relay/shelley_testnet-topology.json` we instruct the node to "talk" to the block-producer *and* an external node as before:
 
 
 	{
@@ -224,23 +224,23 @@ Then you can split the screen with `Ctrl`-`b`-`%` and navigate between the two p
 From one `tmux`-panel we start the block-producing node with the following command. Under `host-addr` replace the x.x.x.x with your public ip
 
     cardano-node run \
-    --topology block-producing/ff-topology.json \
+    --topology block-producing/shelley_testnet-topology.json \
     --database-path block-producing/db \
     --socket-path block-producing/db/node.socket \
     --host-addr x.x.x.x --port 3000 \
-    --config block-producing/ff-config.json
+    --config block-producing/shelley_testnet-config.json
 
 The node will start, but it won't receive any data, because we have configured it to only "talk" to the relay node, and we haven't yet started the relay.
 
 We switch to the other `tmux`-panel with `Ctrl`-`b`-`→` and start the relay node with a similar command. Under `host-addr` replace the x.x.x.x with your public ip
 
     cardano-node run \
-     --topology relay/ff-topology.json \
+     --topology relay/shelley_testnet-topology.json \
      --database-path relay/db \
      --socket-path relay/db/node.socket \
      --host-addr x.x.x.x \
      --port 3001 \
-     --config relay/ff-config.json
+     --config relay/shelley_testnet-config.json
 
 After a few seconds, both nodes should receive data.
 

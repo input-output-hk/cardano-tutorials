@@ -63,7 +63,7 @@ Finnaly, we can generate our __Operational Certificate__
 
 To tho that, first We need to know the slots per KES period, we get it from the genesis file:
 
-    cat ff-genesis.json | grep KESPeriod
+    cat shelley_testnet-genesis.json | grep KESPeriod
     > "slotsPerKESPeriod": 3600,
 
 So one period lasts 3600 slots. What is the current tip of the blockchain?,
@@ -125,14 +125,14 @@ Get the configuration files for your block-producing node if you dont have them 
     mkdir config-files
     cd config-files     
 
-    wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/ff-config.json
-    wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/ff-genesis.json
-    wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/ff-topology.json
+    wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/shelley_testnet-config.json
+    wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/shelley_testnet-genesis.json
+    wget https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/shelley_testnet-topology.json
 
 
 Lets make our __block-producing__ node to "talk" only to our relay node
 
-	nano ff-topology.json
+	nano shelley_testnet-topology.json
 
 	{
 	  "Producers": [
@@ -175,17 +175,17 @@ This is a good moment to add also other relay nodes in the network.
 First we restart our __relay node__ with:
 
 	~$ cardano-node run \
-	 --topology path/to/ff-topology.json \
+	 --topology path/to/shelley_testnet-topology.json \
 	 --database-path path/to/db \
 	 --socket-path path/to/db/node.socket \
 	 --host-addr <PUBLIC IP> \
 	 --port 3001 \
-	 --config path/to/ff-config.json
+	 --config path/to/shelley_testnet-config.json
 
 then, we start our __block producing__ node with:
 
 	~$ cardano-node run \
-	--topology keys/ff-topology.json \
+	--topology keys/shelley_testnet-topology.json \
 	--database-path /db \
 	--socket-path /db/node.socket \
 	--host-addr <PUBLIC IP> \

@@ -1,6 +1,6 @@
 # Shelley Stakepool Exercise Sheet 6
 
-LATEST TAG: 1.13.0
+LATEST TAG: 1.14.2
 
 ## Stake Pool Parameters and Protocol Parameters
 

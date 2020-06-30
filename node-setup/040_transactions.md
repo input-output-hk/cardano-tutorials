@@ -62,7 +62,7 @@ The transaction needs one (1) input: a valid UTXO from `payment.addr`, and two (
 
        > 167965
 
-(The `--testnet-magic 42` identifies the ff-testnet. Other testnets will use other numbers, and mainnet uses `--mainnet` instead.)
+(The `--testnet-magic 42` identifies the Shelley Testnet. Other testnets will use other numbers, and mainnet uses `--mainnet` instead.)
 
 So we need to pay __167965 lovelace__ fee to create this transaction.
 
