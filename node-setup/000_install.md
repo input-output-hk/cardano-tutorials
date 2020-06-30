@@ -108,7 +108,7 @@ Install Libsodium
     export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
 
 
-## Download the source code for cardano-node
+## Download the source code for `cardano-node`
 
 To download the source code, we use git:
 
