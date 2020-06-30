@@ -18,7 +18,6 @@ The current release of tutorials focus on setting up & monitoring the node and u
    node-setup/011_cli.md
    node-setup/012_understanding-config-files.md
    node-setup/020_keys_and_addresses.md
-   node-setup/030_faucet.md
    node-setup/040_transactions.md
    node-setup/050_register_key.md
    node-setup/060_node_keys.md
@@ -28,5 +27,4 @@ The current release of tutorials focus on setting up & monitoring the node and u
    node-setup/081_start_your_nodes.md
    node-setup/090_retire_stakepool.md
    node-setup/091_logging.md
-   node-setup/092_ekg.md
    node-setup/093_prometheus.md
