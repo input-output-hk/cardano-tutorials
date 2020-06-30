@@ -58,21 +58,22 @@ On other systems, you must either move the executable to a folder that is in you
 
 to your `.bashrc`-file.
 
-## Adding ~/.local/bin and ~/.cabal/bin to the PATH
+## Adding `~/.local/bin` and `~/.cabal/bin` to the `PATH`
 
 Navigate to your home folder:
 
     $ cd
-Open your .bashrc file with nano text editor
+
+Open your `.bashrc` file with nano text editor
 
     $ nano .bashrc
+
 Go to the bottom of the file and add the following lines
 
     export PATH="~/.cabal/bin:$PATH"
     export PATH="~/.local/bin:$PATH"
 
-
-You need to restart your server or source your .bashrc file
+You need to restart your server or source your `.bashrc` file
 
     source .bashrc
 
@@ -113,14 +114,13 @@ To download the source code, we use git:
 
     git clone https://github.com/input-output-hk/cardano-node.git
 
-
-This should create a folder ``cardano-node``, then download the latest source code from git into it.
+This should create a folder `cardano-node`, then download the latest source code from git into it.
 
 After the download has finished, we can check its content by
 
     ls cardano-node
 
-Note that the content of your ``cardano-node``-folder can slightly differ from this!
+Note that the content of your `cardano-node`-folder can slightly differ from this!
 
 We change our working directory to the downloaded source code folder:
 
@@ -136,7 +136,7 @@ For the Shelley Testnet, we will use tag `1.14.2`, which we can check out as fol
 
 ## Build and install the node
 
-Now we build and install the node with ``cabal``, which will take a couple of minutes the first time you do a build. Later builds will be much faster, because everything that does not change will be cached.
+Now we build and install the node with cabal, which will take a couple of minutes the first time you do a build. Later builds will be much faster, because everything that does not change will be cached.
 
    		cabal install cardano-node cardano-cli
 
