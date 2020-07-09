@@ -50,7 +50,7 @@
             scrape_interval: 5s
             static_configs:
               - targets: ['a.b.c.d:12789']
-          - job_name: 'node' # To scrape data from a node exporter to allow you monitor your linux host metrics.
+          - job_name: 'node' # To scrape data from a node exporter to monitor your linux host metrics.
             scrape_interval: 5s
             static_configs:
               - targets: ['a.b.c.d:9100']
@@ -69,4 +69,4 @@
 
    ![Prometheus](images/prometheus.png)
 
-**NOTE: Security configurations you should perform on your monitoring server are out of scope for this tutorial. 
+**NOTE: Security configurations you should perform on your monitoring server are out of scope for this tutorial.
