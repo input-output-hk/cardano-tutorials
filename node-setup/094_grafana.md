@@ -34,7 +34,7 @@ Change your password
 
 Add your first data source  
 
-![DataSource](images/grafana_13.39.52.png | width=600)
+![DataSource](images/grafana_13.39.52.png){:width="400px"}
 
 Select Prometheus  
 
