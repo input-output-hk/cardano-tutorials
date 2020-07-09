@@ -63,4 +63,8 @@ and paste the json under `Import via panel json`
 
 ![Dashboard](images/grafana_14.24.43.png)
 
+Enter to your dashboard, and after a few seconds you should see something like this.
+
 ![Dashboard](images/grafana_dashboard.png)
+
+From here you can configure alerts or change the views on your dashboard. 
