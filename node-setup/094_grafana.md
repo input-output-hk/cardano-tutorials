@@ -34,15 +34,15 @@ Change your password
 
 Add your first data source  
 
-![DataSource](images/grafana_13.39.52.png)
+![DataSource](images/grafana_13.39.52.png | width=600)
 
 Select Prometheus  
 
-![Prometheus](images/grafana_13.40.31.png)
+![Prometheus](images/grafana_13.40.31.png | width=600)
 
 Rename it as **prometheus** (IOHK dashboard uses this name, this is useful if you want to import one of our dashboards)
 
-![prometheus](images/grafana_prometheus.png)
+![prometheus](images/grafana_prometheus.png | width=600)
 
 Under HTTP, configure the data source
 
@@ -53,7 +53,7 @@ Click on `save and test`
 
 On the left panel open the Dashboards menu and go to manage:
 
-![Dashboard](images/grafana_13.55.40.png)
+![Dashboard](images/grafana_13.55.40.png | width=600)
 
 You can create a New Dashboard from scratch or import one of IOHK's dashboards. To import a dashboard, click on import
 
@@ -61,6 +61,6 @@ Copy `cardano-application-dashboard-v2.json` from the [cardano-ops repository](c
 
 and paste the json under `Import via panel json`
 
-![Dashboard](images/grafana_14.24.43.png)
+![Dashboard](images/grafana_14.24.43.png | width=600)
 
-![Dashboard](images/grafana_dashboard.png)
+![Dashboard](images/grafana_dashboard.png | width=600)
