@@ -20,3 +20,4 @@ In these tutorials, we will cover the following topics:
 - [CONFIGURE LOGGING](091_logging.md)
 - [MONITORING NODE WITH EKG](092_ekg.md)
 - [MONITORING NODE WITH PROMETHEUS](093_prometheus.md)
+- [ADDING A GRAFANA DASHBOARD](094_grafana.md)

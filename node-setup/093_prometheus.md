@@ -32,12 +32,13 @@
 3. We restart the node, and it will now make Prometheus metrics available
    at port 12789 (or whatever port you specified in `shelley_testnet-config.json`).
 
-4. You need to have Prometheus installed on your local machine.
-   How to do this depends on your platform and setup, but you can find documentation
-   [here](https://prometheus.io/docs/prometheus/latest/getting_started/).
+4. You can get the best out of prometheus if you have both Prometheus on your local machine or monitoring server and Prometheus Node Exporter on your node's server. How to do this depends on your platform and setup, but you can find documentation:
 
-5. Prometheus needs to be configured to monitor our Cardano Node. A minimalistic configuration file
-   doing this could look like this:
+   * [Prometheus](https://prometheus.io/docs/prometheus/latest/getting_started/).
+
+   * [Node exporter](https://prometheus.io/docs/guides/node-exporter/)
+
+5. Prometheus needs to be configured to monitor your Cardano Node. A minimalistic configuration file doing this could look like this:
 
         global:
           scrape_interval:     15s
@@ -45,15 +46,27 @@
             monitor: 'codelab-monitor'
 
         scrape_configs:
-          - job_name: 'cardano'
+          - job_name: 'cardano' # To scrape data from the cardano node
             scrape_interval: 5s
             static_configs:
               - targets: ['a.b.c.d:12789']
+          - job_name: 'node' # To scrape data from a node exporter to monitor your linux host metrics.
+            scrape_interval: 5s
+            static_configs:
+              - targets: ['a.b.c.d:9100']
 
-   You have to replace `a.b.c.d` with the public IP-address of your AWS instance,
-   which you can find on the dashboard under _IPv4 Public IP_.
+   You have to replace `a.b.c.d` with the public IP-address of your Cardano Node server, which you can find on the dashboard under _IPv4 Public IP_.
 
-6. Start Prometheus with this configuration, open `localhost:9090`, pick one or more interesting metrics to graph
-   and enjoy!
+7. Start Prometheus on your local machine or monitoring server with this configuration, for example:
+
+    $ ./prometheus --config.file=prometheus.yml
+
+8. Start Prometheus node exporter on your Cardano node server, for example:
+
+    $ ./node_exporter
+
+9. On your browser open `a.b.c.d:9090`, pick one or more interesting metrics to graph and enjoy!
 
    ![Prometheus](images/prometheus.png)
+
+**NOTE: Security configurations you should perform on your monitoring server are out of scope for this tutorial.
