@@ -109,7 +109,7 @@ GitHub repositories as usual.
 
     The residual amount is the amount that should be left over
     having paid for the transaction fee
-    and the registration fee (as given in the protocol parameters `protocol.json`).
+    and the Key deposit (as given in the protocol parameters `protocol.json`).
 
     Sign the transaction with both the payment- and stake- signing keys:
 
