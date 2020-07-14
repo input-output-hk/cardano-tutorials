@@ -1,5 +1,7 @@
 # Generate your stake pool keys
 
+## Latest documentation has been moved to https://docs.cardano.org/en/latest/ .
+
 A stake pool needs at least 2 running nodes: A __block-producing__ node and a __relay__ node.
 
 We need to setup our __block-producing__ node. You can build the node from source or maintain a single build on your local machine and only upload the binaries to your __block-producing__ and __relay__ servers. Just make sure you have consistent versions across them.

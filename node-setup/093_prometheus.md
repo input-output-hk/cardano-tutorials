@@ -1,5 +1,6 @@
 # Monitoring a Node with Prometheus
 
+## Latest documentation has been moved to https://docs.cardano.org/en/latest/ .
 
 1. In contrast to EKG, Prometheus allows monitoring a Cardano Node running on an AWS instance without
    the need for port forwarding.

@@ -1,5 +1,7 @@
 ## KES Periods
 
+## Latest documentation has been moved to https://docs.cardano.org/en/latest/ .
+
 We saw in the [last tutorial](060_node_keys.md) that in order to create an operational certificate for a block-producing node,
 you need to create a _KES key pair_.
 

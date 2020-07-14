@@ -1,5 +1,7 @@
 # Node Setup Tutorials
 
+## Latest documentation has been moved to https://docs.cardano.org/en/latest/ .
+
 In these tutorials, we will cover the following topics:
 
 - [SET UP AN AWS ENVIRONMENT](000_AWS.md)

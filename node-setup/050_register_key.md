@@ -1,6 +1,8 @@
 
 # Register stake address in the blockchain
 
+## Latest documentation has been moved to https://docs.cardano.org/en/latest/ .
+
 Before, we created our payment keys and address, which allow us to control our funds; we also created our stake keys and stake address, which allow us to participate in the protocol by delegating our stake or by creating a stake pool.  
 
 We need to _register_ our __stake key__ in the blockchain. To achieve this, we:

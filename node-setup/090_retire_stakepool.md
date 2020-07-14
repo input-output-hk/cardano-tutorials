@@ -1,5 +1,6 @@
 # Retiring a Stake Pool
 
+## Latest documentation has been moved to https://docs.cardano.org/en/latest/ .
 
 We assume that we have a registered stake pool with cold keys `cold.vkey` and `cold.skey`, a payment address with sufficient funds
 (for the transaction fees) `payment.addr` and an associated payment signing key `payment.skey`.
