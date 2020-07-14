@@ -1,5 +1,8 @@
 ### Start your nodes:
 
+## Latest documentation has been moved to https://docs.cardano.org/en/latest/ .
+
+
 First we restart our __relay node__ with:
 
     cardano-node run \

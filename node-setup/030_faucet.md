@@ -1,5 +1,7 @@
 # Using the faucet
 
+## Latest documentation has been moved to https://docs.cardano.org/en/latest/ .
+
 UPDATED FOR TAG: 1.14.2
 
 The faucet allows you to get some "test ada",

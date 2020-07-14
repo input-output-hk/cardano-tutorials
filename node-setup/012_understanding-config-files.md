@@ -1,5 +1,8 @@
 # Understanding your configuration files and how to use them:
 
+## Latest documentation has been moved to https://docs.cardano.org/en/latest/ . 
+
+
 UPDATED FOR TAG: 1.14.2
 
 ## The topology.json file

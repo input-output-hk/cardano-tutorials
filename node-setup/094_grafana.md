@@ -1,5 +1,6 @@
 # Adding a Grafana Dashboard to monitor your nodes
 
+## Latest documentation has been moved to https://docs.cardano.org/en/latest/ .
 
 ### Install grafana
 
@@ -67,4 +68,4 @@ Enter to your dashboard, and after a few seconds you should see something like t
 
 ![Dashboard](images/grafana_dashboard.png)
 
-From here you can configure alerts or change the views on your dashboard. 
+From here you can configure alerts or change the views on your dashboard.

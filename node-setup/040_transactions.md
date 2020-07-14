@@ -1,5 +1,7 @@
 # Create a simple transaction
 
+## Latest documentation has been moved to https://docs.cardano.org/en/latest/ .
+
 You will need a new __payment address__ (payment2.addr) so that you can send funds to it. First, get a new payment key pair for that:
 
     cardano-cli shelley address key-gen \

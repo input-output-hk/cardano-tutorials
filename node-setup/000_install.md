@@ -1,5 +1,7 @@
 # Installing and Running a Node
 
+## Latest documentation has been moved to https://docs.cardano.org/en/latest/ .
+
 UPDATED FOR TAG: 1.14.2
 
 ## PREREQUISITES

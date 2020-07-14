@@ -1,5 +1,7 @@
 ## Get genesis, config and topology files; start the node
 
+## Latest documentation has been moved to https://docs.cardano.org/en/latest/ .
+
 Starting the node and connecting it to the testnet requires 3 configuration files:
 
 * shelley_testnet-topology.json

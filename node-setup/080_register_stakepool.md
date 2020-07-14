@@ -1,6 +1,8 @@
 # Register a Stake Pool with Metadata
 
-__USE TAG: 1.14.2__ 
+## Latest documentation has been moved to https://docs.cardano.org/en/latest/ .
+
+__USE TAG: 1.14.2__
 
 ### Prerequisites
 
@@ -54,12 +56,12 @@ Store the file in a url you control, for example [https://gist.githubusercontent
 
 ### 2. Get the hash of your file:
 
-This validates that the JSON fits the required schema, if it does, you will get the hash of your file. 
+This validates that the JSON fits the required schema, if it does, you will get the hash of your file.
 
     cardano-cli shelley stake-pool metadata-hash --pool-metadata-file testPool.json
 
     >6bf124f217d0e5a0a8adb1dbd8540e1334280d49ab861127868339f43b3948af
-    
+
 ### 3. Generate Stake pool registration certificate
 
 Create a _stake pool registration certificate_:
@@ -203,11 +205,9 @@ will output your poolID. You can then check for the presence of your poolID in t
 
     cardano-cli shelley query ledger-state --testnet-magic 42 | grep publicKey | grep <poolId>
 
-or 
+or
 
     cardano-cli shelley query ledger-state --testnet-magic 42 \
-    | jq '._delegationState._pstate._pParams.<poolid>' 
+    | jq '._delegationState._pstate._pParams.<poolid>'
 
 which should return a non-empty string if your poolID is located in the ledger. You can then then head over to a pool listing website such as https://ff.pooltool.io/ and (providing it is up and running and showing a list of registered stake pools) you should hopefully be able to find your pool in there by searching using your poolID, and subsequently claiming it (might require registration on the website) and giving it a customized name.
-
-

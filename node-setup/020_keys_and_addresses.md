@@ -1,5 +1,7 @@
 # Creating keys and addresses
 
+## Latest documentation has been moved to https://docs.cardano.org/en/latest/ .
+
 UPDATED FOR TAG: 1.14.2
 
 We need to create two sets of keys and addresses: One set to control our funds (make and receive payments) and one set to control our stake (to participate in the protocol delegating our stake)
