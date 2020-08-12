@@ -98,7 +98,7 @@ Create a _stake pool registration certificate_:
 
 
 So in the example above, we use the cold- and VRF-keys that we created [here](060_node_keys.md),
-promise to pledge 100,000 ada to our pool, declare operational costs of 10,000 ada per epoch,
+promise to pledge 10000 ada to our pool, declare operational costs of 100 ada per epoch,
 set the operational margin (i.e. the ratio of rewards we take after taking our costs and before the rest is distributed amongst owners and delegators
 according to their delegated stake) to 5%, use the staking key we created [here](020_keys_and_addresses.md) to receive our rewards
 and use the same key as pool owner key for the pledge.
